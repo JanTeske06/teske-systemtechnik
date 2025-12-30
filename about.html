@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <title>Stellar HTML Demo - About</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="./css/vendors/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/vendors/swiper-bundle.min.css" />
-    <link href="./style.css" rel="stylesheet">
+    <link href="css/vendors/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/vendors/swiper-bundle.min.css" />
+    <link href="style.css" rel="stylesheet">
 </head>
 
 <body class="font-inter antialiased bg-slate-900 text-slate-100 tracking-tight">
@@ -24,7 +24,7 @@
                     <div class="flex-1">
                         <!-- Logo -->
                         <a class="inline-flex" href="index.html" aria-label="Cruip">
-                            <img class="max-w-none" src="./images/logo.svg" width="38" height="38" alt="Stellar">
+                            <img class="max-w-none" src="images/logo.svg" width="38" height="38" alt="Stellar">
                         </a>
                     </div>
 
@@ -68,7 +68,7 @@
 
                     <!-- Mobile menu -->
                     <div class="md:hidden flex items-center ml-4" x-data="{ expanded: false }">
-                    
+
                         <!-- Hamburger button -->
                         <button class="group inline-flex w-8 h-8 text-slate-300 hover:text-white text-center items-center justify-center transition" aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded">
                             <span class="sr-only">Menu</span>
@@ -77,8 +77,8 @@
                                 <rect class="origin-center group-aria-expanded:rotate-45 transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)]" y="7" width="16" height="2" rx="1"></rect>
                                 <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] translate-y-[5px] group-aria-expanded:rotate-[135deg] group-aria-expanded:translate-y-0" y="7" width="16" height="2" rx="1"></rect>
                             </svg>
-                        </button>   
-                    
+                        </button>
+
                         <!-- Mobile navigation -->
                         <nav id="mobile-nav" class="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out" x-ref="mobileNav" :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: .8'" @click.outside="expanded = false" @keydown.escape.window="expanded = false" x-cloak>
                             <ul class="border border-transparent [background:linear-gradient(var(--color-slate-900),var(--color-slate-900))_padding-box,conic-gradient(var(--color-slate-400),var(--color-slate-700)_25%,var(--color-slate-700)_75%,var(--color-slate-400)_100%)_border-box] rounded-lg px-4 py-1.5">
@@ -99,7 +99,7 @@
                                 </li>
                             </ul>
                         </nav>
-                    
+
                     </div>
 
                 </div>
@@ -125,7 +125,7 @@
 
                 <!-- Illustration -->
                 <div class="md:block absolute left-1/2 -translate-x-1/2 -mt-16 blur-2xl opacity-90 pointer-events-none -z-10" aria-hidden="true">
-                    <img src="./images/page-illustration.svg" class="max-w-none" width="1440" height="427" alt="Page Illustration">
+                    <img src="images/page-illustration.svg" class="max-w-none" width="1440" height="427" alt="Page Illustration">
                 </div>
 
                 <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -142,9 +142,9 @@
                                     <canvas data-particle-animation data-particle-quantity="10"></canvas>
                                 </div>
                                 <div class="inline-flex [mask-image:_radial-gradient(circle_at_bottom,transparent_15%,black_70%)]">
-                                    <img src="./images/about-illustration.svg" width="446" height="446" alt="About illustration" />
+                                    <img src="images/about-illustration.svg" width="446" height="446" alt="About illustration" />
                                 </div>
-                                <img class="absolute mt-[30%] drop-shadow-lg animate-float" src="./images/about-icon.svg" width="72" height="72" alt="About icon" />
+                                <img class="absolute mt-[30%] drop-shadow-lg animate-float" src="images/about-icon.svg" width="72" height="72" alt="About icon" />
                             </div>
                         </div>
 
@@ -172,15 +172,15 @@
                 <div class="px-4 sm:px-6">
                     <div class="max-w-5xl mx-auto">
                         <div class="pb-12 md:pb-20">
-                        
+
                             <!-- Section header -->
                             <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
                                 <h2 class="h2 bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60">Our story (so far)</h2>
                             </div>
-                        
+
                             <div class="md:flex justify-between space-x-6 md:space-x-8 lg:space-x-14">
                                 <figure class="min-w-[240px]">
-                                    <img class="sticky top-8 mx-auto mb-12 md:mb-0 rounded-lg -rotate-[4deg]" src="./images/team.jpg" width="420" height="280" alt="Team" />
+                                    <img class="sticky top-8 mx-auto mb-12 md:mb-0 rounded-lg -rotate-[4deg]" src="images/team.jpg" width="420" height="280" alt="Team" />
                                 </figure>
                                 <div class="max-w-[548px] mx-auto">
                                     <div class="text-slate-400 space-y-6">
@@ -203,7 +203,7 @@
                                     </div>
                                 </div>
                             </div>
-    
+
                         </div>
                     </div>
                 </div>
@@ -229,7 +229,7 @@
                             <!-- Member #01 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-01.png" width="48" height="48" alt="Team 01" />
+                                    <img class="shrink-0" src="images/team-01.png" width="48" height="48" alt="Team 01" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Sarah Barnekow</div>
                                         <div class="text-sm text-purple-500 font-medium">CEO & Co-founder</div>
@@ -244,7 +244,7 @@
                             <!-- Member #02 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-02.png" width="48" height="48" alt="Team 02" />
+                                    <img class="shrink-0" src="images/team-02.png" width="48" height="48" alt="Team 02" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Alex Suevalov</div>
                                         <div class="text-sm text-purple-500 font-medium">Tech Lead</div>
@@ -254,12 +254,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #03 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-03.png" width="48" height="48" alt="Team 03" />
+                                    <img class="shrink-0" src="images/team-03.png" width="48" height="48" alt="Team 03" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Mark Lamprecht</div>
                                         <div class="text-sm text-purple-500 font-medium">Software Engineer</div>
@@ -269,12 +269,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #04 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-04.png" width="48" height="48" alt="Team 04" />
+                                    <img class="shrink-0" src="images/team-04.png" width="48" height="48" alt="Team 04" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Scott Bailey</div>
                                         <div class="text-sm text-purple-500 font-medium">Software Engineer</div>
@@ -284,12 +284,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #05 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-05.png" width="48" height="48" alt="Team 05" />
+                                    <img class="shrink-0" src="images/team-05.png" width="48" height="48" alt="Team 05" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Vedant Hegde</div>
                                         <div class="text-sm text-purple-500 font-medium">Customer Experience</div>
@@ -299,12 +299,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #06 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-06.png" width="48" height="48" alt="Team 06" />
+                                    <img class="shrink-0" src="images/team-06.png" width="48" height="48" alt="Team 06" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Lucy Radux</div>
                                         <div class="text-sm text-purple-500 font-medium">Marketing Manager</div>
@@ -314,12 +314,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #07 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-07.png" width="48" height="48" alt="Team 07" />
+                                    <img class="shrink-0" src="images/team-07.png" width="48" height="48" alt="Team 07" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Devani Janssen</div>
                                         <div class="text-sm text-purple-500 font-medium">Product Design</div>
@@ -329,12 +329,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #08 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-08.png" width="48" height="48" alt="Team 08" />
+                                    <img class="shrink-0" src="images/team-08.png" width="48" height="48" alt="Team 08" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Dima Trystram</div>
                                         <div class="text-sm text-purple-500 font-medium">Customer Success</div>
@@ -344,12 +344,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #09 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-09.png" width="48" height="48" alt="Team 09" />
+                                    <img class="shrink-0" src="images/team-09.png" width="48" height="48" alt="Team 09" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Fraser Davidson</div>
                                         <div class="text-sm text-purple-500 font-medium">Customer Success</div>
@@ -359,12 +359,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #10 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-10.png" width="48" height="48" alt="Team 10" />
+                                    <img class="shrink-0" src="images/team-10.png" width="48" height="48" alt="Team 10" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">William Adkins</div>
                                         <div class="text-sm text-purple-500 font-medium">Customer Experience</div>
@@ -374,12 +374,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #11 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-11.png" width="48" height="48" alt="Team 11" />
+                                    <img class="shrink-0" src="images/team-11.png" width="48" height="48" alt="Team 11" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Debbie Poulin</div>
                                         <div class="text-sm text-purple-500 font-medium">Head of Talent</div>
@@ -389,12 +389,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #12 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-12.png" width="48" height="48" alt="Team 12" />
+                                    <img class="shrink-0" src="images/team-12.png" width="48" height="48" alt="Team 12" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">James Kudinov</div>
                                         <div class="text-sm text-purple-500 font-medium">Product Design</div>
@@ -404,12 +404,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #13 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-13.png" width="48" height="48" alt="Team 13" />
+                                    <img class="shrink-0" src="images/team-13.png" width="48" height="48" alt="Team 13" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Zhenya Rynzhuk</div>
                                         <div class="text-sm text-purple-500 font-medium">Software Engineer</div>
@@ -419,12 +419,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #14 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-14.png" width="48" height="48" alt="Team 14" />
+                                    <img class="shrink-0" src="images/team-14.png" width="48" height="48" alt="Team 14" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Mary Maka</div>
                                         <div class="text-sm text-purple-500 font-medium">Enterprise Architect</div>
@@ -434,12 +434,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #15 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-15.png" width="48" height="48" alt="Team 15" />
+                                    <img class="shrink-0" src="images/team-15.png" width="48" height="48" alt="Team 15" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Monty Hayton</div>
                                         <div class="text-sm text-purple-500 font-medium">Video Producer</div>
@@ -449,12 +449,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #16 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-16.png" width="48" height="48" alt="Team 16" />
+                                    <img class="shrink-0" src="images/team-16.png" width="48" height="48" alt="Team 16" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Srdjan Vidakovic</div>
                                         <div class="text-sm text-purple-500 font-medium">Operations Manager</div>
@@ -464,12 +464,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #17 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-17.png" width="48" height="48" alt="Team 17" />
+                                    <img class="shrink-0" src="images/team-17.png" width="48" height="48" alt="Team 17" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">David Cran</div>
                                         <div class="text-sm text-purple-500 font-medium">Financial Analyst</div>
@@ -479,12 +479,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #18 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-18.png" width="48" height="48" alt="Team 18" />
+                                    <img class="shrink-0" src="images/team-18.png" width="48" height="48" alt="Team 18" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Jacek Janiczak</div>
                                         <div class="text-sm text-purple-500 font-medium">Data Engineer</div>
@@ -494,12 +494,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #19 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-19.png" width="48" height="48" alt="Team 19" />
+                                    <img class="shrink-0" src="images/team-19.png" width="48" height="48" alt="Team 19" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Tommy Chandra</div>
                                         <div class="text-sm text-purple-500 font-medium">Head of Design</div>
@@ -509,12 +509,12 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                             <!-- Member #20 -->
                             <div class="relative flex items-center justify-between py-4 pl-4 pr-3 group before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-0 hover:before:opacity-10 focus-within:before:opacity-10 before:rounded-xl before:transition-opacity">
                                 <div class="flex items-center space-x-4">
-                                    <img class="shrink-0" src="./images/team-20.png" width="48" height="48" alt="Team 20" />
+                                    <img class="shrink-0" src="images/team-20.png" width="48" height="48" alt="Team 20" />
                                     <div class="grow">
                                         <div class="font-bold text-slate-100 mb-0.5">Ally Golovko</div>
                                         <div class="text-sm text-purple-500 font-medium">Software Engineer</div>
@@ -524,7 +524,7 @@
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path d="M11.297 13.807 7.424 18H5.276l5.019-5.436L5 6h4.43l3.06 3.836L16.025 6h2.147l-4.688 5.084L19 18h-4.32l-3.383-4.193Zm3.975 2.975h1.19L8.783 7.155H7.507l7.766 9.627Z" />
                                     </svg>
-                                </a>                              
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -602,10 +602,10 @@
                 <!-- Images -->
                 <div class="max-w-[1440px] mx-auto px-4 md:px-0">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 md:-mx-5">
-                        <img class="w-full aspect-16/10 object-cover rounded-lg" src="./images/recruitment-01.jpg" width="352" height="220" alt="Recruitment 01" />
-                        <img class="w-full aspect-16/10 object-cover rounded-lg" src="./images/recruitment-02.jpg" width="352" height="220" alt="Recruitment 02" />
-                        <img class="w-full aspect-16/10 object-cover rounded-lg" src="./images/recruitment-03.jpg" width="352" height="220" alt="Recruitment 03" />
-                        <img class="w-full aspect-16/10 object-cover rounded-lg" src="./images/recruitment-04.jpg" width="352" height="220" alt="Recruitment 04" />
+                        <img class="w-full aspect-16/10 object-cover rounded-lg" src="images/recruitment-01.jpg" width="352" height="220" alt="Recruitment 01" />
+                        <img class="w-full aspect-16/10 object-cover rounded-lg" src="images/recruitment-02.jpg" width="352" height="220" alt="Recruitment 02" />
+                        <img class="w-full aspect-16/10 object-cover rounded-lg" src="images/recruitment-03.jpg" width="352" height="220" alt="Recruitment 03" />
+                        <img class="w-full aspect-16/10 object-cover rounded-lg" src="images/recruitment-04.jpg" width="352" height="220" alt="Recruitment 04" />
                     </div>
                 </div>
 
@@ -709,7 +709,7 @@
                             <div class="relative p-5 before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-10 before:rounded-xl">
                                 <div class="flex items-center justify-between mb-4">
                                     <div class="flex items-center space-x-4">
-                                        <img class="shrink-0" src="./images/testimonial-01.png" width="44" height="44" alt="Testimonial 01" />
+                                        <img class="shrink-0" src="images/testimonial-01.png" width="44" height="44" alt="Testimonial 01" />
                                         <div class="grow">
                                             <div class="font-bold text-slate-100">Mary Janiczak</div>
                                             <div class="text-sm text-purple-500 font-medium">Data Engineer</div>
@@ -727,7 +727,7 @@
                             <div class="relative p-5 before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-10 before:rounded-xl">
                                 <div class="flex items-center justify-between mb-4">
                                     <div class="flex items-center space-x-4">
-                                        <img class="shrink-0" src="./images/testimonial-02.png" width="44" height="44" alt="Testimonial 02" />
+                                        <img class="shrink-0" src="images/testimonial-02.png" width="44" height="44" alt="Testimonial 02" />
                                         <div class="grow">
                                             <div class="font-bold text-slate-100">Jack Smith</div>
                                             <div class="text-sm text-purple-500 font-medium">Software Engineer</div>
@@ -745,7 +745,7 @@
                             <div class="relative p-5 before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-10 before:rounded-xl">
                                 <div class="flex items-center justify-between mb-4">
                                     <div class="flex items-center space-x-4">
-                                        <img class="shrink-0" src="./images/testimonial-03.png" width="44" height="44" alt="Testimonial 03" />
+                                        <img class="shrink-0" src="images/testimonial-03.png" width="44" height="44" alt="Testimonial 03" />
                                         <div class="grow">
                                             <div class="font-bold text-slate-100">Anna Johnson</div>
                                             <div class="text-sm text-purple-500 font-medium">Product Designer</div>
@@ -766,7 +766,7 @@
 
             <!-- CTA -->
             <section class="relative">
-            
+
                 <!-- Particles animation -->
                 <div class="absolute left-1/2 -translate-x-1/2 top-0 -z-10 w-80 h-80 -mt-24">
                     <div class="absolute inset-0 -z-10" aria-hidden="true">
@@ -803,17 +803,17 @@
                         </div>
                     </div>
                 </div>
-            </section> 
+            </section>
 
         </main>
 
         <!-- Site footer -->
         <footer>
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        
+
                 <!-- Blocks -->
                 <div class="grid sm:grid-cols-12 gap-8 py-8 md:py-12">
-        
+
                     <!-- 1st block -->
                     <div class="sm:col-span-12 lg:col-span-4 order-1 lg:order-none">
                         <div class="h-full flex flex-col sm:flex-row lg:flex-col justify-between">
@@ -821,7 +821,7 @@
                                 <div class="mb-4">
                                     <!-- Logo -->
                                     <a class="inline-flex" href="index.html" aria-label="Cruip">
-                                        <img src="./images/logo.svg" width="38" height="38" alt="Stellar">
+                                        <img src="images/logo.svg" width="38" height="38" alt="Stellar">
                                     </a>
                                 </div>
                                 <div class="text-sm text-slate-300">&copy; Cruip.com <span class="text-slate-500">-</span> All rights reserved.</div>
@@ -852,7 +852,7 @@
                             </ul>
                         </div>
                     </div>
-        
+
                     <!-- 2nd block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Products</h6>
@@ -874,7 +874,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <!-- 3rd block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Company</h6>
@@ -896,7 +896,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <!-- 4th block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Resources</h6>
@@ -912,7 +912,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <!-- 5th block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Legals</h6>
@@ -931,18 +931,18 @@
                             </li>
                         </ul>
                     </div>
-        
+
                 </div>
-        
+
             </div>
         </footer>
 
     </div>
 
-    <script src="./js/vendors/alpinejs.min.js" defer></script>
-    <script src="./js/vendors/aos.js"></script>
-    <script src="./js/vendors/swiper-bundle.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="js/vendors/alpinejs.min.js" defer></script>
+    <script src="js/vendors/aos.js"></script>
+    <script src="js/vendors/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 

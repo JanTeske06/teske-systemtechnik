@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <title>Stellar HTML Demo - Integrations</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="./css/vendors/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/vendors/swiper-bundle.min.css" />
-    <link href="./style.css" rel="stylesheet">
+    <link href="css/vendors/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/vendors/swiper-bundle.min.css" />
+    <link href="style.css" rel="stylesheet">
 </head>
 
 <body class="font-inter antialiased bg-slate-900 text-slate-100 tracking-tight">
@@ -24,7 +24,7 @@
                     <div class="flex-1">
                         <!-- Logo -->
                         <a class="inline-flex" href="index.html" aria-label="Cruip">
-                            <img class="max-w-none" src="./images/logo.svg" width="38" height="38" alt="Stellar">
+                            <img class="max-w-none" src="images/logo.svg" width="38" height="38" alt="Stellar">
                         </a>
                     </div>
 
@@ -68,7 +68,7 @@
 
                     <!-- Mobile menu -->
                     <div class="md:hidden flex items-center ml-4" x-data="{ expanded: false }">
-                    
+
                         <!-- Hamburger button -->
                         <button class="group inline-flex w-8 h-8 text-slate-300 hover:text-white text-center items-center justify-center transition" aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded">
                             <span class="sr-only">Menu</span>
@@ -77,8 +77,8 @@
                                 <rect class="origin-center group-aria-expanded:rotate-45 transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)]" y="7" width="16" height="2" rx="1"></rect>
                                 <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] translate-y-[5px] group-aria-expanded:rotate-[135deg] group-aria-expanded:translate-y-0" y="7" width="16" height="2" rx="1"></rect>
                             </svg>
-                        </button>   
-                    
+                        </button>
+
                         <!-- Mobile navigation -->
                         <nav id="mobile-nav" class="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out" x-ref="mobileNav" :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: .8'" @click.outside="expanded = false" @keydown.escape.window="expanded = false" x-cloak>
                             <ul class="border border-transparent [background:linear-gradient(var(--color-slate-900),var(--color-slate-900))_padding-box,conic-gradient(var(--color-slate-400),var(--color-slate-700)_25%,var(--color-slate-700)_75%,var(--color-slate-400)_100%)_border-box] rounded-lg px-4 py-1.5">
@@ -99,7 +99,7 @@
                                 </li>
                             </ul>
                         </nav>
-                    
+
                     </div>
 
                 </div>
@@ -114,9 +114,9 @@
 
                 <!-- Illustration 02 -->
                 <div class="md:block absolute left-1/2 -translate-x-1/2 bottom-0 -mb-16 blur-2xl opacity-90 pointer-events-none -z-10" aria-hidden="true">
-                    <img src="./images/page-illustration-02.svg" class="max-w-none" width="1440" height="427" alt="Page Illustration 02">
+                    <img src="images/page-illustration-02.svg" class="max-w-none" width="1440" height="427" alt="Page Illustration 02">
                 </div>
-                
+
                 <!-- Opacity layer -->
                 <div class="absolute inset-0 bg-slate-900 opacity-60 -z-10" aria-hidden="true"></div>
 
@@ -133,7 +133,7 @@
 
                 <!-- Illustration -->
                 <div class="md:block absolute left-1/2 -translate-x-1/2 -mt-16 blur-2xl opacity-90 pointer-events-none -z-10" aria-hidden="true">
-                    <img src="./images/page-illustration.svg" class="max-w-none" width="1440" height="427" alt="Page Illustration">
+                    <img src="images/page-illustration.svg" class="max-w-none" width="1440" height="427" alt="Page Illustration">
                 </div>
 
                 <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -158,8 +158,8 @@
                                     <div class="flex flex-col p-5 h-full">
                                         <div class="flex items-center space-x-3 mb-3">
                                             <div class="relative">
-                                                <img src="./images/integrations-01.svg" width="40" height="40" alt="Icon 01">
-                                                <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                <img src="images/integrations-01.svg" width="40" height="40" alt="Icon 01">
+                                                <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                             </div>
                                             <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Retool</a>
                                         </div>
@@ -168,10 +168,10 @@
                                         </div>
                                         <div class="flex justify-between">
                                             <div class="flex -space-x-3 -ml-0.5">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-01.jpg" width="24" height="24" alt="Avatar 01">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-02.jpg" width="24" height="24" alt="Avatar 02">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-03.jpg" width="24" height="24" alt="Avatar 03">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-04.jpg" width="24" height="24" alt="Avatar 04">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-01.jpg" width="24" height="24" alt="Avatar 01">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-02.jpg" width="24" height="24" alt="Avatar 02">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-03.jpg" width="24" height="24" alt="Avatar 03">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-04.jpg" width="24" height="24" alt="Avatar 04">
                                             </div>
                                             <button class="flex items-center space-x-2 font-medium text-sm text-slate-300 hover:text-white transition-colors">
                                                 <span class="sr-only">Like</span>
@@ -187,8 +187,8 @@
                                     <div class="flex flex-col p-5 h-full">
                                         <div class="flex items-center space-x-3 mb-3">
                                             <div class="relative">
-                                                <img src="./images/integrations-02.svg" width="40" height="40" alt="Icon 02">
-                                                <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                <img src="images/integrations-02.svg" width="40" height="40" alt="Icon 02">
+                                                <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                             </div>
                                             <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Zapier</a>
                                         </div>
@@ -197,9 +197,9 @@
                                         </div>
                                         <div class="flex justify-between">
                                             <div class="flex -space-x-3 -ml-0.5">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-05.jpg" width="24" height="24" alt="Avatar 05">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-06.jpg" width="24" height="24" alt="Avatar 06">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-07.jpg" width="24" height="24" alt="Avatar 07">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-05.jpg" width="24" height="24" alt="Avatar 05">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-06.jpg" width="24" height="24" alt="Avatar 06">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-07.jpg" width="24" height="24" alt="Avatar 07">
                                             </div>
                                             <button class="flex items-center space-x-2 font-medium text-sm text-slate-300 hover:text-white transition-colors">
                                                 <span class="sr-only">Like</span>
@@ -215,8 +215,8 @@
                                     <div class="flex flex-col p-5 h-full">
                                         <div class="flex items-center space-x-3 mb-3">
                                             <div class="relative">
-                                                <img src="./images/integrations-03.svg" width="40" height="40" alt="Icon 03">
-                                                <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                <img src="images/integrations-03.svg" width="40" height="40" alt="Icon 03">
+                                                <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                             </div>
                                             <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Airtable</a>
                                         </div>
@@ -225,10 +225,10 @@
                                         </div>
                                         <div class="flex justify-between">
                                             <div class="flex -space-x-3 -ml-0.5">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-08.jpg" width="24" height="24" alt="Avatar 08">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-09.jpg" width="24" height="24" alt="Avatar 09">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-10.jpg" width="24" height="24" alt="Avatar 10">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-11.jpg" width="24" height="24" alt="Avatar 11">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-08.jpg" width="24" height="24" alt="Avatar 08">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-09.jpg" width="24" height="24" alt="Avatar 09">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-10.jpg" width="24" height="24" alt="Avatar 10">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-11.jpg" width="24" height="24" alt="Avatar 11">
                                             </div>
                                             <button class="flex items-center space-x-2 font-medium text-sm text-slate-300 hover:text-white transition-colors">
                                                 <span class="sr-only">Like</span>
@@ -244,8 +244,8 @@
                                     <div class="flex flex-col p-5 h-full">
                                         <div class="flex items-center space-x-3 mb-3">
                                             <div class="relative">
-                                                <img src="./images/integrations-04.svg" width="40" height="40" alt="Icon 04">
-                                                <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                <img src="images/integrations-04.svg" width="40" height="40" alt="Icon 04">
+                                                <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                             </div>
                                             <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Jira</a>
                                         </div>
@@ -254,10 +254,10 @@
                                         </div>
                                         <div class="flex justify-between">
                                             <div class="flex -space-x-3 -ml-0.5">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-12.jpg" width="24" height="24" alt="Avatar 12">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-13.jpg" width="24" height="24" alt="Avatar 13">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-14.jpg" width="24" height="24" alt="Avatar 14">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-15.jpg" width="24" height="24" alt="Avatar 15">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-12.jpg" width="24" height="24" alt="Avatar 12">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-13.jpg" width="24" height="24" alt="Avatar 13">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-14.jpg" width="24" height="24" alt="Avatar 14">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-15.jpg" width="24" height="24" alt="Avatar 15">
                                             </div>
                                             <button class="flex items-center space-x-2 font-medium text-sm text-slate-300 hover:text-white transition-colors">
                                                 <span class="sr-only">Like</span>
@@ -273,8 +273,8 @@
                                     <div class="flex flex-col p-5 h-full">
                                         <div class="flex items-center space-x-3 mb-3">
                                             <div class="relative">
-                                                <img src="./images/integrations-05.svg" width="40" height="40" alt="Icon 05">
-                                                <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                <img src="images/integrations-05.svg" width="40" height="40" alt="Icon 05">
+                                                <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                             </div>
                                             <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">GitLab</a>
                                         </div>
@@ -283,10 +283,10 @@
                                         </div>
                                         <div class="flex justify-between">
                                             <div class="flex -space-x-3 -ml-0.5">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-16.jpg" width="24" height="24" alt="Avatar 16">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-17.jpg" width="24" height="24" alt="Avatar 17">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-18.jpg" width="24" height="24" alt="Avatar 18">
-                                                <img class="rounded-full border-2 border-slate-800 box-content" src="./images/avatar-19.jpg" width="24" height="24" alt="Avatar 19">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-16.jpg" width="24" height="24" alt="Avatar 16">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-17.jpg" width="24" height="24" alt="Avatar 17">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-18.jpg" width="24" height="24" alt="Avatar 18">
+                                                <img class="rounded-full border-2 border-slate-800 box-content" src="images/avatar-19.jpg" width="24" height="24" alt="Avatar 19">
                                             </div>
                                             <button class="flex items-center space-x-2 font-medium text-sm text-slate-300 hover:text-white transition-colors">
                                                 <span class="sr-only">Like</span>
@@ -300,7 +300,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Arrows -->
                         <div class="flex py-8 justify-end">
                             <button class="carousel-prev relative z-20 w-12 h-12 flex items-center justify-center group">
@@ -376,7 +376,7 @@
                                 </form>
                             </div>
                         </div>
-    
+
                         <!-- Cards -->
                         <div>
                             <!-- Section #1 -->
@@ -388,8 +388,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-06.svg" width="40" height="40" alt="Icon 06">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-06.svg" width="40" height="40" alt="Icon 06">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Vercel</a>
                                             </div>
@@ -403,7 +403,7 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-07.svg" width="40" height="40" alt="Icon 07">
+                                                    <img src="images/integrations-07.svg" width="40" height="40" alt="Icon 07">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Sentry</a>
                                             </div>
@@ -417,8 +417,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-04.svg" width="40" height="40" alt="Icon 04">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-04.svg" width="40" height="40" alt="Icon 04">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Jira</a>
                                             </div>
@@ -432,8 +432,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-08.svg" width="40" height="40" alt="Icon 08">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-08.svg" width="40" height="40" alt="Icon 08">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">GitHub</a>
                                             </div>
@@ -447,8 +447,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-05.svg" width="40" height="40" alt="Icon 05">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-05.svg" width="40" height="40" alt="Icon 05">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">GitLab</a>
                                             </div>
@@ -462,8 +462,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-01.svg" width="40" height="40" alt="Icon 01">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-01.svg" width="40" height="40" alt="Icon 01">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Retool</a>
                                             </div>
@@ -483,8 +483,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-02.svg" width="40" height="40" alt="Icon 02">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-02.svg" width="40" height="40" alt="Icon 02">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Zapier</a>
                                             </div>
@@ -498,8 +498,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-03.svg" width="40" height="40" alt="Icon 03">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-03.svg" width="40" height="40" alt="Icon 03">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Airtable</a>
                                             </div>
@@ -513,8 +513,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-09.svg" width="40" height="40" alt="Icon 09">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-09.svg" width="40" height="40" alt="Icon 09">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Framer</a>
                                             </div>
@@ -528,7 +528,7 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-10.svg" width="40" height="40" alt="Icon 10">
+                                                    <img src="images/integrations-10.svg" width="40" height="40" alt="Icon 10">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Jotform</a>
                                             </div>
@@ -542,8 +542,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-11.svg" width="40" height="40" alt="Icon 11">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-11.svg" width="40" height="40" alt="Icon 11">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Webflow</a>
                                             </div>
@@ -557,7 +557,7 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-12.svg" width="40" height="40" alt="Icon 12">
+                                                    <img src="images/integrations-12.svg" width="40" height="40" alt="Icon 12">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Coda</a>
                                             </div>
@@ -577,8 +577,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-13.svg" width="40" height="40" alt="Icon 13">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-13.svg" width="40" height="40" alt="Icon 13">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Asana</a>
                                             </div>
@@ -592,8 +592,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-14.svg" width="40" height="40" alt="Icon 14">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-14.svg" width="40" height="40" alt="Icon 14">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Myngo</a>
                                             </div>
@@ -607,8 +607,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-15.svg" width="40" height="40" alt="Icon 15">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-15.svg" width="40" height="40" alt="Icon 15">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Bonsai</a>
                                             </div>
@@ -622,8 +622,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-16.svg" width="40" height="40" alt="Icon 16">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-16.svg" width="40" height="40" alt="Icon 16">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Decipad</a>
                                             </div>
@@ -637,8 +637,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-17.svg" width="40" height="40" alt="Icon 17">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-17.svg" width="40" height="40" alt="Icon 17">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Miro</a>
                                             </div>
@@ -652,7 +652,7 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-18.svg" width="40" height="40" alt="Icon 18">
+                                                    <img src="images/integrations-18.svg" width="40" height="40" alt="Icon 18">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Popform</a>
                                             </div>
@@ -672,8 +672,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-19.svg" width="40" height="40" alt="Icon 19">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-19.svg" width="40" height="40" alt="Icon 19">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Linear</a>
                                             </div>
@@ -687,8 +687,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-20.svg" width="40" height="40" alt="Icon 20">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-20.svg" width="40" height="40" alt="Icon 20">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Microsoft</a>
                                             </div>
@@ -702,8 +702,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-21.svg" width="40" height="40" alt="Icon 21">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-21.svg" width="40" height="40" alt="Icon 21">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Google Drive</a>
                                             </div>
@@ -717,8 +717,8 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-22.svg" width="40" height="40" alt="Icon 22">
-                                                    <img class="absolute top-0 -right-1" src="./images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
+                                                    <img src="images/integrations-22.svg" width="40" height="40" alt="Icon 22">
+                                                    <img class="absolute top-0 -right-1" src="images/star.svg" width="16" height="16" alt="Star" aria-hidden="true">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">InVision</a>
                                             </div>
@@ -732,7 +732,7 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-23.svg" width="40" height="40" alt="Icon 23">
+                                                    <img src="images/integrations-23.svg" width="40" height="40" alt="Icon 23">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">WeTransfer</a>
                                             </div>
@@ -746,7 +746,7 @@
                                         <div class="flex flex-col p-5 h-full">
                                             <div class="flex items-center space-x-3 mb-3">
                                                 <div class="relative">
-                                                    <img src="./images/integrations-24.svg" width="40" height="40" alt="Icon 24">
+                                                    <img src="images/integrations-24.svg" width="40" height="40" alt="Icon 24">
                                                 </div>
                                                 <a class="font-semibold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 group-hover:before:absolute group-hover:before:inset-0" href="integrations-single.html">Hotjar</a>
                                             </div>
@@ -799,17 +799,17 @@
                         </div>
                     </div>
                 </div>
-            </section> 
+            </section>
 
         </main>
 
         <!-- Site footer -->
         <footer>
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        
+
                 <!-- Blocks -->
                 <div class="grid sm:grid-cols-12 gap-8 py-8 md:py-12">
-        
+
                     <!-- 1st block -->
                     <div class="sm:col-span-12 lg:col-span-4 order-1 lg:order-none">
                         <div class="h-full flex flex-col sm:flex-row lg:flex-col justify-between">
@@ -817,7 +817,7 @@
                                 <div class="mb-4">
                                     <!-- Logo -->
                                     <a class="inline-flex" href="index.html" aria-label="Cruip">
-                                        <img src="./images/logo.svg" width="38" height="38" alt="Stellar">
+                                        <img src="images/logo.svg" width="38" height="38" alt="Stellar">
                                     </a>
                                 </div>
                                 <div class="text-sm text-slate-300">&copy; Cruip.com <span class="text-slate-500">-</span> All rights reserved.</div>
@@ -848,7 +848,7 @@
                             </ul>
                         </div>
                     </div>
-        
+
                     <!-- 2nd block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Products</h6>
@@ -870,7 +870,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <!-- 3rd block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Company</h6>
@@ -892,7 +892,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <!-- 4th block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Resources</h6>
@@ -908,7 +908,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <!-- 5th block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Legals</h6>
@@ -927,18 +927,18 @@
                             </li>
                         </ul>
                     </div>
-        
+
                 </div>
-        
+
             </div>
         </footer>
 
     </div>
 
-    <script src="./js/vendors/alpinejs.min.js" defer></script>
-    <script src="./js/vendors/aos.js"></script>
-    <script src="./js/vendors/swiper-bundle.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="js/vendors/alpinejs.min.js" defer></script>
+    <script src="js/vendors/aos.js"></script>
+    <script src="js/vendors/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 

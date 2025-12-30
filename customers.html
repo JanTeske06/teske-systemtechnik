@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <title>Stellar HTML Demo - Customers</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="./css/vendors/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/vendors/swiper-bundle.min.css" />
-    <link href="./style.css" rel="stylesheet">
+    <link href="css/vendors/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/vendors/swiper-bundle.min.css" />
+    <link href="style.css" rel="stylesheet">
 </head>
 
 <body class="font-inter antialiased bg-slate-900 text-slate-100 tracking-tight">
@@ -24,7 +24,7 @@
                     <div class="flex-1">
                         <!-- Logo -->
                         <a class="inline-flex" href="index.html" aria-label="Cruip">
-                            <img class="max-w-none" src="./images/logo.svg" width="38" height="38" alt="Stellar">
+                            <img class="max-w-none" src="images/logo.svg" width="38" height="38" alt="Stellar">
                         </a>
                     </div>
 
@@ -68,7 +68,7 @@
 
                     <!-- Mobile menu -->
                     <div class="md:hidden flex items-center ml-4" x-data="{ expanded: false }">
-                    
+
                         <!-- Hamburger button -->
                         <button class="group inline-flex w-8 h-8 text-slate-300 hover:text-white text-center items-center justify-center transition" aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded">
                             <span class="sr-only">Menu</span>
@@ -77,8 +77,8 @@
                                 <rect class="origin-center group-aria-expanded:rotate-45 transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)]" y="7" width="16" height="2" rx="1"></rect>
                                 <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] translate-y-[5px] group-aria-expanded:rotate-[135deg] group-aria-expanded:translate-y-0" y="7" width="16" height="2" rx="1"></rect>
                             </svg>
-                        </button>   
-                    
+                        </button>
+
                         <!-- Mobile navigation -->
                         <nav id="mobile-nav" class="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out" x-ref="mobileNav" :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: .8'" @click.outside="expanded = false" @keydown.escape.window="expanded = false" x-cloak>
                             <ul class="border border-transparent [background:linear-gradient(var(--color-slate-900),var(--color-slate-900))_padding-box,conic-gradient(var(--color-slate-400),var(--color-slate-700)_25%,var(--color-slate-700)_75%,var(--color-slate-400)_100%)_border-box] rounded-lg px-4 py-1.5">
@@ -99,7 +99,7 @@
                                 </li>
                             </ul>
                         </nav>
-                    
+
                     </div>
 
                 </div>
@@ -125,7 +125,7 @@
 
                 <!-- Illustration -->
                 <div class="md:block absolute left-1/2 -translate-x-1/2 -mt-16 blur-2xl opacity-90 pointer-events-none -z-10" aria-hidden="true">
-                    <img src="./images/page-illustration.svg" class="max-w-none" width="1440" height="427" alt="Page Illustration">
+                    <img src="images/page-illustration.svg" class="max-w-none" width="1440" height="427" alt="Page Illustration">
                 </div>
 
                 <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -153,8 +153,8 @@
                                                     <canvas data-particle-animation data-particle-quantity="3"></canvas>
                                                 </div>
                                                 <div class="flex items-center justify-center">
-                                                    <img class="w-full h-full aspect-video object-cover" src="./images/customer-bg-01.png" width="352" height="198" alt="Customer Background 01" aria-hidden="true" />
-                                                    <img class="absolute" src="./images/customer-01.svg" width="78" height="34" alt="Customer 01" />
+                                                    <img class="w-full h-full aspect-video object-cover" src="images/customer-bg-01.png" width="352" height="198" alt="Customer Background 01" aria-hidden="true" />
+                                                    <img class="absolute" src="images/customer-01.svg" width="78" height="34" alt="Customer 01" />
                                                 </div>
                                             </div>
                                         </div>
@@ -170,8 +170,8 @@
                                                     <canvas data-particle-animation data-particle-quantity="3"></canvas>
                                                 </div>
                                                 <div class="flex items-center justify-center">
-                                                    <img class="w-full h-full aspect-video object-cover" src="./images/customer-bg-02.png" width="352" height="198" alt="Customer Background 02" aria-hidden="true" />
-                                                    <img class="absolute" src="./images/customer-02.svg" width="70" height="25" alt="Customer 02" />
+                                                    <img class="w-full h-full aspect-video object-cover" src="images/customer-bg-02.png" width="352" height="198" alt="Customer Background 02" aria-hidden="true" />
+                                                    <img class="absolute" src="images/customer-02.svg" width="70" height="25" alt="Customer 02" />
                                                 </div>
                                             </div>
                                         </div>
@@ -187,8 +187,8 @@
                                                     <canvas data-particle-animation data-particle-quantity="3"></canvas>
                                                 </div>
                                                 <div class="flex items-center justify-center">
-                                                    <img class="w-full h-full aspect-video object-cover" src="./images/customer-bg-03.png" width="352" height="198" alt="Customer Background 03" aria-hidden="true" />
-                                                    <img class="absolute" src="./images/customer-03.svg" width="107" height="33" alt="Customer 03" />
+                                                    <img class="w-full h-full aspect-video object-cover" src="images/customer-bg-03.png" width="352" height="198" alt="Customer Background 03" aria-hidden="true" />
+                                                    <img class="absolute" src="images/customer-03.svg" width="107" height="33" alt="Customer 03" />
                                                 </div>
                                             </div>
                                         </div>
@@ -204,8 +204,8 @@
                                                     <canvas data-particle-animation data-particle-quantity="3"></canvas>
                                                 </div>
                                                 <div class="flex items-center justify-center">
-                                                    <img class="w-full h-full aspect-video object-cover" src="./images/customer-bg-04.png" width="352" height="198" alt="Customer Background 04" aria-hidden="true" />
-                                                    <img class="absolute" src="./images/customer-04.svg" width="85" height="36" alt="Customer 04" />
+                                                    <img class="w-full h-full aspect-video object-cover" src="images/customer-bg-04.png" width="352" height="198" alt="Customer Background 04" aria-hidden="true" />
+                                                    <img class="absolute" src="images/customer-04.svg" width="85" height="36" alt="Customer 04" />
                                                 </div>
                                             </div>
                                         </div>
@@ -221,8 +221,8 @@
                                                     <canvas data-particle-animation data-particle-quantity="3"></canvas>
                                                 </div>
                                                 <div class="flex items-center justify-center">
-                                                    <img class="w-full h-full aspect-video object-cover" src="./images/customer-bg-05.png" width="352" height="198" alt="Customer Background 05" aria-hidden="true" />
-                                                    <img class="absolute" src="./images/customer-05.svg" width="86" height="18" alt="Customer 05" />
+                                                    <img class="w-full h-full aspect-video object-cover" src="images/customer-bg-05.png" width="352" height="198" alt="Customer Background 05" aria-hidden="true" />
+                                                    <img class="absolute" src="images/customer-05.svg" width="86" height="18" alt="Customer 05" />
                                                 </div>
                                             </div>
                                         </div>
@@ -238,8 +238,8 @@
                                                     <canvas data-particle-animation data-particle-quantity="3"></canvas>
                                                 </div>
                                                 <div class="flex items-center justify-center">
-                                                    <img class="w-full h-full aspect-video object-cover" src="./images/customer-bg-06.png" width="352" height="198" alt="Customer Background 06" aria-hidden="true" />
-                                                    <img class="absolute" src="./images/customer-06.svg" width="110" height="21" alt="Customer 06" />
+                                                    <img class="w-full h-full aspect-video object-cover" src="images/customer-bg-06.png" width="352" height="198" alt="Customer Background 06" aria-hidden="true" />
+                                                    <img class="absolute" src="images/customer-06.svg" width="110" height="21" alt="Customer 06" />
                                                 </div>
                                             </div>
                                         </div>
@@ -255,8 +255,8 @@
                                                     <canvas data-particle-animation data-particle-quantity="3"></canvas>
                                                 </div>
                                                 <div class="flex items-center justify-center">
-                                                    <img class="w-full h-full aspect-video object-cover" src="./images/customer-bg-07.png" width="352" height="198" alt="Customer Background 07" aria-hidden="true" />
-                                                    <img class="absolute" src="./images/customer-07.svg" width="83" height="23" alt="Customer 07" />
+                                                    <img class="w-full h-full aspect-video object-cover" src="images/customer-bg-07.png" width="352" height="198" alt="Customer Background 07" aria-hidden="true" />
+                                                    <img class="absolute" src="images/customer-07.svg" width="83" height="23" alt="Customer 07" />
                                                 </div>
                                             </div>
                                         </div>
@@ -272,8 +272,8 @@
                                                     <canvas data-particle-animation data-particle-quantity="3"></canvas>
                                                 </div>
                                                 <div class="flex items-center justify-center">
-                                                    <img class="w-full h-full aspect-video object-cover" src="./images/customer-bg-08.png" width="352" height="198" alt="Customer Background 08" aria-hidden="true" />
-                                                    <img class="absolute" src="./images/customer-08.svg" width="98" height="40" alt="Customer 08" />
+                                                    <img class="w-full h-full aspect-video object-cover" src="images/customer-bg-08.png" width="352" height="198" alt="Customer Background 08" aria-hidden="true" />
+                                                    <img class="absolute" src="images/customer-08.svg" width="98" height="40" alt="Customer 08" />
                                                 </div>
                                             </div>
                                         </div>
@@ -289,8 +289,8 @@
                                                     <canvas data-particle-animation data-particle-quantity="3"></canvas>
                                                 </div>
                                                 <div class="flex items-center justify-center">
-                                                    <img class="w-full h-full aspect-video object-cover" src="./images/customer-bg-09.png" width="352" height="198" alt="Customer Background 09" aria-hidden="true" />
-                                                    <img class="absolute" src="./images/customer-09.svg" width="106" height="35" alt="Customer 09" />
+                                                    <img class="w-full h-full aspect-video object-cover" src="images/customer-bg-09.png" width="352" height="198" alt="Customer Background 09" aria-hidden="true" />
+                                                    <img class="absolute" src="images/customer-09.svg" width="106" height="35" alt="Customer 09" />
                                                 </div>
                                             </div>
                                         </div>
@@ -306,8 +306,8 @@
                                                     <canvas data-particle-animation data-particle-quantity="3"></canvas>
                                                 </div>
                                                 <div class="flex items-center justify-center">
-                                                    <img class="w-full h-full aspect-video object-cover" src="./images/customer-bg-10.png" width="352" height="198" alt="Customer Background 10" aria-hidden="true" />
-                                                    <img class="absolute" src="./images/customer-10.svg" width="132" height="22" alt="Customer 10" />
+                                                    <img class="w-full h-full aspect-video object-cover" src="images/customer-bg-10.png" width="352" height="198" alt="Customer Background 10" aria-hidden="true" />
+                                                    <img class="absolute" src="images/customer-10.svg" width="132" height="22" alt="Customer 10" />
                                                 </div>
                                             </div>
                                         </div>
@@ -321,7 +321,7 @@
                                         </span>
                                     </p>
                                     <div class="inline-flex mb-2">
-                                        <img class="rounded-full" src="./images/customer-avatar-01.jpg" width="32" height="32" alt="Customer Avatar 01" />
+                                        <img class="rounded-full" src="images/customer-avatar-01.jpg" width="32" height="32" alt="Customer Avatar 01" />
                                     </div>
                                     <div class="text-sm font-medium text-slate-300">
                                         Mike Hunt <span class="text-slate-700">-</span> <a class="text-purple-500 hover:underline" href="#0">Thunderbolt</a>
@@ -335,7 +335,7 @@
                                         </span>
                                     </p>
                                     <div class="inline-flex mb-2">
-                                        <img class="rounded-full" src="./images/customer-avatar-02.jpg" width="32" height="32" alt="Customer Avatar 02" />
+                                        <img class="rounded-full" src="images/customer-avatar-02.jpg" width="32" height="32" alt="Customer Avatar 02" />
                                     </div>
                                     <div class="text-sm font-medium text-slate-300">
                                         Mirko Mitt <span class="text-slate-700">-</span> <a class="text-purple-500 hover:underline" href="#0">Mildrink</a>
@@ -395,10 +395,10 @@
         <!-- Site footer -->
         <footer>
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        
+
                 <!-- Blocks -->
                 <div class="grid sm:grid-cols-12 gap-8 py-8 md:py-12">
-        
+
                     <!-- 1st block -->
                     <div class="sm:col-span-12 lg:col-span-4 order-1 lg:order-none">
                         <div class="h-full flex flex-col sm:flex-row lg:flex-col justify-between">
@@ -406,7 +406,7 @@
                                 <div class="mb-4">
                                     <!-- Logo -->
                                     <a class="inline-flex" href="index.html" aria-label="Cruip">
-                                        <img src="./images/logo.svg" width="38" height="38" alt="Stellar">
+                                        <img src="images/logo.svg" width="38" height="38" alt="Stellar">
                                     </a>
                                 </div>
                                 <div class="text-sm text-slate-300">&copy; Cruip.com <span class="text-slate-500">-</span> All rights reserved.</div>
@@ -437,7 +437,7 @@
                             </ul>
                         </div>
                     </div>
-        
+
                     <!-- 2nd block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Products</h6>
@@ -459,7 +459,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <!-- 3rd block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Company</h6>
@@ -481,7 +481,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <!-- 4th block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Resources</h6>
@@ -497,7 +497,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <!-- 5th block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Legals</h6>
@@ -516,18 +516,18 @@
                             </li>
                         </ul>
                     </div>
-        
+
                 </div>
-        
+
             </div>
         </footer>
 
     </div>
 
-    <script src="./js/vendors/alpinejs.min.js" defer></script>
-    <script src="./js/vendors/aos.js"></script>
-    <script src="./js/vendors/swiper-bundle.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="js/vendors/alpinejs.min.js" defer></script>
+    <script src="js/vendors/aos.js"></script>
+    <script src="js/vendors/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 

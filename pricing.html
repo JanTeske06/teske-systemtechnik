@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <title>Stellar HTML Demo - Pricing</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="./css/vendors/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/vendors/swiper-bundle.min.css" />
-    <link href="./style.css" rel="stylesheet">
+    <link href="css/vendors/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/vendors/swiper-bundle.min.css" />
+    <link href="style.css" rel="stylesheet">
 </head>
 
 <body class="font-inter antialiased bg-slate-900 text-slate-100 tracking-tight">
@@ -24,7 +24,7 @@
                     <div class="flex-1">
                         <!-- Logo -->
                         <a class="inline-flex" href="index.html" aria-label="Cruip">
-                            <img class="max-w-none" src="./images/logo.svg" width="38" height="38" alt="Stellar">
+                            <img class="max-w-none" src="images/logo.svg" width="38" height="38" alt="Stellar">
                         </a>
                     </div>
 
@@ -68,7 +68,7 @@
 
                     <!-- Mobile menu -->
                     <div class="md:hidden flex items-center ml-4" x-data="{ expanded: false }">
-                    
+
                         <!-- Hamburger button -->
                         <button class="group inline-flex w-8 h-8 text-slate-300 hover:text-white text-center items-center justify-center transition" aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded">
                             <span class="sr-only">Menu</span>
@@ -77,8 +77,8 @@
                                 <rect class="origin-center group-aria-expanded:rotate-45 transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)]" y="7" width="16" height="2" rx="1"></rect>
                                 <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] translate-y-[5px] group-aria-expanded:rotate-[135deg] group-aria-expanded:translate-y-0" y="7" width="16" height="2" rx="1"></rect>
                             </svg>
-                        </button>   
-                    
+                        </button>
+
                         <!-- Mobile navigation -->
                         <nav id="mobile-nav" class="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out" x-ref="mobileNav" :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: .8'" @click.outside="expanded = false" @keydown.escape.window="expanded = false" x-cloak>
                             <ul class="border border-transparent [background:linear-gradient(var(--color-slate-900),var(--color-slate-900))_padding-box,conic-gradient(var(--color-slate-400),var(--color-slate-700)_25%,var(--color-slate-700)_75%,var(--color-slate-400)_100%)_border-box] rounded-lg px-4 py-1.5">
@@ -99,7 +99,7 @@
                                 </li>
                             </ul>
                         </nav>
-                    
+
                     </div>
 
                 </div>
@@ -125,7 +125,7 @@
 
                 <!-- Illustration -->
                 <div class="md:block absolute left-1/2 -translate-x-1/2 -mt-16 blur-2xl opacity-90 pointer-events-none -z-10" aria-hidden="true">
-                    <img src="./images/page-illustration.svg" class="max-w-none" width="1440" height="427" alt="Page Illustration">
+                    <img src="images/page-illustration.svg" class="max-w-none" width="1440" height="427" alt="Page Illustration">
                 </div>
 
                 <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -555,23 +555,23 @@
 
             <!-- Features -->
             <section class="relative">
-            
+
                 <!-- Particles animation -->
                 <div class="absolute left-1/2 -translate-x-1/2 top-0 -z-10 w-64 h-64 -mt-24">
                     <div class="absolute inset-0 -z-10" aria-hidden="true">
                         <canvas data-particle-animation data-particle-quantity="6" data-particle-staticity="30"></canvas>
                     </div>
                 </div>
-            
+
                 <div class="max-w-6xl mx-auto px-4 sm:px-6">
                     <div class="pb-12 md:pb-20">
-            
+
                         <!-- Section header -->
                         <div class="max-w-3xl mx-auto text-center pb-12">
                             <h2 class="h2 bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">Stop overpaying for software</h2>
                             <p class="text-lg text-slate-400">There are many variations available, but the majority have suffered alteration in some form, by injected humour.</p>
                         </div>
-            
+
                         <!-- Rings illustration -->
                         <div class="text-center pb-8">
                             <div class="inline-flex items-center justify-center relative">
@@ -580,33 +580,33 @@
                                     <canvas data-particle-animation data-particle-quantity="10"></canvas>
                                 </div>
                                 <div class="inline-flex">
-                                    <img src="./images/pricing-illustration.svg" width="334" height="334" alt="Features illustration" />
+                                    <img src="images/pricing-illustration.svg" width="334" height="334" alt="Features illustration" />
                                 </div>
-                                <img class="absolute -mt-[40%]" src="./images/pricing-illustration-top.svg" width="396" height="328" alt="Features illustration top" aria-hidden="true" />
+                                <img class="absolute -mt-[40%]" src="images/pricing-illustration-top.svg" width="396" height="328" alt="Features illustration top" aria-hidden="true" />
                                 <div class="absolute w-[200%] flex items-center justify-center space-x-5">
                                     <div class="-rotate-[4deg]">
-                                        <img class="w-11 h-11 drop-shadow-lg animate-[float_2.6s_ease-in-out_infinite] opacity-10" src="./images/pricing-icon-01.svg" width="80" height="80" alt="Pricing icon 01" />
+                                        <img class="w-11 h-11 drop-shadow-lg animate-[float_2.6s_ease-in-out_infinite] opacity-10" src="images/pricing-icon-01.svg" width="80" height="80" alt="Pricing icon 01" />
                                     </div>
                                     <div class="rotate-[4deg]">
-                                        <img class="w-14 h-14 drop-shadow-lg animate-[float_2.4s_ease-in-out_infinite] opacity-25" src="./images/pricing-icon-02.svg" width="80" height="80" alt="Pricing icon 02" />
+                                        <img class="w-14 h-14 drop-shadow-lg animate-[float_2.4s_ease-in-out_infinite] opacity-25" src="images/pricing-icon-02.svg" width="80" height="80" alt="Pricing icon 02" />
                                     </div>
                                     <div class="-rotate-[4deg]">
-                                        <img class="w-16 h-16 drop-shadow-lg animate-[float_2.2s_ease-in-out_infinite] opacity-60" src="./images/pricing-icon-03.svg" width="80" height="80" alt="Pricing icon 03" />
+                                        <img class="w-16 h-16 drop-shadow-lg animate-[float_2.2s_ease-in-out_infinite] opacity-60" src="images/pricing-icon-03.svg" width="80" height="80" alt="Pricing icon 03" />
                                     </div>
-                                    <img class="drop-shadow-lg animate-float" src="./images/pricing-icon-04.svg" width="80" height="80" alt="Pricing icon 04" />
+                                    <img class="drop-shadow-lg animate-float" src="images/pricing-icon-04.svg" width="80" height="80" alt="Pricing icon 04" />
                                     <div class="rotate-[4deg]">
-                                        <img class="w-16 h-16 drop-shadow-lg animate-[float_2.2s_ease-in-out_infinite] opacity-60" src="./images/pricing-icon-05.svg" width="80" height="80" alt="Pricing icon 05" />
+                                        <img class="w-16 h-16 drop-shadow-lg animate-[float_2.2s_ease-in-out_infinite] opacity-60" src="images/pricing-icon-05.svg" width="80" height="80" alt="Pricing icon 05" />
                                     </div>
                                     <div class="-rotate-[4deg]">
-                                        <img class="w-14 h-14 drop-shadow-lg animate-[float_2.4s_ease-in-out_infinite] opacity-25" src="./images/pricing-icon-06.svg" width="80" height="80" alt="Pricing icon 06" />
+                                        <img class="w-14 h-14 drop-shadow-lg animate-[float_2.4s_ease-in-out_infinite] opacity-25" src="images/pricing-icon-06.svg" width="80" height="80" alt="Pricing icon 06" />
                                     </div>
                                     <div class="rotate-[4deg]">
-                                        <img class="w-11 h-11 drop-shadow-lg animate-[float_2.6ås_ease-in-out_infinite] opacity-10" src="./images/pricing-icon-07.svg" width="80" height="80" alt="Pricing icon 07" />
+                                        <img class="w-11 h-11 drop-shadow-lg animate-[float_2.6ås_ease-in-out_infinite] opacity-10" src="images/pricing-icon-07.svg" width="80" height="80" alt="Pricing icon 07" />
                                     </div>
                                 </div>
                             </div>
                         </div>
-            
+
                         <!-- Features list -->
                         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             <!-- Card #1 -->
@@ -682,7 +682,7 @@
                                 </div>
                             </div>
                         </div>
-            
+
                     </div>
                 </div>
             </section>
@@ -708,7 +708,7 @@
                             <div class="relative p-5 before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-10 before:rounded-xl">
                                 <div class="flex items-center justify-between space-x-2 mb-4">
                                     <div class="flex items-center space-x-4">
-                                        <img class="shrink-0 rounded-full" src="./images/customer-01.jpg" width="44" height="44" alt="Customer 01" />
+                                        <img class="shrink-0 rounded-full" src="images/customer-01.jpg" width="44" height="44" alt="Customer 01" />
                                         <div class="grow truncate">
                                             <div class="font-bold text-slate-100 truncate">Mike Smets</div>
                                             <a class="text-sm text-slate-500 hover:text-slate-300 font-medium truncate transition-colors" href="#0">@MikeSmets</a>
@@ -724,7 +724,7 @@
                             <div class="relative p-5 before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-10 before:rounded-xl">
                                 <div class="flex items-center justify-between space-x-2 mb-4">
                                     <div class="flex items-center space-x-4">
-                                        <img class="shrink-0 rounded-full" src="./images/customer-02.jpg" width="44" height="44" alt="Customer 02" />
+                                        <img class="shrink-0 rounded-full" src="images/customer-02.jpg" width="44" height="44" alt="Customer 02" />
                                         <div class="grow truncate">
                                             <div class="font-bold text-slate-100 truncate">Mike Bryan</div>
                                             <a class="text-sm text-slate-500 hover:text-slate-300 font-medium truncate transition-colors" href="#0">@mike0point7 </a>
@@ -740,7 +740,7 @@
                             <div class="relative p-5 before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-10 before:rounded-xl">
                                 <div class="flex items-center justify-between space-x-2 mb-4">
                                     <div class="flex items-center space-x-4">
-                                        <img class="shrink-0 rounded-full" src="./images/customer-03.jpg" width="44" height="44" alt="Customer 03" />
+                                        <img class="shrink-0 rounded-full" src="images/customer-03.jpg" width="44" height="44" alt="Customer 03" />
                                         <div class="grow truncate">
                                             <div class="font-bold text-slate-100 truncate">Liz Park</div>
                                             <a class="text-sm text-slate-500 hover:text-slate-300 font-medium truncate transition-colors" href="#0">@liz-park82</a>
@@ -756,7 +756,7 @@
                             <div class="relative p-5 before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-10 before:rounded-xl">
                                 <div class="flex items-center justify-between space-x-2 mb-4">
                                     <div class="flex items-center space-x-4">
-                                        <img class="shrink-0 rounded-full" src="./images/customer-04.jpg" width="44" height="44" alt="Customer 04" />
+                                        <img class="shrink-0 rounded-full" src="images/customer-04.jpg" width="44" height="44" alt="Customer 04" />
                                         <div class="grow truncate">
                                             <div class="font-bold text-slate-100 truncate">Jessie Maison</div>
                                             <a class="text-sm text-slate-500 hover:text-slate-300 font-medium truncate transition-colors" href="#0">@jessiem9</a>
@@ -772,7 +772,7 @@
                             <div class="relative p-5 before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-10 before:rounded-xl">
                                 <div class="flex items-center justify-between space-x-2 mb-4">
                                     <div class="flex items-center space-x-4">
-                                        <img class="shrink-0 rounded-full" src="./images/customer-05.jpg" width="44" height="44" alt="Customer 05" />
+                                        <img class="shrink-0 rounded-full" src="images/customer-05.jpg" width="44" height="44" alt="Customer 05" />
                                         <div class="grow truncate">
                                             <div class="font-bold text-slate-100 truncate">Devani Janssen</div>
                                             <a class="text-sm text-slate-500 hover:text-slate-300 font-medium truncate transition-colors" href="#0">@deva07p</a>
@@ -788,7 +788,7 @@
                             <div class="relative p-5 before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-10 before:rounded-xl">
                                 <div class="flex items-center justify-between space-x-2 mb-4">
                                     <div class="flex items-center space-x-4">
-                                        <img class="shrink-0 rounded-full" src="./images/customer-06.jpg" width="44" height="44" alt="Customer 06" />
+                                        <img class="shrink-0 rounded-full" src="images/customer-06.jpg" width="44" height="44" alt="Customer 06" />
                                         <div class="grow truncate">
                                             <div class="font-bold text-slate-100 truncate">Mark Gerkules</div>
                                             <a class="text-sm text-slate-500 hover:text-slate-300 font-medium truncate transition-colors" href="#0">@mark-gerk</a>
@@ -804,7 +804,7 @@
                             <div class="relative p-5 before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-10 before:rounded-xl">
                                 <div class="flex items-center justify-between space-x-2 mb-4">
                                     <div class="flex items-center space-x-4">
-                                        <img class="shrink-0 rounded-full" src="./images/customer-07.jpg" width="44" height="44" alt="Customer 07" />
+                                        <img class="shrink-0 rounded-full" src="images/customer-07.jpg" width="44" height="44" alt="Customer 07" />
                                         <div class="grow truncate">
                                             <div class="font-bold text-slate-100 truncate">Andrey Propenk</div>
                                             <a class="text-sm text-slate-500 hover:text-slate-300 font-medium truncate transition-colors" href="#0">@andrey-prok</a>
@@ -820,7 +820,7 @@
                             <div class="relative p-5 before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-10 before:rounded-xl">
                                 <div class="flex items-center justify-between space-x-2 mb-4">
                                     <div class="flex items-center space-x-4">
-                                        <img class="shrink-0 rounded-full" src="./images/customer-08.jpg" width="44" height="44" alt="Customer 08" />
+                                        <img class="shrink-0 rounded-full" src="images/customer-08.jpg" width="44" height="44" alt="Customer 08" />
                                         <div class="grow truncate">
                                             <div class="font-bold text-slate-100 truncate">Jay Master</div>
                                             <a class="text-sm text-slate-500 hover:text-slate-300 font-medium truncate transition-colors" href="#0">@masterpro</a>
@@ -836,7 +836,7 @@
                             <div class="relative p-5 before:absolute before:inset-0 before:-z-10 before:border before:border-slate-300 before:bg-slate-700 before:opacity-10 before:rounded-xl">
                                 <div class="flex items-center justify-between space-x-2 mb-4">
                                     <div class="flex items-center space-x-4">
-                                        <img class="shrink-0 rounded-full" src="./images/customer-09.jpg" width="44" height="44" alt="Customer 09" />
+                                        <img class="shrink-0 rounded-full" src="images/customer-09.jpg" width="44" height="44" alt="Customer 09" />
                                         <div class="grow truncate">
                                             <div class="font-bold text-slate-100 truncate">Steve Wolf</div>
                                             <a class="text-sm text-slate-500 hover:text-slate-300 font-medium truncate transition-colors" href="#0">@imsteve</a>
@@ -978,10 +978,10 @@
         <!-- Site footer -->
         <footer>
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        
+
                 <!-- Blocks -->
                 <div class="grid sm:grid-cols-12 gap-8 py-8 md:py-12">
-        
+
                     <!-- 1st block -->
                     <div class="sm:col-span-12 lg:col-span-4 order-1 lg:order-none">
                         <div class="h-full flex flex-col sm:flex-row lg:flex-col justify-between">
@@ -989,7 +989,7 @@
                                 <div class="mb-4">
                                     <!-- Logo -->
                                     <a class="inline-flex" href="index.html" aria-label="Cruip">
-                                        <img src="./images/logo.svg" width="38" height="38" alt="Stellar">
+                                        <img src="images/logo.svg" width="38" height="38" alt="Stellar">
                                     </a>
                                 </div>
                                 <div class="text-sm text-slate-300">&copy; Cruip.com <span class="text-slate-500">-</span> All rights reserved.</div>
@@ -1020,7 +1020,7 @@
                             </ul>
                         </div>
                     </div>
-        
+
                     <!-- 2nd block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Products</h6>
@@ -1042,7 +1042,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <!-- 3rd block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Company</h6>
@@ -1064,7 +1064,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <!-- 4th block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Resources</h6>
@@ -1080,7 +1080,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <!-- 5th block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Legals</h6>
@@ -1099,18 +1099,18 @@
                             </li>
                         </ul>
                     </div>
-        
+
                 </div>
-        
+
             </div>
         </footer>
 
     </div>
 
-    <script src="./js/vendors/alpinejs.min.js" defer></script>
-    <script src="./js/vendors/aos.js"></script>
-    <script src="./js/vendors/swiper-bundle.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="js/vendors/alpinejs.min.js" defer></script>
+    <script src="js/vendors/aos.js"></script>
+    <script src="js/vendors/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 

@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <title>Stellar HTML Demo - Changelog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="./css/vendors/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/vendors/swiper-bundle.min.css" />
-    <link href="./style.css" rel="stylesheet">
+    <link href="css/vendors/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/vendors/swiper-bundle.min.css" />
+    <link href="style.css" rel="stylesheet">
 </head>
 
 <body class="font-inter antialiased bg-slate-900 text-slate-100 tracking-tight">
@@ -24,7 +24,7 @@
                     <div class="flex-1">
                         <!-- Logo -->
                         <a class="inline-flex" href="index.html" aria-label="Cruip">
-                            <img class="max-w-none" src="./images/logo.svg" width="38" height="38" alt="Stellar">
+                            <img class="max-w-none" src="images/logo.svg" width="38" height="38" alt="Stellar">
                         </a>
                     </div>
 
@@ -68,7 +68,7 @@
 
                     <!-- Mobile menu -->
                     <div class="md:hidden flex items-center ml-4" x-data="{ expanded: false }">
-                    
+
                         <!-- Hamburger button -->
                         <button class="group inline-flex w-8 h-8 text-slate-300 hover:text-white text-center items-center justify-center transition" aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded">
                             <span class="sr-only">Menu</span>
@@ -77,8 +77,8 @@
                                 <rect class="origin-center group-aria-expanded:rotate-45 transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)]" y="7" width="16" height="2" rx="1"></rect>
                                 <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] translate-y-[5px] group-aria-expanded:rotate-[135deg] group-aria-expanded:translate-y-0" y="7" width="16" height="2" rx="1"></rect>
                             </svg>
-                        </button>   
-                    
+                        </button>
+
                         <!-- Mobile navigation -->
                         <nav id="mobile-nav" class="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out" x-ref="mobileNav" :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: .8'" @click.outside="expanded = false" @keydown.escape.window="expanded = false" x-cloak>
                             <ul class="border border-transparent [background:linear-gradient(var(--color-slate-900),var(--color-slate-900))_padding-box,conic-gradient(var(--color-slate-400),var(--color-slate-700)_25%,var(--color-slate-700)_75%,var(--color-slate-400)_100%)_border-box] rounded-lg px-4 py-1.5">
@@ -99,7 +99,7 @@
                                 </li>
                             </ul>
                         </nav>
-                    
+
                     </div>
 
                 </div>
@@ -125,7 +125,7 @@
 
                 <!-- Illustration -->
                 <div class="md:block absolute left-1/2 -translate-x-1/2 -mt-16 blur-2xl opacity-90 pointer-events-none -z-10" aria-hidden="true">
-                    <img src="./images/page-illustration.svg" class="max-w-none" width="1440" height="427" alt="Page Illustration">
+                    <img src="images/page-illustration.svg" class="max-w-none" width="1440" height="427" alt="Page Illustration">
                 </div>
 
                 <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -156,7 +156,7 @@
                                                 <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 leading-8 pb-6">Weekly Update: Stellar X</h2>
                                             </header>
                                             <figure class="bg-linear-to-b from-slate-300/20 to-transparent rounded-3xl p-px mb-8">
-                                                <img class="w-full rounded-[inherit]" src="./images/changelog-01.png" width="574" height="326" alt="Changelog 01">
+                                                <img class="w-full rounded-[inherit]" src="images/changelog-01.png" width="574" height="326" alt="Changelog 01">
                                             </figure>
                                             <div class="prose max-w-none text-slate-400 prose-p:leading-relaxed prose-a:text-purple-500 prose-a:no-underline hover:prose-a:underline prose-strong:text-slate-50 prose-strong:font-medium">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -178,7 +178,7 @@
                                                 <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 leading-8 pb-6">Refreshed main menu navigation</h2>
                                             </header>
                                             <figure class="bg-linear-to-b from-slate-300/20 to-transparent rounded-3xl p-px mb-8">
-                                                <img class="w-full rounded-[inherit]" src="./images/changelog-02.png" width="574" height="326" alt="Changelog 02">
+                                                <img class="w-full rounded-[inherit]" src="images/changelog-02.png" width="574" height="326" alt="Changelog 02">
                                             </figure>
                                             <div class="prose max-w-none text-slate-400 prose-p:leading-relaxed prose-a:text-purple-500 prose-a:no-underline hover:prose-a:underline prose-strong:text-slate-50 prose-strong:font-medium">
                                                 <p>Better align your teams and partners around standardized product principles and consistent implementation standards using the latest architecture shape pack.</p>
@@ -205,7 +205,7 @@
                                                 <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 leading-8 pb-6">New cloud architecture</h2>
                                             </header>
                                             <figure class="bg-linear-to-b from-slate-300/20 to-transparent rounded-3xl p-px mb-8">
-                                                <img class="w-full rounded-[inherit]" src="./images/changelog-03.png" width="574" height="326" alt="Changelog 03">
+                                                <img class="w-full rounded-[inherit]" src="images/changelog-03.png" width="574" height="326" alt="Changelog 03">
                                             </figure>
                                             <div class="prose max-w-none text-slate-400 prose-p:leading-relaxed prose-a:text-purple-500 prose-a:no-underline hover:prose-a:underline prose-strong:text-slate-50 prose-strong:font-medium">
                                                 <p>Newly created diagrams are now editable, full screen mode for more editing real estate, and both apps are updated to the latest version supporting new diagram types (eg. C4 architecture).</p>
@@ -227,7 +227,7 @@
                                                 <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 leading-8 pb-6">Updates to the Filtering API</h2>
                                             </header>
                                             <figure class="bg-linear-to-b from-slate-300/20 to-transparent rounded-3xl p-px mb-8">
-                                                <img class="w-full rounded-[inherit]" src="./images/changelog-04.png" width="574" height="326" alt="Changelog 04">
+                                                <img class="w-full rounded-[inherit]" src="images/changelog-04.png" width="574" height="326" alt="Changelog 04">
                                             </figure>
                                             <div class="prose max-w-none text-slate-400 prose-p:leading-relaxed prose-a:text-purple-500 prose-a:no-underline hover:prose-a:underline prose-strong:text-slate-50 prose-strong:font-medium">
                                                 <p>We understand that who you've worked with in the past is often who you'll work with in the future, and are now placing a higher emphasis on making your past mentions more accessible. This means your previous collaborators will be front and center, ready for future collaboration.</p>
@@ -307,10 +307,10 @@
         <!-- Site footer -->
         <footer>
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        
+
                 <!-- Blocks -->
                 <div class="grid sm:grid-cols-12 gap-8 py-8 md:py-12">
-        
+
                     <!-- 1st block -->
                     <div class="sm:col-span-12 lg:col-span-4 order-1 lg:order-none">
                         <div class="h-full flex flex-col sm:flex-row lg:flex-col justify-between">
@@ -318,7 +318,7 @@
                                 <div class="mb-4">
                                     <!-- Logo -->
                                     <a class="inline-flex" href="index.html" aria-label="Cruip">
-                                        <img src="./images/logo.svg" width="38" height="38" alt="Stellar">
+                                        <img src="images/logo.svg" width="38" height="38" alt="Stellar">
                                     </a>
                                 </div>
                                 <div class="text-sm text-slate-300">&copy; Cruip.com <span class="text-slate-500">-</span> All rights reserved.</div>
@@ -349,7 +349,7 @@
                             </ul>
                         </div>
                     </div>
-        
+
                     <!-- 2nd block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Products</h6>
@@ -371,7 +371,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <!-- 3rd block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Company</h6>
@@ -393,7 +393,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <!-- 4th block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Resources</h6>
@@ -409,7 +409,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <!-- 5th block -->
                     <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
                         <h6 class="text-sm text-slate-50 font-medium mb-2">Legals</h6>
@@ -428,18 +428,18 @@
                             </li>
                         </ul>
                     </div>
-        
+
                 </div>
-        
+
             </div>
         </footer>
 
     </div>
 
-    <script src="./js/vendors/alpinejs.min.js" defer></script>
-    <script src="./js/vendors/aos.js"></script>
-    <script src="./js/vendors/swiper-bundle.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="js/vendors/alpinejs.min.js" defer></script>
+    <script src="js/vendors/aos.js"></script>
+    <script src="js/vendors/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 
