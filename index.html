@@ -511,54 +511,58 @@ Jan ist stets und sehr schnell erreichbar, immer freundlich, professionell und l
               <span class="text-slate-300">Response guaranteed within 24 hours.</span>
             </p>
 
-            <div class="max-w-sm mx-auto text-left">
-              <form id="contact-form" action="https://formspree.io/f/xykyaqnr" method="POST">
+<div class="max-w-sm mx-auto text-left">
+            <form id="contact-form" action="https://formspree.io/f/xykyaqnr" method="POST">
 
-                <div class="mb-4">
-                  <label class="block text-slate-300 text-sm font-medium mb-1 text-left" for="name">
-                    Name
+              <div class="mb-4">
+                <label class="block text-slate-300 text-sm font-medium mb-1 text-left" for="name">
+                  Name
+                </label>
+                <input id="name" type="text" name="name"
+                       class="form-input w-full text-slate-300 bg-slate-800/50 border border-slate-700 focus:border-purple-500 rounded-sm px-4 py-3 placeholder-slate-500 transition duration-150 ease-in-out"
+                       placeholder="John Miller" required/>
+              </div>
+
+              <div class="mb-4">
+                <label class="block text-slate-300 text-sm font-medium mb-1 text-left" for="email">
+                  Email
+                </label>
+                <input id="email" type="email" name="email"
+                       class="form-input w-full text-slate-300 bg-slate-800/50 border border-slate-700 focus:border-purple-500 rounded-sm px-4 py-3 placeholder-slate-500 transition duration-150 ease-in-out"
+                       placeholder="name@company.com" required/>
+              </div>
+
+              <div class="mb-4">
+                <div class="flex justify-between items-end mb-1">
+                  <label class="block text-slate-300 text-sm font-medium text-left" for="message">
+                    Project Details
                   </label>
-                  <input id="name" type="text" name="name"
-                         class="form-input w-full text-slate-300 bg-slate-800/50 border border-slate-700 focus:border-purple-500 rounded-sm px-4 py-3 placeholder-slate-500 transition duration-150 ease-in-out"
-                         placeholder="John Miller" required/>
+                  <span class="text-xs text-slate-500">Limit: 500 characters</span>
                 </div>
+                <textarea id="message" name="message" rows="4" maxlength="500"
+                          class="form-textarea w-full resize-none text-slate-300 bg-slate-800/50 border border-slate-700 focus:border-purple-500 rounded-sm px-4 py-3 placeholder-slate-500 transition duration-150 ease-in-out"
+                          placeholder="Briefly describe your project, API requirements, or automation goals..."
+                          required></textarea>
+              </div>
 
-                <div class="mb-4">
-                  <label class="block text-slate-300 text-sm font-medium mb-1 text-left" for="email">
-                    Email
-                  </label>
-                  <input id="email" type="email" name="email"
-                         class="form-input w-full text-slate-300 bg-slate-800/50 border border-slate-700 focus:border-purple-500 rounded-sm px-4 py-3 placeholder-slate-500 transition duration-150 ease-in-out"
-                         placeholder="name@company.com" required/>
-                </div>
+              <input type="text" name="_gotcha" style="display:none"/>
 
-                <div class="mb-4">
-                  <div class="flex justify-between items-end mb-1">
-                    <label class="block text-slate-300 text-sm font-medium text-left" for="message">
-                      Project Details
-                    </label>
-                    <span class="text-xs text-slate-500">Limit: 500 characters</span>
-                  </div>
-                  <textarea id="message" name="message" rows="4" maxlength="500"
-                            class="form-textarea w-full resize-none text-slate-300 bg-slate-800/50 border border-slate-700 focus:border-purple-500 rounded-sm px-4 py-3 placeholder-slate-500 transition duration-150 ease-in-out"
-                            placeholder="Briefly describe your project, API requirements, or automation goals..."
-                            required></textarea>
-                </div>
+              <div class="mt-6">
+                <button id="submit-btn" type="submit"
+                        class="btn text-slate-900 bg-linear-to-r from-white/80 via-white to-white/80 hover:bg-white w-full transition duration-150 ease-in-out group font-bold">
+              <span id="btn-text" class="flex items-center justify-center">
+                  Send Request <span
+                class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span>
+              </span>
+                </button>
+              </div>
 
-                <input type="text" name="_gotcha" style="display:none"/>
+              <p class="text-xs text-slate-500 mt-6 text-center">
+                  Mit dem Klick auf "Send Request" erklärst du dich mit der <a href="datenschutz.html" class="text-purple-500 hover:text-purple-400 underline hover:no-underline transition duration-150 ease-in-out">Datenverarbeitung</a> einverstanden.
+              </p>
 
-                <div class="mt-6">
-                  <button id="submit-btn" type="submit"
-                          class="btn text-slate-900 bg-linear-to-r from-white/80 via-white to-white/80 hover:bg-white w-full transition duration-150 ease-in-out group font-bold">
-                <span id="btn-text" class="flex items-center justify-center">
-                    Send Request <span
-                  class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span>
-                </span>
-                  </button>
-                </div>
-
-              </form>
-            </div>
+            </form>
+          </div>
 
           </div>
         </div>
@@ -576,7 +580,7 @@ Jan ist stets und sehr schnell erreichbar, immer freundlich, professionell und l
       <div class="flex flex-col items-center md:items-start">
 
         <div class="mb-6 flex items-center gap-5">
-            <a class="inline-flex shrink-0" href="index.html" aria-label="Teske Systemtechnik">
+            <a class="inline-flex shrink-0" href="index.html" aria-label="Teske Systemtechnik Inhaber: Jan Teske">
                 <img src="static/images/logo_jt.svg" class="w-20 h-20" alt="Teske Logo">
             </a>
 
@@ -624,7 +628,7 @@ Jan ist stets und sehr schnell erreichbar, immer freundlich, professionell und l
             <a class="text-sm text-slate-400 hover:text-purple-400 transition duration-150 ease-in-out" href="/impressum.html">Legal Notice</a>
         </div>
         <div class="text-xs text-slate-500">
-          &copy; 2025 Teske Systemtechnik. All rights reserved.
+          &copy; 2025 Teske Systemtechnik Inhaber: Jan Teske. All rights reserved.
         </div>
       </div>
 
