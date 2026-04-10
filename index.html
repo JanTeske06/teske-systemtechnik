@@ -3,13 +3,19 @@
 <head>
   <meta charset="utf-8">
   <title>Teske Systemtechnik</title>
-  <meta http-equiv="refresh" content="0; url=/de/">
   <link rel="canonical" href="https://teske-systemtechnik.de/de/">
   <link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/">
   <link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/">
   <link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/">
   <meta name="robots" content="noindex,follow">
-  <script>window.location.replace('/de/');</script>
+  <script>
+    // Maintenance guard + language redirect. If /maintenance.flag exists,
+    // redirect to /maintenance.html; otherwise continue to /de/.
+    fetch('/maintenance.flag', { method: 'HEAD', cache: 'no-store' })
+      .then(function (r) { location.replace(r.ok ? '/maintenance.html' : '/de/'); })
+      .catch(function () { location.replace('/de/'); });
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url=/de/"></noscript>
 </head>
 <body style="background:#0c0a09;color:#e7e5e4;font-family:system-ui,sans-serif;text-align:center;padding:4rem 1rem;">
   <p>Teske Systemtechnik — <a href="/de/" style="color:#f97316;">redirecting…</a></p>

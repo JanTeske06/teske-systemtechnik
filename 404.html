@@ -3,6 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <script>
+    // Maintenance guard: if /maintenance.flag exists, redirect to /maintenance.html.
+    // Toggle by creating/deleting that flag file at the repo root (see anleitung.md).
+    (function () {
+      if (location.pathname.endsWith('/maintenance.html')) return;
+      fetch('/maintenance.flag', { method: 'HEAD', cache: 'no-store' })
+        .then(function (r) { if (r.ok) location.replace('/maintenance.html'); })
+        .catch(function () {});
+    })();
+  </script>
   <meta name="robots" content="noindex,follow">
 
   <title>404 · Teske Systemtechnik</title>
