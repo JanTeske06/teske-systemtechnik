@@ -106,6 +106,17 @@ footer,
   z-index: 2;
 }
 
+/* --- Skeleton mode: temporarily hide UI elements without deleting -
+ * Add `data-skeleton-off` as an attribute on any element to hide it.
+ * To re-enable a section or nav item, simply remove the attribute.
+ * Use !important so it overrides Tailwind display classes too.
+ * Current skeleton disables: projects + about pages + their nav
+ * entries + the homepage showcase + about-teaser sections.
+ */
+[data-skeleton-off] {
+  display: none !important;
+}
+
 /* --- Mobile nav: bulletproof top layer ----------------------------
  * The mobile hamburger menu absolutely MUST render on top of every
  * other element and be clickable. ID selector + !important means
