@@ -1,13 +1,14 @@
 {
-  "name": "stellar-html",
-  "description": "Stellar HTML template - Cruip.com",
-  "version": "1.0.0",
-  "homepage": "https://cruip.com",
-  "author": "Pasquale Vitiello",
-  "license": "https://cruip.com/terms/",
+  "name": "teske-systemtechnik",
+  "description": "Static portfolio site for Teske Systemtechnik — bilingual (DE/EN), Tailwind CSS v4.",
+  "version": "2.0.0",
+  "homepage": "https://teske-systemtechnik.de",
+  "author": "Jan Teske",
+  "license": "UNLICENSED",
+  "private": true,
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./css/style.css -o ./style.css --watch",
-    "build": "npx @tailwindcss/cli -i ./css/style.css -o ./style.css"
+    "dev": "npx @tailwindcss/cli -i ./static/css/style.css -o ./static/style.css --watch",
+    "build": "npx @tailwindcss/cli -i ./static/css/style.css -o ./static/style.css --minify"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",

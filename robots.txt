@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://teske-systemtechnik.de/sitemap.xml

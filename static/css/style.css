@@ -1,52 +1,76 @@
-/*! tailwindcss v4.0.3 | MIT License | https://tailwindcss.com */
 /* -------------------------------------------------------
-   LOCAL FONTS (GDPR COMPLIANT)
-   Path: static/fonts/
+   LOCAL FONTS (GDPR COMPLIANT) — self-hosted Inter + Aspekta.
+   Absolute URLs so the compiled bundle works no matter where
+   it ends up (static/style.css referenced from any page).
    ------------------------------------------------------- */
 
-/* Inter - Regular (400) */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('fonts/inter-v20-latin_latin-ext-regular.woff2') format('woff2'),
-       url('fonts/inter-v20-latin_latin-ext-regular.woff') format('woff');
+  src: url('/static/fonts/inter-v20-latin_latin-ext-regular.woff2') format('woff2');
 }
-
-/* Inter - Medium (500) */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('fonts/inter-v20-latin_latin-ext-500.woff2') format('woff2'),
-       url('fonts/inter-v20-latin_latin-ext-500.woff') format('woff');
+  src: url('/static/fonts/inter-v20-latin_latin-ext-500.woff2') format('woff2');
 }
-
-/* Inter - Bold (700) */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('fonts/inter-v20-latin_latin-ext-700.woff2') format('woff2'),
-       url('fonts/inter-v20-latin_latin-ext-700.woff') format('woff');
+  src: url('/static/fonts/inter-v20-latin_latin-ext-700.woff2') format('woff2');
 }
-
-/* Inter - Extra Bold (800) */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url('fonts/inter-v20-latin_latin-ext-800.woff2') format('woff2'),
-       url('fonts/inter-v20-latin_latin-ext-800.woff') format('woff');
+  src: url('/static/fonts/inter-v20-latin_latin-ext-800.woff2') format('woff2');
 }
-layer(base);
-/* @import 'additional-styles/custom-fonts'; */
+@font-face {
+  font-family: 'Aspekta';
+  font-style: normal;
+  font-weight: 350;
+  font-display: swap;
+  src: url('/static/fonts/aspekta/Aspekta-350.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Aspekta';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/static/fonts/aspekta/Aspekta-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Aspekta';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/static/fonts/aspekta/Aspekta-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Aspekta';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/static/fonts/aspekta/Aspekta-650.woff2') format('woff2');
+}
 
 @import 'tailwindcss';
+
+/* Explicitly scan the project HTML + JS for used utility classes.
+   Needed because the runtime JS (showcase.js, catalog.js) builds
+   card markup from template strings that Tailwind must detect.   */
+@source "../../de/**/*.html";
+@source "../../en/**/*.html";
+@source "../../static/js/**/*.js";
+@source "../../404.html";
+@source "../../index.html";
 
 /* Additional styles */
 @import './additional-styles/utility-patterns.css' layer(components);
@@ -60,12 +84,11 @@ layer(base);
 }
 
 @theme {
-  :root, :host {
-    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-      "Liberation Mono", "Courier New", monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 
   --text-xs: 0.75rem;
   --text-xs--line-height: 1.5;
@@ -110,53 +133,53 @@ layer(base);
   --animate-shine: shine 5s linear 500ms infinite;
   --animate-float: float 2s ease-in-out infinite;
   --animate-infinite-scroll: infinite-scroll 40s linear infinite;
+}
 
-  @keyframes endless {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-245px);
-    }
+@keyframes endless {
+  0% {
+    transform: translateY(0);
   }
-  @keyframes shine {
-    0% {
-      top: 0;
-      transform: translateY(-100%) scaleY(10);
-      opacity: 0;
-    }
-    2% {
-      opacity: 0.5;
-    }
-    40% {
-      top: 100%;
-      transform: translateY(0) scaleY(200);
-      opacity: 0;
-    }
-    100% {
-      top: 100%;
-      transform: translateY(0) scaleY(1);
-      opacity: 0;
-    }
+  100% {
+    transform: translateY(-245px);
   }
-  @keyframes float {
-    0% {
-      transform: translateY(3%);
-    }
-    50% {
-      transform: translateY(-3%);
-    }
-    100% {
-      transform: translateY(3%);
-    }
+}
+@keyframes shine {
+  0% {
+    top: 0;
+    transform: translateY(-100%) scaleY(10);
+    opacity: 0;
   }
-  @keyframes infinite-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
+  2% {
+    opacity: 0.5;
+  }
+  40% {
+    top: 100%;
+    transform: translateY(0) scaleY(200);
+    opacity: 0;
+  }
+  100% {
+    top: 100%;
+    transform: translateY(0) scaleY(1);
+    opacity: 0;
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateY(3%);
+  }
+  50% {
+    transform: translateY(-3%);
+  }
+  100% {
+    transform: translateY(3%);
+  }
+}
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }
 

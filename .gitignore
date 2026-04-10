@@ -11,7 +11,35 @@ pids
 logs
 results
 npm-debug.log
-node_modules
+node_modules/
+
+## Python (legacy — kept in case the folders exist locally)
+.venv/
+.venv1/
+__pycache__/
+*.py[cod]
+*$py.class
+
+## Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+## Build output (legacy — from the previous Frozen-Flask setup)
+build/
+
+## Licensed third-party templates — NEVER commit (Cruip license violation)
+ORIGINAL_TEMPLATES/
+
+## Local tool state
+.claude/
+
+## Private documentation — kept locally only, never pushed
+documentation.md
+anleitung.md
+rework.md
+CHANGELOG.md
 
 ## OS X
 .DS_Store

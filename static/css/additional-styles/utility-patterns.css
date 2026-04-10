@@ -64,12 +64,12 @@ input[type="search"]::-webkit-search-results-decoration {
 .form-textarea,
 .form-multiselect,
 .form-select {
-    @apply bg-slate-800 text-slate-200 text-sm px-3 py-1.5 focus:border-purple-500;
+    @apply bg-stone-800 text-stone-200 text-sm px-3 py-1.5 focus:border-orange-500;
 }
 
 .form-input,
 .form-textarea {
-    @apply placeholder-slate-500;
+    @apply placeholder-stone-500;
 }
 
 .form-select {
@@ -78,7 +78,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .form-checkbox,
 .form-radio {
-    @apply bg-slate-800 checked:bg-purple-500 checked:border-transparent text-purple-600 rounded-xs focus-visible:not-checked:border-purple-500;
+    @apply bg-stone-800 checked:bg-orange-500 checked:border-transparent text-orange-500 rounded-xs focus-visible:not-checked:border-orange-500;
 }
 
 .form-checkbox {

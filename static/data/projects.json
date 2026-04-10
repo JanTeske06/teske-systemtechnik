@@ -1,0 +1,57 @@
+{
+  "$schema": "./projects.schema.json",
+  "_comment": "Quelle der Wahrheit für alle Projekte. Showcase-Carousel auf der Homepage und Projekt-Katalog werden automatisch aus dieser Datei gerendert. Um ein neues Projekt hinzuzufügen: (1) neuen Eintrag hier einfügen, (2) /de/projekte/<slug>/index.html und /en/projects/<slug>/index.html erstellen (Vorlage: ebay-automation), (3) Cover-Bild nach /static/projects/<slug>/images/ kopieren.",
+  "projects": [
+    {
+      "slug": "ebay-automation",
+      "featured": true,
+      "showcase_order": 1,
+      "catalog_order": 1,
+      "date": "2024-08-15",
+      "cover": "/static/projects/ebay-automation/images/cover.svg",
+      "tech": ["Python", "Selenium", "FastAPI", "PostgreSQL"],
+      "de": {
+        "title": "eBay Automation Pipeline",
+        "summary": "Automatisierte Listing-Pipeline für einen eBay-Händler, die täglich 200+ Produkte verwaltet — 95% Zeitersparnis."
+      },
+      "en": {
+        "title": "eBay Automation Pipeline",
+        "summary": "Automated listing pipeline for an eBay seller managing 200+ products daily — 95% time saved."
+      }
+    },
+    {
+      "slug": "bird-monitoring",
+      "featured": true,
+      "showcase_order": 2,
+      "catalog_order": 2,
+      "date": "2024-05-10",
+      "cover": "/static/projects/bird-monitoring/images/cover.svg",
+      "tech": ["Python", "eBird API", "SQLite", "Tkinter"],
+      "de": {
+        "title": "eBird Monitoring Tool",
+        "summary": "Desktop-Tool, das seltene Vogelarten in einer definierten Region aus der eBird-API abruft und benachrichtigt."
+      },
+      "en": {
+        "title": "eBird Monitoring Tool",
+        "summary": "Desktop tool that fetches rare bird sightings from the eBird API in a defined region and notifies the user."
+      }
+    },
+    {
+      "slug": "api-recovery",
+      "featured": true,
+      "showcase_order": 3,
+      "catalog_order": 3,
+      "date": "2024-02-22",
+      "cover": "/static/projects/api-recovery/images/cover.svg",
+      "tech": ["Python", "Wireshark", "mitmproxy", "Reverse Engineering"],
+      "de": {
+        "title": "Python API Recovery & Netzwerk-Tracing",
+        "summary": "Reverse-Engineering einer verschwundenen API eines aufgekauften Startups — rekonstruiert und dokumentiert in 5 Tagen."
+      },
+      "en": {
+        "title": "Python API Recovery & Network Tracing",
+        "summary": "Reverse-engineering a lost API after the vendor was acquired — reconstructed and documented in 5 days."
+      }
+    }
+  ]
+}

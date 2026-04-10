@@ -1,8 +1,9 @@
 AOS.init({
   once: true,
-  disable: 'phone',
-  duration: 1000,
+  duration: 700,
+  offset: 60,
   easing: 'ease-out-cubic',
+  anchorPlacement: 'top-bottom',
 });
 
 const clientsEl = document.querySelectorAll('.clients-carousel');

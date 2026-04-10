@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="index,follow">
+
+  
+  <title>eBay Automation · Teske Systemtechnik</title>
+
+  <meta name="description" content="Automated listing pipeline for an eBay seller managing 200+ products daily — 95% time saved.">
+
+  
+  <link rel="canonical" href="https://teske-systemtechnik.de/en/projects/ebay-automation/">
+
+  
+  
+  <link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/ebay-automation/">
+  
+  <link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/ebay-automation/">
+  
+  <link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/ebay-automation/">
+  
+
+  
+  <link rel="icon" type="image/svg+xml" href="/static/images/logo_whitemode.svg">
+
+  
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-650.woff2" as="font" type="font/woff2" crossorigin>
+
+  
+  <link rel="stylesheet" href="/static/css/vendors/aos.css">
+  <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
+
+  
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/css/site.css">
+
+  
+
+  
+  <meta property="og:site_name" content="Teske Systemtechnik">
+  <meta property="og:title" content="eBay Automation Pipeline">
+  <meta property="og:description" content="Automated listing pipeline for an eBay seller managing 200+ products daily — 95% time saved.">
+  <meta property="og:url" content="https://teske-systemtechnik.de/en/projects/ebay-automation/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_EN">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
+
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-orange-500 focus:px-4 focus:py-2 focus:text-white">
+  Skip to content
+</a>
+
+<div class="flex min-h-screen flex-col">
+
+  
+  <header class="absolute z-30 w-full">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="flex h-16 items-center justify-between md:h-20">
+
+        <div class="mr-4 shrink-0">
+          <a class="inline-flex items-center gap-3" href="/en/" aria-label="Teske Systemtechnik">
+            <img class="max-w-none" src="/static/images/logo_whitemode.svg" width="38" height="38" alt="">
+            <span class="font-aspekta text-[11px] font-bold uppercase tracking-[0.2em] text-stone-100 leading-[1.15]">Teske<br>Systemtechnik</span>
+          </a>
+        </div>
+
+        
+        <nav class="hidden md:flex md:grow" aria-label="Primary">
+          <ul class="flex grow flex-wrap items-center justify-end gap-1">
+            <li>
+              <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
+                 href="/en/"
+                 >
+                Home
+              </a>
+            </li>
+            <li>
+              <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
+                 href="/en/about/"
+                 >
+                About
+              </a>
+            </li>
+            <li>
+              <a class="text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
+                 href="/en/projects/"
+                 aria-current="page">
+                Projects
+              </a>
+            </li>
+
+            
+            <li class="ml-2 flex items-center gap-1 rounded-full border border-stone-800 bg-stone-900/60 p-1">
+              
+              <a class="text-stone-400 hover:text-white rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition"
+                 href="/de/projekte/ebay-automation/"
+                 
+                 aria-label="Switch language: DE">
+                DE
+              </a>
+              
+              <a class="bg-orange-500 text-white shadow rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition"
+                 href="#"
+                 aria-current="true"
+                 aria-label="Switch language: EN">
+                EN
+              </a>
+              
+            </li>
+          </ul>
+        </nav>
+
+        
+        <div class="ml-4 flex items-center md:hidden" x-data="{ expanded: false }">
+          <button
+            class="group inline-flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900/60 text-stone-300 transition hover:text-white"
+            aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded">
+            <span class="sr-only">Menu</span>
+            <svg class="pointer-events-none h-4 w-4 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <rect class="origin-center -translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]" y="7" width="16" height="2" rx="1"></rect>
+              <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45" y="7" width="16" height="2" rx="1"></rect>
+              <rect class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]" y="7" width="16" height="2" rx="1"></rect>
+            </svg>
+          </button>
+
+          <template x-teleport="body">
+            <nav id="mobile-nav" aria-label="Mobile"
+                 class="fixed top-16 inset-x-0 z-50 overflow-hidden px-4 transition-all duration-300 ease-in-out sm:px-6"
+                 x-ref="mobileNav"
+                 :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: .8'"
+                 @click.outside="expanded = false" @keydown.escape.window="expanded = false" x-cloak>
+              <ul class="rounded-2xl border border-stone-800 bg-stone-900/90 px-4 py-3 shadow-xl backdrop-blur-xl">
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/en/">Home</a></li>
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/en/about/">About</a></li>
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/en/projects/">Projects</a></li>
+                <li class="mt-2 flex items-center gap-2 border-t border-stone-800 pt-3">
+                  <span class="text-xs uppercase tracking-wider text-stone-500">Switch language:</span>
+                  
+                  <a class="text-stone-400 hover:text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition"
+                     href="/de/projekte/ebay-automation/">
+                    DE
+                  </a>
+                  
+                  <a class="bg-orange-500 text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition"
+                     href="#">
+                    EN
+                  </a>
+                  
+                </li>
+              </ul>
+            </nav>
+          </template>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  
+  <main id="main-content" class="grow">
+    
+<article>
+
+  <header class="relative isolate pt-32 pb-12 md:pt-40">
+    <div class="relative mx-auto max-w-5xl px-4 sm:px-6" data-aos="fade-up">
+      <a href="/en/projects/"
+         class="mb-6 inline-flex items-center gap-2 text-sm font-medium text-stone-400 transition hover:text-amber-300">
+        ← Back to all projects
+      </a>
+
+      <div class="max-w-3xl">
+        
+        <div class="mb-4 flex flex-wrap gap-2">
+          
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Python</span>
+          
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Selenium</span>
+          
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">FastAPI</span>
+          
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">PostgreSQL</span>
+          
+        </div>
+        
+        <h1 class="font-aspekta text-4xl font-bold leading-tight text-white md:text-5xl">eBay Automation Pipeline</h1>
+        <p class="mt-4 text-lg text-stone-300">Automated listing pipeline for an eBay seller managing 200+ products daily — 95% time saved.</p>
+      </div>
+
+      
+      <div class="mt-10 overflow-hidden rounded-3xl border border-stone-800">
+        <img src="/static/projects/ebay-automation/images/cover.svg" alt="eBay Automation Pipeline" class="w-full">
+      </div>
+      
+    </div>
+  </header>
+
+  <div class="relative pb-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6">
+      <div class="grid gap-12 lg:grid-cols-12">
+
+        <aside class="lg:col-span-3">
+          <div class="sticky top-24 space-y-6 rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+            
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Client</p>
+              <p class="mt-1 text-sm text-stone-200">Private client via Upwork</p>
+            </div>
+            
+            
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Duration</p>
+              <p class="mt-1 text-sm text-stone-200">3 weeks</p>
+            </div>
+            
+            
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Budget</p>
+              <p class="mt-1 text-sm text-stone-200">$2,750</p>
+            </div>
+            
+            
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Technology</p>
+              <ul class="mt-2 flex flex-wrap gap-1.5">
+                
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Python</li>
+                
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Selenium</li>
+                
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">FastAPI</li>
+                
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">PostgreSQL</li>
+                
+              </ul>
+            </div>
+            
+            
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Date</p>
+              <p class="mt-1 text-sm text-stone-200">2024-08-15</p>
+            </div>
+            
+          </div>
+        </aside>
+
+        <div class="lg:col-span-9">
+          <div class="prose prose-invert max-w-none prose-headings:font-aspekta prose-headings:text-white prose-a:text-amber-400 hover:prose-a:text-amber-300 prose-strong:text-white prose-code:text-amber-200 prose-img:rounded-2xl prose-img:border prose-img:border-stone-800">
+            <h2 id="the-challenge">The challenge</h2>
+<p>The client runs a mid-sized eBay shop with over 2,000 active listings and used to maintain every product manually: adjusting prices, updating stock, posting new items. The daily effort: <strong>about 6 hours</strong>. That didn&rsquo;t just cost time — it produced errors: incorrect prices, forgotten updates, accidentally deleted listings.</p>
+<h2 id="the-solution">The solution</h2>
+<p>I built a Python-based automation pipeline that covers the complete lifecycle of a listing:</p>
+<ol>
+<li><strong>CSV import</strong> from the client&rsquo;s ERP system</li>
+<li><strong>Validation</strong> of every row against eBay&rsquo;s category requirements</li>
+<li><strong>Selenium-based interaction</strong> with the eBay seller portal (because the official API was too limited)</li>
+<li><strong>PostgreSQL database</strong> as a single source of truth for listing state</li>
+<li><strong>FastAPI dashboard</strong> so the client can see updates in real time</li>
+</ol>
+<p>The entire process now runs <strong>automatically at night</strong> via a cron job — the client just glances at the dashboard in the morning.</p>
+<h2 id="the-result">The result</h2>
+<ul>
+<li><strong>95% time saved</strong> (from 6h down to ~20 minutes of review per day)</li>
+<li><strong>Error rate dropped</strong> from ~8% to under 1%</li>
+<li><strong>New listings</strong> go live within 2 hours of CSV upload</li>
+<li><strong>ROI for the client</strong> reached after 6 weeks</li>
+</ul>
+<h2 id="technical-details">Technical details</h2>
+<p>The architecture was intentionally simple — a monolithic Python service on a small VPS hosting both the Selenium workers and the FastAPI dashboard. No Kubernetes, no message broker, no microservices — because the problem didn&rsquo;t need them.</p>
+<p>The biggest technical hurdle was eBay&rsquo;s rate limiting and their dynamic DOM, which occasionally changed between deployments. I built a selector wrapper that automatically notifies on failure and tries a fallback path.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  
+  <section class="border-t border-stone-800/60 py-16">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <h2 class="mb-8 font-aspekta text-2xl font-bold text-white">More projects</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        
+        <a href="/en/projects/bird-monitoring/"
+           class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+          
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/static/projects/bird-monitoring/images/cover.svg" alt="" loading="lazy"
+                 class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+          </div>
+          
+          <div class="p-5">
+            <h3 class="font-aspekta text-lg font-bold text-white">eBird Monitoring Tool</h3>
+            <p class="mt-1 line-clamp-2 text-sm text-stone-400">Desktop tool that fetches rare bird sightings from the eBird API in a defined region and notifies the user.</p>
+          </div>
+        </a>
+        
+        <a href="/en/projects/api-recovery/"
+           class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+          
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/static/projects/api-recovery/images/cover.svg" alt="" loading="lazy"
+                 class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+          </div>
+          
+          <div class="p-5">
+            <h3 class="font-aspekta text-lg font-bold text-white">Python API Recovery &amp; Network Tracing</h3>
+            <p class="mt-1 line-clamp-2 text-sm text-stone-400">Reverse-engineering a lost API after the vendor was acquired — reconstructed and documented in 5 days.</p>
+          </div>
+        </a>
+        
+      </div>
+    </div>
+  </section>
+  
+
+</article>
+
+  </main>
+
+  
+  <footer class="relative border-t border-stone-800/60 mt-10">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="grid gap-10 py-12 md:grid-cols-12">
+
+        <div class="md:col-span-5">
+          <a class="inline-flex items-center gap-3" href="/en/" aria-label="Teske Systemtechnik">
+            <img src="/static/images/logo_whitemode.svg" class="h-12 w-12" alt="">
+            <span class="font-aspekta text-lg font-bold uppercase tracking-[0.2em] text-stone-100">Teske<br>Systemtechnik</span>
+          </a>
+          <p class="mt-4 max-w-sm text-sm text-stone-400">Quality engineered in Germany.</p>
+        </div>
+
+        <div class="md:col-span-3">
+          <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Navigation</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/">Home</a></li>
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/about/">About</a></li>
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/projects/">Projects</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-2">
+          <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Legal</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/legal-notice/">Legal Notice</a></li>
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/privacy-policy/">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-2">
+          <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Follow me</h3>
+          <ul class="flex gap-3">
+            <li>
+              <a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white"
+                 href="https://pypi.org/user/JanTeske06/" target="_blank" rel="noopener noreferrer" aria-label="PyPI">
+                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12,2L2,7V17L12,22L22,17V7L12,2ZM4,16.06V8.94L11,12.44V19.56L4,16.06ZM12,11.38L5.13,7.94L12,4.5L18.87,7.94L12,11.38ZM20,16.06L13,19.56V12.44L20,8.94V16.06Z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#14a800] hover:bg-[#14a800] hover:text-white"
+                 href="https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c" target="_blank" rel="noopener noreferrer" aria-label="Upwork">
+                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-white hover:bg-black hover:text-white"
+                 href="https://github.com/JanTeske06" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col items-center justify-between gap-3 border-t border-stone-800/60 py-6 text-xs text-stone-500 md:flex-row">
+        <p>&copy; 2026 Teske Systemtechnik. All rights reserved.</p>
+        <p class="font-aspekta uppercase tracking-widest">Quality engineered in Germany.</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script src="/static/js/vendors/alpinejs.min.js" defer></script>
+<script src="/static/js/vendors/aos.js"></script>
+<script src="/static/js/vendors/swiper-bundle.min.js"></script>
+<script src="/static/js/main.js"></script>
+
+
+
+</body>
+</html>
