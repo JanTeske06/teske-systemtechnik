@@ -1,0 +1,299 @@
+/* ------------------------------------------------------------------
+   site.css — overlay on top of the compiled Tailwind bundle.
+   Contains: Aspekta @font-face (with absolute URLs), prose dark-mode
+   tweaks, project-detail ergonomics, Swiper pagination, glow, footer.
+   ------------------------------------------------------------------ */
+
+/* --- Aspekta self-hosted (GDPR-compliant) ---------------------------
+ * Absolute URLs so the font resolves correctly regardless of the CSS
+ * file's location in the URL hierarchy. The compiled Tailwind bundle
+ * has relative URLs that break outside of /static/, so we override
+ * them here.
+ */
+@font-face {
+  font-family: "Aspekta";
+  font-style: normal;
+  font-weight: 350;
+  font-display: swap;
+  src: url("/static/fonts/aspekta/Aspekta-350.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Aspekta";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/fonts/aspekta/Aspekta-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Aspekta";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/fonts/aspekta/Aspekta-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Aspekta";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/fonts/aspekta/Aspekta-650.woff2") format("woff2");
+}
+
+/* Force the baseline body font in case Tailwind's preflight doesn't
+   pick up --font-inter via a utility class. */
+html,
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-aspekta {
+  font-family: "Aspekta", "Inter", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* --- Atmospheric background layers --------------------------------
+ * Three stacked, fixed, ultra-subtle background-image layers on the
+ * body on top of the stone-950 background-color. Nothing here moves,
+ * nothing "glows" cosmically — these read as photographic ambient
+ * light and architectural graph-paper, not AI decoration.
+ *
+ *   (1) Fine dot grid (32px spacing, stone-500 @ 18% alpha)
+ *       Architectural rhythm, like graph paper / code indent guides.
+ *   (2) Warm orange radial sourced off-screen at the bottom-right,
+ *       ~8% alpha. Feels like warm lamplight from behind the screen.
+ *   (3) Amber accent radial at the top-left corner, ~4% alpha.
+ *       Feels like morning-light bleed. Even more subtle than (2).
+ *
+ * All three use background-attachment: fixed so they stay put while
+ * you scroll — consistent atmosphere across the whole site.
+ * ------------------------------------------------------------------ */
+body {
+  position: relative;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgb(120 113 108 / 0.13) 1px, transparent 0),
+    radial-gradient(ellipse 55% 40% at 5% 0%, rgb(251 191 36 / 0.12), transparent 70%),
+    radial-gradient(ellipse 80% 60% at 95% 105%, rgb(249 115 22 / 0.21), transparent 60%);
+  background-size: 32px 32px, auto, auto;
+  background-repeat: repeat, no-repeat, no-repeat;
+  background-attachment: scroll, scroll, scroll;
+  background-position: 0 0, 0 0, 100% 100%;
+}
+
+/* --- Film grain on top of the ambient layers ----------------------
+ * Fixed full-viewport SVG noise. Extremely subtle (~7.5% opacity,
+ * soft-light blend) — transforms the smooth gradients and dot grid
+ * into a single coherent analog/paper texture. Inlined SVG, zero
+ * HTTP requests.
+ * ------------------------------------------------------------------ */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.14;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch' seed='7'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 240px 240px;
+}
+
+/* Make sure interactive chrome stays above the grain overlay. */
+header,
+main,
+footer,
+.swiper {
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Skeleton mode: temporarily hide UI elements without deleting -
+ * Add `data-skeleton-off` as an attribute on any element to hide it.
+ * To re-enable a section or nav item, simply remove the attribute.
+ * Use !important so it overrides Tailwind display classes too.
+ * Current skeleton disables: projects + about pages + their nav
+ * entries + the homepage showcase + about-teaser sections.
+ */
+[data-skeleton-off] {
+  display: none !important;
+}
+
+/* --- Mobile nav: bulletproof top layer ----------------------------
+ * The mobile hamburger menu absolutely MUST render on top of every
+ * other element and be clickable. ID selector + !important means
+ * nothing in the cascade can trap it in a parent stacking context
+ * (not the header, not AOS transforms on the hero h1, nothing).
+ *
+ * The .expanded class is toggled by Alpine's :class handler via the
+ * attribute binding — when the hamburger is tapped, body gets the
+ * menu on top no matter what happened upstream.
+ */
+#mobile-nav {
+  position: fixed !important;
+  top: 4rem !important;    /* 64px — directly below the 16/20-high header */
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+}
+
+/* --- Section numbering helper (editorial / magazine pattern) ------
+ * Used on homepage sections: "001 /  AUSGEWÄHLTE ARBEITEN".
+ * Warm dark sage-moss green (#5e7a47) is the logo-echo accent —
+ * warm-toned (yellow-green, not blue-green), clearly dark but still
+ * readable on the stone-950 background. This is the one place in the
+ * UI where green appears, picking up the green from the Teske logo
+ * without fighting the orange primary accent.
+ */
+.section-num {
+  font-family: ui-monospace, "JetBrains Mono", "IBM Plex Mono",
+    "SFMono-Regular", Menlo, Consolas, monospace;
+  color: rgb(94 122 71); /* warm sage green — logo accent */
+  letter-spacing: 0;
+}
+
+/* --- Prose (Typography plugin) tweaks for our dark theme ------------ */
+.prose.prose-invert {
+  --tw-prose-body: rgb(214 211 209);          /* stone-300 */
+  --tw-prose-headings: rgb(250 250 249);      /* stone-50 */
+  --tw-prose-lead: rgb(214 211 209);
+  --tw-prose-links: rgb(251 191 36);         /* amber-400 */
+  --tw-prose-bold: rgb(250 250 249);
+  --tw-prose-counters: rgb(168 162 158);
+  --tw-prose-bullets: rgb(87 83 78);
+  --tw-prose-hr: rgb(41 37 36);
+  --tw-prose-quotes: rgb(231 229 228);
+  --tw-prose-quote-borders: rgb(249 115 22);  /* orange-500 */
+  --tw-prose-captions: rgb(168 162 158);
+  --tw-prose-code: rgb(253 230 138);
+  --tw-prose-pre-code: rgb(231 229 228);
+  --tw-prose-pre-bg: rgb(12 10 9);             /* stone-950 */
+  --tw-prose-th-borders: rgb(68 64 60);
+  --tw-prose-td-borders: rgb(41 37 36);
+}
+
+.prose.prose-invert :where(code)::before,
+.prose.prose-invert :where(code)::after {
+  content: "";
+}
+
+.prose.prose-invert :where(code) {
+  background: rgb(30 41 59 / 0.6);
+  border: 1px solid rgb(68 64 60);
+  border-radius: 0.375rem;
+  padding: 0.125rem 0.375rem;
+  font-weight: 500;
+  font-size: 0.875em;
+}
+
+.prose.prose-invert :where(pre) {
+  border: 1px solid rgb(41 37 36);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+}
+
+.prose.prose-invert :where(blockquote) {
+  border-left-width: 3px;
+  font-style: normal;
+  padding-left: 1.25rem;
+}
+
+.prose.prose-invert :where(h2, h3, h4) {
+  scroll-margin-top: 6rem;
+}
+
+/* --- Swiper pagination bullets --- */
+.swiper-pagination-bullet {
+  background: rgb(120 113 108);
+  opacity: 0.5;
+  width: 30px;
+  height: 3px;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+.swiper-pagination-bullet-active {
+  background: rgb(249 115 22);
+  opacity: 1;
+  width: 42px;
+}
+
+/* --- Keep the footer above fixed decorations --- */
+footer {
+  position: relative;
+  z-index: 10;
+}
+
+/* --- Dynamic project slots (rendered by showcase.js / catalog.js) ---
+ * Reserve minimum space so there's no layout shift while the tiny
+ * projects.json fetch completes. Sized for the compact card layout.
+ */
+.project-showcase-mount {
+  min-height: 16rem;
+}
+.project-catalog-mount {
+  min-height: 14rem;
+}
+
+/* --- Graceful fade-in when JS populates the dynamic slots --- */
+.project-dyn-loaded {
+  animation: dyn-fade-in 0.4s ease-out both;
+}
+@keyframes dyn-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Case-study image patterns (inside .prose .prose-invert) -------
+ * The basic <img> tag already gets rounded corners + slate border
+ * via the prose-img-* utility classes on each detail page's article.
+ * These rules add:
+ *   - clean styling for <figure> + <figcaption>
+ *   - a responsive 2-column grid for side-by-side / before-after
+ *   - an optional full-bleed variant that breaks out of the prose
+ *     column on large screens for extra-wide diagrams/screenshots
+ */
+.prose figure {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.prose figure > img {
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+}
+.prose figure figcaption {
+  margin-top: 0.75em;
+  text-align: center;
+  font-size: 0.875em;
+  font-style: italic;
+  color: rgb(168 162 158); /* stone-400 */
+}
+
+/* Two figures side-by-side (stacks on mobile, pair on sm+) */
+.prose .figure-pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+@media (min-width: 640px) {
+  .prose .figure-pair {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+}
+.prose .figure-pair figure,
+.prose .figure-pair img {
+  margin: 0;
+}
+
+/* Wide figure: breaks out of the narrow prose column on lg+ screens
+ * so panoramic diagrams get more room. Stays contained on mobile.
+ */
+@media (min-width: 1024px) {
+  .prose figure.figure-wide {
+    margin-left: -6rem;
+    margin-right: -6rem;
+  }
+  .prose figure.figure-wide > img {
+    max-width: none;
+  }
+}
