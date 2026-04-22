@@ -1,0 +1,59 @@
+# Teske Systemtechnik
+
+> Freelance Python automation, API development, and custom software engineering business based in Melle, Germany. Operated by Jan Teske. Specializes in workflow automation, data pipelines, web scraping, API development (FastAPI/Flask), and reverse engineering. Clients worldwide, bilingual German/English service.
+
+## Core pages
+
+- [Homepage (German)](https://teske-systemtechnik.de/de/): Primary business landing page in German
+- [Homepage (English)](https://teske-systemtechnik.de/en/): Primary business landing page in English
+- [About Jan Teske (German)](https://teske-systemtechnik.de/de/about/): Founder biography and service overview
+- [About Jan Teske (English)](https://teske-systemtechnik.de/en/about/): Founder biography and service overview
+- [Project catalog (German)](https://teske-systemtechnik.de/de/projekte/): List of selected project case studies
+- [Project catalog (English)](https://teske-systemtechnik.de/en/projects/): List of selected project case studies
+
+## Case studies
+
+- [eBay Automation Pipeline (German)](https://teske-systemtechnik.de/de/projekte/ebay-automation/): Automated listing pipeline for an eBay seller managing 200+ products daily — 95% time saved. Tech: Python, Selenium, FastAPI, PostgreSQL.
+- [eBay Automation Pipeline (English)](https://teske-systemtechnik.de/en/projects/ebay-automation/): Same case study in English.
+- [eBird Bird Monitoring Tool (German)](https://teske-systemtechnik.de/de/projekte/bird-monitoring/): Desktop tool fetching rare bird sightings from the eBird API in a defined region. Tech: Python, eBird API, SQLite, Tkinter.
+- [eBird Bird Monitoring Tool (English)](https://teske-systemtechnik.de/en/projects/bird-monitoring/): Same case study in English.
+- [Python API Recovery (German)](https://teske-systemtechnik.de/de/projekte/api-recovery/): Reverse-engineering a lost API after the vendor was acquired — reconstructed and documented in 5 days. Tech: Python, Wireshark, mitmproxy.
+- [Python API Recovery (English)](https://teske-systemtechnik.de/en/projects/api-recovery/): Same case study in English.
+
+## Legal
+
+- [Impressum (German)](https://teske-systemtechnik.de/de/impressum/): Legal notice per § 5 TMG
+- [Legal Notice (English)](https://teske-systemtechnik.de/en/legal-notice/): Same in English
+- [Datenschutzerklärung (German)](https://teske-systemtechnik.de/de/datenschutz/): Privacy policy (GDPR)
+- [Privacy Policy (English)](https://teske-systemtechnik.de/en/privacy-policy/): Same in English
+
+## Key facts
+
+- Business name: Teske Systemtechnik
+- Legal form: Einzelunternehmen (sole proprietorship), Inhaber Jan Teske
+- Location: Melle, Niedersachsen, Germany
+- Address: Elschers Kamp 13, 49324 Melle, Germany
+- VAT ID: DE459634758
+- Email: jt@teske-systemtechnik.de
+- Phone: +49 1522 5166058
+- Service area: Worldwide, remote-first
+- Languages: German (native), English (fluent)
+- GitHub: https://github.com/JanTeske06
+- PyPI: https://pypi.org/user/JanTeske06/
+- Upwork: https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c
+
+## Services
+
+- Python automation: Web scraping, workflow automation, cronjob systems, data extraction
+- API development: FastAPI, Flask, REST, GraphQL — clean, typed, tested, documented
+- Data pipelines: CSV/unstructured → structured, queryable databases (PostgreSQL, SQLite)
+- Custom tools: CLI utilities, desktop applications, internal dashboards
+- Reverse engineering: Network tracing, API reconstruction, legacy system recovery
+
+## Technology stack
+
+Python, FastAPI, Flask, Django, SQL (PostgreSQL, SQLite), Selenium, mitmproxy, Wireshark, Docker, Git. General preference for clean, typed, tested code over clever one-liners.
+
+## Contact preference
+
+Email first (jt@teske-systemtechnik.de) for initial project inquiries. Phone (+49 1522 5166058) for urgent matters. Typical response time: within one business day.

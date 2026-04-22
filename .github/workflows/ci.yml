@@ -1,0 +1,50 @@
+name: CI
+
+# Runs on every push to master and every pull request targeting master.
+# Fails fast on broken HTML, invalid JSON/JSON-LD, dead internal links,
+# sitemap mismatches, missing required files, or a broken Tailwind build.
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:  # allow manual trigger from the Actions tab
+
+jobs:
+  check:
+    name: Site integrity + build
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run site integrity checks
+        run: python scripts/check_site.py
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Build Tailwind CSS
+        run: npm run build
+
+      - name: Verify Tailwind build produced output
+        run: |
+          if [ ! -s static/style.css ]; then
+            echo "ERROR: static/style.css is missing or empty after build"
+            exit 1
+          fi
+          echo "OK: static/style.css present ($(wc -c < static/style.css) bytes)"

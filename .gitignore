@@ -39,6 +39,10 @@ documentation.md
 anleitung.md
 rework.md
 CHANGELOG.md
+seo-plan.md
+
+## Throwaway one-shot scripts (prefix convention) — never commit
+_*.py
 
 ## OS X
 .DS_Store
