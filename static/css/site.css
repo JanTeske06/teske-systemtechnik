@@ -40,10 +40,15 @@
 }
 
 /* Force the baseline body font in case Tailwind's preflight doesn't
-   pick up --font-inter via a utility class. */
+   pick up --font-inter via a utility class. Also set the site background
+   on <html> so page-fade transitions (opacity on body) don't flash the
+   browser default white behind a transparent body. */
 html,
 body {
   font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+html {
+  background-color: rgb(12 10 9); /* stone-950, matches body */
 }
 
 .font-aspekta {
@@ -115,6 +120,60 @@ footer,
  */
 [data-skeleton-off] {
   display: none !important;
+}
+
+/* --- Page transitions (View Transitions API) ---------------------
+ * Modern browsers (Chrome 126+, Safari 18+) cross-fade page content
+ * on same-origin navigation. Elements with `view-transition-name`
+ * persist across pages and animate smoothly from their old position
+ * to their new one. Older browsers just navigate normally.
+ *
+ * Persistent elements here:
+ *   - Header brand (logo + "Teske Systemtechnik" text) — stays in place
+ *   - Active (orange) language button — slides between DE and EN
+ *     positions when the user switches language
+ *
+ * Everything else (hero text, body content, other nav items) cross-
+ * fades via the default "root" transition.
+ * ----------------------------------------------------------------- */
+@view-transition {
+  navigation: auto;
+}
+
+/* Default root cross-fade timing */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 220ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Header brand (logo + stacked text) persists across every page */
+header a[aria-label="Teske Systemtechnik"] {
+  view-transition-name: site-header-brand;
+}
+
+/* Active (orange) language button — slides between DE and EN
+ * positions. The non-active (grey) button is not named so it just
+ * cross-fades with the content. */
+header a[aria-label^="Sprache wechseln"][aria-current="true"],
+header a[aria-label^="Switch language"][aria-current="true"] {
+  view-transition-name: lang-active-button;
+}
+
+/* Slightly longer, smoother animation for persisted elements so
+ * the slide is clearly visible. */
+::view-transition-group(site-header-brand),
+::view-transition-group(lang-active-button) {
+  animation-duration: 350ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Respect OS-level reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
 }
 
 /* --- Mobile nav: bulletproof top layer ----------------------------

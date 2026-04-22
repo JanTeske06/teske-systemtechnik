@@ -267,3 +267,9 @@ const highlighters = document.querySelectorAll('[data-highlighter]');
 highlighters.forEach((highlighter) => {
   new Highlighter(highlighter);
 });
+
+
+// Note: page transitions are handled by the native View Transitions API
+// via CSS in static/css/site.css. Logo, brand, and the active language
+// button get view-transition-name so the browser animates them
+// smoothly between pages. No JS needed.
