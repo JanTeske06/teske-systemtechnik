@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1917"/>
+      <stop offset="50%" stop-color="#431407"/>
+      <stop offset="100%" stop-color="#1c1917"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#44403c" stroke-width="1" opacity="0.4"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <circle cx="800" cy="450" r="500" fill="url(#glow)"/>
+  <text x="800" y="380" font-family="Aspekta, Inter, sans-serif" font-size="86" font-weight="700" fill="#fafaf9" text-anchor="middle">Microsoft Shopping Feed</text>
+  <text x="800" y="440" font-family="Aspekta, Inter, sans-serif" font-size="56" font-weight="700" fill="#fdba74" text-anchor="middle">Pipeline</text>
+  <text x="800" y="510" font-family="Inter, sans-serif" font-size="32" fill="#a8a29e" text-anchor="middle">Python · Pandas · ETL · Microsoft Ads</text>
+  <text x="800" y="570" font-family="Inter, sans-serif" font-size="26" fill="#a8a29e" text-anchor="middle">Teske Systemtechnik — Case Study</text>
+</svg>

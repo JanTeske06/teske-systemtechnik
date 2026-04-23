@@ -122,6 +122,21 @@ footer,
   display: none !important;
 }
 
+/* --- Showcase carousel arrow cursor -----------------------------
+ * Tailwind preflight removes the default button pointer cursor.
+ * Restore it on the project-showcase prev/next arrows so the
+ * hover affordance matches the rest of the interactive site.
+ */
+.project-showcase-prev:not(:disabled),
+.project-showcase-next:not(:disabled),
+.project-showcase .swiper-pagination-bullet {
+  cursor: pointer;
+}
+.project-showcase-prev:disabled,
+.project-showcase-next:disabled {
+  cursor: not-allowed;
+}
+
 /* --- Page transitions (View Transitions API) ---------------------
  * Modern browsers (Chrome 126+, Safari 18+) cross-fade page content
  * on same-origin navigation. Elements with `view-transition-name`

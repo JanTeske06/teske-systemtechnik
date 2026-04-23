@@ -36,7 +36,7 @@
     const techHtml = tech
       .map(function (t) {
         return (
-          '<span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-2 py-0.5 text-[10px] font-medium text-amber-200">' +
+          '<span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-2 py-0.5 text-[11px] font-medium text-amber-200">' +
           helpers.escapeHtml(t) +
           '</span>'
         );
@@ -47,24 +47,23 @@
       '<div class="swiper-slide">' +
       '<a href="' +
       helpers.escapeHtml(href) +
-      '" class="group relative block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900">' +
+      '" class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">' +
       '<div class="aspect-[16/9] overflow-hidden">' +
       '<img src="' +
       cover +
       '" alt="" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">' +
-      '<div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>' +
       '</div>' +
-      '<div class="absolute inset-x-0 bottom-0 p-4 md:p-5">' +
-      '<div class="mb-1.5 flex flex-wrap gap-1">' +
+      '<div class="p-5 md:p-6">' +
+      '<div class="mb-3 flex flex-wrap gap-1.5">' +
       techHtml +
       '</div>' +
-      '<h3 class="font-aspekta text-base font-bold text-white md:text-lg">' +
+      '<h3 class="font-aspekta text-lg font-bold text-white md:text-2xl">' +
       title +
       '</h3>' +
-      '<p class="mt-1 line-clamp-2 max-w-md text-xs text-stone-300">' +
+      '<p class="mt-2 line-clamp-2 max-w-md text-sm text-stone-400 md:text-base">' +
       summary +
       '</p>' +
-      '<span class="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-amber-300 transition group-hover:text-amber-200">' +
+      '<span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-amber-400 transition group-hover:text-amber-200">' +
       helpers.escapeHtml(LABELS[lang].viewCase) +
       '</span>' +
       '</div>' +
@@ -82,8 +81,9 @@
     const canLoop = slideCount > 1;
     new Swiper('.project-showcase', {
       loop: canLoop,
-      effect: 'fade',
-      fadeEffect: { crossFade: true },
+      effect: 'slide',
+      speed: 900,
+      spaceBetween: 32,
       autoplay: canLoop
         ? {
             delay: 5000,

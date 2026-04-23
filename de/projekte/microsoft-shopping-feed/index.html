@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <script>
+    // Maintenance guard: if /maintenance.flag exists, redirect to /maintenance.html.
+    // Toggle by creating/deleting that flag file at the repo root (see anleitung.md).
+    (function () {
+      if (location.pathname.endsWith('/maintenance.html')) return;
+      fetch('/maintenance.flag', { method: 'HEAD', cache: 'no-store' })
+        .then(function (r) { if (r.ok) location.replace('/maintenance.html'); })
+        .catch(function () {});
+    })();
+  </script>
+  <meta name="robots" content="index,follow">
+
+
+  <title>Microsoft Shopping Feed Pipeline · Teske Systemtechnik</title>
+
+  <meta name="description" content="Vollautomatisierte Tages-Sync großer Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — ausfallsicher, 100 % Compliance.">
+
+
+  <link rel="canonical" href="https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/">
+
+
+
+  <link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/">
+
+  <link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/microsoft-shopping-feed/">
+
+  <link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/">
+
+
+
+  <link rel="icon" type="image/svg+xml" href="/static/images/logo_favicon.svg">
+
+
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-650.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  <link rel="stylesheet" href="/static/css/vendors/aos.css">
+  <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
+
+
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/css/site.css">
+
+
+
+
+  <meta property="og:site_name" content="Teske Systemtechnik">
+  <meta property="og:title" content="Microsoft Shopping Feed Pipeline — Case Study">
+  <meta property="og:description" content="Vollautomatisierte Tages-Sync großer Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — ausfallsicher, 100 % Compliance.">
+  <meta property="og:url" content="https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://teske-systemtechnik.de/static/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Teske Systemtechnik - Python-Automation, API-Entwicklung, maßgeschneiderte Software">
+  <meta name="twitter:image" content="https://teske-systemtechnik.de/static/images/og-default.png">
+  <meta name="twitter:image:alt" content="Teske Systemtechnik - Python-Automation, API-Entwicklung, maßgeschneiderte Software">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://teske-systemtechnik.de/#organization",
+      "name": "Teske Systemtechnik",
+      "alternateName": "Teske Systemtechnik Inhaber: Jan Teske",
+      "url": "https://teske-systemtechnik.de",
+      "logo": "https://teske-systemtechnik.de/static/images/logo_favicon.svg",
+      "image": "https://teske-systemtechnik.de/static/images/og-default.png",
+      "description": "Freelance Python automation, API development and custom software engineering from Germany.",
+      "founder": { "@id": "https://teske-systemtechnik.de/#jan-teske" },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Elschers Kamp 13",
+        "addressLocality": "Melle",
+        "postalCode": "49324",
+        "addressCountry": "DE"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "jt@teske-systemtechnik.de",
+        "telephone": "+49-1522-5166058",
+        "availableLanguage": ["de", "en"]
+      },
+      "vatID": "DE459634758",
+      "sameAs": [
+        "https://github.com/JanTeske06",
+        "https://pypi.org/user/JanTeske06/",
+        "https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c"
+      ],
+      "knowsAbout": [
+        "Python",
+        "API Development",
+        "Workflow Automation",
+        "Data Pipelines",
+        "Web Scraping",
+        "FastAPI",
+        "Reverse Engineering",
+        "Software Engineering",
+        "AWS Cloud Cost Optimization",
+        "FinOps",
+        "Legacy System Decommissioning",
+        "Computer Vision",
+        "Generative AI",
+        "Desktop Application Development",
+        "Data Engineering",
+        "ETL Pipelines",
+        "Microsoft Merchant Center",
+        "Affiliate Feed Integration"
+      ],
+      "areaServed": "Worldwide"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://teske-systemtechnik.de/#website-de",
+      "url": "https://teske-systemtechnik.de/de/",
+      "name": "Teske Systemtechnik",
+      "inLanguage": "de",
+      "publisher": { "@id": "https://teske-systemtechnik.de/#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://teske-systemtechnik.de/de/" },
+        { "@type": "ListItem", "position": 2, "name": "Projekte", "item": "https://teske-systemtechnik.de/de/projekte/" },
+        { "@type": "ListItem", "position": 3, "name": "Microsoft Shopping Feed Pipeline" }
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/#creativework",
+      "name": "Microsoft Shopping Feed Pipeline",
+      "headline": "Data Engineering & Automatisierung: Microsoft Merchant Center Feed Pipeline",
+      "description": "Vollautomatisierte Tages-Sync großer Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — ausfallsicher, 100 % Compliance.",
+      "author": { "@id": "https://teske-systemtechnik.de/#jan-teske" },
+      "creator": { "@id": "https://teske-systemtechnik.de/#jan-teske" },
+      "publisher": { "@id": "https://teske-systemtechnik.de/#organization" },
+      "inLanguage": "de",
+      "datePublished": "2026-04-10",
+      "image": "https://teske-systemtechnik.de/static/projects/microsoft-shopping-feed/images/cover.svg",
+      "url": "https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/",
+      "about": [
+        "Python",
+        "Pandas",
+        "Data Engineering",
+        "ETL",
+        "Microsoft Merchant Center",
+        "Microsoft Advertising",
+        "Shopping Ads",
+        "Affiliate Feeds"
+      ],
+      "keywords": "Python, Pandas, Data Engineering, ETL, Microsoft Merchant Center, Microsoft Advertising, Shopping Ads, Affiliate Feeds, Connexity, Shopping24",
+      "review": {
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
+        "author": {
+          "@type": "Organization",
+          "name": "Blender Networks Inc.",
+          "description": "Advertising agency, Bedford, Canada"
+        },
+        "publisher": { "@type": "Organization", "name": "Upwork", "url": "https://www.upwork.com/" }
+      }
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
+
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-orange-500 focus:px-4 focus:py-2 focus:text-white">
+  Zum Inhalt springen
+</a>
+
+<div class="flex min-h-screen flex-col">
+
+
+  <header class="absolute z-30 w-full">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="flex h-16 items-center justify-between md:h-20">
+
+        <div class="mr-4 shrink-0">
+          <a class="inline-flex items-center gap-3" href="/de/" aria-label="Teske Systemtechnik">
+            <img class="max-w-none" src="/static/images/logo_whitemode.svg" width="40" height="40" alt="">
+            <span class="font-aspekta text-[17px] font-bold uppercase tracking-[0.1em] text-stone-100 leading-[20px]">Teske<br>Systemtechnik</span>
+          </a>
+        </div>
+
+
+        <nav class="hidden md:flex md:grow" aria-label="Primary">
+          <ul class="flex grow flex-wrap items-center justify-end gap-1">
+            <li>
+              <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/de/">Start</a>
+            </li>
+            <li data-skeleton-off>
+              <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/de/about/">Über uns</a>
+            </li>
+            <li>
+              <a class="text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/de/projekte/" aria-current="page">Projekte</a>
+            </li>
+
+
+            <li class="ml-2 flex items-center gap-1 rounded-full border border-stone-800 bg-stone-900/60 p-1">
+              <a class="bg-orange-500 text-white shadow rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition" href="#" aria-current="true" aria-label="Sprache wechseln: DE">DE</a>
+              <a class="text-stone-400 hover:text-white rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/en/projects/microsoft-shopping-feed/" aria-label="Sprache wechseln: EN">EN</a>
+            </li>
+          </ul>
+        </nav>
+
+
+        <div class="ml-4 flex items-center md:hidden" x-data="{ expanded: false }">
+          <button class="group inline-flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900/60 text-stone-300 transition hover:text-white"
+            aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded">
+            <span class="sr-only">Menu</span>
+            <svg class="pointer-events-none h-4 w-4 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <rect class="origin-center -translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]" y="7" width="16" height="2" rx="1"></rect>
+              <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45" y="7" width="16" height="2" rx="1"></rect>
+              <rect class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]" y="7" width="16" height="2" rx="1"></rect>
+            </svg>
+          </button>
+
+          <template x-teleport="body">
+            <nav id="mobile-nav" aria-label="Mobile"
+                 class="fixed top-16 inset-x-0 z-50 overflow-hidden px-4 transition-all duration-300 ease-in-out sm:px-6"
+                 x-ref="mobileNav"
+                 :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: .8'"
+                 @click.outside="expanded = false" @keydown.escape.window="expanded = false" x-cloak>
+              <ul class="rounded-2xl border border-stone-800 bg-stone-900/90 px-4 py-3 shadow-xl backdrop-blur-xl">
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/">Start</a></li>
+                <li data-skeleton-off><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/about/">Über uns</a></li>
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/projekte/">Projekte</a></li>
+                <li class="mt-2 flex items-center gap-2 border-t border-stone-800 pt-3">
+                  <span class="text-xs uppercase tracking-wider text-stone-500">Sprache wechseln:</span>
+                  <a class="bg-orange-500 text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition" href="#">DE</a>
+                  <a class="text-stone-400 hover:text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/en/projects/microsoft-shopping-feed/">EN</a>
+                </li>
+              </ul>
+            </nav>
+          </template>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <main id="main-content" class="grow">
+
+<article>
+
+  <header class="relative isolate pt-32 pb-12 md:pt-40">
+    <div class="relative mx-auto max-w-5xl px-4 sm:px-6" data-aos="fade-up">
+      <a href="/de/projekte/" class="mb-6 inline-flex items-center gap-2 text-sm font-medium text-stone-400 transition hover:text-amber-300">← Zurück zur Übersicht</a>
+
+      <div class="max-w-3xl">
+        <div class="mb-4 flex flex-wrap gap-2">
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Python</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Pandas</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Microsoft Merchant Center</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">ETL</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Feed Engineering</span>
+        </div>
+
+        <h1 class="font-aspekta text-4xl font-bold leading-tight text-white md:text-5xl">Microsoft Shopping Feed Pipeline</h1>
+        <p class="mt-4 text-lg text-stone-300">Vollautomatisierte Tages-Sync großer Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — <strong>ausfallsicher, 100 % Compliance</strong>, Zero-Error-Monitoring.</p>
+      </div>
+
+
+      <div class="mt-10 overflow-hidden rounded-3xl border border-stone-800">
+        <img src="/static/projects/microsoft-shopping-feed/images/cover.svg" alt="Microsoft Shopping Feed Pipeline — Case Study Cover" class="w-full">
+      </div>
+
+    </div>
+  </header>
+
+  <div class="relative pb-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6">
+      <div class="grid gap-12 lg:grid-cols-12">
+
+        <aside class="lg:col-span-3">
+          <div class="sticky top-16 space-y-6 rounded-2xl border border-stone-800 bg-stone-900/60 p-6" style="top: 3rem">
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Kunde</p>
+              <p class="mt-1 text-sm text-stone-200">Blender Networks Inc.</p>
+            </div>
+
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Branche</p>
+              <p class="mt-1 text-sm text-stone-200">Werbeagentur · Bedford, Kanada</p>
+            </div>
+
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Ergebnis</p>
+              <p class="mt-1 text-sm text-stone-200">100 % Compliance · Zero Errors</p>
+            </div>
+
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Technologie</p>
+              <ul class="mt-2 flex flex-wrap gap-1.5">
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Python</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Pandas</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">MS Merchant Center</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">ETL</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Feed Engineering</li>
+              </ul>
+            </div>
+
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Zeitraum</p>
+              <p class="mt-1 text-sm text-stone-200">Frühjahr 2026</p>
+            </div>
+
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Projektbudget</p>
+              <p class="mt-1 text-sm text-stone-200">3.000 $</p>
+            </div>
+
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Bewertung</p>
+              <div class="mt-2 flex items-center gap-2">
+                <div class="flex gap-1 text-amber-400" aria-label="5 von 5 Sternen" role="img">
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.287-3.957z"/></svg>
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.287-3.957z"/></svg>
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.287-3.957z"/></svg>
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.287-3.957z"/></svg>
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.287-3.957z"/></svg>
+                </div>
+                <span class="text-[11px] uppercase tracking-wider text-stone-500">via Upwork</span>
+              </div>
+            </div>
+
+          </div>
+        </aside>
+
+        <div class="lg:col-span-9">
+          <div class="prose prose-invert max-w-none prose-headings:font-aspekta prose-headings:text-white prose-a:text-amber-400 hover:prose-a:text-amber-300 prose-strong:text-white prose-code:text-amber-200 prose-img:rounded-2xl prose-img:border prose-img:border-stone-800">
+            <h2 id="die-herausforderung">Die Herausforderung</h2>
+            <p><strong>Blender Networks Inc.</strong> betreibt ein großes Preisvergleichsportal, dessen komplette Monetarisierung exklusiv auf Microsoft Advertising Product Listing Ads (PLAs) basiert. Die bisherige In-House-Feed-Lösung war instabil und musste abgelöst werden. Kritisch: komplexe, fehleranfällige und inkompatible Drittanbieter-Feeds (Connexity, Shopping24) mussten <strong>fehlerfrei, vollautomatisiert und täglich</strong> ins Microsoft Merchant Center integriert werden. Jeder Formatfehler, jeder „Item Drop" = direkter Umsatzverlust.</p>
+
+            <h2 id="die-umsetzung">Die Umsetzung</h2>
+            <ul>
+              <li><strong>High-Throughput Data Ingestion.</strong> Python-Pipeline auf Basis von Pandas und striktem Type Hinting — ingestiert und bereinigt asynchrone Affiliate-Feeds in extrem abweichenden Formaten (XML, CSV, JSON) in der Masse.</li>
+              <li><strong>Deep Logic Mapping &amp; Transformation.</strong> Striktes Mapping der unstrukturierten Drittanbieter-Daten auf die hochgradig spezifischen Microsoft-Merchant-Center-Spezifikationen. Komplexe Parsing-Logik ergänzt fehlende Attribute algorithmisch und generiert valide SEO-Titel.</li>
+              <li><strong>Fail-Safe Automatisierung.</strong> Ausfallsichere, tägliche Synchronisation. Volatile Daten (Preise, Verfügbarkeiten, dynamische URLs) werden fehlerfrei geupdatet — Disapprovals durch veraltete Daten sind systemseitig ausgeschlossen.</li>
+              <li><strong>Proaktives Error-Handling &amp; Diagnostics.</strong> Tiefe Monitoring-Schicht. Katalogfehler, unerklärliche Item Drops und Policy-Verstöße werden proaktiv abgefangen und in Log-Reports isoliert, <em>bevor</em> sie das Live-Ranking im Merchant Center gefährden.</li>
+              <li><strong>Garantierte Systemstabilität.</strong> Das strenge Abnahmekriterium (mindestens 5 Tage lückenlose, fehlerfreie Automatisierung) wurde auf Anhieb übertroffen — gesichert durch modulare Architektur und Unit Tests.</li>
+            </ul>
+
+            <aside class="not-prose mt-10 mb-10 flex aspect-[16/9] items-center justify-center rounded-2xl border border-stone-800 bg-stone-900/60" aria-label="Infografik-Platzhalter">
+              <div class="text-center">
+                <p class="font-aspekta text-xs font-semibold uppercase tracking-widest text-stone-500">Infografik</p>
+                <p class="mt-2 text-sm text-stone-400">Vorher / Nachher — folgt</p>
+              </div>
+            </aside>
+
+            <h2 id="das-ergebnis">Das Ergebnis</h2>
+            <ul>
+              <li><strong>100 % Feed-Compliance</strong> — keine Disapprovals durch Formatfehler mehr.</li>
+              <li><strong>Zero Errors</strong> in der täglichen Sync — Abnahmekriterium auf Anhieb bestanden.</li>
+              <li><strong>ROI geschützt</strong> — kein Umsatzverlust durch fehlerhafte Feed-Updates.</li>
+              <li><strong>Modular erweiterbar</strong> — neue Drittanbieter-Feeds integrierbar ohne Kern-Umbau.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <section class="border-t border-stone-800/60 py-16">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <h2 class="mb-8 font-aspekta text-2xl font-bold text-white">Weitere Projekte</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+
+        <a href="/de/projekte/aws-cost-optimization/" class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/static/projects/aws-cost-optimization/images/cover.svg" alt="" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-5">
+            <h3 class="font-aspekta text-lg font-bold text-white">AWS Kostenoptimierung</h3>
+            <p class="mt-1 line-clamp-2 text-sm text-stone-400">65 % weniger AWS-Kosten (3.850 $ → 1.330 $ / Monat) durch sicheren Rückbau einer Legacy-Plattform — Zero Downtime.</p>
+          </div>
+        </a>
+
+        <a href="/de/projekte/legacy-data-extraction/" class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/static/projects/legacy-data-extraction/images/cover.svg" alt="" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-5">
+            <h3 class="font-aspekta text-lg font-bold text-white">Legacy-Datenextraktion</h3>
+            <p class="mt-1 line-clamp-2 text-sm text-stone-400">Direkte Datenextraktion aus veralteter Offline-Software (Komatsu LinkOne, CAT SIS) via ODBC-Hijacking und lokaler API-Analyse — ohne Web-Scraping.</p>
+          </div>
+        </a>
+
+        <a href="/de/projekte/book-lister-ai/" class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/static/projects/book-lister-ai/images/cover.svg" alt="" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-5">
+            <h3 class="font-aspekta text-lg font-bold text-white">Book Lister AI</h3>
+            <p class="mt-1 line-clamp-2 text-sm text-stone-400">Desktop-App, die gebrauchte Bücher in unter 30 Sekunden scannt, per Gemini-Vision erfasst, live bepreist und bei eBay listet — +400 % Durchsatz.</p>
+          </div>
+        </a>
+
+      </div>
+      <div class="mt-12 flex justify-center">
+        <a href="/de/projekte/"
+           class="inline-flex items-center gap-2 rounded-full border border-stone-800 bg-stone-900 px-6 py-3 text-sm font-semibold text-stone-200 transition hover:border-orange-500/50 hover:text-amber-300">
+          Alle Case Studies ansehen
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+</article>
+
+  </main>
+
+
+  <footer class="relative border-t border-stone-800/60 mt-10">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="grid gap-10 py-12 md:grid-cols-12">
+
+        <div class="md:col-span-5">
+          <a class="inline-flex items-center gap-3" href="/de/" aria-label="Teske Systemtechnik">
+            <img src="/static/images/logo_whitemode.svg" class="h-12 w-12" alt="">
+            <span class="font-aspekta text-lg font-bold uppercase tracking-[0.2em] text-stone-100">Teske<br>Systemtechnik</span>
+          </a>
+          <p class="mt-4 max-w-sm text-sm text-stone-400">Quality engineered in Germany.</p>
+        </div>
+
+        <div class="md:col-span-3">
+          <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Navigation</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/">Start</a></li>
+            <li data-skeleton-off><a class="text-stone-400 transition hover:text-amber-400" href="/de/about/">Über uns</a></li>
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/projekte/">Projekte</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-2">
+          <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Rechtliches</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/impressum/">Impressum</a></li>
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/datenschutz/">Datenschutz</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-2">
+          <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Folgen Sie mir</h3>
+          <ul class="flex gap-3">
+            <li>
+              <a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white" href="https://pypi.org/user/JanTeske06/" target="_blank" rel="noopener noreferrer" aria-label="PyPI">
+                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12,2L2,7V17L12,22L22,17V7L12,2ZM4,16.06V8.94L11,12.44V19.56L4,16.06ZM12,11.38L5.13,7.94L12,4.5L18.87,7.94L12,11.38ZM20,16.06L13,19.56V12.44L20,8.94V16.06Z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#14a800] hover:bg-[#14a800] hover:text-white" href="https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c" target="_blank" rel="noopener noreferrer" aria-label="Upwork">
+                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-white hover:bg-black hover:text-white" href="https://github.com/JanTeske06" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col items-center justify-between gap-3 border-t border-stone-800/60 py-6 text-xs text-stone-500 md:flex-row">
+        <p>&copy; 2026 Teske Systemtechnik. Alle Rechte vorbehalten.</p>
+        <p class="font-aspekta uppercase tracking-widest">Quality engineered in Germany.</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script src="/static/js/vendors/alpinejs.min.js" defer></script>
+<script src="/static/js/vendors/aos.js"></script>
+<script src="/static/js/vendors/swiper-bundle.min.js"></script>
+<script src="/static/js/main.js"></script>
+
+
+
+</body>
+</html>

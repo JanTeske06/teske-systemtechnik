@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#431407"/>
+      <stop offset="0%" stop-color="#1c1917"/>
       <stop offset="50%" stop-color="#7c2d12"/>
       <stop offset="100%" stop-color="#1c1917"/>
     </linearGradient>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#f97316" stop-opacity="0.3"/>
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.25"/>
       <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
@@ -16,7 +16,7 @@
   <rect width="1600" height="900" fill="url(#bg)"/>
   <rect width="1600" height="900" fill="url(#grid)"/>
   <circle cx="800" cy="450" r="500" fill="url(#glow)"/>
-  <text x="800" y="420" font-family="Aspekta, Inter, sans-serif" font-size="110" font-weight="700" fill="#fafaf9" text-anchor="middle">eBay Automation</text>
-  <text x="800" y="500" font-family="Inter, sans-serif" font-size="38" fill="#fdba74" text-anchor="middle">Python · Selenium · FastAPI · PostgreSQL</text>
-  <text x="800" y="570" font-family="Inter, sans-serif" font-size="28" fill="#a8a29e" text-anchor="middle">Teske Systemtechnik — Case Study</text>
+  <text x="800" y="400" font-family="Aspekta, Inter, sans-serif" font-size="110" font-weight="700" fill="#fafaf9" text-anchor="middle">Book Lister AI</text>
+  <text x="800" y="480" font-family="Inter, sans-serif" font-size="34" fill="#fdba74" text-anchor="middle">Python · OpenCV · Gemini · eBay API</text>
+  <text x="800" y="560" font-family="Inter, sans-serif" font-size="28" fill="#a8a29e" text-anchor="middle">Teske Systemtechnik — Case Study</text>
 </svg>

@@ -90,58 +90,76 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/"/>
   </url>
 
-  <!-- Project: eBay Automation Pipeline -->
+  <!-- Project: AWS Cost Optimization -->
   <url>
-    <loc>https://teske-systemtechnik.de/de/projekte/ebay-automation/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <loc>https://teske-systemtechnik.de/de/projekte/aws-cost-optimization/</loc>
+    <lastmod>2026-04-23</lastmod>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/ebay-automation/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/ebay-automation/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/ebay-automation/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/aws-cost-optimization/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/aws-cost-optimization/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/aws-cost-optimization/"/>
   </url>
   <url>
-    <loc>https://teske-systemtechnik.de/en/projects/ebay-automation/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <loc>https://teske-systemtechnik.de/en/projects/aws-cost-optimization/</loc>
+    <lastmod>2026-04-23</lastmod>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/ebay-automation/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/ebay-automation/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/ebay-automation/"/>
-  </url>
-
-  <!-- Project: eBird Monitoring Tool -->
-  <url>
-    <loc>https://teske-systemtechnik.de/de/projekte/bird-monitoring/</loc>
-    <lastmod>2026-04-10</lastmod>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/bird-monitoring/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/bird-monitoring/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/bird-monitoring/"/>
-  </url>
-  <url>
-    <loc>https://teske-systemtechnik.de/en/projects/bird-monitoring/</loc>
-    <lastmod>2026-04-10</lastmod>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/bird-monitoring/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/bird-monitoring/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/bird-monitoring/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/aws-cost-optimization/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/aws-cost-optimization/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/aws-cost-optimization/"/>
   </url>
 
-  <!-- Project: Python API Recovery -->
+  <!-- Project: Legacy Data Extraction (Komatsu & CAT) -->
   <url>
-    <loc>https://teske-systemtechnik.de/de/projekte/api-recovery/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <loc>https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/</loc>
+    <lastmod>2026-04-23</lastmod>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/api-recovery/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/api-recovery/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/api-recovery/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/legacy-data-extraction/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/"/>
   </url>
   <url>
-    <loc>https://teske-systemtechnik.de/en/projects/api-recovery/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <loc>https://teske-systemtechnik.de/en/projects/legacy-data-extraction/</loc>
+    <lastmod>2026-04-23</lastmod>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/api-recovery/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/api-recovery/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/api-recovery/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/legacy-data-extraction/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/"/>
+  </url>
+
+  <!-- Project: Book Lister AI -->
+  <url>
+    <loc>https://teske-systemtechnik.de/de/projekte/book-lister-ai/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/book-lister-ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/book-lister-ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/book-lister-ai/"/>
+  </url>
+  <url>
+    <loc>https://teske-systemtechnik.de/en/projects/book-lister-ai/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/book-lister-ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/book-lister-ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/book-lister-ai/"/>
+  </url>
+
+  <!-- Project: Microsoft Shopping Feed Pipeline -->
+  <url>
+    <loc>https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/microsoft-shopping-feed/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/"/>
+  </url>
+  <url>
+    <loc>https://teske-systemtechnik.de/en/projects/microsoft-shopping-feed/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/microsoft-shopping-feed/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/"/>
   </url>
 
 </urlset>

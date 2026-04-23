@@ -13,12 +13,14 @@
 
 ## Case studies
 
-- [eBay Automation Pipeline (German)](https://teske-systemtechnik.de/de/projekte/ebay-automation/): Automated listing pipeline for an eBay seller managing 200+ products daily — 95% time saved. Tech: Python, Selenium, FastAPI, PostgreSQL.
-- [eBay Automation Pipeline (English)](https://teske-systemtechnik.de/en/projects/ebay-automation/): Same case study in English.
-- [eBird Bird Monitoring Tool (German)](https://teske-systemtechnik.de/de/projekte/bird-monitoring/): Desktop tool fetching rare bird sightings from the eBird API in a defined region. Tech: Python, eBird API, SQLite, Tkinter.
-- [eBird Bird Monitoring Tool (English)](https://teske-systemtechnik.de/en/projects/bird-monitoring/): Same case study in English.
-- [Python API Recovery (German)](https://teske-systemtechnik.de/de/projekte/api-recovery/): Reverse-engineering a lost API after the vendor was acquired — reconstructed and documented in 5 days. Tech: Python, Wireshark, mitmproxy.
-- [Python API Recovery (English)](https://teske-systemtechnik.de/en/projects/api-recovery/): Same case study in English.
+- [AWS Cost Optimization (German)](https://teske-systemtechnik.de/de/projekte/aws-cost-optimization/): 65% AWS cost reduction ($3,850 → $1,330 / month) via safe legacy decommissioning with zero downtime — log-driven cleanup of zombie ALBs, EKS shutdown, storage lifecycle migration to Glacier. Client: Blender Networks Inc. (advertising agency, Bedford, Canada). Tech: AWS (EC2, ALB, EKS, S3, RDS, VPC), CloudWatch, Cost Explorer, FinOps.
+- [AWS Cost Optimization (English)](https://teske-systemtechnik.de/en/projects/aws-cost-optimization/): Same case study in English.
+- [Legacy Data Extraction (German)](https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/): Direct data extraction from legacy offline software (Komatsu LinkOne, CAT SIS) via ODBC hijacking of Sybase SQL Anywhere and local API reverse engineering — full construction-machinery parts database extracted without web scraping. Client: Eincors (spare parts manufacturer, Turkey). Tech: Python, Reverse Engineering, Wireshark, Fiddler, Sybase SQL Anywhere, ODBC.
+- [Legacy Data Extraction (English)](https://teske-systemtechnik.de/en/projects/legacy-data-extraction/): Same case study in English.
+- [Book Lister AI (German)](https://teske-systemtechnik.de/de/projekte/book-lister-ai/): Windows desktop app that scans used books in under 30 seconds — ArUco-calibrated webcam measures dimensions + scans barcode, Gemini 2.5 Vision extracts title/author/publisher/year, Google Books + eBay Browse API set competitive pricing, eBay Trading API publishes the listing. 400% throughput boost for a used-bookstore. Tech: Python 3.11, OpenCV, customtkinter, Google Vertex AI (Gemini 2.5), eBay APIs, SQLite. ~6,450 LOC production + 260+ pytest tests.
+- [Book Lister AI (English)](https://teske-systemtechnik.de/en/projects/book-lister-ai/): Same case study in English.
+- [Microsoft Shopping Feed Pipeline (German)](https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/): Fully automated daily sync of large affiliate feeds (Connexity, Shopping24) into Microsoft Merchant Center — fail-safe, 100% compliant, zero-error monitoring to protect ad-revenue ROI. Client: Blender Networks Inc. Tech: Python, Pandas, ETL pipelines, complex XML/CSV/JSON parsing, Microsoft Merchant Center feed specifications.
+- [Microsoft Shopping Feed Pipeline (English)](https://teske-systemtechnik.de/en/projects/microsoft-shopping-feed/): Same case study in English.
 
 ## Legal
 
@@ -49,6 +51,7 @@
 - Data pipelines: CSV/unstructured → structured, queryable databases (PostgreSQL, SQLite)
 - Custom tools: CLI utilities, desktop applications, internal dashboards
 - Reverse engineering: Network tracing, API reconstruction, legacy system recovery
+- Cloud cost optimization (FinOps): AWS audits, legacy decommissioning, right-sizing, storage lifecycle — measurable cost reduction with zero production impact
 
 ## Technology stack
 
