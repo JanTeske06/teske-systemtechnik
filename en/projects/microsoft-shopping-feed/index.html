@@ -232,9 +232,9 @@
 
           <template x-teleport="body">
             <nav id="mobile-nav" aria-label="Mobile"
-                 class="fixed top-16 inset-x-0 z-50 overflow-hidden px-4 transition-all duration-300 ease-in-out sm:px-6"
+                 class="fixed top-16 inset-x-0 z-50 overflow-hidden px-4 transition-all duration-300 ease-out sm:px-6"
                  x-ref="mobileNav"
-                 :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: .8'"
+                 :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1; transform: translateY(0)' : 'max-height: 0; opacity: 0; transform: translateY(-8px)'"
                  @click.outside="expanded = false" @keydown.escape.window="expanded = false" x-cloak>
               <ul class="rounded-2xl border border-stone-800 bg-stone-900/90 px-4 py-3 shadow-xl backdrop-blur-xl">
                 <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/en/">Home</a></li>
