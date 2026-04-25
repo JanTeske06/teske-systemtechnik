@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <script>
+    // About-Seite ist temporär deaktiviert — auf 404 weiterleiten.
+    // Zum Wieder-Aktivieren: diesen <script>-Block in /de/about/, /en/about/
+    // und /ru/about/ löschen.
+    location.replace('/404.html');
+  </script>
+  <script>
     // Maintenance guard: if /maintenance.flag exists, redirect to /maintenance.html.
     (function () {
       if (location.pathname.endsWith('/maintenance.html')) return;
@@ -431,9 +437,9 @@
 </div>
 
 <script src="/static/js/vendors/alpinejs.min.js" defer></script>
-<script src="/static/js/vendors/aos.js"></script>
-<script src="/static/js/vendors/swiper-bundle.min.js"></script>
-<script src="/static/js/main.js"></script>
+<script src="/static/js/vendors/aos.js?v=20260425b"></script>
+<script src="/static/js/vendors/swiper-bundle.min.js?v=20260425b"></script>
+<script src="/static/js/main.js?v=20260425b"></script>
 
 </body>
 </html>

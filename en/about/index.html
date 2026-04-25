@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <script>
+    // About page is temporarily disabled — redirect to 404.
+    // To re-enable: remove this <script> block from /de/about/, /en/about/
+    // and /ru/about/.
+    location.replace('/404.html');
+  </script>
+  <script>
     // Maintenance guard: if /maintenance.flag exists, redirect to /maintenance.html.
     // Toggle by creating/deleting that flag file at the repo root (see anleitung.md).
     (function () {
@@ -513,9 +519,9 @@
 </div>
 
 <script src="/static/js/vendors/alpinejs.min.js" defer></script>
-<script src="/static/js/vendors/aos.js"></script>
-<script src="/static/js/vendors/swiper-bundle.min.js"></script>
-<script src="/static/js/main.js"></script>
+<script src="/static/js/vendors/aos.js?v=20260425b"></script>
+<script src="/static/js/vendors/swiper-bundle.min.js?v=20260425b"></script>
+<script src="/static/js/main.js?v=20260425b"></script>
 
 
 

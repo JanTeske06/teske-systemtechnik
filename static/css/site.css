@@ -167,11 +167,12 @@ header a[aria-label="Teske Systemtechnik"] {
   view-transition-name: site-header-brand;
 }
 
-/* Active (orange) language button — slides between DE and EN
- * positions. The non-active (grey) button is not named so it just
- * cross-fades with the content. */
+/* Active (orange) language button — slides between DE, EN and RU
+ * positions. The non-active (grey) buttons are not named so they
+ * just cross-fade with the content. */
 header a[aria-label^="Sprache wechseln"][aria-current="true"],
-header a[aria-label^="Switch language"][aria-current="true"] {
+header a[aria-label^="Switch language"][aria-current="true"],
+header a[aria-label^="Сменить язык"][aria-current="true"] {
   view-transition-name: lang-active-button;
 }
 
