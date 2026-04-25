@@ -1,0 +1,51 @@
+{
+  "_comment": "Central language config. To add a new language: (1) add entry to languages[], (2) add path map per page type under paths.*, (3) add labels.<code>, (4) translate HTML templates into /<code>/, (5) add i18n.<code> fields to every project in projects.json.",
+  "default": "de",
+  "languages": [
+    { "code": "de", "label": "DE", "name": "Deutsch",  "htmlLang": "de", "ogLocale": "de_DE" },
+    { "code": "en", "label": "EN", "name": "English",  "htmlLang": "en", "ogLocale": "en_US" },
+    { "code": "ru", "label": "RU", "name": "Русский",  "htmlLang": "ru", "ogLocale": "ru_RU" }
+  ],
+  "paths": {
+    "home":         { "de": "/de/",             "en": "/en/",               "ru": "/ru/" },
+    "about":        { "de": "/de/about/",       "en": "/en/about/",         "ru": "/ru/about/" },
+    "projectsBase": { "de": "/de/projekte",     "en": "/en/projects",       "ru": "/ru/proekty" },
+    "legal":        { "de": "/de/impressum/",   "en": "/en/legal-notice/",  "ru": "/ru/impressum/" },
+    "privacy":      { "de": "/de/datenschutz/", "en": "/en/privacy-policy/","ru": "/ru/privacy/" }
+  },
+  "labels": {
+    "de": {
+      "viewCase": "Case Study ansehen →",
+      "readCase": "Case Study lesen →",
+      "prev": "Vorheriges Projekt",
+      "next": "Nächstes Projekt",
+      "switchLanguage": "Sprache wechseln",
+      "catalogEmpty": "Aktuell sind keine Projekte verfügbar. Bitte schauen Sie später noch einmal vorbei.",
+      "contactSending": "Wird gesendet…",
+      "contactSuccess": "Erfolgreich gesendet ✓",
+      "contactError": "Fehler — bitte erneut versuchen"
+    },
+    "en": {
+      "viewCase": "View case study →",
+      "readCase": "Read case study →",
+      "prev": "Previous project",
+      "next": "Next project",
+      "switchLanguage": "Switch language",
+      "catalogEmpty": "There are currently no projects to show. Please check back soon.",
+      "contactSending": "Sending…",
+      "contactSuccess": "Sent successfully ✓",
+      "contactError": "Failed — please try again"
+    },
+    "ru": {
+      "viewCase": "Смотреть кейс →",
+      "readCase": "Читать кейс →",
+      "prev": "Предыдущий проект",
+      "next": "Следующий проект",
+      "switchLanguage": "Сменить язык",
+      "catalogEmpty": "На данный момент проектов нет. Пожалуйста, загляните позже.",
+      "contactSending": "Отправка…",
+      "contactSuccess": "Отправлено ✓",
+      "contactError": "Ошибка — попробуйте ещё раз"
+    }
+  }
+}

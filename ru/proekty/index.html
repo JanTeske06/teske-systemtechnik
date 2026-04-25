@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <script>
+    (function () {
+      if (location.pathname.endsWith('/maintenance.html')) return;
+      fetch('/maintenance.flag', { method: 'HEAD', cache: 'no-store' })
+        .then(function (r) { if (r.ok) location.replace('/maintenance.html'); })
+        .catch(function () {});
+    })();
+  </script>
+  <meta name="robots" content="index,follow">
+
+  <title>Проекты · Teske Systemtechnik</title>
+
+  <meta name="description" content="Выборка моих работ — от небольших скриптов автоматизации до полных пайплайнов данных.">
+
+  <link rel="canonical" href="https://teske-systemtechnik.de/ru/proekty/">
+
+  <link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/">
+  <link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/">
+  <link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/proekty/">
+  <link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/">
+
+  <link rel="icon" type="image/svg+xml" href="/static/images/logo_favicon.svg">
+
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-650.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/static/css/vendors/aos.css">
+  <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
+
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/css/site.css">
+
+  <meta property="og:site_name" content="Teske Systemtechnik">
+  <meta property="og:title" content="Проекты — Teske Systemtechnik">
+  <meta property="og:description" content="Выборка моих работ — от небольших скриптов автоматизации до полных пайплайнов данных.">
+  <meta property="og:url" content="https://teske-systemtechnik.de/ru/proekty/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://teske-systemtechnik.de/static/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Teske Systemtechnik — Python-автоматизация, разработка API, индивидуальное ПО">
+  <meta name="twitter:image" content="https://teske-systemtechnik.de/static/images/og-default.png">
+  <meta name="twitter:image:alt" content="Teske Systemtechnik — Python-автоматизация, разработка API, индивидуальное ПО">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://teske-systemtechnik.de/#organization",
+      "name": "Teske Systemtechnik",
+      "alternateName": "Teske Systemtechnik Inhaber: Jan Teske",
+      "url": "https://teske-systemtechnik.de",
+      "logo": "https://teske-systemtechnik.de/static/images/logo_favicon.svg",
+      "image": "https://teske-systemtechnik.de/static/images/og-default.png",
+      "description": "Freelance Python automation, API development and custom software engineering from Germany.",
+      "founder": { "@id": "https://teske-systemtechnik.de/#jan-teske" },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Elschers Kamp 13",
+        "addressLocality": "Melle",
+        "postalCode": "49324",
+        "addressCountry": "DE"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "jt@teske-systemtechnik.de",
+        "telephone": "+49-1522-5166058",
+        "availableLanguage": ["de", "en"]
+      },
+      "vatID": "DE459634758",
+      "sameAs": [
+        "https://github.com/JanTeske06",
+        "https://pypi.org/user/JanTeske06/",
+        "https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c"
+      ],
+      "knowsAbout": [
+        "Python", "API Development", "Workflow Automation", "Data Pipelines",
+        "Web Scraping", "FastAPI", "Reverse Engineering", "Software Engineering",
+        "AWS Cloud Cost Optimization", "FinOps", "Legacy System Decommissioning"
+      ],
+      "areaServed": "Worldwide"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://teske-systemtechnik.de/#website-ru",
+      "url": "https://teske-systemtechnik.de/ru/",
+      "name": "Teske Systemtechnik",
+      "inLanguage": "ru",
+      "publisher": { "@id": "https://teske-systemtechnik.de/#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://teske-systemtechnik.de/ru/" },
+        { "@type": "ListItem", "position": 2, "name": "Проекты" }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://teske-systemtechnik.de/ru/proekty/#itemlist",
+      "name": "Проекты",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "url": "https://teske-systemtechnik.de/ru/proekty/aws-cost-optimization/", "name": "Оптимизация расходов AWS" },
+        { "@type": "ListItem", "position": 2, "url": "https://teske-systemtechnik.de/ru/proekty/legacy-data-extraction/", "name": "Извлечение данных из legacy-систем" },
+        { "@type": "ListItem", "position": 3, "url": "https://teske-systemtechnik.de/ru/proekty/book-lister-ai/", "name": "Book Lister AI" },
+        { "@type": "ListItem", "position": 4, "url": "https://teske-systemtechnik.de/ru/proekty/microsoft-shopping-feed/", "name": "Microsoft Shopping Feed Pipeline" }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
+
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-orange-500 focus:px-4 focus:py-2 focus:text-white">
+  Перейти к содержимому
+</a>
+
+<div class="flex min-h-screen flex-col">
+
+  <header class="absolute z-30 w-full">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="flex h-16 items-center justify-between md:h-20">
+
+        <div class="mr-4 shrink-0">
+          <a class="inline-flex items-center gap-3" href="/ru/" aria-label="Teske Systemtechnik">
+            <img class="max-w-none" src="/static/images/logo_whitemode.svg" width="40" height="40" alt="">
+            <span class="font-aspekta text-[17px] font-bold uppercase tracking-[0.1em] text-stone-100 leading-[20px]">Teske<br>Systemtechnik</span>
+          </a>
+        </div>
+
+        <nav class="hidden md:flex md:grow" aria-label="Primary">
+          <ul class="flex grow flex-wrap items-center justify-end gap-1">
+            <li>
+              <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
+                 href="/ru/">
+                Главная
+              </a>
+            </li>
+            <li data-skeleton-off>
+              <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
+                 href="/ru/about/">
+                Обо мне
+              </a>
+            </li>
+            <li>
+              <a class="text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
+                 href="/ru/proekty/"
+                 aria-current="page">
+                Проекты
+              </a>
+            </li>
+
+            <li class="ml-2 flex items-center gap-1 rounded-full border border-stone-800 bg-stone-900/60 p-1">
+              <a class="text-stone-400 hover:text-white rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition"
+                 href="/de/projekte/" aria-label="Сменить язык: DE">DE</a>
+              <a class="text-stone-400 hover:text-white rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition"
+                 href="/en/projects/" aria-label="Сменить язык: EN">EN</a>
+              <a class="bg-orange-500 text-white shadow rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition"
+                 href="#" aria-current="true" aria-label="Сменить язык: RU">RU</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="ml-4 flex items-center md:hidden" x-data="{ expanded: false }">
+          <button
+            class="group inline-flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900/60 text-stone-300 transition hover:text-white"
+            aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded">
+            <span class="sr-only">Меню</span>
+            <svg class="pointer-events-none h-4 w-4 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <rect class="origin-center -translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]" y="7" width="16" height="2" rx="1"></rect>
+              <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45" y="7" width="16" height="2" rx="1"></rect>
+              <rect class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]" y="7" width="16" height="2" rx="1"></rect>
+            </svg>
+          </button>
+
+          <template x-teleport="body">
+            <nav id="mobile-nav" aria-label="Mobile"
+                 class="fixed top-16 inset-x-0 z-50 overflow-hidden px-4 transition-all duration-300 ease-out sm:px-6"
+                 x-ref="mobileNav"
+                 :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1; transform: translateY(0)' : 'max-height: 0; opacity: 0; transform: translateY(-8px)'"
+                 @click.outside="expanded = false" @keydown.escape.window="expanded = false" x-cloak>
+              <ul class="rounded-2xl border border-stone-800 bg-stone-900/90 px-4 py-3 shadow-xl backdrop-blur-xl">
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/ru/">Главная</a></li>
+                <li data-skeleton-off><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/ru/about/">Обо мне</a></li>
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/ru/proekty/">Проекты</a></li>
+                <li class="mt-2 flex items-center gap-2 border-t border-stone-800 pt-3">
+                  <span class="text-xs uppercase tracking-wider text-stone-500">Сменить язык:</span>
+                  <a class="text-stone-400 hover:text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition"
+                     href="/de/projekte/">DE</a>
+                  <a class="text-stone-400 hover:text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition"
+                     href="/en/projects/">EN</a>
+                  <a class="bg-orange-500 text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition"
+                     href="#">RU</a>
+                </li>
+              </ul>
+            </nav>
+          </template>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <main id="main-content" class="grow">
+
+<section class="relative pt-32 pb-16 md:pt-40">
+
+  <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
+    <div data-aos="fade-up">
+      <p class="mb-6 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+        <span class="h-px w-8 bg-amber-400" aria-hidden="true"></span>
+        Проекты
+      </p>
+      <h1 class="font-aspekta text-5xl font-bold leading-tight text-white md:text-6xl">Проекты</h1>
+      <p class="mt-4 max-w-xl text-lg text-stone-300">Выборка моих работ — от небольших скриптов автоматизации до полных пайплайнов данных.</p>
+    </div>
+
+    <div id="project-catalog" class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3 project-catalog-mount"
+         data-aos="fade-up" data-aos-delay="150">
+      <!-- Карточки рендерятся из /static/data/projects.json через /static/js/catalog.js. -->
+    </div>
+
+    <noscript>
+      <div class="mt-16 rounded-2xl border border-stone-800 bg-stone-900/60 p-10 text-center">
+        <p class="text-stone-400">JavaScript отключён. Сетка проектов генерируется динамически при загрузке.</p>
+        <p class="mt-3 text-sm text-stone-500">Отдельные кейсы доступны по ссылкам ниже:</p>
+        <ul class="mt-4 flex flex-col gap-2 text-sm">
+          <li><a class="text-amber-400 underline" href="/ru/proekty/aws-cost-optimization/">Оптимизация расходов AWS</a></li>
+          <li><a class="text-amber-400 underline" href="/ru/proekty/legacy-data-extraction/">Извлечение данных из legacy-систем</a></li>
+          <li><a class="text-amber-400 underline" href="/ru/proekty/book-lister-ai/">Book Lister AI</a></li>
+          <li><a class="text-amber-400 underline" href="/ru/proekty/microsoft-shopping-feed/">Microsoft Shopping Feed Pipeline</a></li>
+        </ul>
+      </div>
+    </noscript>
+
+    <div class="mt-16 flex justify-center" data-aos="fade-up">
+      <a href="/ru/"
+         class="inline-flex items-center gap-2 rounded-full border border-stone-800 bg-stone-900 px-6 py-3 text-sm font-semibold text-stone-200 transition hover:border-orange-500/50 hover:text-amber-300">
+        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd"/></svg>
+        На главную
+      </a>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="relative border-t border-stone-800/60 mt-10">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="grid gap-10 py-12 md:grid-cols-12">
+
+        <div class="md:col-span-5">
+          <a class="inline-flex items-center gap-3" href="/ru/" aria-label="Teske Systemtechnik">
+            <img src="/static/images/logo_whitemode.svg" class="h-12 w-12" alt="">
+            <span class="font-aspekta text-lg font-bold uppercase tracking-[0.2em] text-stone-100">Teske<br>Systemtechnik</span>
+          </a>
+          <p class="mt-4 max-w-sm text-sm text-stone-400">Quality engineered in Germany.</p>
+        </div>
+
+        <div class="md:col-span-3">
+          <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Навигация</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/ru/">Главная</a></li>
+            <li data-skeleton-off><a class="text-stone-400 transition hover:text-amber-400" href="/ru/about/">Обо мне</a></li>
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/ru/proekty/">Проекты</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-2">
+          <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Правовая информация</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/ru/impressum/">Выходные данные</a></li>
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/ru/privacy/">Конфиденциальность</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-2">
+          <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Подписаться</h3>
+          <ul class="flex gap-3">
+            <li>
+              <a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white"
+                 href="https://pypi.org/user/JanTeske06/" target="_blank" rel="noopener noreferrer" aria-label="PyPI">
+                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12,2L2,7V17L12,22L22,17V7L12,2ZM4,16.06V8.94L11,12.44V19.56L4,16.06ZM12,11.38L5.13,7.94L12,4.5L18.87,7.94L12,11.38ZM20,16.06L13,19.56V12.44L20,8.94V16.06Z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#14a800] hover:bg-[#14a800] hover:text-white"
+                 href="https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c" target="_blank" rel="noopener noreferrer" aria-label="Upwork">
+                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-white hover:bg-black hover:text-white"
+                 href="https://github.com/JanTeske06" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col items-center justify-between gap-3 border-t border-stone-800/60 py-6 text-xs text-stone-500 md:flex-row">
+        <p>&copy; 2026 Teske Systemtechnik. Все права защищены.</p>
+        <p class="font-aspekta uppercase tracking-widest">Quality engineered in Germany.</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script src="/static/js/vendors/alpinejs.min.js" defer></script>
+<script src="/static/js/vendors/aos.js"></script>
+<script src="/static/js/vendors/swiper-bundle.min.js"></script>
+<script src="/static/js/main.js"></script>
+
+<!-- Каталог проектов рендерится из /static/data/projects.json -->
+<script src="/static/js/projects-data.js"></script>
+<script src="/static/js/catalog.js"></script>
+
+</body>
+</html>
