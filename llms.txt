@@ -1,33 +1,42 @@
 # Teske Systemtechnik
 
-> Freelance Python automation, API development, and custom software engineering business based in Melle, Germany. Operated by Jan Teske. Specializes in workflow automation, data pipelines, web scraping, API development (FastAPI/Flask), and reverse engineering. Clients worldwide, bilingual German/English service.
+> Freelance Python automation, API development, and custom software engineering business based in Melle, Germany. Operated by Jan Teske. Specializes in workflow automation, data pipelines, web scraping, API development (FastAPI/Flask), and reverse engineering. Clients worldwide. Trilingual service: German (native), English (fluent), Russian.
 
 ## Core pages
 
 - [Homepage (German)](https://teske-systemtechnik.de/de/): Primary business landing page in German
 - [Homepage (English)](https://teske-systemtechnik.de/en/): Primary business landing page in English
+- [Homepage (Russian)](https://teske-systemtechnik.de/ru/): Primary business landing page in Russian
 - [About Jan Teske (German)](https://teske-systemtechnik.de/de/about/): Founder biography and service overview
 - [About Jan Teske (English)](https://teske-systemtechnik.de/en/about/): Founder biography and service overview
+- [About Jan Teske (Russian)](https://teske-systemtechnik.de/ru/about/): Founder biography and service overview
 - [Project catalog (German)](https://teske-systemtechnik.de/de/projekte/): List of selected project case studies
 - [Project catalog (English)](https://teske-systemtechnik.de/en/projects/): List of selected project case studies
+- [Project catalog (Russian)](https://teske-systemtechnik.de/ru/proekty/): List of selected project case studies
 
 ## Case studies
 
 - [AWS Cost Optimization (German)](https://teske-systemtechnik.de/de/projekte/aws-cost-optimization/): 65% AWS cost reduction ($3,850 → $1,330 / month) via safe legacy decommissioning with zero downtime — log-driven cleanup of zombie ALBs, EKS shutdown, storage lifecycle migration to Glacier. Client: Blender Networks Inc. (advertising agency, Bedford, Canada). Tech: AWS (EC2, ALB, EKS, S3, RDS, VPC), CloudWatch, Cost Explorer, FinOps.
 - [AWS Cost Optimization (English)](https://teske-systemtechnik.de/en/projects/aws-cost-optimization/): Same case study in English.
+- [AWS Cost Optimization (Russian)](https://teske-systemtechnik.de/ru/proekty/aws-cost-optimization/): Same case study in Russian.
 - [Legacy Data Extraction (German)](https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/): Direct data extraction from legacy offline software (Komatsu LinkOne, CAT SIS) via ODBC hijacking of Sybase SQL Anywhere and local API reverse engineering — full construction-machinery parts database extracted without web scraping. Client: Eincors (spare parts manufacturer, Turkey). Tech: Python, Reverse Engineering, Wireshark, Fiddler, Sybase SQL Anywhere, ODBC.
 - [Legacy Data Extraction (English)](https://teske-systemtechnik.de/en/projects/legacy-data-extraction/): Same case study in English.
+- [Legacy Data Extraction (Russian)](https://teske-systemtechnik.de/ru/proekty/legacy-data-extraction/): Same case study in Russian.
 - [Book Lister AI (German)](https://teske-systemtechnik.de/de/projekte/book-lister-ai/): Windows desktop app that scans used books in under 30 seconds — ArUco-calibrated webcam measures dimensions + scans barcode, Gemini 2.5 Vision extracts title/author/publisher/year, Google Books + eBay Browse API set competitive pricing, eBay Trading API publishes the listing. 400% throughput boost for a used-bookstore. Tech: Python 3.11, OpenCV, customtkinter, Google Vertex AI (Gemini 2.5), eBay APIs, SQLite. ~6,450 LOC production + 260+ pytest tests.
 - [Book Lister AI (English)](https://teske-systemtechnik.de/en/projects/book-lister-ai/): Same case study in English.
+- [Book Lister AI (Russian)](https://teske-systemtechnik.de/ru/proekty/book-lister-ai/): Same case study in Russian.
 - [Microsoft Shopping Feed Pipeline (German)](https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/): Fully automated daily sync of large affiliate feeds (Connexity, Shopping24) into Microsoft Merchant Center — fail-safe, 100% compliant, zero-error monitoring to protect ad-revenue ROI. Client: Blender Networks Inc. Tech: Python, Pandas, ETL pipelines, complex XML/CSV/JSON parsing, Microsoft Merchant Center feed specifications.
 - [Microsoft Shopping Feed Pipeline (English)](https://teske-systemtechnik.de/en/projects/microsoft-shopping-feed/): Same case study in English.
+- [Microsoft Shopping Feed Pipeline (Russian)](https://teske-systemtechnik.de/ru/proekty/microsoft-shopping-feed/): Same case study in Russian.
 
 ## Legal
 
-- [Impressum (German)](https://teske-systemtechnik.de/de/impressum/): Legal notice per § 5 TMG
-- [Legal Notice (English)](https://teske-systemtechnik.de/en/legal-notice/): Same in English
-- [Datenschutzerklärung (German)](https://teske-systemtechnik.de/de/datenschutz/): Privacy policy (GDPR)
-- [Privacy Policy (English)](https://teske-systemtechnik.de/en/privacy-policy/): Same in English
+- [Impressum (German)](https://teske-systemtechnik.de/de/impressum/): Legal notice per § 5 TMG (legally binding)
+- [Legal Notice (English)](https://teske-systemtechnik.de/en/legal-notice/): English convenience translation
+- [Выходные данные (Russian)](https://teske-systemtechnik.de/ru/impressum/): Russian convenience translation
+- [Datenschutzerklärung (German)](https://teske-systemtechnik.de/de/datenschutz/): Privacy policy (GDPR, legally binding)
+- [Privacy Policy (English)](https://teske-systemtechnik.de/en/privacy-policy/): English convenience translation
+- [Политика конфиденциальности (Russian)](https://teske-systemtechnik.de/ru/privacy/): Russian convenience translation
 
 ## Key facts
 
@@ -39,7 +48,7 @@
 - Email: jt@teske-systemtechnik.de
 - Phone: +49 1522 5166058
 - Service area: Worldwide, remote-first
-- Languages: German (native), English (fluent)
+- Languages: German (native), English (fluent), Russian
 - GitHub: https://github.com/JanTeske06
 - PyPI: https://pypi.org/user/JanTeske06/
 - Upwork: https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c

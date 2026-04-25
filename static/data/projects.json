@@ -1,6 +1,6 @@
 {
   "$schema": "./projects.schema.json",
-  "_comment": "Quelle der Wahrheit für alle Projekte. Showcase-Carousel auf der Homepage und Projekt-Katalog werden automatisch aus dieser Datei gerendert. Um ein neues Projekt hinzuzufügen: (1) neuen Eintrag hier einfügen, (2) /de/projekte/<slug>/index.html und /en/projects/<slug>/index.html erstellen (Vorlage: aws-cost-optimization), (3) Cover-Bild nach /static/projects/<slug>/images/ kopieren.",
+  "_comment": "Quelle der Wahrheit für alle Projekte. Showcase-Carousel auf der Homepage und Projekt-Katalog werden automatisch aus dieser Datei gerendert. Um ein neues Projekt hinzuzufügen: (1) neuen Eintrag hier einfügen, (2) Case-Study-Seite für jede Sprache erstellen (Pfade siehe i18n.json → paths.projectsBase), (3) Cover-Bild nach /static/projects/<slug>/images/ kopieren. Um eine neue Sprache hinzuzufügen: (1) Sprache in i18n.json registrieren, (2) i18n.<code> Block in jedem Projekt hier ergänzen.",
   "projects": [
     {
       "slug": "aws-cost-optimization",
@@ -10,13 +10,19 @@
       "date": "2026-03-23",
       "cover": "/static/projects/aws-cost-optimization/images/cover.svg",
       "tech": ["AWS", "EKS", "CloudWatch", "S3 Glacier", "FinOps"],
-      "de": {
-        "title": "AWS Kostenoptimierung",
-        "summary": "65 % weniger AWS-Kosten (3.850 $ → 1.330 $ / Monat) durch sicheren Rückbau einer Legacy-Plattform — Zero Downtime."
-      },
-      "en": {
-        "title": "AWS Cost Optimization",
-        "summary": "65 % AWS cost reduction ($3,850 → $1,330 / month) via safe legacy decommissioning — zero downtime."
+      "i18n": {
+        "de": {
+          "title": "AWS Kostenoptimierung",
+          "summary": "65 % weniger AWS-Kosten (3.850 $ → 1.330 $ / Monat) durch sicheren Rückbau einer Legacy-Plattform — Zero Downtime."
+        },
+        "en": {
+          "title": "AWS Cost Optimization",
+          "summary": "65 % AWS cost reduction ($3,850 → $1,330 / month) via safe legacy decommissioning — zero downtime."
+        },
+        "ru": {
+          "title": "Оптимизация расходов AWS",
+          "summary": "Снижение расходов на AWS на 65 % (с $3 850 до $1 330 в месяц) за счёт безопасного вывода legacy-платформы из эксплуатации — без простоев."
+        }
       }
     },
     {
@@ -27,13 +33,19 @@
       "date": "2026-03-31",
       "cover": "/static/projects/legacy-data-extraction/images/cover.svg",
       "tech": ["Python", "Reverse Engineering", "Wireshark", "SQL Anywhere", "ODBC"],
-      "de": {
-        "title": "Legacy-Datenextraktion",
-        "summary": "Direkte Datenextraktion aus veralteter Offline-Software (Komatsu LinkOne, CAT SIS) via ODBC-Hijacking und lokaler API-Analyse — ohne Web-Scraping."
-      },
-      "en": {
-        "title": "Legacy Data Extraction",
-        "summary": "Direct data extraction from legacy offline software (Komatsu LinkOne, CAT SIS) via ODBC hijacking and local API analysis — no web scraping."
+      "i18n": {
+        "de": {
+          "title": "Legacy-Datenextraktion",
+          "summary": "Direkte Datenextraktion aus veralteter Offline-Software (Komatsu LinkOne, CAT SIS) via ODBC-Hijacking und lokaler API-Analyse — ohne Web-Scraping."
+        },
+        "en": {
+          "title": "Legacy Data Extraction",
+          "summary": "Direct data extraction from legacy offline software (Komatsu LinkOne, CAT SIS) via ODBC hijacking and local API analysis — no web scraping."
+        },
+        "ru": {
+          "title": "Извлечение данных из legacy-систем",
+          "summary": "Прямое извлечение данных из устаревшего офлайн-ПО (Komatsu LinkOne, CAT SIS) через ODBC-перехват и анализ локальных API — без веб-скрейпинга."
+        }
       }
     },
     {
@@ -44,13 +56,19 @@
       "date": "2026-04-15",
       "cover": "/static/projects/book-lister-ai/images/cover.svg",
       "tech": ["Python", "OpenCV", "Gemini", "eBay API", "SQLite"],
-      "de": {
-        "title": "Book Lister AI",
-        "summary": "Desktop-App, die gebrauchte Bücher in unter 30 Sekunden scannt, per Gemini-Vision erfasst, live bepreist und bei eBay listet — +400 % Durchsatz."
-      },
-      "en": {
-        "title": "Book Lister AI",
-        "summary": "Desktop app that scans used books in under 30 seconds, extracts data via Gemini vision, live-prices, and lists on eBay — +400 % throughput."
+      "i18n": {
+        "de": {
+          "title": "Book Lister AI",
+          "summary": "Desktop-App, die gebrauchte Bücher in unter 30 Sekunden scannt, per Gemini-Vision erfasst, live bepreist und bei eBay listet — +400 % Durchsatz."
+        },
+        "en": {
+          "title": "Book Lister AI",
+          "summary": "Desktop app that scans used books in under 30 seconds, extracts data via Gemini vision, live-prices, and lists on eBay — +400 % throughput."
+        },
+        "ru": {
+          "title": "Book Lister AI",
+          "summary": "Настольное приложение: сканирует подержанные книги меньше чем за 30 секунд, распознаёт через Gemini Vision, устанавливает цену в реальном времени и публикует на eBay — +400 % к производительности."
+        }
       }
     },
     {
@@ -61,13 +79,19 @@
       "date": "2026-04-10",
       "cover": "/static/projects/microsoft-shopping-feed/images/cover.svg",
       "tech": ["Python", "Pandas", "Microsoft Merchant Center", "ETL", "Feed Engineering"],
-      "de": {
-        "title": "Microsoft Shopping Feed Pipeline",
-        "summary": "Vollautomatisierte Tages-Sync großer Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — ausfallsicher, 100 % Compliance."
-      },
-      "en": {
-        "title": "Microsoft Shopping Feed Pipeline",
-        "summary": "Fully automated daily sync of large affiliate feeds (Connexity, Shopping24) into Microsoft Merchant Center — fail-safe, 100 % compliant."
+      "i18n": {
+        "de": {
+          "title": "Microsoft Shopping Feed Pipeline",
+          "summary": "Vollautomatisierte Tages-Sync großer Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — ausfallsicher, 100 % Compliance."
+        },
+        "en": {
+          "title": "Microsoft Shopping Feed Pipeline",
+          "summary": "Fully automated daily sync of large affiliate feeds (Connexity, Shopping24) into Microsoft Merchant Center — fail-safe, 100 % compliant."
+        },
+        "ru": {
+          "title": "Microsoft Shopping Feed Pipeline",
+          "summary": "Полностью автоматизированная ежедневная синхронизация крупных партнёрских фидов (Connexity, Shopping24) в Microsoft Merchant Center — отказоустойчивость и 100 % соответствие требованиям."
+        }
       }
     }
   ]

@@ -1,15 +1,11 @@
 /* ------------------------------------------------------------------
  * catalog.js — populates the project catalog grid
  * (<div id="project-catalog">) with one card per project, rendered
- * from /static/data/projects.json. Depends on projects-data.js.
+ * from /static/data/projects.json. Depends on projects-data.js and
+ * i18n.json.
  * ------------------------------------------------------------------ */
 (function () {
   'use strict';
-
-  const LABELS = {
-    de: { readCase: 'Case Study lesen →' },
-    en: { readCase: 'Read case study →' },
-  };
 
   // Catalog cards show up to 3 tech tags (the showcase shows all).
   const MAX_TECH_TAGS = 3;
@@ -54,7 +50,7 @@
       summary +
       '</p>' +
       '<span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-amber-400 transition group-hover:text-amber-200">' +
-      helpers.escapeHtml(LABELS[lang].readCase) +
+      helpers.escapeHtml(helpers.label('readCase', lang)) +
       '</span>' +
       '</div>' +
       '</a>'
@@ -62,13 +58,11 @@
   }
 
   function renderEmpty(lang) {
-    const msg =
-      lang === 'de'
-        ? 'Aktuell sind keine Projekte verfügbar. Bitte schauen Sie später noch einmal vorbei.'
-        : 'There are currently no projects to show. Please check back soon.';
+    const helpers = window.TeskeProjects;
+    const msg = helpers.label('catalogEmpty', lang);
     return (
       '<div class="col-span-full rounded-3xl border border-stone-800 bg-stone-900/60 p-10 text-center text-stone-400">' +
-      window.TeskeProjects.escapeHtml(msg) +
+      helpers.escapeHtml(msg) +
       '</div>'
     );
   }
@@ -77,10 +71,9 @@
     const grid = document.getElementById('project-catalog');
     if (!grid || !window.TeskeProjects) return;
 
-    const lang = window.TeskeProjects.detectLang();
-
-    window.TeskeProjects.loadProjects().then(function (projects) {
-      const sorted = projects.slice().sort(function (a, b) {
+    window.TeskeProjects.loadContext().then(function (ctx) {
+      const lang = ctx.lang;
+      const sorted = ctx.projects.slice().sort(function (a, b) {
         return (a.catalog_order || 9999) - (b.catalog_order || 9999);
       });
 
@@ -90,9 +83,7 @@
       }
 
       grid.innerHTML = sorted
-        .map(function (p) {
-          return renderCard(p, lang);
-        })
+        .map(function (p) { return renderCard(p, lang); })
         .join('');
       grid.classList.add('project-dyn-loaded');
     });

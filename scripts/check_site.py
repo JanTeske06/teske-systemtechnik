@@ -107,10 +107,28 @@ def check_projects_json() -> None:
     if "projects" not in data:
         fail("projects.json missing 'projects' key")
         return
+    # Load i18n config so we know which languages a project must cover.
+    required_langs = ["de", "en"]
+    i18n_path = ROOT / "static/data/i18n.json"
+    if i18n_path.exists():
+        try:
+            i18n = json.loads(i18n_path.read_text(encoding="utf-8"))
+            required_langs = [lg["code"] for lg in i18n.get("languages", [])] or required_langs
+        except json.JSONDecodeError as e:
+            fail(f"i18n.json invalid JSON: {e}")
+
     for i, proj in enumerate(data["projects"]):
-        for req in ("slug", "de", "en", "tech", "date", "cover"):
+        for req in ("slug", "i18n", "tech", "date", "cover"):
             if req not in proj:
                 fail(f"projects[{i}] missing key '{req}'")
+        i18n_block = proj.get("i18n", {})
+        for code in required_langs:
+            if code not in i18n_block:
+                fail(f"projects[{i}] ({proj.get('slug', '?')}) missing i18n.{code}")
+            else:
+                for field in ("title", "summary"):
+                    if field not in i18n_block[code]:
+                        fail(f"projects[{i}] ({proj.get('slug', '?')}) missing i18n.{code}.{field}")
 
 
 # -------- Check 4: Internal link resolution --------

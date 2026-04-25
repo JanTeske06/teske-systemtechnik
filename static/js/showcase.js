@@ -1,24 +1,11 @@
 /* ------------------------------------------------------------------
  * showcase.js — populates the homepage <div class="project-showcase">
  * with a Swiper fade-carousel of projects flagged `featured: true`.
- * Depends on projects-data.js and the Swiper global from
- * /static/js/vendors/swiper-bundle.min.js
+ * Depends on projects-data.js, i18n.json, projects.json and the Swiper
+ * global from /static/js/vendors/swiper-bundle.min.js.
  * ------------------------------------------------------------------ */
 (function () {
   'use strict';
-
-  const LABELS = {
-    de: {
-      viewCase: 'Case Study ansehen →',
-      prev: 'Vorheriges Projekt',
-      next: 'Nächstes Projekt',
-    },
-    en: {
-      viewCase: 'View case study →',
-      prev: 'Previous project',
-      next: 'Next project',
-    },
-  };
 
   // Showcase cards show up to 3 tech tags to keep the header row compact.
   const MAX_TECH_TAGS = 3;
@@ -64,7 +51,7 @@
       summary +
       '</p>' +
       '<span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-amber-400 transition group-hover:text-amber-200">' +
-      helpers.escapeHtml(LABELS[lang].viewCase) +
+      helpers.escapeHtml(helpers.label('viewCase', lang)) +
       '</span>' +
       '</div>' +
       '</a>' +
@@ -77,6 +64,7 @@
       console.warn('[teske] Swiper is not loaded; skipping carousel init.');
       return;
     }
+    const helpers = window.TeskeProjects;
     // Loop mode needs >=2 slides, otherwise Swiper warns.
     const canLoop = slideCount > 1;
     new Swiper('.project-showcase', {
@@ -101,8 +89,8 @@
       },
       keyboard: { enabled: true, onlyInViewport: true },
       a11y: {
-        prevSlideMessage: LABELS[lang].prev,
-        nextSlideMessage: LABELS[lang].next,
+        prevSlideMessage: helpers.label('prev', lang),
+        nextSlideMessage: helpers.label('next', lang),
       },
     });
   }
@@ -116,13 +104,10 @@
     const wrapper = document.querySelector('.project-showcase .swiper-wrapper');
     if (!wrapper || !window.TeskeProjects) return;
 
-    const lang = window.TeskeProjects.detectLang();
-
-    window.TeskeProjects.loadProjects().then(function (projects) {
-      const featured = projects
-        .filter(function (p) {
-          return p && p.featured;
-        })
+    window.TeskeProjects.loadContext().then(function (ctx) {
+      const lang = ctx.lang;
+      const featured = ctx.projects
+        .filter(function (p) { return p && p.featured; })
         .sort(function (a, b) {
           return (a.showcase_order || 9999) - (b.showcase_order || 9999);
         });
@@ -133,9 +118,7 @@
       }
 
       wrapper.innerHTML = featured
-        .map(function (p) {
-          return renderSlide(p, lang);
-        })
+        .map(function (p) { return renderSlide(p, lang); })
         .join('');
       wrapper.parentElement.classList.add('project-dyn-loaded');
 
