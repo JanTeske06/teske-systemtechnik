@@ -31,34 +31,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/"/>
   </url>
 
-  <!-- About -->
-  <url>
-    <loc>https://teske-systemtechnik.de/de/about/</loc>
-    <lastmod>2026-04-25</lastmod>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/about/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/about/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/about/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/about/"/>
-  </url>
-  <url>
-    <loc>https://teske-systemtechnik.de/en/about/</loc>
-    <lastmod>2026-04-25</lastmod>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/about/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/about/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/about/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/about/"/>
-  </url>
-  <url>
-    <loc>https://teske-systemtechnik.de/ru/about/</loc>
-    <lastmod>2026-04-25</lastmod>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/about/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/about/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/about/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/about/"/>
-  </url>
+  <!-- About — temporarily disabled, redirects to /404.html.
+       Re-add /de/about/, /en/about/, /ru/about/ blocks here when re-enabled. -->
 
   <!-- Legal pages -->
   <url>
