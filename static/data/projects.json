@@ -30,21 +30,21 @@
       "featured": true,
       "showcase_order": 2,
       "catalog_order": 2,
-      "date": "2026-03-31",
+      "date": "2026-02-28",
       "cover": "/static/projects/legacy-data-extraction/images/cover.svg",
-      "tech": ["Python", "Reverse Engineering", "Wireshark", "SQL Anywhere", "ODBC"],
+      "tech": ["Python", "pyodbc", "MS Access", "SQLite", "DjVuLibre", "PyMuPDF", "ETL"],
       "i18n": {
         "de": {
-          "title": "Legacy-Datenextraktion",
-          "summary": "Direkte Datenextraktion aus veralteter Offline-Software (Komatsu LinkOne, CAT SIS) via ODBC-Hijacking und lokaler API-Analyse — ohne Web-Scraping."
+          "title": "Legacy-DB Reverse Engineering & Migration",
+          "summary": "1,47 Mio. Bauteile aus einer 1,2 GB passwortgeschützten Hersteller-Datenbank befreit und ins neue System migriert — inkl. 82.076 konvertierter Schaltbilder, null Regelverstöße, vollständig auditierbar."
         },
         "en": {
-          "title": "Legacy Data Extraction",
-          "summary": "Direct data extraction from legacy offline software (Komatsu LinkOne, CAT SIS) via ODBC hijacking and local API analysis — no web scraping."
+          "title": "Legacy-DB Reverse Engineering & Migration",
+          "summary": "1.47 million parts liberated from a 1.2 GB password-protected manufacturer database and migrated into the client's new system — including 82,076 converted drawings, zero rule violations, fully auditable."
         },
         "ru": {
-          "title": "Извлечение данных из legacy-систем",
-          "summary": "Прямое извлечение данных из устаревшего офлайн-ПО (Komatsu LinkOne, CAT SIS) через ODBC-перехват и анализ локальных API — без веб-скрейпинга."
+          "title": "Реверс-инжиниринг и миграция legacy-БД",
+          "summary": "1,47 млн деталей извлечены из защищённой паролем БД производителя объёмом 1,2 ГБ и перенесены в новую систему клиента — включая 82 076 конвертированных схем, ноль нарушений, полностью аудируемо."
         }
       }
     },
@@ -78,19 +78,42 @@
       "catalog_order": 4,
       "date": "2026-04-10",
       "cover": "/static/projects/microsoft-shopping-feed/images/cover.svg",
-      "tech": ["Python", "Pandas", "Microsoft Merchant Center", "ETL", "Feed Engineering"],
+      "tech": ["Python", "ijson", "SQLite", "LFTP", "MS Merchant Center", "ETL", "Feed Engineering"],
       "i18n": {
         "de": {
           "title": "Microsoft Shopping Feed Pipeline",
-          "summary": "Vollautomatisierte Tages-Sync großer Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — ausfallsicher, 100 % Compliance."
+          "summary": "Vollautomatischer täglicher Sync großvolumiger Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — OOM-sicher, chunked-Upload, 100 % konform."
         },
         "en": {
           "title": "Microsoft Shopping Feed Pipeline",
-          "summary": "Fully automated daily sync of large affiliate feeds (Connexity, Shopping24) into Microsoft Merchant Center — fail-safe, 100 % compliant."
+          "summary": "Fully automated daily sync of high-volume affiliate feeds (Connexity, Shopping24) into Microsoft Merchant Center — OOM-safe, chunked upload, 100 % compliant."
         },
         "ru": {
           "title": "Microsoft Shopping Feed Pipeline",
-          "summary": "Полностью автоматизированная ежедневная синхронизация крупных партнёрских фидов (Connexity, Shopping24) в Microsoft Merchant Center — отказоустойчивость и 100 % соответствие требованиям."
+          "summary": "Полностью автоматизированная ежедневная синхронизация крупнообъёмных партнёрских фидов (Connexity, Shopping24) в Microsoft Merchant Center — OOM-безопасно, chunked-загрузка, 100 % соответствие."
+        }
+      }
+    },
+    {
+      "slug": "browser-automation-framework",
+      "featured": true,
+      "showcase_order": 5,
+      "catalog_order": 5,
+      "date": "2026-04-26",
+      "cover": "/static/projects/browser-automation-framework/images/cover.svg",
+      "tech": ["Python", "asyncio", "Playwright", "CDP", "SQLite", "Streamlit", "pytest", "Multi-Process IPC"],
+      "i18n": {
+        "de": {
+          "title": "Multi-Process Browser-Automation Framework",
+          "summary": "17k LOC Python-Framework für parallele, fehlertolerante Browser-Workflows — race-safe Worker-Koordination, Cross-Process Crash-Bridge und vollständige Operator-UX über Streamlit."
+        },
+        "en": {
+          "title": "Multi-Process Browser Automation Framework",
+          "summary": "17k LOC Python framework for parallel, fault-tolerant browser workflows — race-safe worker coordination, cross-process crash bridge, and full operator UX through Streamlit."
+        },
+        "ru": {
+          "title": "Multi-Process Browser Automation Framework",
+          "summary": "Python-фреймворк на 17k LOC для параллельных отказоустойчивых browser-воркфлоу — race-safe координация воркеров, cross-process crash-bridge и полный operator-UX через Streamlit."
         }
       }
     }

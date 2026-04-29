@@ -17,9 +17,9 @@
   <meta name="robots" content="index,follow">
 
 
-  <title>Legacy-Datenextraktion · Teske Systemtechnik</title>
+  <title>Legacy-DB Reverse Engineering &amp; Migration · Teske Systemtechnik</title>
 
-  <meta name="description" content="Direkte Datenextraktion aus veralteter Offline-Software (Komatsu LinkOne, CAT SIS) via ODBC-Hijacking und lokaler API-Analyse — ohne Web-Scraping.">
+  <meta name="description" content="1,47 Mio. Bauteile aus einer 1,2 GB großen, passwortgeschützten Hersteller-Datenbank befreit und ins neue System des Kunden migriert — inkl. 82.076 konvertierter Schaltbilder, validiert auf null Regelverstöße, vollständig auditierbar.">
 
 
   <link rel="canonical" href="https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/">
@@ -53,8 +53,8 @@
 
 
   <meta property="og:site_name" content="Teske Systemtechnik">
-  <meta property="og:title" content="Legacy-Datenextraktion — Case Study">
-  <meta property="og:description" content="Direkte Datenextraktion aus veralteter Offline-Software (Komatsu LinkOne, CAT SIS) via ODBC-Hijacking und lokaler API-Analyse — ohne Web-Scraping.">
+  <meta property="og:title" content="Legacy-DB Reverse Engineering &amp; Migration — Case Study">
+  <meta property="og:description" content="1,47 Mio. Bauteile aus einer 1,2 GB großen, passwortgeschützten Hersteller-Datenbank befreit und ins neue System des Kunden migriert — inkl. 82.076 konvertierter Schaltbilder, validiert auf null Regelverstöße, vollständig auditierbar.">
   <meta property="og:url" content="https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
@@ -148,16 +148,16 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Legacy-Datenextraktion"
+          "name": "Legacy-DB Reverse Engineering & Migration"
         }
       ]
     },
     {
       "@type": "CreativeWork",
       "@id": "https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/#creativework",
-      "name": "Legacy-Datenextraktion",
-      "headline": "Reverse Engineering & Datenextraktion: Legacy Baumaschinen-Systeme (Komatsu & CAT)",
-      "description": "Direkte Datenextraktion aus veralteter Offline-Software (Komatsu LinkOne, CAT SIS) via ODBC-Hijacking und lokaler API-Analyse — ohne Web-Scraping.",
+      "name": "Legacy-DB Reverse Engineering & Migration",
+      "headline": "1,47 Mio. Bauteile aus einer 1,2 GB Legacy-DB ins neue System migriert — null Regelverstöße",
+      "description": "1,47 Mio. Bauteile aus einer 1,2 GB großen, passwortgeschützten Hersteller-Datenbank befreit und ins neue System des Kunden migriert — inkl. 82.076 konvertierter Schaltbilder, validiert auf null Regelverstöße, vollständig auditierbar.",
       "author": {
         "@id": "https://teske-systemtechnik.de/#jan-teske"
       },
@@ -168,19 +168,23 @@
         "@id": "https://teske-systemtechnik.de/#organization"
       },
       "inLanguage": "de",
-      "datePublished": "2026-03-31",
+      "datePublished": "2026-02-28",
       "image": "https://teske-systemtechnik.de/static/projects/legacy-data-extraction/images/cover.svg",
       "url": "https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/",
       "about": [
         "Python",
         "Reverse Engineering",
-        "Wireshark",
-        "Sybase SQL Anywhere",
-        "ODBC",
-        "Komatsu LinkOne",
-        "Caterpillar SIS"
+        "pyodbc",
+        "MS Access",
+        "SQLite",
+        "DjVuLibre",
+        "PyMuPDF",
+        "ETL",
+        "Legacy Migration",
+        "Forensic Data Recovery",
+        "Data Validation"
       ],
-      "keywords": "Python, Reverse Engineering, Wireshark, Sybase SQL Anywhere, ODBC, Komatsu LinkOne, Caterpillar SIS, Legacy Data Extraction",
+      "keywords": "Python, Reverse Engineering, pyodbc, MS Access, SQLite, DjVuLibre, PyMuPDF, ETL, Legacy Migration, Forensic Data Recovery, Data Validation",
       "review": {
         "@type": "Review",
         "reviewRating": {
@@ -190,13 +194,21 @@
         },
         "author": {
           "@type": "Organization",
-          "name": "Eincors",
-          "description": "Spare parts manufacturer for construction machinery, Turkey"
+          "name": "After-market construction equipment dealer",
+          "description": "Anonymized under NDA"
         },
         "publisher": {
           "@type": "Organization",
           "name": "Upwork",
           "url": "https://www.upwork.com/"
+        },
+        "positiveNotes": {
+          "@type": "ItemList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Strukturiertes Vorgehen" },
+            { "@type": "ListItem", "position": 2, "name": "Auditierbar" },
+            { "@type": "ListItem", "position": 3, "name": "Liefert was vereinbart" }
+          ]
         }
       }
     }
@@ -345,26 +357,26 @@
       <div class="max-w-3xl">
 
         <div class="mb-4 flex flex-wrap gap-2">
-
           <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Python</span>
-
           <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Reverse Engineering</span>
-
-          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Wireshark</span>
-
-          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">SQL Anywhere</span>
-
-          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">ODBC</span>
-
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">pyodbc</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">MS Access</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">SQLite</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">DjVuLibre</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">PyMuPDF</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">ETL</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Legacy-Migration</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Forensic Data Recovery</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Data Validation</span>
         </div>
 
-        <h1 class="font-aspekta text-4xl font-bold leading-tight text-white md:text-5xl">Legacy-Datenextraktion: Komatsu &amp; CAT</h1>
-        <p class="mt-4 text-lg text-stone-300">Direkte Datenextraktion aus veralteter Offline-Software (Komatsu LinkOne, CAT SIS) via ODBC-Hijacking und lokaler API-Analyse — ohne fragiles Web-Scraping.</p>
+        <h1 class="font-aspekta text-4xl font-bold leading-tight text-white md:text-5xl">Legacy-DB Reverse Engineering &amp; Migration</h1>
+        <p class="mt-4 text-lg text-stone-300">1,47&nbsp;Mio. Bauteile aus einer 1,2&nbsp;GB großen, passwortgeschützten Hersteller-Datenbank befreit und ins neue System des Kunden migriert — inkl. <strong>82.076 konvertierter Schaltbilder</strong>, validiert auf <strong>null Regelverstöße</strong>, vollständig auditierbar.</p>
       </div>
 
 
       <div class="mt-10 overflow-hidden rounded-3xl border border-stone-800">
-        <img src="/static/projects/legacy-data-extraction/images/cover.svg" alt="Legacy-Datenextraktion — Case Study Cover" class="w-full">
+        <img src="/static/projects/legacy-data-extraction/images/cover.svg" alt="Legacy-DB Reverse Engineering &amp; Migration — Case Study Cover" class="w-full">
       </div>
 
     </div>
@@ -379,51 +391,39 @@
 
             <div>
               <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Kunde</p>
-              <p class="mt-1 text-sm text-stone-200">Eincors</p>
+              <p class="mt-1 text-sm text-stone-200">Anonymisiert (NDA)</p>
             </div>
-
 
             <div>
               <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Branche</p>
-              <p class="mt-1 text-sm text-stone-200">Ersatzteile für Baumaschinen · Türkei</p>
+              <p class="mt-1 text-sm text-stone-200">Baumaschinen-Ersatzteile · After-Market</p>
             </div>
-
 
             <div>
               <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Ergebnis</p>
-              <p class="mt-1 text-sm text-stone-200">Komplette Legacy-Datenbank extrahiert</p>
+              <p class="mt-1 text-sm text-stone-200">1,47&nbsp;Mio. Datensätze · 0 Verstöße</p>
             </div>
-
 
             <div>
               <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Technologie</p>
               <ul class="mt-2 flex flex-wrap gap-1.5">
-
                 <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Python</li>
-
-                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Reverse Engineering</li>
-
-                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Wireshark</li>
-
-                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">SQL Anywhere</li>
-
-                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">ODBC</li>
-
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">pyodbc</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">MS Access</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">SQLite</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">DjVuLibre</li>
               </ul>
             </div>
 
-
             <div>
               <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Zeitraum</p>
-              <p class="mt-1 text-sm text-stone-200">Dez 2025 – März 2026</p>
+              <p class="mt-1 text-sm text-stone-200">Februar 2026</p>
             </div>
-
 
             <div>
               <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Projektbudget</p>
               <p class="mt-1 text-sm text-stone-200">1.300 $</p>
             </div>
-
 
             <div>
               <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Bewertung</p>
@@ -437,6 +437,11 @@
                 </div>
                 <span class="text-[11px] uppercase tracking-wider text-stone-500">via Upwork</span>
               </div>
+              <ul class="mt-3 flex flex-wrap gap-1.5">
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Strukturiertes Vorgehen</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Auditierbar</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Liefert was vereinbart</li>
+              </ul>
             </div>
 
           </div>
@@ -445,29 +450,43 @@
         <div class="lg:col-span-9">
           <div class="prose prose-invert max-w-none prose-headings:font-aspekta prose-headings:text-white prose-a:text-amber-400 hover:prose-a:text-amber-300 prose-strong:text-white prose-code:text-amber-200 prose-img:rounded-2xl prose-img:border prose-img:border-stone-800">
             <h2 id="die-herausforderung">Die Herausforderung</h2>
-            <p><strong>Eincors</strong>, ein Ersatzteil-Hersteller für Baumaschinen aus der Türkei (Bagger, Kräne, Heavy Equipment), brauchte die kompletten Bestandsdaten von <strong>Komatsu</strong> und <strong>Caterpillar (CAT)</strong>. Problem: Diese Daten existierten nicht im Web, sondern waren in proprietären Offline-Installationen (CD/USB) eingesperrt — veraltete Software, die sich mit modernen IT-Systemen nicht mehr sauber integrieren ließ. Ziel: <strong>die Benutzeroberflächen komplett umgehen und die Datenbanken direkt strukturiert auslesen — ohne fehleranfälliges UI-Scraping.</strong></p>
+            <p>Der Kunde betreibt das After-Market-Geschäft für Ersatzteile eines internationalen Tier-1 Baumaschinenherstellers und besitzt eine gültige Lizenz für dessen Wartungs-Datenbank — eine 1,2&nbsp;GB große, passwortgeschützte MS-Access-Datei (<code>.mdb</code>) aus den frühen 2000ern. Die rechtmäßig erworbenen Daten sollen in das neue Warenwirtschaftssystem des Kunden überführt werden. Drei Mauern stehen dem im Weg.</p>
+            <p><strong>Erstens:</strong> die ursprünglichen Konfigurationsparameter der Datenbank — insbesondere die Zugangsdaten — sind im Lauf der Jahre intern verloren gegangen, und das alte Hersteller-Tool öffnet die DB zwar im Hintergrund, exportiert aber keine Rohdaten.</p>
+            <p><strong>Zweitens:</strong> das Schema. Rund 30 verflochtene Tabellen mit kryptischen Spaltennamen, n:m-Relationen zwischen Büchern und Verkaufsmodellen, Bauteilnamen verteilt über drei Tabellen plus ein Sprachfeld — nichts davon ohne strukturelle Analyse lesbar.</p>
+            <p><strong>Drittens:</strong> rund 82.000 Schaltbilder im obskuren DjVu-Format der frühen 2000er, das das neue System nicht rendert.</p>
+            <p>Und das Ganze in einer Größenordnung (<strong>~1,9&nbsp;Mio. Rohzeilen</strong>), die Excel ohne Murren bei 1.048.576 Zeilen abschneiden würde — was de facto die halbe Maschinenflotte unterschlagen hätte. Aufgabe: alle drei Mauern einreißen und den vollständigen, lizenzierten Datenbestand sauber in das neue System überführen.</p>
 
             <h2 id="die-umsetzung">Die Umsetzung</h2>
             <ul>
-              <li><strong>Datenbank-Forensik &amp; ODBC-Hijacking (Komatsu LinkOne).</strong> Die Software kapselte ihre Daten in <code>.db</code>-Dateien, verwaltet von einer alten Sybase (SAP) SQL Anywhere Engine. Statt an Passwörtern zu scheitern: die beim App-Start dynamisch generierte ODBC-Verbindung (User/System DSN) analysiert. Ein Python-Script klinkt sich in diese aktive Session ein und setzt direkte SQL-Queries ab (z.&nbsp;B. auf <code>PART_MASTER</code>) — sauberer Full-Dump des kompletten Datensatzes.</li>
-              <li><strong>Local API Reverse Engineering (CAT SIS 2.0).</strong> Die Offline-Version lief über einen lokalen Tomcat/Java-Server auf <code>localhost:8080</code>. Präzises Network-Sniffing (Wireshark/Fiddler) auf dem Localhost-Traffic deckte die undokumentierten internen API-Endpunkte auf und dekonstruierte das Schema.</li>
-              <li><strong>High-Speed Headless Extraction.</strong> Für CAT wurde ein Python-Script entwickelt, das die internen HTTP-Requests systematisch über alle Modellpräfixe hinweg replayed — JSON/XML-Extraktion in Höchstgeschwindigkeit direkt vom lokalen Backend, vollständig headless, kein UI-Rendering-Overhead.</li>
-              <li><strong>Enterprise-Grade Reliability.</strong> Beide Pipelines nach strengen Engineering-Standards gebaut: 100&nbsp;% Type Hinting, modulare Architektur, Fail-Safe-Verarbeitung selbst bei inkonsistenten oder korrupten Legacy-Datensätzen, die sich über Jahrzehnte angesammelt hatten.</li>
+              <li><strong>Forensische Wiederherstellung verlorener Zugangsdaten.</strong> Statt das alte Wartungs-Tool zur Blackbox zu erklären, wird die Systemumgebung des Kunden forensisch analysiert: ein gezielter Scan über das gesamte lokal installierte Verzeichnis (<code>.exe</code>, <code>.dll</code>, <code>.ini</code>, <code>.cfg</code>, <code>.xml</code>) durchsucht die Konfigurationsdateien und Laufzeit-Artefakte nach den klassischen Indikatoren persistierter Connection-Parameter — Jet-OLEDB-Strings, PWD/UID-Verweise, <code>.mdw</code>-Pfade — mit Kontext-Window um jeden Treffer. Aus den Konfigurations-Resten lassen sich die ursprünglichen Zugangsdaten rekonstruieren, die der Kunde mit seiner Lizenz ohnehin besitzt. Ab da ist die DB via <code>pyodbc</code> + Microsoft Access Driver direkt auf der Datenebene lesbar.</li>
+              <li><strong>Strukturelle Schema-Rekonstruktion.</strong> Die DB hat keine Doku, keine ER-Diagramme, nur Tabellennamen und Spalten-Codes. Ein Schema-Scanner zieht aus jeder Tabelle 10-Zeilen-Samples plus den vollen Spalten-Header und macht damit die Beziehungen zwischen den ~30 Tabellen sichtbar — welche Tabelle hält Ersatznummern, welche das Bild-File-ID, wo liegen die Sprachvarianten der Bauteilnamen. Das ist die Grundlage für den späteren Single-Source-Join. Ergebnis: drei lateral verstreute Quellen für Ersatzteil-Nummern (eine Live-Zuordnungs-Tabelle plus zwei Stammdaten-Tabellen mit historischen Ersetzungen), zwei für Bilddateien (mit Fallback-Kette) und eine sprachgefilterte Quelle für englische Klartextnamen.</li>
+              <li><strong>One-Shot Cold-Storage in SQLite.</strong> Die gesamte Access-DB wird in einem Take in eine lokale SQLite-Datei geclont — alle Spalten als TEXT (am sichersten gegen die inkonsistente Typisierung der Quelle), in 10k-Häppchen via <code>fetchmany</code>. Vorteil: ab da läuft jede Auswertung lokal, beliebig oft und ohne ODBC-Overhead — der 1,2-GB-Mahlstein wird zur 400-MB-Read-only-Quelle und ist von der Migrations-Pipeline entkoppelt.</li>
+              <li><strong>Multi-Table-Join als Single Source of Truth.</strong> Eine zentrale Query bündelt das gewonnene Schema-Wissen in einem Statement. Der Bauteile-Katalog joint mit der Buch-zu-Modell-Mapping-Tabelle und der Verkaufsmodell-Tabelle (denn die Wartungsbücher heißen intern anders als die Endprodukt-Modelle), der Figuren-Tabelle (Gruppe / Untergruppe / Bilddatei via <code>COALESCE</code> als Fallback-Kette), der sprachgefilterten Klartextnamen-Tabelle und einer CTE, die alle Ersatzteil-Beziehungen pro Bauteil mit <code>GROUP_CONCAT</code> zu einer kommagetrennten Liste verdichtet. Sichere LEFT JOINs mit <code>IFNULL</code> fangen leere Schlüsselfelder ab — das Zielsystem braucht für jede Zeile ein vollständiges Tupel, kein lückenhaftes.</li>
+              <li><strong>Self-Healing Part Names.</strong> Die Roh-Daten enthielten als „Bauteilname" oft nur den Platzhalter <code>"PART"</code>, reine alphanumerische Codes oder Müll wie <code>"(OPTIONAL)"</code> — alles Werte, die ein modernes ERP-/Shop-System sofort als Datenmüll markieren würde. Lösung: ein In-RAM-Wörterbuch aus der englischsprachigen Stammdaten-Tabelle liefert pro Teilenummer den korrekten Klartextnamen. Heuristiken (Mindestlänge 3, kein reiner Code-String, kein „PART"-Platzhalter) entscheiden, wann gelookup-ed wird — bei Treffer wird der Name geheilt, sonst wird der Datensatz als <code>UNKNOWN_NAME_REQUIRES_CHECK</code> markiert und in einer späteren Stage hart gefiltert. Der Heilungsschritt allein rettet zehntausende Zeilen vor dem Müll-Filter.</li>
+              <li><strong>DjVu → JPG Pipeline mit Multithreading.</strong> ~82.000 Schaltbilder lagen im obskuren DjVu-Format vor — ein Format, das das neue System nicht rendern kann und für das es keine moderne Standard-Library gibt. Pipeline: <code>ddjvu</code> (DjVuLibre) konvertiert jede Datei in ein temporäres PDF, PyMuPDF (<code>fitz</code>) rendert die erste Seite mit 150&nbsp;DPI in Graustufen als JPG (massiver Speicherplatz-Gewinn ohne Lesbarkeits-Verlust), das Temp-PDF wird sofort gelöscht. <code>ThreadPoolExecutor</code> fährt mit <code>os.cpu_count()</code> Workern. Idempotente Skip-Logik (fertige Targets werden übersprungen) macht den Lauf re-runnable — ein Crash bei Datei 50.000 kostet keine 50.000 Re-Konvertierungen.</li>
+              <li><strong>System-aware Hyperlinks.</strong> Statt nackter Pfade wird jede Image-Zelle als <code>=HYPERLINK(&quot;…\&lt;bildpfad&gt;.jpg&quot;, &quot;&lt;bildname&gt;.jpg&quot;)</code> geschrieben — ein Format, das vom Zielsystem direkt als klickbarer Bild-Link verstanden wird. Ein rekursiver Index aller JPGs (Dateiname → relativer Pfad) löst die Bilder vor dem Schreiben auf; nicht gefundene Bilder werden defensiv als <code>MISSING_JPG: &lt;stem&gt;</code> markiert, statt die Spalte still zu verschmutzen oder die Migration abzubrechen.</li>
+              <li><strong>Iterative Cleanup-Stages mit Audit-Trail.</strong> Raw → v2 (Hyperlinks injiziert) → Pristine_v2 (UNKNOWN-Namen + manuell blockierte regionale Sondervarianten entfernt) → Pristine_v3 (String-Cleanup: Semikolons, führende Sonderzeichen, doppelte Leerzeichen) → Final_Delivered (Ersatzteil-Nummern aus den beiden Stammdaten-Quellen nachgeladen, Duplikate vermieden) → Perfect (drei letzte Problemzeilen mit verschmutzter SubGroup entfernt). Jede Stage ist eine eigene Datei und ein eigenes Skript — debugbar, reproduzierbar, mit klarem Audit-Trail. Wer am Ende fragt „warum ist Zeile X nicht im neuen System?", bekommt eine Antwort.</li>
+              <li><strong>Strict-Mode Validation gegen das Ziel-Schema.</strong> Ein dedizierter Validator prüft die finale CSV gegen einen 5-Regel-Schema-Vertrag, der 1:1 dem entspricht, was das Zielsystem akzeptiert: Header (exakt 10 Spalten in fester Reihenfolge), Pflichtfelder (Buch + Teilenummer gesetzt), keine illegalen Steuerzeichen (Regex <code>\x00-\x1f</code>), Format Teilenummer (keine Klammern), Format Teilename (uppercase, kein führendes Sonderzeichen, kein UNKNOWN_NAME), Format Image_File (<code>=HYPERLINK</code> + <code>.jpg</code> oder explizites <code>MISSING_JPG</code>). Ergebnis nach mehreren Iterationen: <strong>1.473.210 Zeilen, null Regelverstöße</strong>. Jeder Verstoß landet in einer Log-Datei mit Zeilennummer + Buch + Teilenummer + Begründung — surgical, nicht „irgendwas ist kaputt".</li>
+              <li><strong>Trust-By-Transparenz.</strong> Zwei separate Reports werden mitgeliefert. <em>Coverage-Report:</em> alle 386 Master-Bücher aus der Quell-DB mit Mapping zum Verkaufsmodell und Zeilenzahl in der finalen CSV — der Kunde sieht für jedes einzelne Buch, ob und wie viele Bauteile in das neue System überführt wurden. <em>Trash-Analysis:</em> alle 470.276 weggefilterten Zeilen mit Begründung — fehlender englischer Name, manuell geblockte regionale Sondervariante, Teilenummer unter vier Zeichen, sonstiger Bereinigungs-Filter. Der Kunde bekommt nicht nur die Migration, sondern jede einzelne Filter-Entscheidung dokumentiert.</li>
             </ul>
 
-            <aside class="not-prose mt-10 mb-10 flex aspect-[16/9] items-center justify-center rounded-2xl border border-stone-800 bg-stone-900/60" aria-label="Infografik-Platzhalter">
+            <aside class="not-prose mt-10 mb-10 flex aspect-[16/9] items-center justify-center rounded-2xl border border-stone-800 bg-stone-900/60" aria-label="Migrations-Pipeline-Platzhalter">
               <div class="text-center">
-                <p class="font-aspekta text-xs font-semibold uppercase tracking-widest text-stone-500">Infografik</p>
-                <p class="mt-2 text-sm text-stone-400">Vorher / Nachher — folgt</p>
+                <p class="font-aspekta text-xs font-semibold uppercase tracking-widest text-stone-500">Migrations-Pipeline</p>
+                <p class="mt-2 text-sm text-stone-400">Eine Legacy-Quelle, fünf Stages, ein modernes Ziel — Diagramm folgt</p>
               </div>
             </aside>
+            <p class="text-sm text-stone-400">Das Diagramm zeigt den vollständigen Migrationsfluss: von der forensischen Konfigurationsdaten-Wiederherstellung über die geöffnete 1,2-GB MS-Access-Quelldatenbank, den SQLite-Klon, die zentrale Multi-Table-Join-Query und die parallele DjVu-zu-JPG-Konvertierungs-Pipeline bis hin zur Hyperlink-Injektion und der Strict-Mode-Validierung gegen das Schema des neuen Zielsystems.</p>
 
             <h2 id="das-ergebnis">Das Ergebnis</h2>
             <ul>
-              <li><strong>Komplette Ersatzteil-Datenbank</strong> beider Hersteller (Komatsu + CAT) sauber extrahiert.</li>
-              <li><strong>Strukturierter E-Commerce-Export</strong> — direkt in die Verkaufsdatenbank des Kunden nutzbar.</li>
-              <li><strong>Kein Web-Scraping</strong> — keine Fragilität durch UI-Änderungen, kein Rate-Limiting, kein CAPTCHA.</li>
-              <li><strong>Enterprise-Grade-Codebasis</strong> — wartbar, wiederverwendbar für weitere Legacy-Systeme.</li>
+              <li><strong>Hersteller-Lock-in aufgehoben.</strong> Eine 1,2-GB-Legacy-Datenbank, die der Kunde rechtmäßig lizenziert hatte, aber faktisch nicht mehr nutzen konnte, wurde forensisch erschlossen, ihr Schema strukturell rekonstruiert und der vollständige Datenbestand in seinen Besitz überführt — ohne weitere Abhängigkeit vom alten Wartungs-Tool.</li>
+              <li><strong>1.473.210 migrierte Bauteil-Datensätze</strong> über 339 Verkaufsmodelle (aus 386 Master-Büchern inkl. n:1-Mappings, wo ein Buch mehrere Modellvarianten abdeckt) — bereit zur Ingestion in das neue System.</li>
+              <li><strong>~82.000 Original-Schaltbilder</strong> vom alten DjVu-Format in modernes JPG konvertiert und per <code>=HYPERLINK</code> referenziert — defensiv markiert wo die Konvertierung fehlte, statt das Delivery zu blockieren.</li>
+              <li><strong>Null Regelverstöße</strong> in der Final-CSV gegen einen 5-Regel-Strict-Mode-Validierungs-Vertrag — das Akzeptanzkriterium des Zielsystems war binär, das Ergebnis ist binär.</li>
+              <li><strong>1,2&nbsp;GB Legacy-MDB → 400&nbsp;MB SQLite</strong> (Cold-Storage) → <strong>274&nbsp;MB CSV</strong> (Migrations-Lieferung). Volle Datenhoheit jenseits des proprietären Hersteller-Tools, in einem Format, das jedes moderne ERP-, Shop- oder BI-System versteht.</li>
+              <li><strong>Vollständiger Audit-Trail</strong> über jede einzelne der 470.276 verworfenen Roh-Zeilen plus über jedes der 386 Bücher — kein Black-Box-ETL, sondern ein Migrations-Vertrag, den der Kunde Zeile für Zeile nachvollziehen kann.</li>
+              <li><strong>Excel-Hard-Limit umschifft.</strong> Die CSV bleibt streamfähig, das neue System ingestet sequenziell — nichts wird stillschweigend bei 1.048.576 Zeilen gekappt, wie es bei einem naiven Excel-Re-Save passiert wäre.</li>
             </ul>
           </div>
         </div>
@@ -520,7 +539,7 @@
 
           <div class="p-5">
             <h3 class="font-aspekta text-lg font-bold text-white">Microsoft Shopping Feed Pipeline</h3>
-            <p class="mt-1 line-clamp-2 text-sm text-stone-400">Vollautomatisierte Tages-Sync großer Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — ausfallsicher, 100 % Compliance.</p>
+            <p class="mt-1 line-clamp-2 text-sm text-stone-400">Vollautomatischer täglicher Sync großvolumiger Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — OOM-sicher, chunked-Upload, 100 % konform.</p>
           </div>
         </a>
 

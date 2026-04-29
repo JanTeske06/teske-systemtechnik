@@ -148,10 +148,10 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/aws-cost-optimization/"/>
   </url>
 
-  <!-- Project: Legacy Data Extraction (Komatsu & CAT) -->
+  <!-- Project: Legacy-DB Reverse Engineering & Migration -->
   <url>
     <loc>https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-04-29</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/legacy-data-extraction/"/>
@@ -160,7 +160,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/projects/legacy-data-extraction/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-04-29</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/legacy-data-extraction/"/>
@@ -169,7 +169,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/proekty/legacy-data-extraction/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-04-29</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/legacy-data-extraction/"/>
@@ -233,6 +233,35 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/microsoft-shopping-feed/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/proekty/microsoft-shopping-feed/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/"/>
+  </url>
+
+  <!-- Project: Multi-Process Browser-Automation Framework -->
+  <url>
+    <loc>https://teske-systemtechnik.de/de/projekte/browser-automation-framework/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/browser-automation-framework/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/browser-automation-framework/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/proekty/browser-automation-framework/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/browser-automation-framework/"/>
+  </url>
+  <url>
+    <loc>https://teske-systemtechnik.de/en/projects/browser-automation-framework/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/browser-automation-framework/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/browser-automation-framework/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/proekty/browser-automation-framework/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/browser-automation-framework/"/>
+  </url>
+  <url>
+    <loc>https://teske-systemtechnik.de/ru/proekty/browser-automation-framework/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/browser-automation-framework/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/browser-automation-framework/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/proekty/browser-automation-framework/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/browser-automation-framework/"/>
   </url>
 
 </urlset>

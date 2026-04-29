@@ -19,7 +19,7 @@
 
   <title>Microsoft Shopping Feed Pipeline · Teske Systemtechnik</title>
 
-  <meta name="description" content="Vollautomatisierte Tages-Sync großer Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — ausfallsicher, 100 % Compliance.">
+  <meta name="description" content="Vollautomatischer täglicher Sync großvolumiger Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — OOM-sicher, chunked-Upload, 100 % konform.">
 
 
   <link rel="canonical" href="https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/">
@@ -54,7 +54,7 @@
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="Microsoft Shopping Feed Pipeline — Case Study">
-  <meta property="og:description" content="Vollautomatisierte Tages-Sync großer Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — ausfallsicher, 100 % Compliance.">
+  <meta property="og:description" content="Vollautomatischer täglicher Sync großvolumiger Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — OOM-sicher, chunked-Upload, 100 % konform.">
   <meta property="og:url" content="https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
@@ -143,7 +143,7 @@
       "@id": "https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/#creativework",
       "name": "Microsoft Shopping Feed Pipeline",
       "headline": "Data Engineering & Automatisierung: Microsoft Merchant Center Feed Pipeline",
-      "description": "Vollautomatisierte Tages-Sync großer Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — ausfallsicher, 100 % Compliance.",
+      "description": "Vollautomatischer täglicher Sync großvolumiger Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — OOM-sicher, chunked-Upload, 100 % konform.",
       "author": { "@id": "https://teske-systemtechnik.de/#jan-teske" },
       "creator": { "@id": "https://teske-systemtechnik.de/#jan-teske" },
       "publisher": { "@id": "https://teske-systemtechnik.de/#organization" },
@@ -280,14 +280,16 @@
       <div class="max-w-3xl">
         <div class="mb-4 flex flex-wrap gap-2">
           <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Python</span>
-          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Pandas</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">ijson (streaming)</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">SQLite</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">LFTP / SFTP</span>
           <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Microsoft Merchant Center</span>
           <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">ETL</span>
           <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Feed Engineering</span>
         </div>
 
         <h1 class="font-aspekta text-4xl font-bold leading-tight text-white md:text-5xl">Microsoft Shopping Feed Pipeline</h1>
-        <p class="mt-4 text-lg text-stone-300">Vollautomatisierte Tages-Sync großer Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — <strong>ausfallsicher, 100 % Compliance</strong>, Zero-Error-Monitoring.</p>
+        <p class="mt-4 text-lg text-stone-300">Vollautomatischer täglicher Sync großvolumiger Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — <strong>OOM-sicher, chunked-Upload, 100 % konform</strong>.</p>
       </div>
 
 
@@ -327,7 +329,9 @@
               <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Technologie</p>
               <ul class="mt-2 flex flex-wrap gap-1.5">
                 <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Python</li>
-                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Pandas</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">ijson</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">SQLite</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">LFTP</li>
                 <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">MS Merchant Center</li>
                 <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">ETL</li>
                 <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Feed Engineering</li>
@@ -367,30 +371,40 @@
         <div class="lg:col-span-9">
           <div class="prose prose-invert max-w-none prose-headings:font-aspekta prose-headings:text-white prose-a:text-amber-400 hover:prose-a:text-amber-300 prose-strong:text-white prose-code:text-amber-200 prose-img:rounded-2xl prose-img:border prose-img:border-stone-800">
             <h2 id="die-herausforderung">Die Herausforderung</h2>
-            <p><strong>Blender Networks Inc.</strong> betreibt ein großes Preisvergleichsportal, dessen komplette Monetarisierung exklusiv auf Microsoft Advertising Product Listing Ads (PLAs) basiert. Die bisherige In-House-Feed-Lösung war instabil und musste abgelöst werden. Kritisch: komplexe, fehleranfällige und inkompatible Drittanbieter-Feeds (Connexity, Shopping24) mussten <strong>fehlerfrei, vollautomatisiert und täglich</strong> ins Microsoft Merchant Center integriert werden. Jeder Formatfehler, jeder „Item Drop" = direkter Umsatzverlust.</p>
+            <p><strong>Blender Networks Inc.</strong> betreibt ein großes Preisvergleichsportal, dessen komplette Monetarisierung exklusiv auf Microsoft Advertising Product Listing Ads (PLAs) basiert. Die bisherige In-House-Feed-Lösung war instabil und musste abgelöst werden.</p>
+            <p>Schwierig wurde es durch die heterogenen Drittanbieter-Quellen: Connexity liefert gezippte JSON-Bundles über einen API-Index, Shopping24 (S24) stellt eine CSV-Master-Datei plus Fragment-Updates per FTP bereit. Beide Formate mussten fehlerfrei in das streng definierte TSV-Schema des Microsoft Merchant Centers überführt werden. Jeder Formatfehler, jeder „Item Drop" = direkter Umsatzverlust.</p>
+            <p>Zusätzliche Härte: Die Connexity-Daten sprengen routinemäßig 2 GB pro Publisher-Account, der gemappte Output liegt im zweistelligen GB-Bereich, und der gesamte tägliche Upload ins Microsoft Merchant Center bewegt sich bei rund 200 GB. Naive In-Memory-Verarbeitung war keine Option — die Pipeline musste auch auf moderater Hardware OOM-sicher laufen.</p>
 
             <h2 id="die-umsetzung">Die Umsetzung</h2>
+            <p>Drei heterogene Quellen, eine einheitliche Pipeline. Die Architektur folgt einem strikten Drei-Stage-Modell — <strong>Ingest → Map → Upload</strong> — in dem jedes Affiliate-Netzwerk hinter derselben Schnittstelle lebt, aber intern auf seinen eigenen Stack zugreift (siehe Pipeline-Diagramm unten).</p>
             <ul>
-              <li><strong>High-Throughput Data Ingestion.</strong> Python-Pipeline auf Basis von Pandas und striktem Type Hinting — ingestiert und bereinigt asynchrone Affiliate-Feeds in extrem abweichenden Formaten (XML, CSV, JSON) in der Masse.</li>
-              <li><strong>Deep Logic Mapping &amp; Transformation.</strong> Striktes Mapping der unstrukturierten Drittanbieter-Daten auf die hochgradig spezifischen Microsoft-Merchant-Center-Spezifikationen. Komplexe Parsing-Logik ergänzt fehlende Attribute algorithmisch und generiert valide SEO-Titel.</li>
-              <li><strong>Fail-Safe Automatisierung.</strong> Ausfallsichere, tägliche Synchronisation. Volatile Daten (Preise, Verfügbarkeiten, dynamische URLs) werden fehlerfrei geupdatet — Disapprovals durch veraltete Daten sind systemseitig ausgeschlossen.</li>
-              <li><strong>Proaktives Error-Handling &amp; Diagnostics.</strong> Tiefe Monitoring-Schicht. Katalogfehler, unerklärliche Item Drops und Policy-Verstöße werden proaktiv abgefangen und in Log-Reports isoliert, <em>bevor</em> sie das Live-Ranking im Merchant Center gefährden.</li>
-              <li><strong>Garantierte Systemstabilität.</strong> Das strenge Abnahmekriterium (mindestens 5 Tage lückenlose, fehlerfreie Automatisierung) wurde auf Anhieb übertroffen — gesichert durch modulare Architektur und Unit Tests.</li>
+              <li><strong>Streaming-First Ingestion.</strong> Eine Python-Pipeline mit <code>ijson</code> parst die gezippten JSON-Bundles item-by-item direkt aus dem Stream, statt das komplette Dokument in RAM zu deserialisieren. Der Speicherverbrauch bleibt konstant, unabhängig von der Feed-Größe.</li>
+              <li><strong>Disk-basierte Deduplizierung.</strong> Eine SQLite-Tabelle mit <code>PRAGMA</code>-Tuning übernimmt die Cross-Account-Deduplizierung auf Disk. Multi-Million-Item-Feeds bleiben sauber, ohne den Heap zu sprengen — der Dedup-State überlebt selbst bei Abbruch zur Inspektion.</li>
+              <li><strong>Strenges Mapping auf die MS-Spec.</strong> Jeder Source-Datensatz wird deterministisch auf das geforderte <code>id/title/description/link/image_link/price/...</code> Schema gemappt. Validierungslogik filtert unbrauchbare Brand-Strings (rein numerisch, zu lang, zu viele Wörter), prüft GTINs auf zulässige Längen (8/12/13/14) und setzt <code>identifier_exists</code> konsistent — keine „Partial Identifier"-Warnungen mehr.</li>
+              <li><strong>15-GB-Chunking &amp; Chunk-Aware Upload.</strong> Mapping-Outputs werden bei 15 GB automatisch in <code>_0.txt</code>, <code>_1.txt</code>, … geteilt — passend zum Microsoft-Upload-Limit. Der Uploader erkennt diese Chunks per Pattern-Matching und nummeriert sie remote korrekt durch (<code>TipDigest_US_0.txt</code>, <code>TipDigest_US_1.txt</code>, …).</li>
+              <li><strong>Hochgeschwindigkeits-SFTP via LFTP.</strong> Statt Python-SFTP-Libraries (paramiko) wird die System-LFTP-Binary mit vergrößertem TCP-Socket-Buffer und Reconnect-Strategie gefahren. Deutlich schneller und stabiler bei Multi-GB-Files als jede Python-Implementierung.</li>
+              <li><strong>Multi-Account-Orchestrierung.</strong> Mehrere Connexity-Publisher und mehrere Merchant-Center-Konten (US/DE) werden parallel durchgereicht; jeder Account liefert in seinen eigenen Output-Pfad und wird per Store-Mapping korrekt zugeordnet.</li>
+              <li><strong>Resilient Daily Sync.</strong> Cron-Lockfile schützt vor überlappenden Doppelläufen. Pipeline-Stages sind einzeln togglebar (<code>--skip-ingest</code>, <code>--skip-map</code>, <code>--skip-upload</code>) für gezielte Re-Runs nach Teilfehlern, ohne dass der gesamte 2-GB-Download neu gezogen werden muss.</li>
+              <li><strong>Proactive Error Handling &amp; Diagnostics.</strong> Hybrid-Logging (Rich-Console mit Emojis für humans + RotatingFileHandler für die Maschine), pro-Stage Execution-Report-Tabelle, Per-Account-Isolation. Ein einzelner Truncated-JSON-Stream stoppt nicht den Gesamtlauf — Fehler werden lokalisiert geloggt und der Lauf läuft mit dem Rest weiter.</li>
+              <li><strong>Modulare Architektur.</strong> Jedes Affiliate-Netzwerk lebt in seinem eigenen Modul (<code>ingest_*.py</code> + <code>mapper_*.py</code>) hinter einer einheitlichen Pipeline-Schnittstelle. Eine dritte Quelle (Kelkoo) ließ sich anhängen, ohne Connexity oder S24 anzufassen — Beweis, dass die Abstraktion trägt.</li>
+              <li><strong>Acceptance Criterion.</strong> Die harte Abnahmebedingung (5+ Tage in Folge fehlerfreie Automation) wurde im ersten Anlauf bestanden — gesichert durch saubere Modulgrenzen und konsequentes Validation-Layering.</li>
             </ul>
 
             <aside class="not-prose mt-10 mb-10 flex aspect-[16/9] items-center justify-center rounded-2xl border border-stone-800 bg-stone-900/60" aria-label="Infografik-Platzhalter">
               <div class="text-center">
-                <p class="font-aspekta text-xs font-semibold uppercase tracking-widest text-stone-500">Infografik</p>
-                <p class="mt-2 text-sm text-stone-400">Vorher / Nachher — folgt</p>
+                <p class="font-aspekta text-xs font-semibold uppercase tracking-widest text-stone-500">Pipeline-Architektur</p>
+                <p class="mt-2 text-sm text-stone-400">Drei Quellen, drei Stages, modular by design — Diagramm folgt</p>
               </div>
             </aside>
+            <p class="text-sm text-stone-400">Das Diagramm zeigt den vollständigen Datenfluss: von den heterogenen Quellsystemen (gezippte JSON-Streams, REST-API, FTP-Dumps) durch die OOM-sichere Ingest-Schicht, das validations-getriebene Mapping mit 15-GB-Chunking bis hin zum chunk-aware LFTP-Upload in das Microsoft Merchant Center.</p>
 
             <h2 id="das-ergebnis">Das Ergebnis</h2>
             <ul>
-              <li><strong>100 % Feed-Compliance</strong> — keine Disapprovals durch Formatfehler mehr.</li>
-              <li><strong>Zero Errors</strong> in der täglichen Sync — Abnahmekriterium auf Anhieb bestanden.</li>
-              <li><strong>ROI geschützt</strong> — kein Umsatzverlust durch fehlerhafte Feed-Updates.</li>
-              <li><strong>Modular erweiterbar</strong> — neue Drittanbieter-Feeds integrierbar ohne Kern-Umbau.</li>
+              <li><strong>100 % Feed-Compliance</strong> — keine Disapprovals mehr durch Formatfehler.</li>
+              <li><strong>Zero Errors</strong> im täglichen Sync — Akzeptanzkriterium first try bestanden.</li>
+              <li><strong>ROI geschützt</strong> — kein Umsatzverlust mehr durch defekte Feed-Updates.</li>
+              <li><strong>OOM-sicher bei Multi-GB-Feeds</strong> — Pipeline läuft auf moderater Hardware ohne Speicherstress.</li>
+              <li><strong>Modular erweiterbar</strong> — neue Affiliate-Netzwerke integrieren sich ohne Eingriff in den Kern.</li>
             </ul>
           </div>
         </div>
@@ -420,8 +434,8 @@
             <img src="/static/projects/legacy-data-extraction/images/cover.svg" alt="" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
           </div>
           <div class="p-5">
-            <h3 class="font-aspekta text-lg font-bold text-white">Legacy-Datenextraktion</h3>
-            <p class="mt-1 line-clamp-2 text-sm text-stone-400">Direkte Datenextraktion aus veralteter Offline-Software (Komatsu LinkOne, CAT SIS) via ODBC-Hijacking und lokaler API-Analyse — ohne Web-Scraping.</p>
+            <h3 class="font-aspekta text-lg font-bold text-white">Legacy-DB Reverse Engineering &amp; Migration</h3>
+            <p class="mt-1 line-clamp-2 text-sm text-stone-400">1,47 Mio. Bauteile aus einer 1,2 GB passwortgeschützten Hersteller-Datenbank befreit und ins neue System migriert — null Regelverstöße, vollständig auditierbar.</p>
           </div>
         </a>
 

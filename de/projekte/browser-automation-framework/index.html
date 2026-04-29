@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <script>
+    // Maintenance guard: if /maintenance.flag exists, redirect to /maintenance.html.
+    (function () {
+      if (location.pathname.endsWith('/maintenance.html')) return;
+      fetch('/maintenance.flag', { method: 'HEAD', cache: 'no-store' })
+        .then(function (r) { if (r.ok) location.replace('/maintenance.html'); })
+        .catch(function () {});
+    })();
+  </script>
+  <meta name="robots" content="index,follow">
+
+  <title>Multi-Process Browser-Automation Framework · Teske Systemtechnik</title>
+
+  <meta name="description" content="17k LOC Python-Framework für parallele, fehlertolerante Browser-Workflows — race-safe Worker-Koordination, Cross-Process Crash-Bridge, Per-Phase-Timeouts und vollständige Operator-UX über Streamlit.">
+
+  <link rel="canonical" href="https://teske-systemtechnik.de/de/projekte/browser-automation-framework/">
+
+  <link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/browser-automation-framework/">
+  <link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/browser-automation-framework/">
+  <link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/proekty/browser-automation-framework/">
+  <link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/browser-automation-framework/">
+
+  <link rel="icon" type="image/svg+xml" href="/static/images/logo_favicon.svg">
+
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-650.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/static/css/vendors/aos.css">
+  <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
+
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/css/site.css">
+
+  <meta property="og:site_name" content="Teske Systemtechnik">
+  <meta property="og:title" content="Multi-Process Browser-Automation Framework — Case Study">
+  <meta property="og:description" content="17k LOC Python-Framework für parallele, fehlertolerante Browser-Workflows — race-safe Worker-Koordination, Cross-Process Crash-Bridge, Per-Phase-Timeouts und vollständige Operator-UX über Streamlit.">
+  <meta property="og:url" content="https://teske-systemtechnik.de/de/projekte/browser-automation-framework/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://teske-systemtechnik.de/static/projects/browser-automation-framework/images/cover.svg">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="900">
+  <meta property="og:image:alt" content="Multi-Process Browser-Automation Framework — Case Study Cover">
+  <meta name="twitter:image" content="https://teske-systemtechnik.de/static/projects/browser-automation-framework/images/cover.svg">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://teske-systemtechnik.de/#organization",
+      "name": "Teske Systemtechnik",
+      "alternateName": "Teske Systemtechnik Inhaber: Jan Teske",
+      "url": "https://teske-systemtechnik.de",
+      "logo": "https://teske-systemtechnik.de/static/images/logo_favicon.svg",
+      "image": "https://teske-systemtechnik.de/static/images/og-default.png",
+      "description": "Freelance Python automation, API development and custom software engineering from Germany.",
+      "founder": { "@id": "https://teske-systemtechnik.de/#jan-teske" },
+      "address": { "@type": "PostalAddress", "streetAddress": "Elschers Kamp 13", "addressLocality": "Melle", "postalCode": "49324", "addressCountry": "DE" },
+      "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": "jt@teske-systemtechnik.de", "telephone": "+49-1522-5166058", "availableLanguage": ["de", "en"] },
+      "vatID": "DE459634758",
+      "sameAs": ["https://github.com/JanTeske06", "https://pypi.org/user/JanTeske06/", "https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c"],
+      "knowsAbout": ["Python", "API Development", "Workflow Automation", "Data Pipelines", "Web Scraping", "FastAPI", "Reverse Engineering", "Software Engineering", "Browser Automation", "Playwright", "Chrome DevTools Protocol"],
+      "areaServed": "Worldwide"
+    },
+    { "@type": "WebSite", "@id": "https://teske-systemtechnik.de/#website-de", "url": "https://teske-systemtechnik.de/de/", "name": "Teske Systemtechnik", "inLanguage": "de", "publisher": { "@id": "https://teske-systemtechnik.de/#organization" } },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://teske-systemtechnik.de/de/" },
+        { "@type": "ListItem", "position": 2, "name": "Projekte", "item": "https://teske-systemtechnik.de/de/projekte/" },
+        { "@type": "ListItem", "position": 3, "name": "Multi-Process Browser-Automation Framework" }
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://teske-systemtechnik.de/de/projekte/browser-automation-framework/#creativework",
+      "name": "Multi-Process Browser-Automation Framework",
+      "headline": "17.461 LOC Python-Framework für parallele, fehlertolerante Browser-Workflows",
+      "description": "17k LOC Python-Framework für parallele, fehlertolerante Browser-Workflows — race-safe Worker-Koordination, Cross-Process Crash-Bridge, Per-Phase-Timeouts und vollständige Operator-UX über Streamlit.",
+      "author": { "@id": "https://teske-systemtechnik.de/#jan-teske" },
+      "creator": { "@id": "https://teske-systemtechnik.de/#jan-teske" },
+      "publisher": { "@id": "https://teske-systemtechnik.de/#organization" },
+      "inLanguage": "de",
+      "datePublished": "2026-04-26",
+      "image": "https://teske-systemtechnik.de/static/projects/browser-automation-framework/images/cover.svg",
+      "url": "https://teske-systemtechnik.de/de/projekte/browser-automation-framework/",
+      "about": ["Python", "asyncio", "Playwright", "Chrome DevTools Protocol", "SQLite", "Streamlit", "pytest", "GitHub Actions", "Multi-Process IPC", "Windows Job Objects"],
+      "keywords": "Python, asyncio, Playwright, CDP, SQLite, Streamlit, pytest, Multi-Process IPC, Windows Job Objects, Browser Automation",
+      "review": {
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
+        "author": { "@type": "Person", "name": "Private client" },
+        "publisher": { "@type": "Organization", "name": "Upwork", "url": "https://www.upwork.com/" },
+        "positiveNotes": {
+          "@type": "ItemList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Clear Communicator" },
+            { "@type": "ListItem", "position": 2, "name": "Accountable for Outcomes" },
+            { "@type": "ListItem", "position": 3, "name": "Detail Oriented" }
+          ]
+        }
+      }
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
+
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-orange-500 focus:px-4 focus:py-2 focus:text-white">Zum Inhalt springen</a>
+
+<div class="flex min-h-screen flex-col">
+
+  <header class="absolute z-30 w-full">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="flex h-16 items-center justify-between md:h-20">
+
+        <div class="mr-4 shrink-0">
+          <a class="inline-flex items-center gap-3" href="/de/" aria-label="Teske Systemtechnik">
+            <img class="max-w-none" src="/static/images/logo_whitemode.svg" width="40" height="40" alt="">
+            <span class="font-aspekta text-[17px] font-bold uppercase tracking-[0.1em] text-stone-100 leading-[20px]">Teske<br>Systemtechnik</span>
+          </a>
+        </div>
+
+        <nav class="hidden md:flex md:grow" aria-label="Primary">
+          <ul class="flex grow flex-wrap items-center justify-end gap-1">
+            <li><a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/de/">Start</a></li>
+            <li data-skeleton-off><a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/de/about/">Über uns</a></li>
+            <li><a class="text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/de/projekte/" aria-current="page">Projekte</a></li>
+
+            <li class="ml-2 flex items-center gap-1 rounded-full border border-stone-800 bg-stone-900/60 p-1">
+              <a class="bg-orange-500 text-white shadow rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition" href="#" aria-current="true" aria-label="Sprache wechseln: DE">DE</a>
+              <a class="text-stone-400 hover:text-white rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/en/projects/browser-automation-framework/" aria-label="Sprache wechseln: EN">EN</a>
+              <a class="text-stone-400 hover:text-white rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/ru/proekty/browser-automation-framework/" aria-label="Sprache wechseln: RU">RU</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="ml-4 flex items-center md:hidden" x-data="{ expanded: false }">
+          <button class="group inline-flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900/60 text-stone-300 transition hover:text-white" aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded">
+            <span class="sr-only">Menu</span>
+            <svg class="pointer-events-none h-4 w-4 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <rect class="origin-center -translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]" y="7" width="16" height="2" rx="1"></rect>
+              <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45" y="7" width="16" height="2" rx="1"></rect>
+              <rect class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]" y="7" width="16" height="2" rx="1"></rect>
+            </svg>
+          </button>
+
+          <template x-teleport="body">
+            <nav id="mobile-nav" aria-label="Mobile" class="fixed top-16 inset-x-0 z-50 overflow-hidden px-4 transition-all duration-300 ease-out sm:px-6" x-ref="mobileNav" :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1; transform: translateY(0)' : 'max-height: 0; opacity: 0; transform: translateY(-8px)'" @click.outside="expanded = false" @keydown.escape.window="expanded = false" x-cloak>
+              <ul class="rounded-2xl border border-stone-800 bg-stone-900/90 px-4 py-3 shadow-xl backdrop-blur-xl">
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/">Start</a></li>
+                <li data-skeleton-off><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/about/">Über uns</a></li>
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/projekte/">Projekte</a></li>
+                <li class="mt-2 flex items-center gap-2 border-t border-stone-800 pt-3">
+                  <span class="text-xs uppercase tracking-wider text-stone-500">Sprache wechseln:</span>
+                  <a class="bg-orange-500 text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition" href="#">DE</a>
+                  <a class="text-stone-400 hover:text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/en/projects/browser-automation-framework/">EN</a>
+                  <a class="text-stone-400 hover:text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/ru/proekty/browser-automation-framework/">RU</a>
+                </li>
+              </ul>
+            </nav>
+          </template>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <main id="main-content" class="grow">
+
+<article>
+
+  <header class="relative isolate pt-32 pb-12 md:pt-40">
+    <div class="relative mx-auto max-w-5xl px-4 sm:px-6" data-aos="fade-up">
+      <a href="/de/projekte/" class="mb-6 inline-flex items-center gap-2 text-sm font-medium text-stone-400 transition hover:text-amber-300">← Zurück zur Übersicht</a>
+
+      <div class="max-w-3xl">
+        <div class="mb-4 flex flex-wrap gap-2">
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Python</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">asyncio</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Playwright</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Chrome DevTools Protocol</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">SQLite (WAL)</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Streamlit</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">pytest</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">GitHub Actions</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Multi-Process IPC</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Windows Job Objects</span>
+        </div>
+
+        <h1 class="font-aspekta text-4xl font-bold leading-tight text-white md:text-5xl">Multi-Process Browser-Automation Framework</h1>
+        <p class="mt-4 text-lg text-stone-300">17k LOC Python-Framework für parallele, fehlertolerante Browser-Workflows — <strong>race-safe Worker-Koordination, Cross-Process Crash-Bridge, Per-Phase-Timeouts</strong> und vollständige Operator-UX über Streamlit.</p>
+      </div>
+
+      <div class="mt-10 overflow-hidden rounded-3xl border border-stone-800">
+        <img src="/static/projects/browser-automation-framework/images/cover.svg" alt="Multi-Process Browser-Automation Framework — Case Study Cover" class="w-full">
+      </div>
+    </div>
+  </header>
+
+  <div class="relative pb-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6">
+      <div class="grid gap-12 lg:grid-cols-12">
+
+        <aside class="lg:col-span-3">
+          <div class="sticky top-16 space-y-6 rounded-2xl border border-stone-800 bg-stone-900/60 p-6" style="top: 3rem">
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Kunde</p>
+              <p class="mt-1 text-sm text-stone-200">Privatkunde</p>
+            </div>
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Branche</p>
+              <p class="mt-1 text-sm text-stone-200">Browser-Automation Engineering</p>
+            </div>
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Ergebnis</p>
+              <p class="mt-1 text-sm text-stone-200">17k LOC · 24/7 Uptime</p>
+            </div>
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Technologie</p>
+              <ul class="mt-2 flex flex-wrap gap-1.5">
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Python</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">asyncio</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Playwright</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">SQLite</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Streamlit</li>
+              </ul>
+            </div>
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Zeitraum</p>
+              <p class="mt-1 text-sm text-stone-200">Q4 2025 – Q2 2026</p>
+            </div>
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Projektbudget</p>
+              <p class="mt-1 text-sm text-stone-200">15.000 €</p>
+            </div>
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Bewertung</p>
+              <div class="mt-2 flex items-center gap-2">
+                <div class="flex gap-1 text-amber-400" aria-label="5 von 5 Sternen" role="img">
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.287-3.957z"/></svg>
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.287-3.957z"/></svg>
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.287-3.957z"/></svg>
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.287-3.957z"/></svg>
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.287-3.957z"/></svg>
+                </div>
+                <span class="text-[11px] uppercase tracking-wider text-stone-500">via Upwork</span>
+              </div>
+              <ul class="mt-3 flex flex-wrap gap-1.5">
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Klare Kommunikation</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Ergebnisverantwortlich</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Detailorientiert</li>
+              </ul>
+            </div>
+
+          </div>
+        </aside>
+
+        <div class="lg:col-span-9">
+          <div class="prose prose-invert max-w-none prose-headings:font-aspekta prose-headings:text-white prose-a:text-amber-400 hover:prose-a:text-amber-300 prose-strong:text-white prose-code:text-amber-200 prose-img:rounded-2xl prose-img:border prose-img:border-stone-800">
+            <h2 id="die-herausforderung">Die Herausforderung</h2>
+            <p>Ein Privatkunde benötigte ein dauerhaft betriebsbereites Backend für browserbasierte Automatisierungs-Workflows. Die Anforderungen waren von Anfang an vom Engineering her gedacht, nicht vom Featureset:</p>
+            <ul>
+              <li>Mehrere parallele Browser-Sessions, sauber voneinander isoliert.</li>
+              <li>Subprocess-Architektur — ein Crash in einer Session darf andere nicht mitreißen, und ein hängender Workflow darf den ganzen Prozessbaum nicht blockieren.</li>
+              <li>Vollständige Beobachtbarkeit — jeder Phasen-Übergang protokolliert seinen Status, jeder Crash trägt einen eindeutigen Phasen-Marker.</li>
+              <li>Operator-UX über ein Dashboard statt über die CLI — der Endnutzer ist der Kunde, nicht der Developer.</li>
+              <li>100&nbsp;% Type-Hinting, klare Layer-Trennung, vollständiges pytest-Setup mit GitHub-Actions-CI ab Tag eins.</li>
+            </ul>
+            <p>Trivial ist das auf Windows nicht: parallele Chrome-Instanzen sind ein Minenfeld aus Race-Conditions (Port-Kollisionen bei dynamischer CDP-Allokation, Profil-Locks im User-Data-Dir, Zombie-Prozesse beim Streamlit-Restart). Und ein Subprocess, der stirbt, <em>bevor</em> sein eigener Crash-Handler überhaupt laufen kann, bedeutet ohne Schutzmechanismus eine stumm verlorene Fehlermeldung — exakt die Klasse Bug, die in der Produktion sechs Wochen unentdeckt bleibt.</p>
+
+            <h2 id="die-umsetzung">Die Umsetzung</h2>
+            <p>Das Resultat ist eine <strong>17.461-LOC Python-Codebase</strong> in 25 sauber modularisierten Files, durchgehend Type-annotiert, organisiert in drei klar entkoppelten Layern:</p>
+            <pre><code>Presentation  →  Streamlit-UI
+Control       →  Scheduler + CLI-Orchestrator
+Execution     →  Browser-Worker (als Subprocesses)</code></pre>
+            <p>Cross-Layer-Kommunikation läuft ausschließlich über SQLite und atomar geschriebene JSON-Files; kein Worker importiert je einen anderen.</p>
+
+            <ul>
+              <li><strong>Race-Safe Multi-Worker-Koordination.</strong> Bei N parallelen asyncio-Tasks teilen sich die Worker einen gemeinsamen <code>asyncio.Lock</code>-basierten Round-Robin: nur ein Worker führt zur Zeit den teuren Discovery-Schritt aus, die übrigen warten am Lock und übernehmen das Resultat aus einem Shared-Dict. Halbiert ausgehenden Output ohne Geschwindigkeitsverlust und vermeidet, dass alle Worker dieselbe Operation parallel duplizieren.</li>
+              <li><strong>Best-Result-Aggregation mit Coordinated Cancellation.</strong> Sobald ein Worker das Zielergebnis erreicht hat, feuert eine <code>asyncio.Event</code> und ein Watchdog-Task ruft <code>task.cancel()</code> auf alle Geschwister-Tasks. Saubere <code>CancelledError</code>-Propagation statt Polling. Zusätzlich unterdrückt ein klassen-globaler <code>_completed_jobs</code>-Set spätere Reports aus den abgebrochenen Tasks — kein Notification-Spam, selbst wenn 10 Geschwister gleichzeitig ihren Cleanup-Pfad durchlaufen.</li>
+              <li><strong>Subprocess-Isolation auf Windows-Niveau.</strong> Jeder Worker bekommt eine vollständig isolierte Chrome-Instanz: race-safe Port-Allokation via Socket-Bind (<code>_PortLock</code> hält den Port reserviert, bis Chrome ihn übernimmt — kein TOCTOU-Race), eigenes User-Data-Dir (<code>chrome_&lt;uuid&gt;</code>), eigener Crash-Dump-Pfad, eigene CDP-Session. Keine geteilten Ressourcen, keine Lock-Konflikte zwischen parallelen Sessions, kein Übergreifen von Browser-State.</li>
+              <li><strong>CDP-basierte Auth-Konfiguration.</strong> Statt einer klassischen Manifest-V2-Browser-Extension läuft die Auth-Konfiguration direkt über Chrome DevTools Protocol via <code>Fetch.authRequired</code>. Auth-Events propagieren automatisch auf Popup-Pages über einen <code>context.on(&quot;page&quot;, ...)</code>-Handler. Eine schlanke Klasse ersetzt den traditionellen Extension-Workaround und kommt mit deutlich weniger Surface-Area aus.</li>
+              <li><strong>Cross-Process Crash-File-Bridge.</strong> Worker laufen als Subprocesses, vom Scheduler über <code>subprocess.Popen</code> angeworfen. Bei einem Crash schreibt der Subprocess eine strukturierte JSON-Datei nach <code>data/crashes/job_&lt;id&gt;_&lt;ts&gt;.json</code> UND versucht parallel eine direkte Telegram-Benachrichtigung. Der Scheduler liest die Datei nach Subprocess-Exit zurück, dedupliziert mit der bereits abgesetzten Notification, ergänzt fehlende Meldungen oder räumt die Datei stillschweigend auf, wenn alles bereits gemeldet wurde. Ein globaler <code>sys.excepthook</code> als Last-Line-of-Defence garantiert: <em>kein</em> Crash geht verloren, selbst wenn der Subprocess so früh stirbt, dass der eigene Crash-Handler nicht mehr läuft.</li>
+              <li><strong>Per-Phase-Timeouts mit Live-Phase-Tracking.</strong> Jede Workflow-Phase läuft in einem dedizierten <code>asyncio.timeout()</code>-Block; jede Phase aktualisiert ein zentrales Context-Objekt mit dem aktuellen Sub-Step. Bei Crash steht im Telegram-Report exakt, in welcher Phase welcher Worker scheiterte — nicht „irgendwo in main()", sondern „4/6 add_step: konkretes UI-Element X". Debugging-Zeit fällt von „erstmal Logs durchsuchen" auf „direkt zur fraglichen Funktion".</li>
+              <li><strong>Typisierte Fehler-Hierarchie + Swarm-Deduplication.</strong> Eine eigene Exception-Klasse pro Failure-Modus (<code>ProxyError</code>, <code>NavigateError</code>, <code>SessionExpiredError</code>, …), jede mit eigener Recovery-Politik (Browser schließen vs. offen lassen, Retry mit anderem Proxy, Hard-Fail). Wenn 10 Worker parallel mit demselben Root-Cause crashen, gruppiert <code>report_grouped_errors</code> die Meldungen nach (Exception-Typ, erstem Stackframe) und sendet eine einzelne aggregierte Telegram-Nachricht mit Worker-IDs und betroffenen Phasen — keine 10 redundanten Pings.</li>
+              <li><strong>SQLite mit WAL + BEGIN IMMEDIATE für Race-Sicherheit.</strong> Counter und State in den Tabellen werden in Read-Modify-Write-Transaktionen aktualisiert. Bei N parallelen Workern, die gleichzeitig Counter erhöhen, würde naive UPDATE-Counter-Logik den Counter um 1 statt N inkrementieren — <code>BEGIN IMMEDIATE</code> serialisiert die Updates korrekt und verhindert die Race auf SQLite-Ebene, bevor sie überhaupt Python erreicht. Plus WAL-Modus + 64 MB Cache + 256 MB mmap für Read-Performance unter parallelem Schreibdruck. Auto-Migrationen beim ersten Connect, mit pytest-Tests, die jede Migration einzeln verifizieren.</li>
+              <li><strong>Atomic-File-IPC.</strong> Sämtliche Inter-Process State-Files (Job-Status-Snapshots, Live-State, Run-Reports) werden atomar geschrieben — <code>.tmp</code> schreiben, dann <code>os.rename()</code>. Kein Worker liest je eine halb-geschriebene JSON-Datei, selbst unter konkurrierendem Zugriff aus mehreren Subprocesses. POSIX-Semantik, funktioniert auch auf Windows seit <code>Path.replace()</code>.</li>
+              <li><strong>Datums-versionierte Logs.</strong> <code>logs/&lt;DD-MM-YYYY&gt;/{chrome,traces,screenshots,…}/</code> — jede Phase jedes Workers erzeugt klar zugeordnete Artefakte (Chrome-Stdout, Playwright-Trace, Failure-Screenshot). Bei einem Production-Issue findet man per <code>ls logs/23-03-2026/screenshots/</code> in fünf Sekunden die genaue Failure-Phase jedes betroffenen Workers, plus den vollständigen Playwright-Trace zum Replay im Browser-Trace-Viewer.</li>
+              <li><strong>Streamlit-Operations-UI mit Windows-Hard-Cleanup.</strong> Multi-Page-Dashboard mit Service-Lifecycle (Start/Stop/Restart aller Subsysteme), DB-CRUD, Live-Logs, EN/IT-Lokalisierung über 300+ String-Pairs. Streamlit ist auf Windows heikel — Process-Tree-Cleanup wird beim Shutdown nicht garantiert, Kinder werden zu Zombies. Gelöst über ein Windows Job Object mit <code>JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE</code>: jeder Subprocess wird beim Spawn dem Job-Handle zugewiesen, beim Streamlit-Exit terminiert das OS automatisch alle Kinder kaskadierend. Funktioniert auch bei Hard-Kill via Task-Manager — keine übriggebliebenen Browser-Prozesse mehr.</li>
+              <li><strong>Zentralisierter Telegram-Reporter.</strong> Eine einzige <code>ErrorReporter</code>-Klasse als Single-Entry-Point für sämtliche Notifications. Fire-and-forget by Contract: wirft nie eine Exception, blockiert nie länger als der HTTP-Roundtrip, fällt bei Verbindungsfehlern (Windows 10054 ConnectionReset, …) leise ab und retryt mit frischer Session. Direktverbindung ohne Proxy (<code>session.trust_env = False</code>), damit System-Proxy-Vars die Reports nicht silent killen, plus globale Suppression-Logik gegen Notification-Storms.</li>
+            </ul>
+
+            <h2 id="engineering-highlights">Engineering Highlights &amp; Fail-Safe-Architektur</h2>
+            <p>Zuverlässigkeit war absolut nicht verhandelbar — das System läuft 24/7 unbeaufsichtigt und der Endnutzer ist kein Developer:</p>
+            <ul>
+              <li><strong>9 pytest-Test-Suites mit GitHub-Actions-CI.</strong> Database-Migrations (idempotent, mehrfach ausführbar), Error-Reporter (260+ Tests inklusive Suppression-Logik und Crash-File-Roundtrip), Coordination-Patterns, Proxy-Layer, Shared-Helpers, Config-Resolution — alles automatisch auf jedem Push gegen Ubuntu Python 3.13 validiert. Migrations-Bugs werden vor dem Deploy abgefangen, nicht zur Laufzeit.</li>
+              <li><strong>Strikte Layer-Trennung ohne zirkuläre Imports.</strong> Presentation-Layer importiert nur Control-Layer; Control-Layer importiert nur Execution-Layer + Utils. Jeder Subprocess kann standalone hochgefahren werden, ohne dass Streamlit überhaupt installiert sein muss — relevant für CI-Runs und Debugging-Sessions ohne UI-Overhead.</li>
+              <li><strong>Singleton-Path-Resolution.</strong> Eine <code>PATHS</code>-Singleton-Klasse mit Auto-Root-Detection (sucht aufwärts nach Marker-Files wie <code>.git</code>, <code>.env</code>, <code>requirements.txt</code>) und automatischer Verzeichnis-Erstellung bei Property-Access. Code aus jedem beliebigen Working-Directory aufgerufen findet konsistent dieselben absoluten Pfade — kein einziges <code>os.path.join(os.path.dirname(__file__), …)</code> in der ganzen Codebase.</li>
+              <li><strong>Dataclass-First Domain-Model.</strong> Alle Workflow-Inputs und -Outputs sind Dataclasses mit Type-Hints, Validation-Logik und sauberen <code>from_dict</code>/<code>to_dict</code>-Roundtrips. Saubere Schnittstellen zwischen Layern, IDE-Autocomplete funktioniert, Refactorings ziehen Compile-Time-Fehler nach sich statt Runtime-AttributeErrors.</li>
+              <li><strong>Test-First für IPC-kritische Komponenten.</strong> Crash-File-Bridge, Suppression-Gate und Aggregator-Logik sind die riskantesten Stellen — sie laufen genau dann, wenn alles andere kaputt geht. Entsprechend dicht ist die Test-Suite: ein eigenes <code>_clear_*</code>-Fixture-Pattern resettet klassen-globalen State zwischen Tests, jeder Edge-Case (Subprocess crashed VOR Crash-File-Write, Crash-File ohne Telegram-Flag, Telegram nach Crash-File, beides parallel) hat einen expliziten Test-Case.</li>
+              <li><strong>Dependency-Injection-Layer für Tests.</strong> Jede externe Abhängigkeit (DB, Telegram, Proxy-Provider, Filesystem) sitzt hinter einer schmalen Schnittstelle, die im Testbetrieb durch ein In-Memory-Pendant ersetzt werden kann. Die SQLite-Tests laufen aber gegen eine echte SQLite-DB im pytest-<code>tmp_path</code>, nicht gegen einen Mock — Migrations-Bugs würden Mocks systematisch nicht aufdecken.</li>
+            </ul>
+
+            <aside class="not-prose mt-10 mb-10 flex aspect-[16/9] items-center justify-center rounded-2xl border border-stone-800 bg-stone-900/60" aria-label="Codebase-Treemap-Platzhalter">
+              <div class="text-center">
+                <p class="font-aspekta text-xs font-semibold uppercase tracking-widest text-stone-500">Codebase-Treemap</p>
+                <p class="mt-2 text-sm text-stone-400">17.461 LOC in 25 Modulen über 4 Architektur-Layer, proportional nach Modulgröße — folgt</p>
+              </div>
+            </aside>
+            <p class="text-sm text-stone-400">Volumen-Aufschlüsselung der gesamten Codebase über Presentation-, Control-, Execution-Core- und Utility-Layer — der Execution-Core (8.228 LOC) dominiert visuell als größter Block, die Utility-Schicht zeigt die Modularität in 11 kleinen Helper-Modulen.</p>
+
+            <h2 id="das-ergebnis">Das Ergebnis</h2>
+            <ul>
+              <li><strong>17.461 LOC Production-Python</strong> in 25 sauber modularisierten Files — klare Layer-Trennung, keine zirkulären Imports, jede Stage standalone lauffähig.</li>
+              <li><strong>260+ pytest-Tests mit GitHub-Actions-CI</strong> auf jedem Push — Migrations-Bugs, IPC-Race-Conditions und Suppression-Logik werden vor dem Deploy abgefangen.</li>
+              <li><strong>Cross-Process Crash-Bridge</strong> — kein Crash geht verloren, selbst bei Subprocess-Tod vor dem eigenen Crash-Handler.</li>
+              <li><strong>Race-safe Coordination</strong> zwischen N parallelen Browser-Workern auf Windows — keine Port-Kollisionen, keine Profil-Locks, keine Zombie-Prozesse beim Shutdown.</li>
+              <li><strong>Vollständige Operator-UX über Streamlit</strong> — der Endkunde schaltet Services per Klick, sieht Live-Status und Live-Logs, ohne CLI je gesehen zu haben.</li>
+              <li><strong>Modular erweiterbar</strong> — neue Workflow-Typen sind ein neues Modul gegen die existierende Coordination- und Reporting-Infrastruktur, ohne Eingriff in den Core.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <section class="border-t border-stone-800/60 py-16">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <h2 class="mb-8 font-aspekta text-2xl font-bold text-white">Weitere Projekte</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+
+        <a href="/de/projekte/aws-cost-optimization/" class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/static/projects/aws-cost-optimization/images/cover.svg" alt="" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-5">
+            <h3 class="font-aspekta text-lg font-bold text-white">AWS Kostenoptimierung</h3>
+            <p class="mt-1 line-clamp-2 text-sm text-stone-400">65 % weniger AWS-Kosten (3.850 $ → 1.330 $ / Monat) durch sicheren Rückbau einer Legacy-Plattform — Zero Downtime.</p>
+          </div>
+        </a>
+
+        <a href="/de/projekte/book-lister-ai/" class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/static/projects/book-lister-ai/images/cover.svg" alt="" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-5">
+            <h3 class="font-aspekta text-lg font-bold text-white">Book Lister AI</h3>
+            <p class="mt-1 line-clamp-2 text-sm text-stone-400">Desktop-App, die gebrauchte Bücher in unter 30 Sekunden scannt, per Gemini-Vision erfasst, live bepreist und bei eBay listet — +400 % Durchsatz.</p>
+          </div>
+        </a>
+
+        <a href="/de/projekte/microsoft-shopping-feed/" class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/static/projects/microsoft-shopping-feed/images/cover.svg" alt="" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-5">
+            <h3 class="font-aspekta text-lg font-bold text-white">Microsoft Shopping Feed Pipeline</h3>
+            <p class="mt-1 line-clamp-2 text-sm text-stone-400">Vollautomatischer täglicher Sync großvolumiger Affiliate-Feeds (Connexity, Shopping24) ins Microsoft Merchant Center — OOM-sicher, chunked-Upload, 100 % konform.</p>
+          </div>
+        </a>
+
+      </div>
+      <div class="mt-12 flex justify-center">
+        <a href="/de/projekte/" class="inline-flex items-center gap-2 rounded-full border border-stone-800 bg-stone-900 px-6 py-3 text-sm font-semibold text-stone-200 transition hover:border-orange-500/50 hover:text-amber-300">
+          Alle Case Studies ansehen
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</article>
+
+  </main>
+
+
+  <footer class="relative border-t border-stone-800/60 mt-10">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="grid gap-10 py-12 md:grid-cols-12">
+
+        <div class="md:col-span-5">
+          <a class="inline-flex items-center gap-3" href="/de/" aria-label="Teske Systemtechnik">
+            <img src="/static/images/logo_whitemode.svg" class="h-12 w-12" alt="">
+            <span class="font-aspekta text-lg font-bold uppercase tracking-[0.2em] text-stone-100">Teske<br>Systemtechnik</span>
+          </a>
+          <p class="mt-4 max-w-sm text-sm text-stone-400">Quality engineered in Germany.</p>
+        </div>
+
+        <div class="md:col-span-3">
+          <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Navigation</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/">Start</a></li>
+            <li data-skeleton-off><a class="text-stone-400 transition hover:text-amber-400" href="/de/about/">Über uns</a></li>
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/projekte/">Projekte</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-2">
+          <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Rechtliches</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/impressum/">Impressum</a></li>
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/datenschutz/">Datenschutz</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-2">
+          <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Folgen Sie mir</h3>
+          <ul class="flex gap-3">
+            <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white" href="https://pypi.org/user/JanTeske06/" target="_blank" rel="noopener noreferrer" aria-label="PyPI"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12,2L2,7V17L12,22L22,17V7L12,2ZM4,16.06V8.94L11,12.44V19.56L4,16.06ZM12,11.38L5.13,7.94L12,4.5L18.87,7.94L12,11.38ZM20,16.06L13,19.56V12.44L20,8.94V16.06Z"/></svg></a></li>
+            <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#14a800] hover:bg-[#14a800] hover:text-white" href="https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c" target="_blank" rel="noopener noreferrer" aria-label="Upwork"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg></a></li>
+            <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-white hover:bg-black hover:text-white" href="https://github.com/JanTeske06" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col items-center justify-between gap-3 border-t border-stone-800/60 py-6 text-xs text-stone-500 md:flex-row">
+        <p>&copy; 2026 Teske Systemtechnik. Alle Rechte vorbehalten.</p>
+        <p class="font-aspekta uppercase tracking-widest">Quality engineered in Germany.</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script src="/static/js/vendors/alpinejs.min.js?v=20260425b" defer></script>
+<script src="/static/js/vendors/aos.js?v=20260425b"></script>
+<script src="/static/js/vendors/swiper-bundle.min.js?v=20260425b"></script>
+<script src="/static/js/main.js?v=20260425b"></script>
+
+</body>
+</html>
