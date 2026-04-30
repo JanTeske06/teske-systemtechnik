@@ -306,6 +306,25 @@ footer {
   min-height: 14rem;
 }
 
+/* --- Equal-height carousel slides --------------------------------
+ * Swiper defaults make the wrapper track the active slide's natural
+ * height, which causes a visible jump when slides have different
+ * title-wrap counts or summary lengths. Forcing align-items:stretch
+ * + height:auto on each slide makes them all match the tallest, and
+ * the inner <a> uses h-full + flex-col so the "view case" link stays
+ * pinned to the bottom regardless of text length.
+ */
+.project-showcase .swiper-wrapper {
+  align-items: stretch;
+}
+.project-showcase .swiper-slide {
+  height: auto;
+  display: flex;
+}
+.project-showcase .swiper-slide > a {
+  width: 100%;
+}
+
 /* --- Graceful fade-in when JS populates the dynamic slots --- */
 .project-dyn-loaded {
   animation: dyn-fade-in 0.4s ease-out both;

@@ -33,13 +33,13 @@
     return (
       '<a href="' +
       helpers.escapeHtml(href) +
-      '" class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">' +
+      '" class="group flex h-full flex-col overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">' +
       '<div class="aspect-[16/9] overflow-hidden">' +
       '<img src="' +
       cover +
       '" alt="" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">' +
       '</div>' +
-      '<div class="p-5">' +
+      '<div class="flex flex-1 flex-col p-5">' +
       '<div class="mb-3 flex flex-wrap gap-1.5">' +
       techHtml +
       '</div>' +
@@ -49,7 +49,7 @@
       '<p class="mt-2 line-clamp-2 text-sm text-stone-400">' +
       summary +
       '</p>' +
-      '<span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-amber-400 transition group-hover:text-amber-200">' +
+      '<span class="mt-auto pt-4 inline-flex items-center gap-1 text-sm font-semibold text-amber-400 transition group-hover:text-amber-200">' +
       helpers.escapeHtml(helpers.label('readCase', lang)) +
       '</span>' +
       '</div>' +
