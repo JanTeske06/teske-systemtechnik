@@ -67,10 +67,12 @@
     const helpers = window.TeskeProjects;
     // Loop mode needs >=2 slides, otherwise Swiper warns.
     const canLoop = slideCount > 1;
-    new Swiper('.project-showcase', {
+    const BASE_SPEED = 700;
+    const CHAIN_SPEED = 320;
+    const swiper = new Swiper('.project-showcase', {
       loop: canLoop,
       effect: 'slide',
-      speed: 900,
+      speed: BASE_SPEED,
       spaceBetween: 32,
       autoplay: canLoop
         ? {
@@ -79,10 +81,10 @@
             disableOnInteraction: false,
           }
         : false,
-      navigation: {
-        prevEl: '.project-showcase-prev',
-        nextEl: '.project-showcase-next',
-      },
+      // Swiper's built-in nav ignores clicks during a transition. We replace
+      // it with our own handler that queues rapid presses and chains them
+      // smoothly — single click feels smooth, three quick clicks slide all
+      // the way through to the third project without skipping or stalling.
       pagination: {
         el: '.project-showcase .swiper-pagination',
         clickable: true,
@@ -93,6 +95,34 @@
         nextSlideMessage: helpers.label('next', lang),
       },
     });
+
+    let queued = 0;
+    let busy = false;
+    function process() {
+      if (busy || queued === 0 || !swiper || swiper.destroyed) return;
+      busy = true;
+      const step = queued > 0 ? 1 : -1;
+      queued -= step;
+      const speed = queued !== 0 ? CHAIN_SPEED : BASE_SPEED;
+      if (step > 0) swiper.slideNext(speed);
+      else swiper.slidePrev(speed);
+      swiper.once('slideChangeTransitionEnd', function () {
+        busy = false;
+        process();
+      });
+    }
+    function enqueue(dir) {
+      return function (e) {
+        if (!swiper || swiper.destroyed) return;
+        e.preventDefault();
+        queued += dir === 'next' ? 1 : -1;
+        process();
+      };
+    }
+    const prevBtn = document.querySelector('.project-showcase-prev');
+    const nextBtn = document.querySelector('.project-showcase-next');
+    if (prevBtn) prevBtn.addEventListener('click', enqueue('prev'));
+    if (nextBtn) nextBtn.addEventListener('click', enqueue('next'));
   }
 
   function hideSection() {
