@@ -38,7 +38,7 @@ ORIGINAL_TEMPLATES/
 documentation.md
 anleitung.md
 rework.md
-CHANGELOG.md
+CHANGELOG.md222
 seo-plan.md
 
 ## Throwaway one-shot scripts (prefix convention) — never commit
@@ -49,6 +49,24 @@ _*.py
 ## - upwork_links.txt: input data for the local-only add-upwork-sidebar.py
 teske-logo-lockup.svg
 upwork_links.txt
+
+## Local working directories (separate projects, not part of the public site)
+BookListerAI/
+High speed data aquision/
+Legacy-Data-Extraction/
+Microsoft feed/
+
+## Wireframe drafts and design feedback — local design notes, never deploy
+Wireframe-*.txt
+Wireframe-*.pdf
+Teske Systemtechnik-WIREFRAMES-*.pdf
+Teske Systemtechnik-Infographics-*.pdf
+
+## Signed legal documents — keep locally only, must NEVER be committed
+*DPA*.pdf
+Forminit*.pdf
+*Auftragsverarbeitung*.pdf
+*processor-agreement*.pdf
 
 ## OS X
 .DS_Store

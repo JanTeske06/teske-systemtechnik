@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <script>
-    // About-Seite ist temporär deaktiviert — auf 404 weiterleiten.
+    // About-Seite ist temporär deaktiviert, auf 404 weiterleiten.
     // Zum Wieder-Aktivieren: diesen <script>-Block in /de/about/, /en/about/
     // und /ru/about/ löschen.
     location.replace('/404.html');
@@ -21,11 +21,11 @@
         .catch(function () {});
     })();
   </script>
-  <meta name="robots" content="index,follow">
+  <meta name="robots" content="noindex,nofollow">
 
   <title>Обо мне · Teske Systemtechnik</title>
 
-  <meta name="description" content="Jan Teske, владелец Teske Systemtechnik — Python-автоматизация, API и индивидуальное ПО из Мелле, Германия. Удалённое сотрудничество по всему миру.">
+  <meta name="description" content="Jan Teske, владелец Teske Systemtechnik, Python-автоматизация, API и индивидуальное ПО из Мелле, Германия. Удалённое сотрудничество по всему миру.">
 
   <link rel="canonical" href="https://teske-systemtechnik.de/ru/about/">
 
@@ -42,12 +42,12 @@
   <link rel="stylesheet" href="/static/css/vendors/aos.css">
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
 
-  <link rel="stylesheet" href="/static/style.css?v=20260430a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260430a">
+  <link rel="stylesheet" href="/static/style.css?v=20260521a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260521a">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
-  <meta property="og:title" content="Обо мне — Teske Systemtechnik">
-  <meta property="og:description" content="Jan Teske, владелец Teske Systemtechnik — Python-автоматизация, API и индивидуальное ПО из Мелле, Германия. Удалённое сотрудничество по всему миру.">
+  <meta property="og:title" content="Обо мне, Teske Systemtechnik">
+  <meta property="og:description" content="Jan Teske, владелец Teske Systemtechnik, Python-автоматизация, API и индивидуальное ПО из Мелле, Германия. Удалённое сотрудничество по всему миру.">
   <meta property="og:url" content="https://teske-systemtechnik.de/ru/about/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
@@ -55,9 +55,9 @@
   <meta property="og:image" content="https://teske-systemtechnik.de/static/images/og-default.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Teske Systemtechnik — Python-автоматизация, разработка API, индивидуальное ПО">
+  <meta property="og:image:alt" content="Teske Systemtechnik, Python-автоматизация, разработка API, индивидуальное ПО">
   <meta name="twitter:image" content="https://teske-systemtechnik.de/static/images/og-default.png">
-  <meta name="twitter:image:alt" content="Teske Systemtechnik — Python-автоматизация, разработка API, индивидуальное ПО">
+  <meta name="twitter:image:alt" content="Teske Systemtechnik, Python-автоматизация, разработка API, индивидуальное ПО">
 
   <script type="application/ld+json">
 {
@@ -85,9 +85,10 @@
         "contactType": "customer support",
         "email": "jt@teske-systemtechnik.de",
         "telephone": "+49-1522-5166058",
-        "availableLanguage": ["de", "en"]
+        "availableLanguage": ["de", "en", "ru"]
       },
       "vatID": "DE459634758",
+      "priceRange": "€75 - €8500+",
       "sameAs": [
         "https://github.com/JanTeske06",
         "https://pypi.org/user/JanTeske06/",
@@ -151,7 +152,7 @@
           "name": "Какие технологии вы используете?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "В первую очередь Python (FastAPI, Flask, Django) для backend-задач и автоматизации. Плюс SQL-базы (PostgreSQL, SQLite), Docker для деплоя, Git для версионирования. Для скрейпинга и трейсинга — Selenium, mitmproxy, Wireshark. Выбор технологии всегда диктуется задачей — никаких фреймворков ради фреймворков."
+            "text": "В первую очередь Python (FastAPI, Flask, Django) для backend-задач и автоматизации. Плюс SQL-базы (PostgreSQL, SQLite), Docker для деплоя, Git для версионирования. Для скрейпинга и трейсинга, Selenium, mitmproxy, Wireshark. Выбор технологии всегда диктуется задачей, никаких фреймворков ради фреймворков."
           }
         },
         {
@@ -167,7 +168,7 @@
           "name": "Беретесь ли вы за небольшие задачи?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Да. Отдельный скрипт, короткий скрейпинг-джоб или день воркшоп-консалтинга — я берусь с тем же интересом, что и за многонедельные проекты. Минимальный объём: около 4 часов."
+            "text": "Да. Отдельный скрипт, короткий скрейпинг-джоб или день воркшоп-консалтинга, я берусь с тем же интересом, что и за многонедельные проекты. Минимальный объём: около 4 часов."
           }
         },
         {
@@ -191,7 +192,7 @@
           "name": "Как быстро вы можете начать?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Обычно в течение одной-двух недель. Для срочных запросов часто быстрее — просто напишите, и мы посмотрим, что возможно."
+            "text": "Обычно в течение одной-двух недель. Для срочных запросов часто быстрее, просто напишите, и мы посмотрим, что возможно."
           }
         }
       ]
@@ -233,6 +234,12 @@
                  href="/ru/about/"
                  aria-current="page">
                 Обо мне
+              </a>
+            </li>
+            <li>
+              <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
+                 href="/ru/uslugi/">
+                Услуги
               </a>
             </li>
             <li>
@@ -281,6 +288,7 @@
               <ul class="rounded-2xl border border-stone-800 bg-stone-900/90 px-4 py-3 shadow-xl backdrop-blur-xl">
                 <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/ru/">Главная</a></li>
                 <li data-skeleton-off><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/ru/about/">Обо мне</a></li>
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/ru/uslugi/">Услуги</a></li>
                 <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/ru/proekty/">Проекты</a></li>
                 <li><a class="flex items-center gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer"><svg class="h-3.5 w-3.5 fill-[#14a800]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>Консультация</a></li>
                 <li class="mt-2 flex items-center gap-2 border-t border-stone-800 pt-3">
@@ -313,22 +321,22 @@
         Обо мне
       </p>
       <h1 class="font-aspekta text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">О Teske Systemtechnik</h1>
-      <p class="mt-4 max-w-xl text-lg text-stone-300">Jan Teske, владелец Teske Systemtechnik — Python-автоматизация, API и индивидуальное ПО из Мелле, Германия. Удалённое сотрудничество по всему миру.</p>
+      <p class="mt-4 max-w-xl text-lg text-stone-300">Jan Teske, владелец Teske Systemtechnik, Python-автоматизация, API и индивидуальное ПО из Мелле, Германия. Удалённое сотрудничество по всему миру.</p>
     </div>
 
     <article class="prose prose-invert mt-12 max-w-none prose-headings:font-aspekta prose-headings:text-white prose-a:text-amber-400 hover:prose-a:text-amber-300 prose-strong:text-white prose-img:rounded-2xl prose-img:border prose-img:border-stone-800"
              data-aos="fade-up" data-aos-delay="200">
       <h2 id="privet-ya-jan-teske">Привет, меня зовут Jan Teske.</h2>
-      <p>Я разрабатываю <strong>индивидуальные программные решения</strong> для клиентов по всему миру — с чётким фокусом на Python, чистые API и надёжную автоматизацию.</p>
-      <p>Что меня мотивирует: процессы, которые раньше занимали дни, после моей работы выполняются за минуты. Или вовсе не требуют участия человека — потому что запускаются автоматически.</p>
+      <p>Я разрабатываю <strong>индивидуальные программные решения</strong> для клиентов по всему миру, с чётким фокусом на Python, чистые API и надёжную автоматизацию.</p>
+      <p>Что меня мотивирует: процессы, которые раньше занимали дни, после моей работы выполняются за минуты. Или вовсе не требуют участия человека, потому что запускаются автоматически.</p>
 
       <h2 id="chto-ya-delayu">Что я делаю</h2>
       <ul>
-        <li><strong>Python-автоматизация</strong> — скрейпинг, извлечение данных, workflow-автоматизация, cron-задачи, которые просто работают.</li>
-        <li><strong>Разработка API</strong> — FastAPI, Flask, REST, GraphQL. С документацией, типизацией, тестами.</li>
-        <li><strong>Пайплайны данных</strong> — из хаоса CSV-файлов в структурированные базы данных, готовые к запросам.</li>
-        <li><strong>Веб-скрейпинг</strong> — от динамических JavaScript-страниц до сложных сценариев авторизации.</li>
-        <li><strong>Индивидуальные инструменты</strong> — настольные приложения, CLI-утилиты, внутренние дашборды.</li>
+        <li><strong>Python-автоматизация</strong>, скрейпинг, извлечение данных, workflow-автоматизация, cron-задачи, которые просто работают.</li>
+        <li><strong>Разработка API</strong>, FastAPI, Flask, REST, GraphQL. С документацией, типизацией, тестами.</li>
+        <li><strong>Пайплайны данных</strong>, из хаоса CSV-файлов в структурированные базы данных, готовые к запросам.</li>
+        <li><strong>Веб-скрейпинг</strong>, от динамических JavaScript-страниц до сложных сценариев авторизации.</li>
+        <li><strong>Индивидуальные инструменты</strong>, настольные приложения, CLI-утилиты, внутренние дашборды.</li>
       </ul>
 
       <h2 id="moi-standarty">Мои стандарты</h2>
@@ -339,12 +347,12 @@
       </ol>
 
       <h2 id="pochemu-teske-systemtechnik">Почему «Teske Systemtechnik»?</h2>
-      <p>Название выбрано намеренно техническое. Я не маркетинговая студия с красивыми слайдами — я тот, кто починит ваш рабочий процесс, разберёт гору данных или построит тот самый инструмент, которого вам не хватает уже несколько месяцев.</p>
-      <p><strong>Quality engineered in Germany</strong> — не лозунг, а стандарт, по которому я работаю.</p>
+      <p>Название выбрано намеренно техническое. Я не маркетинговая студия с красивыми слайдами, я тот, кто починит ваш рабочий процесс, разберёт гору данных или построит тот самый инструмент, которого вам не хватает уже несколько месяцев.</p>
+      <p><strong>Quality engineered in Germany</strong>, не лозунг, а стандарт, по которому я работаю.</p>
 
       <h2 id="korotko-o-glavnom">Коротко о главном</h2>
       <ul>
-        <li><strong>Компания:</strong> Teske Systemtechnik — индивидуальный предприниматель, владелец Jan Teske</li>
+        <li><strong>Компания:</strong> Teske Systemtechnik, индивидуальный предприниматель, владелец Jan Teske</li>
         <li><strong>Адрес:</strong> Elschers Kamp 13, 49324 Melle, Нижняя Саксония, Германия</li>
         <li><strong>НДС-номер (VAT-ID):</strong> DE459634758</li>
         <li><strong>Услуги:</strong> Python-автоматизация, разработка API, пайплайны данных, веб-скрейпинг, индивидуальные инструменты, реверс-инжиниринг</li>
@@ -356,13 +364,13 @@
       <h2 id="chastye-voprosy">Частые вопросы</h2>
 
       <h3 id="faq-tech">Какие технологии вы используете?</h3>
-      <p>В первую очередь Python (FastAPI, Flask, Django) для backend-задач и автоматизации. Плюс SQL-базы данных (PostgreSQL, SQLite), Docker для деплоя, Git для версионирования. Для скрейпинга и трейсинга — Selenium, mitmproxy, Wireshark. Выбор технологии всегда диктуется задачей — никаких фреймворков ради фреймворков.</p>
+      <p>В первую очередь Python (FastAPI, Flask, Django) для backend-задач и автоматизации. Плюс SQL-базы данных (PostgreSQL, SQLite), Docker для деплоя, Git для версионирования. Для скрейпинга и трейсинга, Selenium, mitmproxy, Wireshark. Выбор технологии всегда диктуется задачей, никаких фреймворков ради фреймворков.</p>
 
       <h3 id="faq-process">Как обычно идёт проект?</h3>
       <p>Первый разговор для уточнения требований (бесплатно, около 30 минут). Затем письменное предложение с объёмом работ, сроками и ценой. При согласовании: старт работы, регулярные апдейты, чёткая приёмка. После передачи я опционально предлагаю период сопровождения и поддержки.</p>
 
       <h3 id="faq-small">Беретесь ли вы за небольшие задачи?</h3>
-      <p>Да. Отдельный скрипт, короткая задача по скрейпингу или однодневный консалтинг-воркшоп — я берусь с тем же интересом, что и за многонедельные проекты. Минимальный объём: около 4 часов.</p>
+      <p>Да. Отдельный скрипт, короткая задача по скрейпингу или однодневный консалтинг-воркшоп, я берусь с тем же интересом, что и за многонедельные проекты. Минимальный объём: около 4 часов.</p>
 
       <h3 id="faq-price">Сколько стоит проект?</h3>
       <p>Ценообразование либо фиксированное (при чёткой постановке) либо почасовое (при открытом объёме). Конкретные цифры после первого разговора, когда станет понятен объём работы.</p>
@@ -371,11 +379,11 @@
       <p>Да. Все проекты идут удалённо. Общение на немецком или английском, часовой пояс Центральная Европа (CET/CEST), с гибкостью для звонков вне основных часов.</p>
 
       <h3 id="faq-start">Как быстро вы можете начать?</h3>
-      <p>Обычно в течение одной-двух недель. Для срочных запросов часто быстрее — просто напишите, и мы посмотрим, что возможно.</p>
+      <p>Обычно в течение одной-двух недель. Для срочных запросов часто быстрее, просто напишите, и мы посмотрим, что возможно.</p>
 
       <h2 id="davayte-pogovorim">Давайте поговорим</h2>
       <p>У вас есть проект, который застрял? Задача, которую пора наконец автоматизировать? Идея, в осуществимости которой вы не уверены?</p>
-      <p><a href="mailto:jan.teske.06@gmail.com">Напишите мне</a> — обычно я отвечаю в течение дня.</p>
+      <p><a href="mailto:jan.teske.06@gmail.com">Напишите мне</a>, обычно я отвечаю в течение дня.</p>
     </article>
   </div>
 </section>
@@ -399,6 +407,7 @@
           <ul class="space-y-2 text-sm">
             <li><a class="text-stone-400 transition hover:text-amber-400" href="/ru/">Главная</a></li>
             <li data-skeleton-off><a class="text-stone-400 transition hover:text-amber-400" href="/ru/about/">Обо мне</a></li>
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/ru/uslugi/">Услуги</a></li>
             <li><a class="text-stone-400 transition hover:text-amber-400" href="/ru/proekty/">Проекты</a></li>
             <li><a class="text-stone-400 transition hover:text-amber-400" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer">Консультация через Upwork</a></li>
           </ul>

@@ -391,3 +391,53 @@ footer {
     max-width: none;
   }
 }
+
+/* ------------------------------------------------------------------
+   FAQ-Karten auf Service-Seiten — smooth open + animiertes Plus-Icon.
+   Plus-Icon: orange im closed-state, emerald im open-state, mit 360°
+   Drehung beim Öffnen. Smooth open per ::details-content (Chromium
+   131+); ältere Browser fallen auf instant open zurück.
+   ------------------------------------------------------------------ */
+
+@supports (interpolate-size: allow-keywords) {
+  :root { interpolate-size: allow-keywords; }
+}
+
+.faq-card > summary {
+  list-style: none;
+  cursor: pointer;
+}
+.faq-card > summary::-webkit-details-marker { display: none; }
+.faq-card > summary::marker { content: ""; }
+
+.faq-card::details-content {
+  overflow: clip;
+  block-size: 0;
+  opacity: 0;
+  transition:
+    block-size 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.25s ease 0.05s,
+    content-visibility 0.38s allow-discrete;
+  transition-behavior: allow-discrete;
+}
+.faq-card[open]::details-content {
+  block-size: auto;
+  opacity: 1;
+}
+
+.faq-icon {
+  display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  color: #fb923c;            /* orange-400 — closed */
+  transform: rotate(0deg);
+  transform-origin: center center;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s ease;
+  user-select: none;
+}
+.faq-card[open] .faq-icon {
+  color: rgb(94 122 71);     /* sage-moss green — same as .section-num */
+  transform: rotate(180deg);
+}

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <script>
+  (function () {
+    if (location.pathname.endsWith('/maintenance.html')) return;
+    fetch('/maintenance.flag', { cache: 'no-store' })
+      .then(function (r) { return r.text(); })
+      .then(function (t) { if (t.trim() === 'on') location.replace('/maintenance.html'); })
+      .catch(function () {});
+  })();
+</script>
+  <meta name="robots" content="index,follow">
+
+  <title>Discovery Call & Architecture Consultation · Teske Systemtechnik</title>
+  <meta name="description" content="Paid discovery call: workflow analysis, feasibility check, architecture recommendation. 30 minutes from €75, 1 hour from €150. Credited against a follow-up project.">
+
+  <link rel="canonical" href="https://teske-systemtechnik.de/en/services/discovery-call/">
+  <link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/discovery-call/">
+  <link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/discovery-call/">
+  <link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/uslugi/discovery-call/">
+  <link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/leistungen/discovery-call/">
+
+  <link rel="icon" type="image/svg+xml" href="/static/images/logo_favicon.svg">
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-650.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/static/css/vendors/aos.css">
+  <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/static/style.css?v=20260521a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260521a">
+
+  <meta property="og:site_name" content="Teske Systemtechnik">
+  <meta property="og:title" content="Discovery Call & Architecture Consultation, Teske Systemtechnik">
+  <meta property="og:description" content="Paid discovery call: workflow analysis, feasibility check, architecture recommendation. 30 minutes from €75, 1 hour from €150. Credited against a follow-up project.">
+  <meta property="og:url" content="https://teske-systemtechnik.de/en/services/discovery-call/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://teske-systemtechnik.de/static/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://teske-systemtechnik.de/#organization",
+      "name": "Teske Systemtechnik",
+      "url": "https://teske-systemtechnik.de"
+    },
+    {
+      "@type": "Service",
+      "name": "Discovery Call & Architecture Consultation",
+      "serviceType": "Consultation",
+      "provider": {
+        "@id": "https://teske-systemtechnik.de/#organization"
+      },
+      "areaServed": "Worldwide",
+      "description": "Paid discovery call: workflow analysis, feasibility check, architecture recommendation. 30 minutes from €75, 1 hour from €150. Credited against a follow-up project.",
+      "url": "https://teske-systemtechnik.de/en/services/discovery-call/",
+      "offers": {
+        "@type": "Offer",
+        "price": "75",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "75",
+          "priceCurrency": "EUR"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why not a free call?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because a good call needs preparation, reading code, weighing options, sketching architecture. Plus, the price filters out inquiries where nobody really wants to invest. Result: a call that delivers something, not a 15-minute sales pitch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "And if you say it's not feasible?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Then you have the written summary with reasoning and save yourself a project that wouldn't have worked. That's the most common \"worst case\", and the call still paid off."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When are 30 minutes enough, when do I need 60?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "30 work if you already have a concrete question (\"Should I use X or Y?\"). 60 is useful for more complex workflows or if we want to look at live code together."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the project credit work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The call price shows up in the project invoice as \"already paid\". You pay the project fixed price minus €75 (or €150). Credit applies to any follow-up project with me."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does async work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Audio messages and shared notes, if live calls are tricky. Same price, same deliverable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if the call overruns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "5–10 minutes of buffer are planned. If it needs more: either schedule a follow-up, or upgrade to the 60-minute tier on the spot, you pay the difference, nothing twice."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-orange-500 focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+<div class="flex min-h-screen flex-col">
+
+<header class="absolute z-30 w-full">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="flex h-16 items-center justify-between md:h-20">
+      <div class="mr-4 shrink-0">
+        <a class="inline-flex items-center gap-3" href="/en/" aria-label="Teske Systemtechnik">
+          <img class="max-w-none" src="/static/images/logo_whitemode.svg" width="40" height="40" alt="">
+          <span class="font-aspekta text-[17px] font-bold uppercase tracking-[0.1em] text-stone-100 leading-[20px]">Teske<br>Systemtechnik</span>
+        </a>
+      </div>
+      <nav class="hidden md:flex md:grow" aria-label="Primary">
+        <ul class="flex grow flex-wrap items-center justify-end gap-1">
+          <li><a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/en/">Home</a></li>
+          <li data-skeleton-off><a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/en/about/">About</a></li>
+          <li><a class="text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/en/services/" aria-current="page">Services</a></li>
+          <li><a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/en/projects/">Projects</a></li>
+          <li><a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer"><svg class="h-3.5 w-3.5 fill-[#14a800]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>Consulting</a></li>
+          <li class="ml-2 flex items-center gap-1 rounded-full border border-stone-800 bg-stone-900/60 p-1">
+            <a class="text-stone-400 hover:text-white rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/de/leistungen/discovery-call/" aria-label="Switch language: DE">DE</a>
+              <a class="bg-orange-500 text-white shadow rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition" href="#" aria-current="true" aria-label="Switch language: EN">EN</a>
+              <a class="text-stone-400 hover:text-white rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/ru/uslugi/discovery-call/" aria-label="Switch language: RU">RU</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="ml-4 flex items-center md:hidden" x-data="{ expanded: false }">
+        <button class="group inline-flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900/60 text-stone-300 transition hover:text-white" aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded">
+          <span class="sr-only">Menu</span>
+          <svg class="pointer-events-none h-4 w-4 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect class="origin-center -translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]" y="7" width="16" height="2" rx="1"></rect>
+            <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45" y="7" width="16" height="2" rx="1"></rect>
+            <rect class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]" y="7" width="16" height="2" rx="1"></rect>
+          </svg>
+        </button>
+        <template x-teleport="body">
+          <nav id="mobile-nav" aria-label="Mobile" class="fixed top-16 inset-x-0 z-50 overflow-hidden px-4 transition-all duration-300 ease-out sm:px-6" x-ref="mobileNav"
+               :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1; transform: translateY(0)' : 'max-height: 0; opacity: 0; transform: translateY(-8px)'"
+               @click.outside="expanded = false" @keydown.escape.window="expanded = false" x-cloak>
+            <ul class="rounded-2xl border border-stone-800 bg-stone-900/90 px-4 py-3 shadow-xl backdrop-blur-xl">
+              <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/en/">Home</a></li>
+              <li data-skeleton-off><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/en/about/">About</a></li>
+              <li><a class="flex py-2 text-sm font-medium text-white" href="/en/services/">Services</a></li>
+              <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/en/projects/">Projects</a></li>
+              <li><a class="flex items-center gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer"><svg class="h-3.5 w-3.5 fill-[#14a800]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>Consulting</a></li>
+              <li class="mt-2 flex items-center gap-2 border-t border-stone-800 pt-3">
+                <span class="text-xs uppercase tracking-wider text-stone-500">Switch language:</span>
+                <a class="text-stone-400 hover:text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/de/leistungen/discovery-call/" aria-label="Switch language: DE">DE</a>
+              <a class="bg-orange-500 text-white shadow rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition" href="#" aria-current="true" aria-label="Switch language: EN">EN</a>
+              <a class="text-stone-400 hover:text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/ru/uslugi/discovery-call/" aria-label="Switch language: RU">RU</a>
+              </li>
+            </ul>
+          </nav>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content" class="grow">
+
+<section class="relative pt-32 pb-16 md:pt-40 md:pb-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <a href="/en/services/" class="mb-6 inline-flex items-center gap-2 text-sm font-medium text-stone-400 transition hover:text-amber-300" data-aos="fade-up">← All services</a>
+    <div class="max-w-3xl">
+      <p class="mb-6 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400" data-aos="fade-up">
+        <span class="section-num">000 /</span>
+        Consultation
+      </p>
+      <h1 class="font-aspekta text-5xl font-bold leading-[1.02] text-white md:text-6xl" data-aos="fade-up" data-aos-delay="80">Discovery Call & Architecture Consultation</h1>
+      <p class="mt-6 max-w-2xl text-lg text-stone-300" data-aos="fade-up" data-aos-delay="160">30 minutes or one hour on the phone, workflow analysis, feasibility check, architecture recommendation. You get a cost estimate for the implementation and a written summary. Book a project afterwards and the call price gets fully credited against it.</p>
+      <div class="mt-10 flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="240">
+        <a class="inline-flex items-center rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400" href="/en/?service=discovery-call&amp;min=75#contact">Send inquiry</a>
+        <a class="inline-flex items-center rounded-full border border-stone-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-orange-500 hover:text-amber-300" href="#leistungsumfang">What you get</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="leistungsumfang" class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl" data-aos="fade-up">
+      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+        <span class="section-num">001 /</span>
+        Deliverables
+      </p>
+      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">What you get</h2>
+      <p class="mt-4 text-stone-400">Four concrete things you walk away with, even if you decide against a follow-up project.</p>
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up">
+  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+  <h3 class="font-aspekta text-lg font-bold text-white">Written summary</h3>
+  <p class="mt-2 text-sm text-stone-400">What we discussed, what your options are, which one I'd recommend for your case. By email within 24 h of the call, even if you don't proceed.</p>
+</div>
+          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="80">
+  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+  <h3 class="font-aspekta text-lg font-bold text-white">Feasibility assessment</h3>
+  <p class="mt-2 text-sm text-stone-400">Straight answer: is what you have in mind technically realistic and stable to build? If not, I tell you in the call, before you invest time or money.</p>
+</div>
+          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="160">
+  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h7a3 3 0 013 3v6"/></svg></div>
+  <h3 class="font-aspekta text-lg font-bold text-white">Architecture recommendation</h3>
+  <p class="mt-2 text-sm text-stone-400">Which tools fit your case (e.g. Python + Docker, FastAPI, Playwright, scraping vs. APIs). So you don't build a fragile system that has to be rebuilt in three months.</p>
+</div>
+          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="240">
+  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+  <h3 class="font-aspekta text-lg font-bold text-white">Realistic cost estimate</h3>
+  <p class="mt-2 text-sm text-stone-400">If a follow-up project makes sense: range plus assumptions. No surprises later, no bait-and-switch.</p>
+</div>
+    </div>
+  </div>
+</section>
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl" data-aos="fade-up">
+      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+        <span class="section-num">002 /</span>
+        How it runs
+      </p>
+      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">How the call runs</h2>
+    </div>
+    <ol class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up">
+  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">01</span>
+  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Inquiry</h3>
+  <p class="mt-2 text-sm text-stone-400">You send a short inquiry with the question or problem. Reply within 24 h, with a proposed time and a hint about which tier (30 or 60 min) makes sense.</p>
+</li>
+          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up" data-aos-delay="80">
+  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">02</span>
+  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Optional prep</h3>
+  <p class="mt-2 text-sm text-stone-400">Send material ahead, code repo, screenshots, an existing tool, and I look at it before the call. Makes the minutes count more, no surcharge.</p>
+</li>
+          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up" data-aos-delay="160">
+  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">03</span>
+  <h3 class="mt-3 font-aspekta text-base font-bold text-white">The call</h3>
+  <p class="mt-2 text-sm text-stone-400">30 or 60 minutes, depending on the chosen tier. Live (video or audio) or async (audio messages plus notes, if time zones are tricky).</p>
+</li>
+          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up" data-aos-delay="240">
+  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">04</span>
+  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Summary</h3>
+  <p class="mt-2 text-sm text-stone-400">Within 24 h after the call: written summary, architecture recommendation, cost estimate where applicable. By email.</p>
+</li>
+    </ol>
+  </div>
+</section>
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="grid gap-10 lg:grid-cols-12 items-start">
+      <div class="lg:col-span-5" data-aos="fade-up">
+        <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+          <span class="section-num">003 /</span>
+          Price
+        </p>
+        <h2 class="font-aspekta text-3xl font-bold leading-tight text-white md:text-4xl">Two lengths, one price per minute</h2>
+        <p class="mt-4 text-stone-400">Two options depending on complexity: 30 minutes for €75, 60 minutes for €150. Both tiers include prep, the call, and the written summary.</p>
+        <p class="mt-4 text-stone-400">If you book a project with me after the call, the call price gets fully credited against the project. Effectively you pay nothing extra for the consultation, you only pay the filter, in case it doesn't turn into a booking.</p>
+      </div>
+      <div class="lg:col-span-7" data-aos="fade-up" data-aos-delay="120">
+        <div class="rounded-3xl border border-orange-500/30 bg-gradient-to-br from-stone-900/80 to-stone-950 p-8 shadow-xl">
+          <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-amber-400">Discovery Call</p>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="font-aspekta text-sm text-stone-400">from</span>
+            <span class="font-aspekta text-5xl font-bold text-white">€75</span>
+            <span class="font-aspekta text-sm text-stone-400">net</span>
+          </div>
+          <p class="mt-2 text-sm text-stone-400">30 or 60 minutes · live or async</p>
+          <ul class="mt-6 space-y-3 text-sm text-stone-200">
+            <li class="flex items-start gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 011.42-1.42L8 12.585l7.29-7.29a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>30 minutes · €75, compact overview, architecture recommendation</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 011.42-1.42L8 12.585l7.29-7.29a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>60 minutes · €150, deeper analysis, live screen-sharing</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 011.42-1.42L8 12.585l7.29-7.29a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Workflow analysis: what makes sense to automate, and what doesn't</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 011.42-1.42L8 12.585l7.29-7.29a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Written summary + cost estimate for the implementation</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 011.42-1.42L8 12.585l7.29-7.29a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Call price fully credited against any follow-up project</li>
+          </ul>
+          <a href="/en/?service=discovery-call&amp;min=75#contact" class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">
+            Send inquiry
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+          </a>
+          <p class="mt-3 text-center text-xs text-stone-500">Reply within 24 h</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl" data-aos="fade-up">
+      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+        <span class="section-num">005 /</span>
+        Frequent questions
+      </p>
+      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">What you should know about the call</h2>
+    </div>
+    <div class="mt-12 grid gap-4 md:grid-cols-2 items-start" data-aos="fade-up" data-aos-delay="80">
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    Why not a free call?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">Because a good call needs preparation, reading code, weighing options, sketching architecture. Plus, the price filters out inquiries where nobody really wants to invest. Result: a call that delivers something, not a 15-minute sales pitch.</p>
+</details>
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    And if you say it's not feasible?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">Then you have the written summary with reasoning and save yourself a project that wouldn't have worked. That's the most common "worst case", and the call still paid off.</p>
+</details>
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    When are 30 minutes enough, when do I need 60?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">30 work if you already have a concrete question ("Should I use X or Y?"). 60 is useful for more complex workflows or if we want to look at live code together.</p>
+</details>
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    How does the project credit work?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">The call price shows up in the project invoice as "already paid". You pay the project fixed price minus €75 (or €150). Credit applies to any follow-up project with me.</p>
+</details>
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    Does async work?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">Yes. Audio messages and shared notes, if live calls are tricky. Same price, same deliverable.</p>
+</details>
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    What if the call overruns?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">5–10 minutes of buffer are planned. If it needs more: either schedule a follow-up, or upgrade to the 60-minute tier on the spot, you pay the difference, nothing twice.</p>
+</details>
+    </div>
+  </div>
+</section>
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="mb-10 max-w-3xl" data-aos="fade-up">
+      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+        <span class="section-num">006 /</span>
+        Related services
+      </p>
+      <p class="text-stone-400">Often booked alongside this service:</p>
+    </div>
+    <div class="grid gap-6 md:grid-cols-2 items-stretch">
+      <a href="/en/services/aws-cost-analysis/" class="group flex flex-col rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up">
+  <p class="mb-2 font-aspekta text-[11px] font-semibold uppercase tracking-widest text-amber-400">FinOps</p>
+  <h3 class="font-aspekta text-xl font-bold text-white">AWS Cost Analysis & Reduction</h3>
+  <p class="mt-3 grow text-sm text-stone-400">Fixed-price audit of your AWS bill. Action list with quick wins, structural fixes and architectural refactors, sorted by ROI. Zero downtime on the implementation.</p>
+  <div class="mt-6 flex items-baseline justify-between gap-3 border-t border-stone-800/60 pt-4">
+    <div class="flex items-baseline gap-1.5">
+      <span class="font-aspekta text-xs text-stone-500">from</span>
+      <span class="font-aspekta text-xl font-bold text-white">€3,500</span>
+    </div>
+    <span class="text-xs font-semibold text-amber-400 transition group-hover:text-amber-300">See details →</span>
+  </div>
+</a>
+      <a href="/en/services/custom-ai-app/" class="group flex flex-col rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up">
+  <p class="mb-2 font-aspekta text-[11px] font-semibold uppercase tracking-widest text-amber-400">Custom Apps</p>
+  <h3 class="font-aspekta text-xl font-bold text-white">Custom AI Desktop App</h3>
+  <p class="mt-3 grow text-sm text-stone-400">Bespoke Windows apps with AI backend, hardware integration and API pipelines. For workflows no SaaS tool covers.</p>
+  <div class="mt-6 flex items-baseline justify-between gap-3 border-t border-stone-800/60 pt-4">
+    <div class="flex items-baseline gap-1.5">
+      <span class="font-aspekta text-xs text-stone-500">from</span>
+      <span class="font-aspekta text-xl font-bold text-white">€8,500</span>
+    </div>
+    <span class="text-xs font-semibold text-amber-400 transition group-hover:text-amber-300">See details →</span>
+  </div>
+</a>
+    </div>
+  </div>
+</section>
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-3xl px-4 text-center sm:px-6" data-aos="fade-up">
+    <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">A question, a problem, an idea?</h2>
+    <p class="mt-4 text-stone-400">Send a short inquiry, within 24 h you get proposed times and a few targeted prep questions.</p>
+    <a href="/en/?service=discovery-call&amp;min=75#contact" class="mt-10 inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-4 text-sm font-semibold text-white transition hover:bg-orange-400">
+      Send inquiry
+      <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="relative border-t border-stone-800/60 mt-10">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="grid gap-10 py-12 md:grid-cols-12">
+      <div class="md:col-span-5">
+        <a class="inline-flex items-center gap-3" href="/en/" aria-label="Teske Systemtechnik">
+          <img src="/static/images/logo_whitemode.svg" class="h-12 w-12" alt="">
+          <span class="font-aspekta text-lg font-bold uppercase tracking-[0.2em] text-stone-100">Teske<br>Systemtechnik</span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm text-stone-400">Quality engineered in Germany.</p>
+      </div>
+      <div class="md:col-span-3">
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Navigation</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/">Home</a></li>
+          <li data-skeleton-off><a class="text-stone-400 transition hover:text-amber-400" href="/en/about/">About</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/services/">Services</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/projects/">Projects</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer">Consulting via Upwork</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-2">
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Legal</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/legal-notice/">Legal Notice</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/privacy-policy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-2">
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Follow me</h3>
+        <ul class="flex gap-3">
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white" href="https://pypi.org/user/JanTeske06/" target="_blank" rel="noopener noreferrer" aria-label="PyPI"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12,2L2,7V17L12,22L22,17V7L12,2ZM4,16.06V8.94L11,12.44V19.56L4,16.06ZM12,11.38L5.13,7.94L12,4.5L18.87,7.94L12,11.38ZM20,16.06L13,19.56V12.44L20,8.94V16.06Z"/></svg></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#14a800] hover:bg-[#14a800] hover:text-white" href="https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c" target="_blank" rel="noopener noreferrer" aria-label="Upwork"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-white hover:bg-black hover:text-white" href="https://github.com/JanTeske06" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col items-center justify-between gap-3 border-t border-stone-800/60 py-6 text-xs text-stone-500 md:flex-row">
+      <p>&copy; 2026 Teske Systemtechnik. All rights reserved.</p>
+      <p class="font-aspekta uppercase tracking-widest">Quality engineered in Germany.</p>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script src="/static/js/vendors/alpinejs.min.js" defer></script>
+<script src="/static/js/vendors/aos.js?v=20260430a"></script>
+<script src="/static/js/vendors/swiper-bundle.min.js?v=20260430a"></script>
+<script src="/static/js/main.js?v=20260430a"></script>
+
+</body>
+</html>

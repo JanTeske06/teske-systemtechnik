@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "npx @tailwindcss/cli -i ./static/css/style.css -o ./static/style.css --watch",
     "build": "npx @tailwindcss/cli -i ./static/css/style.css -o ./static/style.css --minify",
-    "sync-root": "node scripts/sync-root.mjs"
+    "sync-root": "node scripts/sync-root.mjs",
+    "build-services": "node scripts/build-services.mjs"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
