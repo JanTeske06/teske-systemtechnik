@@ -23,7 +23,8 @@
       "catalogEmpty": "Aktuell sind keine Projekte verfügbar. Bitte schauen Sie später noch einmal vorbei.",
       "contactSending": "Wird gesendet…",
       "contactSuccess": "Erfolgreich gesendet ✓",
-      "contactError": "Fehler — bitte erneut versuchen"
+      "contactError": "Fehler — bitte erneut versuchen",
+      "platform": "Plattform"
     },
     "en": {
       "viewCase": "View case study →",
@@ -34,7 +35,8 @@
       "catalogEmpty": "There are currently no projects to show. Please check back soon.",
       "contactSending": "Sending…",
       "contactSuccess": "Sent successfully ✓",
-      "contactError": "Failed — please try again"
+      "contactError": "Failed — please try again",
+      "platform": "Platform"
     },
     "ru": {
       "viewCase": "Смотреть кейс →",
@@ -45,7 +47,8 @@
       "catalogEmpty": "На данный момент проектов нет. Пожалуйста, загляните позже.",
       "contactSending": "Отправка…",
       "contactSuccess": "Отправлено ✓",
-      "contactError": "Ошибка — попробуйте ещё раз"
+      "contactError": "Ошибка — попробуйте ещё раз",
+      "platform": "Платформа"
     }
   }
 }

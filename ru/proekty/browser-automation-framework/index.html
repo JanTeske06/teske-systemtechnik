@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <script>
+    // Maintenance guard: if /maintenance.flag contains "on", redirect to /maintenance.html.
+    // Toggle by editing the content of that file at the repo root (see anleitung.md).
     (function () {
       if (location.pathname.endsWith('/maintenance.html')) return;
-      fetch('/maintenance.flag', { method: 'HEAD', cache: 'no-store' })
-        .then(function (r) { if (r.ok) location.replace('/maintenance.html'); })
+      fetch('/maintenance.flag', { cache: 'no-store' })
+        .then(function (r) { return r.text(); })
+        .then(function (t) { if (t.trim() === 'on') location.replace('/maintenance.html'); })
         .catch(function () {});
     })();
   </script>
@@ -76,8 +79,8 @@
       "datePublished": "2026-04-26",
       "image": "https://teske-systemtechnik.de/static/projects/browser-automation-framework/images/cover.svg",
       "url": "https://teske-systemtechnik.de/ru/proekty/browser-automation-framework/",
-      "about": ["Python", "asyncio", "Playwright", "Chrome DevTools Protocol", "SQLite", "Streamlit", "pytest", "GitHub Actions", "Multi-Process IPC", "Windows Job Objects"],
-      "keywords": "Python, asyncio, Playwright, CDP, SQLite, Streamlit, pytest, Multi-Process IPC, Windows Job Objects, Browser Automation",
+      "about": ["asyncio", "Playwright", "Chrome DevTools Protocol", "SQLite", "Streamlit", "pytest", "GitHub Actions", "Multi-Process IPC", "Windows Job Objects"],
+      "keywords": "asyncio, Playwright, CDP, SQLite, Streamlit, pytest, Multi-Process IPC, Windows Job Objects, Browser Automation",
       "review": {
         "@type": "Review",
         "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
@@ -179,7 +182,6 @@
 
       <div class="max-w-3xl">
         <div class="mb-4 flex flex-wrap gap-2">
-          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Python</span>
           <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">asyncio</span>
           <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Playwright</span>
           <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Chrome DevTools Protocol</span>
@@ -226,7 +228,6 @@
             <div>
               <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Технологии</p>
               <ul class="mt-2 flex flex-wrap gap-1.5">
-                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Python</li>
                 <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">asyncio</li>
                 <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Playwright</li>
                 <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">SQLite</li>
@@ -242,6 +243,19 @@
             <div>
               <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Бюджет проекта</p>
               <p class="mt-1 text-sm text-stone-200">15 000 €</p>
+            </div>
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Платформа</p>
+              <a href="https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c?p=2053851495754145792"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-1 inline-flex items-center gap-1.5 text-sm font-medium text-[#14a800] transition hover:underline">
+                Upwork
+                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7"/>
+                  <path d="M8 7h9v9"/>
+                </svg>
+              </a>
             </div>
 
             <div>

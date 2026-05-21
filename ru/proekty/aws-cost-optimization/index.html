@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <script>
+    // Maintenance guard: if /maintenance.flag contains "on", redirect to /maintenance.html.
+    // Toggle by editing the content of that file at the repo root (see anleitung.md).
     (function () {
       if (location.pathname.endsWith('/maintenance.html')) return;
-      fetch('/maintenance.flag', { method: 'HEAD', cache: 'no-store' })
-        .then(function (r) { if (r.ok) location.replace('/maintenance.html'); })
+      fetch('/maintenance.flag', { cache: 'no-store' })
+        .then(function (r) { return r.text(); })
+        .then(function (t) { if (t.trim() === 'on') location.replace('/maintenance.html'); })
         .catch(function () {});
     })();
   </script>
@@ -257,6 +260,19 @@
             <div>
               <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Бюджет проекта</p>
               <p class="mt-1 text-sm text-stone-200">$4 000</p>
+            </div>
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Платформа</p>
+              <a href="https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c?p=2053850170360446976"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-1 inline-flex items-center gap-1.5 text-sm font-medium text-[#14a800] transition hover:underline">
+                Upwork
+                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7"/>
+                  <path d="M8 7h9v9"/>
+                </svg>
+              </a>
             </div>
 
             <div>

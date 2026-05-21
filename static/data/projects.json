@@ -9,7 +9,14 @@
       "catalog_order": 1,
       "date": "2026-03-23",
       "cover": "/static/projects/aws-cost-optimization/images/cover.svg",
-      "tech": ["AWS", "EKS", "CloudWatch", "S3 Glacier", "FinOps"],
+      "upwork": "https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c?p=2053850170360446976",
+      "tech": [
+        "AWS",
+        "EKS",
+        "CloudWatch",
+        "S3 Glacier",
+        "FinOps"
+      ],
       "i18n": {
         "de": {
           "title": "AWS Kostenoptimierung",
@@ -32,7 +39,16 @@
       "catalog_order": 2,
       "date": "2026-02-28",
       "cover": "/static/projects/legacy-data-extraction/images/cover.svg",
-      "tech": ["Python", "pyodbc", "MS Access", "SQLite", "DjVuLibre", "PyMuPDF", "ETL"],
+      "upwork": "https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c?p=2057447749556867072",
+      "tech": [
+        "Python",
+        "pyodbc",
+        "MS Access",
+        "SQLite",
+        "DjVuLibre",
+        "PyMuPDF",
+        "ETL"
+      ],
       "i18n": {
         "de": {
           "title": "Legacy-DB Reverse Engineering & Migration",
@@ -55,7 +71,13 @@
       "catalog_order": 3,
       "date": "2026-04-15",
       "cover": "/static/projects/book-lister-ai/images/cover.svg",
-      "tech": ["Python", "OpenCV", "Gemini", "eBay API", "SQLite"],
+      "upwork": "https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c?p=2053850828435623936",
+      "tech": [
+        "OpenCV",
+        "Gemini",
+        "eBay API",
+        "SQLite"
+      ],
       "i18n": {
         "de": {
           "title": "Book Lister AI",
@@ -78,7 +100,15 @@
       "catalog_order": 4,
       "date": "2026-04-10",
       "cover": "/static/projects/microsoft-shopping-feed/images/cover.svg",
-      "tech": ["Python", "ijson", "SQLite", "LFTP", "MS Merchant Center", "ETL", "Feed Engineering"],
+      "upwork": "https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c?p=2053851934259679232",
+      "tech": [
+        "Python",
+        "SQLite",
+        "LFTP",
+        "MS Merchant Center",
+        "ETL",
+        "Feed Engineering"
+      ],
       "i18n": {
         "de": {
           "title": "Microsoft Shopping Feed Pipeline",
@@ -101,7 +131,16 @@
       "catalog_order": 5,
       "date": "2026-04-26",
       "cover": "/static/projects/browser-automation-framework/images/cover.svg",
-      "tech": ["Python", "asyncio", "Playwright", "CDP", "SQLite", "Streamlit", "pytest", "Multi-Process IPC"],
+      "upwork": "https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c?p=2053851495754145792",
+      "tech": [
+        "asyncio",
+        "Playwright",
+        "CDP",
+        "SQLite",
+        "Streamlit",
+        "pytest",
+        "Multi-Process IPC"
+      ],
       "i18n": {
         "de": {
           "title": "Multi-Process Browser-Automation Framework",
