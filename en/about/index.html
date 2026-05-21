@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <script>
-    // About page is temporarily disabled — redirect to 404.
+    // About page is temporarily disabled, redirect to 404.
     // To re-enable: remove this <script> block from /de/about/, /en/about/
     // and /ru/about/.
     location.replace('/404.html');
@@ -21,12 +21,12 @@
         .catch(function () {});
     })();
   </script>
-  <meta name="robots" content="index,follow">
+  <meta name="robots" content="noindex,nofollow">
 
   
   <title>About · Teske Systemtechnik</title>
 
-  <meta name="description" content="Jan Teske, founder of Teske Systemtechnik — Python automation, APIs, and custom software from Melle, Germany. Remote collaboration worldwide.">
+  <meta name="description" content="Jan Teske, founder of Teske Systemtechnik, Python automation, APIs, and custom software from Melle, Germany. Remote collaboration worldwide.">
 
   
   <link rel="canonical" href="https://teske-systemtechnik.de/en/about/">
@@ -53,18 +53,18 @@
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
 
   
-  <link rel="stylesheet" href="/static/style.css?v=20260430a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260430a">
+  <link rel="stylesheet" href="/static/style.css?v=20260521a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260521a">
 
   
 
   
   <meta property="og:site_name" content="Teske Systemtechnik">
-  <meta property="og:title" content="About Teske Systemtechnik — Teske Systemtechnik">
-  <meta property="og:description" content="Jan Teske, founder of Teske Systemtechnik — Python automation, APIs, and custom software from Melle, Germany. Remote collaboration worldwide.">
+  <meta property="og:title" content="About Teske Systemtechnik, Teske Systemtechnik">
+  <meta property="og:description" content="Jan Teske, founder of Teske Systemtechnik, Python automation, APIs, and custom software from Melle, Germany. Remote collaboration worldwide.">
   <meta property="og:url" content="https://teske-systemtechnik.de/en/about/">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_EN">
+  <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:image" content="https://teske-systemtechnik.de/static/images/og-default-en.png">
   <meta property="og:image:width" content="1200">
@@ -104,9 +104,10 @@
         "availableLanguage": [
           "de",
           "en"
-        ]
+        , "ru"]
       },
       "vatID": "DE459634758",
+      "priceRange": "€75 - €8500+",
       "sameAs": [
         "https://github.com/JanTeske06",
         "https://pypi.org/user/JanTeske06/",
@@ -291,6 +292,12 @@
             </li>
             <li>
               <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
+                 href="/en/services/">
+                Services
+              </a>
+            </li>
+            <li>
+              <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
                  href="/en/projects/"
                  >
                 Projects
@@ -354,6 +361,7 @@
               <ul class="rounded-2xl border border-stone-800 bg-stone-900/90 px-4 py-3 shadow-xl backdrop-blur-xl">
                 <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/en/">Home</a></li>
                 <li data-skeleton-off><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/en/about/">About</a></li>
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/en/services/">Services</a></li>
                 <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/en/projects/">Projects</a></li>
                 <li><a class="flex items-center gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer"><svg class="h-3.5 w-3.5 fill-[#14a800]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>Book a call</a></li>
                 <li class="mt-2 flex items-center gap-2 border-t border-stone-800 pt-3">
@@ -397,21 +405,21 @@
         About
       </p>
       <h1 class="font-aspekta text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">About Teske Systemtechnik</h1>
-      <p class="mt-4 max-w-xl text-lg text-stone-300">Jan Teske, founder of Teske Systemtechnik — Python automation, APIs, and custom software from Melle, Germany. Remote collaboration worldwide.</p>
+      <p class="mt-4 max-w-xl text-lg text-stone-300">Jan Teske, founder of Teske Systemtechnik, Python automation, APIs, and custom software from Melle, Germany. Remote collaboration worldwide.</p>
     </div>
 
     <article class="prose prose-invert mt-12 max-w-none prose-headings:font-aspekta prose-headings:text-white prose-a:text-amber-400 hover:prose-a:text-amber-300 prose-strong:text-white prose-img:rounded-2xl prose-img:border prose-img:border-stone-800"
              data-aos="fade-up" data-aos-delay="200">
       <h2 id="hi-im-jan-teske">Hi, I&rsquo;m Jan Teske.</h2>
-<p>I build <strong>custom software solutions</strong> for clients worldwide — with a clear focus on Python, clean APIs and robust automation.</p>
+<p>I build <strong>custom software solutions</strong> for clients worldwide, with a clear focus on Python, clean APIs and robust automation.</p>
 <p>What drives me: processes that used to take days run in minutes after I&rsquo;m done. Or not at all, because they&rsquo;re handled automatically now.</p>
 <h2 id="what-i-do">What I do</h2>
 <ul>
-<li><strong>Python automation</strong> — scraping, data extraction, workflow automation, cron jobs that just work.</li>
-<li><strong>API development</strong> — FastAPI, Flask, REST, GraphQL. Well documented, type-safe, tested.</li>
-<li><strong>Data pipelines</strong> — from CSV chaos to structured, queryable databases.</li>
-<li><strong>Web scraping</strong> — from dynamic JavaScript pages to complex login flows.</li>
-<li><strong>Custom tools</strong> — desktop apps, CLI utilities, internal dashboards.</li>
+<li><strong>Python automation</strong>, scraping, data extraction, workflow automation, cron jobs that just work.</li>
+<li><strong>API development</strong>, FastAPI, Flask, REST, GraphQL. Well documented, type-safe, tested.</li>
+<li><strong>Data pipelines</strong>, from CSV chaos to structured, queryable databases.</li>
+<li><strong>Web scraping</strong>, from dynamic JavaScript pages to complex login flows.</li>
+<li><strong>Custom tools</strong>, desktop apps, CLI utilities, internal dashboards.</li>
 </ul>
 <h2 id="my-standards">My standards</h2>
 <ol>
@@ -420,11 +428,11 @@
 <li><strong>Measurable results.</strong> Every project starts with a clear definition of what &ldquo;done&rdquo; means.</li>
 </ol>
 <h2 id="why-teske-systemtechnik">Why &ldquo;Teske Systemtechnik&rdquo;?</h2>
-<p>The name is intentionally technical. I&rsquo;m not a marketing studio with colorful slides — I&rsquo;m the guy who fixes your workflow, sorts your data mountain, or builds that one tool you&rsquo;ve been missing for months.</p>
-<p><strong>Quality engineered in Germany</strong> — not a slogan, that&rsquo;s the standard I work to.</p>
+<p>The name is intentionally technical. I&rsquo;m not a marketing studio with colorful slides, I&rsquo;m the guy who fixes your workflow, sorts your data mountain, or builds that one tool you&rsquo;ve been missing for months.</p>
+<p><strong>Quality engineered in Germany</strong>, not a slogan, that&rsquo;s the standard I work to.</p>
 <h2 id="at-a-glance">At a glance</h2>
 <ul>
-<li><strong>Business:</strong> Teske Systemtechnik — sole proprietorship, owner Jan Teske</li>
+<li><strong>Business:</strong> Teske Systemtechnik, sole proprietorship, owner Jan Teske</li>
 <li><strong>Location:</strong> Elschers Kamp 13, 49324 Melle, Lower Saxony, Germany</li>
 <li><strong>VAT ID:</strong> DE459634758</li>
 <li><strong>Services:</strong> Python automation, API development, data pipelines, web scraping, custom tools, reverse engineering</li>
@@ -436,7 +444,7 @@
 <h2 id="frequently-asked-questions">Frequently asked questions</h2>
 
 <h3 id="faq-tech">What technologies do you use?</h3>
-<p>Primarily Python (FastAPI, Flask, Django) for backend and automation work. Plus SQL databases (PostgreSQL, SQLite), Docker for deployments, Git for version control. For scraping and tracing: Selenium, mitmproxy, Wireshark. Technology choice always follows the problem — no framework for its own sake.</p>
+<p>Primarily Python (FastAPI, Flask, Django) for backend and automation work. Plus SQL databases (PostgreSQL, SQLite), Docker for deployments, Git for version control. For scraping and tracing: Selenium, mitmproxy, Wireshark. Technology choice always follows the problem, no framework for its own sake.</p>
 
 <h3 id="faq-process">How does a project typically work?</h3>
 <p>First call to understand the requirement (free, ~30 minutes). Then a written proposal with scope, timeline, and pricing. On approval: work begins, regular updates, clearly defined handover. After delivery, I optionally offer a transition and support phase.</p>
@@ -451,11 +459,11 @@
 <p>Yes. All projects run remote. Communication in German or English, Central European Time zone (CET/CEST), with flexibility for calls outside core hours.</p>
 
 <h3 id="faq-start">How quickly can you start?</h3>
-<p>Usually within one to two weeks. For urgent requests, often faster — just ask, and we'll see what's possible.</p>
+<p>Usually within one to two weeks. For urgent requests, often faster, just ask, and we'll see what's possible.</p>
 
 <h2 id="lets-talk">Let&rsquo;s talk</h2>
 <p>Do you have a project that&rsquo;s stuck? A recurring task that should finally be automated? An idea you&rsquo;re not even sure is feasible?</p>
-<p><a href="mailto:jan.teske.06@gmail.com">Drop me a message</a> — I usually respond within a day.</p>
+<p><a href="mailto:jan.teske.06@gmail.com">Drop me a message</a>, I usually respond within a day.</p>
     </article>
   </div>
 </section>
@@ -480,6 +488,7 @@
           <ul class="space-y-2 text-sm">
             <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/">Home</a></li>
             <li data-skeleton-off><a class="text-stone-400 transition hover:text-amber-400" href="/en/about/">About</a></li>
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/services/">Services</a></li>
             <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/projects/">Projects</a></li>
             <li><a class="text-stone-400 transition hover:text-amber-400" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer">Consultation via Upwork</a></li>
           </ul>

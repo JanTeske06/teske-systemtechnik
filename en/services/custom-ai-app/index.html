@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <script>
+  (function () {
+    if (location.pathname.endsWith('/maintenance.html')) return;
+    fetch('/maintenance.flag', { cache: 'no-store' })
+      .then(function (r) { return r.text(); })
+      .then(function (t) { if (t.trim() === 'on') location.replace('/maintenance.html'); })
+      .catch(function () {});
+  })();
+</script>
+  <meta name="robots" content="index,follow">
+
+  <title>Custom AI Desktop App · Teske Systemtechnik</title>
+  <meta name="description" content="Bespoke desktop apps with AI integration, hardware connectivity (camera, scanner), vision, API pipelines. Fixed-price project.">
+
+  <link rel="canonical" href="https://teske-systemtechnik.de/en/services/custom-ai-app/">
+  <link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/custom-ai-app/">
+  <link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/custom-ai-app/">
+  <link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/uslugi/custom-ai-app/">
+  <link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/leistungen/custom-ai-app/">
+
+  <link rel="icon" type="image/svg+xml" href="/static/images/logo_favicon.svg">
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-650.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/static/css/vendors/aos.css">
+  <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/static/style.css?v=20260521a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260521a">
+
+  <meta property="og:site_name" content="Teske Systemtechnik">
+  <meta property="og:title" content="Custom AI Desktop App, Teske Systemtechnik">
+  <meta property="og:description" content="Bespoke desktop apps with AI integration, hardware connectivity (camera, scanner), vision, API pipelines. Fixed-price project.">
+  <meta property="og:url" content="https://teske-systemtechnik.de/en/services/custom-ai-app/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://teske-systemtechnik.de/static/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://teske-systemtechnik.de/#organization",
+      "name": "Teske Systemtechnik",
+      "url": "https://teske-systemtechnik.de"
+    },
+    {
+      "@type": "Service",
+      "name": "Custom AI Desktop App",
+      "serviceType": "Custom Apps",
+      "provider": {
+        "@id": "https://teske-systemtechnik.de/#organization"
+      },
+      "areaServed": "Worldwide",
+      "description": "Bespoke desktop apps with AI integration, hardware connectivity (camera, scanner), vision, API pipelines. Fixed-price project.",
+      "url": "https://teske-systemtechnik.de/en/services/custom-ai-app/",
+      "offers": {
+        "@type": "Offer",
+        "price": "8500",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "8500",
+          "priceCurrency": "EUR"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Cloud AI or local model?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depends on the workflow. For vision tasks, cloud (Gemini 2.5 / Claude) is usually better today. For sensitive data or offline requirements: local models (Llama-based, Ollama). We decide in discovery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who hosts the app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nobody, the app runs locally on the Windows PC. Cloud components only if explicitly wanted. No monthly server fees from me."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who pays the API costs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You, because the keys are on your account. On the Book Lister it was ~€5 per month for Gemini + Google Books. Scales with volume, but mostly manageable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if the AI hallucinates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The question that comes up early in every discovery. Answer: pre-validation on the data side (e.g. ISBN check against Google Books), confidence scoring, and critical actions require user confirmation. AI as a suggestion, not as autopilot."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What breaks when the app glitches?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A crash handler writes a crash file per incident, the app remembers the last good state. On re-open the unfinished workflow is restored where possible. Data loss is extremely unlikely."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I extend the app myself?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Source comes with it, plus code docs. If you or your team know Python, yes. Otherwise we can also do a maintenance retainer, cancellable monthly."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-orange-500 focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+<div class="flex min-h-screen flex-col">
+
+<header class="absolute z-30 w-full">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="flex h-16 items-center justify-between md:h-20">
+      <div class="mr-4 shrink-0">
+        <a class="inline-flex items-center gap-3" href="/en/" aria-label="Teske Systemtechnik">
+          <img class="max-w-none" src="/static/images/logo_whitemode.svg" width="40" height="40" alt="">
+          <span class="font-aspekta text-[17px] font-bold uppercase tracking-[0.1em] text-stone-100 leading-[20px]">Teske<br>Systemtechnik</span>
+        </a>
+      </div>
+      <nav class="hidden md:flex md:grow" aria-label="Primary">
+        <ul class="flex grow flex-wrap items-center justify-end gap-1">
+          <li><a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/en/">Home</a></li>
+          <li data-skeleton-off><a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/en/about/">About</a></li>
+          <li><a class="text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/en/services/" aria-current="page">Services</a></li>
+          <li><a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/en/projects/">Projects</a></li>
+          <li><a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer"><svg class="h-3.5 w-3.5 fill-[#14a800]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>Consulting</a></li>
+          <li class="ml-2 flex items-center gap-1 rounded-full border border-stone-800 bg-stone-900/60 p-1">
+            <a class="text-stone-400 hover:text-white rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/de/leistungen/custom-ai-app/" aria-label="Switch language: DE">DE</a>
+              <a class="bg-orange-500 text-white shadow rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition" href="#" aria-current="true" aria-label="Switch language: EN">EN</a>
+              <a class="text-stone-400 hover:text-white rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/ru/uslugi/custom-ai-app/" aria-label="Switch language: RU">RU</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="ml-4 flex items-center md:hidden" x-data="{ expanded: false }">
+        <button class="group inline-flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900/60 text-stone-300 transition hover:text-white" aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded">
+          <span class="sr-only">Menu</span>
+          <svg class="pointer-events-none h-4 w-4 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect class="origin-center -translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]" y="7" width="16" height="2" rx="1"></rect>
+            <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45" y="7" width="16" height="2" rx="1"></rect>
+            <rect class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]" y="7" width="16" height="2" rx="1"></rect>
+          </svg>
+        </button>
+        <template x-teleport="body">
+          <nav id="mobile-nav" aria-label="Mobile" class="fixed top-16 inset-x-0 z-50 overflow-hidden px-4 transition-all duration-300 ease-out sm:px-6" x-ref="mobileNav"
+               :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1; transform: translateY(0)' : 'max-height: 0; opacity: 0; transform: translateY(-8px)'"
+               @click.outside="expanded = false" @keydown.escape.window="expanded = false" x-cloak>
+            <ul class="rounded-2xl border border-stone-800 bg-stone-900/90 px-4 py-3 shadow-xl backdrop-blur-xl">
+              <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/en/">Home</a></li>
+              <li data-skeleton-off><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/en/about/">About</a></li>
+              <li><a class="flex py-2 text-sm font-medium text-white" href="/en/services/">Services</a></li>
+              <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/en/projects/">Projects</a></li>
+              <li><a class="flex items-center gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer"><svg class="h-3.5 w-3.5 fill-[#14a800]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>Consulting</a></li>
+              <li class="mt-2 flex items-center gap-2 border-t border-stone-800 pt-3">
+                <span class="text-xs uppercase tracking-wider text-stone-500">Switch language:</span>
+                <a class="text-stone-400 hover:text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/de/leistungen/custom-ai-app/" aria-label="Switch language: DE">DE</a>
+              <a class="bg-orange-500 text-white shadow rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition" href="#" aria-current="true" aria-label="Switch language: EN">EN</a>
+              <a class="text-stone-400 hover:text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/ru/uslugi/custom-ai-app/" aria-label="Switch language: RU">RU</a>
+              </li>
+            </ul>
+          </nav>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content" class="grow">
+
+<section class="relative pt-32 pb-16 md:pt-40 md:pb-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <a href="/en/services/" class="mb-6 inline-flex items-center gap-2 text-sm font-medium text-stone-400 transition hover:text-amber-300" data-aos="fade-up">← All services</a>
+    <div class="max-w-3xl">
+      <p class="mb-6 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400" data-aos="fade-up">
+        <span class="section-num">000 /</span>
+        Custom Apps
+      </p>
+      <h1 class="font-aspekta text-5xl font-bold leading-[1.02] text-white md:text-6xl" data-aos="fade-up" data-aos-delay="80">Custom AI Desktop App</h1>
+      <p class="mt-6 max-w-2xl text-lg text-stone-300" data-aos="fade-up" data-aos-delay="160">A Windows app where someone presses a button, and a workflow runs that used to take five tools, three logins and ten minutes of focus. AI-assisted, installed locally, no cloud lock-in.</p>
+      <div class="mt-10 flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="240">
+        <a class="inline-flex items-center rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400" href="/en/?service=custom-ai-app&amp;min=8500#contact">Send inquiry</a>
+        <a class="inline-flex items-center rounded-full border border-stone-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-orange-500 hover:text-amber-300" href="#leistungsumfang">What you get</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="leistungsumfang" class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl" data-aos="fade-up">
+      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+        <span class="section-num">001 /</span>
+        Deliverables
+      </p>
+      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">What you get</h2>
+      <p class="mt-4 text-stone-400">What you end up holding, four concrete deliverables.</p>
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up">
+  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+  <h3 class="font-aspekta text-lg font-bold text-white">Installed app, working</h3>
+  <p class="mt-2 text-sm text-stone-400">A single .exe with everything bundled. No separate Python install, no PyPI adventures. Optional auto-update mechanism.</p>
+</div>
+          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="80">
+  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+  <h3 class="font-aspekta text-lg font-bold text-white">AI integration, debounceable</h3>
+  <p class="mt-2 text-sm text-stone-400">Whether Gemini, Claude, GPT or a local model, the app uses it as a tool, not as an end in itself. With caching, error handling, and sensible fallbacks if the model goes silent.</p>
+</div>
+          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="160">
+  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h7a3 3 0 013 3v6"/></svg></div>
+  <h3 class="font-aspekta text-lg font-bold text-white">Hardware integration</h3>
+  <p class="mt-2 text-sm text-stone-400">Webcam calibration with ArUco markers, USB devices, printers, scanners, anything attached to a Windows machine. On the Book Lister project: webcam measures book dimensions automatically in under a second.</p>
+</div>
+          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="240">
+  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+  <h3 class="font-aspekta text-lg font-bold text-white">Tests + documentation</h3>
+  <p class="mt-2 text-sm text-stone-400">~250 pytest tests in the Book Lister codebase, because hardware + AI + live APIs go voodoo fast otherwise. Plus code documentation for you or your team if someone later needs to extend it.</p>
+</div>
+    </div>
+  </div>
+</section>
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl" data-aos="fade-up">
+      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+        <span class="section-num">002 /</span>
+        How it runs
+      </p>
+      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">How a custom-app project runs</h2>
+    </div>
+    <ol class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up">
+  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">01</span>
+  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Discovery</h3>
+  <p class="mt-2 text-sm text-stone-400">I look at the manual workflow to be replaced. Which steps, how much time, what goes wrong. Out of that comes the scope.</p>
+</li>
+          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up" data-aos-delay="80">
+  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">02</span>
+  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Prototype</h3>
+  <p class="mt-2 text-sm text-stone-400">A small vertical slice within one or two weeks, the most important path, end to end. You test, give feedback.</p>
+</li>
+          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up" data-aos-delay="160">
+  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">03</span>
+  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Build</h3>
+  <p class="mt-2 text-sm text-stone-400">On top of the prototype the app gets built out. Iterative, with intermediate builds you can test.</p>
+</li>
+          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up" data-aos-delay="240">
+  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">04</span>
+  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Handover</h3>
+  <p class="mt-2 text-sm text-stone-400">Installer + source + documentation. Plus a one-hour setup coaching for the end users.</p>
+</li>
+    </ol>
+  </div>
+</section>
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="grid gap-10 lg:grid-cols-12 items-start">
+      <div class="lg:col-span-5" data-aos="fade-up">
+        <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+          <span class="section-num">003 /</span>
+          Price
+        </p>
+        <h2 class="font-aspekta text-3xl font-bold leading-tight text-white md:text-4xl">Per project, in tiers</h2>
+        <p class="mt-4 text-stone-400">€8,500 is the entry for a focused app with one AI model, one hardware component and one API integration. On the Book Lister it was Gemini Vision + webcam + eBay APIs.</p>
+        <p class="mt-4 text-stone-400">Larger apps with multiple workflows, multi-user architecture or cloud sync scale accordingly. The fixed figure comes after discovery, you know it before you sign.</p>
+      </div>
+      <div class="lg:col-span-7" data-aos="fade-up" data-aos-delay="120">
+        <div class="rounded-3xl border border-orange-500/30 bg-gradient-to-br from-stone-900/80 to-stone-950 p-8 shadow-xl">
+          <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-amber-400">Custom-app project</p>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="font-aspekta text-sm text-stone-400">from</span>
+            <span class="font-aspekta text-5xl font-bold text-white">€8,500</span>
+            <span class="font-aspekta text-sm text-stone-400">net</span>
+          </div>
+          <p class="mt-2 text-sm text-stone-400">One workflow, one AI, one hardware component.</p>
+          <ul class="mt-6 space-y-3 text-sm text-stone-200">
+            <li class="flex items-start gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 011.42-1.42L8 12.585l7.29-7.29a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Discovery + scope definition</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 011.42-1.42L8 12.585l7.29-7.29a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Vertical-slice prototype (2 weeks)</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 011.42-1.42L8 12.585l7.29-7.29a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Full app with installer (.exe)</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 011.42-1.42L8 12.585l7.29-7.29a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Pytest coverage for critical paths</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 011.42-1.42L8 12.585l7.29-7.29a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Setup coaching (1 h) + code docs</li>
+          </ul>
+          <a href="/en/?service=custom-ai-app&amp;min=8500#contact" class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">
+            Send inquiry
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+          </a>
+          <p class="mt-3 text-center text-xs text-stone-500">Reply within 24 h</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl" data-aos="fade-up">
+      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+        <span class="section-num">004 /</span>
+        Reference
+      </p>
+      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">What such a project looks like</h2>
+      <p class="mt-4 text-stone-400">In early 2026 I built an app for a used-book seller. Before: 10 minutes per book, manually. After: 30 seconds.</p>
+    </div>
+    <a href="/en/projects/book-lister-ai/" class="mt-12 block overflow-hidden rounded-3xl border border-stone-800 bg-stone-900/60 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="120">
+      <div class="grid md:grid-cols-12">
+        <div class="md:col-span-5">
+          <img src="/static/projects/book-lister-ai/images/cover.svg" alt="30 seconds per book instead of 10 minutes" class="h-full w-full object-cover" loading="lazy">
+        </div>
+        <div class="p-8 md:col-span-7">
+          <div class="mb-4 flex flex-wrap gap-2">
+            <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Book Lister AI</span>
+            <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Used-book trade</span>
+          </div>
+          <h3 class="font-aspekta text-2xl font-bold text-white">30 seconds per book instead of 10 minutes</h3>
+          <p class="mt-3 text-stone-300">ArUco-calibrated webcam measures dimensions, Gemini 2.5 Vision reads title/author/publisher, Google Books + eBay Browse APIs set the price, eBay Trading API publishes the listing. ~6,450 lines of Python, 260+ pytest tests. 400 % throughput.</p>
+          <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-amber-400">
+            Read the full case study
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl" data-aos="fade-up">
+      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+        <span class="section-num">005 /</span>
+        Frequent questions
+      </p>
+      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">Before you inquire</h2>
+    </div>
+    <div class="mt-12 grid gap-4 md:grid-cols-2 items-start" data-aos="fade-up" data-aos-delay="80">
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    Cloud AI or local model?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">Depends on the workflow. For vision tasks, cloud (Gemini 2.5 / Claude) is usually better today. For sensitive data or offline requirements: local models (Llama-based, Ollama). We decide in discovery.</p>
+</details>
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    Who hosts the app?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">Nobody, the app runs locally on the Windows PC. Cloud components only if explicitly wanted. No monthly server fees from me.</p>
+</details>
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    Who pays the API costs?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">You, because the keys are on your account. On the Book Lister it was ~€5 per month for Gemini + Google Books. Scales with volume, but mostly manageable.</p>
+</details>
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    What if the AI hallucinates?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">The question that comes up early in every discovery. Answer: pre-validation on the data side (e.g. ISBN check against Google Books), confidence scoring, and critical actions require user confirmation. AI as a suggestion, not as autopilot.</p>
+</details>
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    What breaks when the app glitches?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">A crash handler writes a crash file per incident, the app remembers the last good state. On re-open the unfinished workflow is restored where possible. Data loss is extremely unlikely.</p>
+</details>
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    Can I extend the app myself?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">Source comes with it, plus code docs. If you or your team know Python, yes. Otherwise we can also do a maintenance retainer, cancellable monthly.</p>
+</details>
+    </div>
+  </div>
+</section>
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="mb-10 max-w-3xl" data-aos="fade-up">
+      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+        <span class="section-num">006 /</span>
+        Related services
+      </p>
+      <p class="text-stone-400">Often booked alongside this service:</p>
+    </div>
+    <div class="grid gap-6 md:grid-cols-2 items-stretch">
+      <a href="/en/services/browser-automation/" class="group flex flex-col rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up">
+  <p class="mb-2 font-aspekta text-[11px] font-semibold uppercase tracking-widest text-amber-400">Automation</p>
+  <h3 class="font-aspekta text-xl font-bold text-white">Browser automation at production level</h3>
+  <p class="mt-3 grow text-sm text-stone-400">Browser automation that runs in parallel, fault-tolerant, without daily babysitting. Multi-worker with IPC, crash recovery, CDP-based auth.</p>
+  <div class="mt-6 flex items-baseline justify-between gap-3 border-t border-stone-800/60 pt-4">
+    <div class="flex items-baseline gap-1.5">
+      <span class="font-aspekta text-xs text-stone-500">from</span>
+      <span class="font-aspekta text-xl font-bold text-white">€6,500</span>
+    </div>
+    <span class="text-xs font-semibold text-amber-400 transition group-hover:text-amber-300">See details →</span>
+  </div>
+</a>
+      <a href="/en/services/discovery-call/" class="group flex flex-col rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up">
+  <p class="mb-2 font-aspekta text-[11px] font-semibold uppercase tracking-widest text-amber-400">Consultation</p>
+  <h3 class="font-aspekta text-xl font-bold text-white">Discovery Call & Architecture Consultation</h3>
+  <p class="mt-3 grow text-sm text-stone-400">30 or 60 minutes on the phone, workflow, feasibility, architecture recommendation. Written summary. Price credited against any follow-up project.</p>
+  <div class="mt-6 flex items-baseline justify-between gap-3 border-t border-stone-800/60 pt-4">
+    <div class="flex items-baseline gap-1.5">
+      <span class="font-aspekta text-xs text-stone-500">from</span>
+      <span class="font-aspekta text-xl font-bold text-white">€75</span>
+    </div>
+    <span class="text-xs font-semibold text-amber-400 transition group-hover:text-amber-300">See details →</span>
+  </div>
+</a>
+    </div>
+  </div>
+</section>
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-3xl px-4 text-center sm:px-6" data-aos="fade-up">
+    <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">A workflow that's too valuable to stay manual?</h2>
+    <p class="mt-4 text-stone-400">Briefly describe the workflow you want to automate, I'll be back within 24 h with an estimate and a proposed call time.</p>
+    <a href="/en/?service=custom-ai-app&amp;min=8500#contact" class="mt-10 inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-4 text-sm font-semibold text-white transition hover:bg-orange-400">
+      Send inquiry
+      <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="relative border-t border-stone-800/60 mt-10">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="grid gap-10 py-12 md:grid-cols-12">
+      <div class="md:col-span-5">
+        <a class="inline-flex items-center gap-3" href="/en/" aria-label="Teske Systemtechnik">
+          <img src="/static/images/logo_whitemode.svg" class="h-12 w-12" alt="">
+          <span class="font-aspekta text-lg font-bold uppercase tracking-[0.2em] text-stone-100">Teske<br>Systemtechnik</span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm text-stone-400">Quality engineered in Germany.</p>
+      </div>
+      <div class="md:col-span-3">
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Navigation</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/">Home</a></li>
+          <li data-skeleton-off><a class="text-stone-400 transition hover:text-amber-400" href="/en/about/">About</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/services/">Services</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/projects/">Projects</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer">Consulting via Upwork</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-2">
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Legal</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/legal-notice/">Legal Notice</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/en/privacy-policy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-2">
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Follow me</h3>
+        <ul class="flex gap-3">
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white" href="https://pypi.org/user/JanTeske06/" target="_blank" rel="noopener noreferrer" aria-label="PyPI"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12,2L2,7V17L12,22L22,17V7L12,2ZM4,16.06V8.94L11,12.44V19.56L4,16.06ZM12,11.38L5.13,7.94L12,4.5L18.87,7.94L12,11.38ZM20,16.06L13,19.56V12.44L20,8.94V16.06Z"/></svg></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#14a800] hover:bg-[#14a800] hover:text-white" href="https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c" target="_blank" rel="noopener noreferrer" aria-label="Upwork"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-white hover:bg-black hover:text-white" href="https://github.com/JanTeske06" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col items-center justify-between gap-3 border-t border-stone-800/60 py-6 text-xs text-stone-500 md:flex-row">
+      <p>&copy; 2026 Teske Systemtechnik. All rights reserved.</p>
+      <p class="font-aspekta uppercase tracking-widest">Quality engineered in Germany.</p>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script src="/static/js/vendors/alpinejs.min.js" defer></script>
+<script src="/static/js/vendors/aos.js?v=20260430a"></script>
+<script src="/static/js/vendors/swiper-bundle.min.js?v=20260430a"></script>
+<script src="/static/js/main.js?v=20260430a"></script>
+
+</body>
+</html>

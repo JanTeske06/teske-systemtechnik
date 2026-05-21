@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <script>
-    // About-Seite ist temporär deaktiviert — auf 404 weiterleiten.
+    // About-Seite ist temporär deaktiviert, auf 404 weiterleiten.
     // Zum Wieder-Aktivieren: diesen <script>-Block in /de/about/, /en/about/
     // und /ru/about/ löschen.
     location.replace('/404.html');
@@ -21,12 +21,12 @@
         .catch(function () {});
     })();
   </script>
-  <meta name="robots" content="index,follow">
+  <meta name="robots" content="noindex,nofollow">
 
   
   <title>Über uns · Teske Systemtechnik</title>
 
-  <meta name="description" content="Jan Teske, Inhaber von Teske Systemtechnik — Python-Automation, APIs und maßgeschneiderte Software aus Melle, Deutschland. Remote-Zusammenarbeit weltweit.">
+  <meta name="description" content="Jan Teske, Inhaber von Teske Systemtechnik, Python-Automation, APIs und maßgeschneiderte Software aus Melle, Deutschland. Remote-Zusammenarbeit weltweit.">
 
   
   <link rel="canonical" href="https://teske-systemtechnik.de/de/about/">
@@ -53,15 +53,15 @@
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
 
   
-  <link rel="stylesheet" href="/static/style.css?v=20260430a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260430a">
+  <link rel="stylesheet" href="/static/style.css?v=20260521a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260521a">
 
   
 
   
   <meta property="og:site_name" content="Teske Systemtechnik">
-  <meta property="og:title" content="Über Teske Systemtechnik — Teske Systemtechnik">
-  <meta property="og:description" content="Jan Teske, Inhaber von Teske Systemtechnik — Python-Automation, APIs und maßgeschneiderte Software aus Melle, Deutschland. Remote-Zusammenarbeit weltweit.">
+  <meta property="og:title" content="Über Teske Systemtechnik, Teske Systemtechnik">
+  <meta property="og:description" content="Jan Teske, Inhaber von Teske Systemtechnik, Python-Automation, APIs und maßgeschneiderte Software aus Melle, Deutschland. Remote-Zusammenarbeit weltweit.">
   <meta property="og:url" content="https://teske-systemtechnik.de/de/about/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
@@ -104,9 +104,10 @@
         "availableLanguage": [
           "de",
           "en"
-        ]
+        , "ru"]
       },
       "vatID": "DE459634758",
+      "priceRange": "€75 - €8500+",
       "sameAs": [
         "https://github.com/JanTeske06",
         "https://pypi.org/user/JanTeske06/",
@@ -291,6 +292,12 @@
             </li>
             <li>
               <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
+                 href="/de/leistungen/">
+                Leistungen
+              </a>
+            </li>
+            <li>
+              <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
                  href="/de/projekte/"
                  >
                 Projekte
@@ -354,6 +361,7 @@
               <ul class="rounded-2xl border border-stone-800 bg-stone-900/90 px-4 py-3 shadow-xl backdrop-blur-xl">
                 <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/">Start</a></li>
                 <li data-skeleton-off><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/about/">Über uns</a></li>
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/leistungen/">Leistungen</a></li>
                 <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/projekte/">Projekte</a></li>
                 <li><a class="flex items-center gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer"><svg class="h-3.5 w-3.5 fill-[#14a800]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>Beratung</a></li>
                 <li class="mt-2 flex items-center gap-2 border-t border-stone-800 pt-3">
@@ -397,21 +405,21 @@
         Über uns
       </p>
       <h1 class="font-aspekta text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">Über Teske Systemtechnik</h1>
-      <p class="mt-4 max-w-xl text-lg text-stone-300">Jan Teske, Inhaber von Teske Systemtechnik — Python-Automation, APIs und maßgeschneiderte Software aus Melle, Deutschland. Remote-Zusammenarbeit weltweit.</p>
+      <p class="mt-4 max-w-xl text-lg text-stone-300">Jan Teske, Inhaber von Teske Systemtechnik, Python-Automation, APIs und maßgeschneiderte Software aus Melle, Deutschland. Remote-Zusammenarbeit weltweit.</p>
     </div>
 
     <article class="prose prose-invert mt-12 max-w-none prose-headings:font-aspekta prose-headings:text-white prose-a:text-amber-400 hover:prose-a:text-amber-300 prose-strong:text-white prose-img:rounded-2xl prose-img:border prose-img:border-stone-800"
              data-aos="fade-up" data-aos-delay="200">
       <h2 id="hallo-ich-bin-jan-teske">Hallo, ich bin Jan Teske.</h2>
-<p>Ich baue <strong>maßgeschneiderte Software-Lösungen</strong> für Kunden weltweit — mit einem klaren Fokus auf Python, saubere APIs und robuste Automation.</p>
+<p>Ich baue <strong>maßgeschneiderte Software-Lösungen</strong> für Kunden weltweit, mit einem klaren Fokus auf Python, saubere APIs und robuste Automation.</p>
 <p>Was mich antreibt: Prozesse, die vorher Tage dauerten, laufen nach meiner Arbeit in Minuten. Oder gar nicht mehr, weil sie automatisch abgearbeitet werden.</p>
 <h2 id="was-ich-mache">Was ich mache</h2>
 <ul>
-<li><strong>Python-Automation</strong> — Scraping, Datenextraktion, Workflow-Automatisierung, Cronjobs, die einfach laufen.</li>
-<li><strong>API-Entwicklung</strong> — FastAPI, Flask, REST, GraphQL. Sauber dokumentiert, typsicher, getestet.</li>
-<li><strong>Datenpipelines</strong> — von CSV-Chaos zu strukturierten, abfragbaren Datenbanken.</li>
-<li><strong>Web-Scraping</strong> — von dynamischen JavaScript-Seiten bis zu komplexen Login-Flows.</li>
-<li><strong>Custom Tools</strong> — Desktop-Tools, CLI-Utilities, interne Dashboards.</li>
+<li><strong>Python-Automation</strong>, Scraping, Datenextraktion, Workflow-Automatisierung, Cronjobs, die einfach laufen.</li>
+<li><strong>API-Entwicklung</strong>, FastAPI, Flask, REST, GraphQL. Sauber dokumentiert, typsicher, getestet.</li>
+<li><strong>Datenpipelines</strong>, von CSV-Chaos zu strukturierten, abfragbaren Datenbanken.</li>
+<li><strong>Web-Scraping</strong>, von dynamischen JavaScript-Seiten bis zu komplexen Login-Flows.</li>
+<li><strong>Custom Tools</strong>, Desktop-Tools, CLI-Utilities, interne Dashboards.</li>
 </ul>
 <h2 id="mein-anspruch">Mein Anspruch</h2>
 <ol>
@@ -420,11 +428,11 @@
 <li><strong>Messbare Ergebnisse.</strong> Jedes Projekt startet mit einer klaren Definition, was „fertig&rdquo; bedeutet.</li>
 </ol>
 <h2 id="warum-teske-systemtechnik">Warum „Teske Systemtechnik&rdquo;?</h2>
-<p>Der Name ist bewusst technisch. Ich bin kein Marketing-Studio mit bunten Folien — ich bin der Typ, der Ihren Workflow repariert, Ihren Datenberg sortiert oder das eine Tool baut, das Ihnen seit Monaten fehlt.</p>
-<p><strong>Quality engineered in Germany</strong> — das ist keine Floskel, das ist der Standard, nach dem ich arbeite.</p>
+<p>Der Name ist bewusst technisch. Ich bin kein Marketing-Studio mit bunten Folien, ich bin der Typ, der Ihren Workflow repariert, Ihren Datenberg sortiert oder das eine Tool baut, das Ihnen seit Monaten fehlt.</p>
+<p><strong>Quality engineered in Germany</strong>, das ist keine Floskel, das ist der Standard, nach dem ich arbeite.</p>
 <h2 id="auf-einen-blick">Auf einen Blick</h2>
 <ul>
-<li><strong>Firma:</strong> Teske Systemtechnik — Einzelunternehmen, Inhaber Jan Teske</li>
+<li><strong>Firma:</strong> Teske Systemtechnik, Einzelunternehmen, Inhaber Jan Teske</li>
 <li><strong>Sitz:</strong> Elschers Kamp 13, 49324 Melle, Niedersachsen, Deutschland</li>
 <li><strong>Umsatzsteuer-ID:</strong> DE459634758</li>
 <li><strong>Leistungen:</strong> Python-Automation, API-Entwicklung, Datenpipelines, Web-Scraping, Custom Tools, Reverse Engineering</li>
@@ -436,7 +444,7 @@
 <h2 id="haeufige-fragen">Häufige Fragen</h2>
 
 <h3 id="faq-tech">Welche Technologien setzt du ein?</h3>
-<p>Primär Python (FastAPI, Flask, Django) für Backend- und Automations-Aufgaben. Dazu SQL-Datenbanken (PostgreSQL, SQLite), Docker für Deployments, Git für Versionierung. Für Scraping und Tracing kommen Selenium, mitmproxy und Wireshark zum Einsatz. Die Technologie-Wahl richtet sich immer nach dem Problem — kein Framework um seiner selbst willen.</p>
+<p>Primär Python (FastAPI, Flask, Django) für Backend- und Automations-Aufgaben. Dazu SQL-Datenbanken (PostgreSQL, SQLite), Docker für Deployments, Git für Versionierung. Für Scraping und Tracing kommen Selenium, mitmproxy und Wireshark zum Einsatz. Die Technologie-Wahl richtet sich immer nach dem Problem, kein Framework um seiner selbst willen.</p>
 
 <h3 id="faq-ablauf">Wie läuft ein Projekt typischerweise ab?</h3>
 <p>Erstes Gespräch zur Bedarfsklärung (kostenlos, ~30 Minuten). Danach ein schriftliches Angebot mit Umfang, Zeitplan und Preis. Bei Zustimmung: Arbeitsbeginn, regelmäßige Zwischenstände, klar definierte Abnahme. Nach der Übergabe biete ich optional eine Einarbeitungs- und Support-Phase an.</p>
@@ -451,11 +459,11 @@
 <p>Ja. Alle Projekte laufen remote. Kommunikation in Deutsch oder Englisch, Zeitzone Mitteleuropa (MEZ/MESZ), mit Flexibilität für Calls außerhalb der Kernzeiten.</p>
 
 <h3 id="faq-start">Wie schnell kannst du starten?</h3>
-<p>In der Regel innerhalb von ein bis zwei Wochen. Bei dringenden Anfragen häufig schneller — kurz anfragen, dann sehen wir, was geht.</p>
+<p>In der Regel innerhalb von ein bis zwei Wochen. Bei dringenden Anfragen häufig schneller, kurz anfragen, dann sehen wir, was geht.</p>
 
 <h2 id="lassen-sie-uns-reden">Lassen Sie uns reden</h2>
 <p>Haben Sie ein Projekt, das nicht vom Fleck kommt? Eine wiederkehrende Aufgabe, die sich endlich automatisieren lassen sollte? Eine Idee, von der Sie nicht wissen, ob sie überhaupt machbar ist?</p>
-<p><a href="mailto:jan.teske.06@gmail.com">Schreiben Sie mir</a> — in der Regel antworte ich innerhalb eines Tages.</p>
+<p><a href="mailto:jan.teske.06@gmail.com">Schreiben Sie mir</a>, in der Regel antworte ich innerhalb eines Tages.</p>
     </article>
   </div>
 </section>
@@ -480,6 +488,7 @@
           <ul class="space-y-2 text-sm">
             <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/">Start</a></li>
             <li data-skeleton-off><a class="text-stone-400 transition hover:text-amber-400" href="/de/about/">Über uns</a></li>
+            <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/leistungen/">Leistungen</a></li>
             <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/projekte/">Projekte</a></li>
             <li><a class="text-stone-400 transition hover:text-amber-400" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer">Beratung via Upwork</a></li>
           </ul>

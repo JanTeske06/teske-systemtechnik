@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <script>
+  (function () {
+    if (location.pathname.endsWith('/maintenance.html')) return;
+    fetch('/maintenance.flag', { cache: 'no-store' })
+      .then(function (r) { return r.text(); })
+      .then(function (t) { if (t.trim() === 'on') location.replace('/maintenance.html'); })
+      .catch(function () {});
+  })();
+</script>
+  <meta name="robots" content="index,follow">
+
+  <title>Анализ и снижение расходов AWS · Teske Systemtechnik</title>
+  <meta name="description" content="Аудит счёта AWS по фиксированной цене с конкретным списком мер. Zero downtime при внедрении, обоснованный прогноз «до/после». От €3 500.">
+
+  <link rel="canonical" href="https://teske-systemtechnik.de/ru/uslugi/aws-cost-analysis/">
+  <link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/aws-kostenanalyse/">
+  <link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/aws-cost-analysis/">
+  <link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/uslugi/aws-cost-analysis/">
+  <link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/leistungen/aws-kostenanalyse/">
+
+  <link rel="icon" type="image/svg+xml" href="/static/images/logo_favicon.svg">
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-650.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/static/css/vendors/aos.css">
+  <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/static/style.css?v=20260521a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260521a">
+
+  <meta property="og:site_name" content="Teske Systemtechnik">
+  <meta property="og:title" content="Анализ и снижение расходов AWS, Teske Systemtechnik">
+  <meta property="og:description" content="Аудит счёта AWS по фиксированной цене с конкретным списком мер. Zero downtime при внедрении, обоснованный прогноз «до/после». От €3 500.">
+  <meta property="og:url" content="https://teske-systemtechnik.de/ru/uslugi/aws-cost-analysis/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://teske-systemtechnik.de/static/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://teske-systemtechnik.de/#organization",
+      "name": "Teske Systemtechnik",
+      "url": "https://teske-systemtechnik.de"
+    },
+    {
+      "@type": "Service",
+      "name": "Анализ и снижение расходов AWS",
+      "serviceType": "FinOps",
+      "provider": {
+        "@id": "https://teske-systemtechnik.de/#organization"
+      },
+      "areaServed": "Worldwide",
+      "description": "Аудит счёта AWS по фиксированной цене с конкретным списком мер. Zero downtime при внедрении, обоснованный прогноз «до/после». От €3 500.",
+      "url": "https://teske-systemtechnik.de/ru/uslugi/aws-cost-analysis/",
+      "offers": {
+        "@type": "Offer",
+        "price": "3500",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "3500",
+          "priceCurrency": "EUR"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "От какого размера счёта аудит окупается?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "От примерно $2 000 в месяц и выше аудит почти всегда окупается за один-два месяца, если setup ещё не идеально оптимизирован. Ниже, приходите на discovery-звонок, но я могу честно сказать, что рычаги слишком малы для затрат."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие доступы нужны конкретно?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cost Explorer, CloudWatch Logs и Metrics, плюс describe/list на EC2, EKS, RDS, S3 и ALB. Никаких прав записи. Никакого доступа к содержимому S3-бакетов или баз данных. Policy высылаю до подписания договора, вы видите, что именно даёте."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько это занимает?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "От трёх до пяти рабочих дней после предоставления доступа. Multi-account-setup с Organizations занимает больше; это я оцениваю на discovery-звонке."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Вы внедряете или только аудит?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "По желанию, оба. Внедрение по дневному тарифу, шаг за шагом с планом отката для каждой меры. Альтернатива: handoff-спринт, где я сопровождаю вашу команду, а ваши люди выполняют."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Фиксированная цена или почасовая?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Сам аудит, фиксированный. Для очень крупных setup цифра адаптируется, но известна до подписания. Последующее внедрение, по дневному тарифу."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что с нашими данными?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Всё остаётся в вашем аккаунте. Я читаю в режиме read-only, ничего не копирую из S3 или RDS, работаю с метриками расходов и логами. NDA по запросу, ещё до discovery-звонка."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-orange-500 focus:px-4 focus:py-2 focus:text-white">Перейти к содержимому</a>
+
+<div class="flex min-h-screen flex-col">
+
+<header class="absolute z-30 w-full">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="flex h-16 items-center justify-between md:h-20">
+      <div class="mr-4 shrink-0">
+        <a class="inline-flex items-center gap-3" href="/ru/" aria-label="Teske Systemtechnik">
+          <img class="max-w-none" src="/static/images/logo_whitemode.svg" width="40" height="40" alt="">
+          <span class="font-aspekta text-[17px] font-bold uppercase tracking-[0.1em] text-stone-100 leading-[20px]">Teske<br>Systemtechnik</span>
+        </a>
+      </div>
+      <nav class="hidden md:flex md:grow" aria-label="Primary">
+        <ul class="flex grow flex-wrap items-center justify-end gap-1">
+          <li><a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/ru/">Главная</a></li>
+          <li data-skeleton-off><a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/ru/about/">Обо мне</a></li>
+          <li><a class="text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/ru/uslugi/" aria-current="page">Услуги</a></li>
+          <li><a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="/ru/proekty/">Проекты</a></li>
+          <li><a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer"><svg class="h-3.5 w-3.5 fill-[#14a800]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>Консультация</a></li>
+          <li class="ml-2 flex items-center gap-1 rounded-full border border-stone-800 bg-stone-900/60 p-1">
+            <a class="text-stone-400 hover:text-white rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/de/leistungen/aws-kostenanalyse/" aria-label="Сменить язык: DE">DE</a>
+              <a class="text-stone-400 hover:text-white rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/en/services/aws-cost-analysis/" aria-label="Сменить язык: EN">EN</a>
+              <a class="bg-orange-500 text-white shadow rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition" href="#" aria-current="true" aria-label="Сменить язык: RU">RU</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="ml-4 flex items-center md:hidden" x-data="{ expanded: false }">
+        <button class="group inline-flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900/60 text-stone-300 transition hover:text-white" aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded">
+          <span class="sr-only">Menu</span>
+          <svg class="pointer-events-none h-4 w-4 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect class="origin-center -translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]" y="7" width="16" height="2" rx="1"></rect>
+            <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45" y="7" width="16" height="2" rx="1"></rect>
+            <rect class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]" y="7" width="16" height="2" rx="1"></rect>
+          </svg>
+        </button>
+        <template x-teleport="body">
+          <nav id="mobile-nav" aria-label="Mobile" class="fixed top-16 inset-x-0 z-50 overflow-hidden px-4 transition-all duration-300 ease-out sm:px-6" x-ref="mobileNav"
+               :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1; transform: translateY(0)' : 'max-height: 0; opacity: 0; transform: translateY(-8px)'"
+               @click.outside="expanded = false" @keydown.escape.window="expanded = false" x-cloak>
+            <ul class="rounded-2xl border border-stone-800 bg-stone-900/90 px-4 py-3 shadow-xl backdrop-blur-xl">
+              <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/ru/">Главная</a></li>
+              <li data-skeleton-off><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/ru/about/">Обо мне</a></li>
+              <li><a class="flex py-2 text-sm font-medium text-white" href="/ru/uslugi/">Услуги</a></li>
+              <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/ru/proekty/">Проекты</a></li>
+              <li><a class="flex items-center gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer"><svg class="h-3.5 w-3.5 fill-[#14a800]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>Консультация</a></li>
+              <li class="mt-2 flex items-center gap-2 border-t border-stone-800 pt-3">
+                <span class="text-xs uppercase tracking-wider text-stone-500">Сменить язык:</span>
+                <a class="text-stone-400 hover:text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/de/leistungen/aws-kostenanalyse/" aria-label="Сменить язык: DE">DE</a>
+              <a class="text-stone-400 hover:text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition" href="/en/services/aws-cost-analysis/" aria-label="Сменить язык: EN">EN</a>
+              <a class="bg-orange-500 text-white shadow rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition" href="#" aria-current="true" aria-label="Сменить язык: RU">RU</a>
+              </li>
+            </ul>
+          </nav>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content" class="grow">
+
+<section class="relative pt-32 pb-16 md:pt-40 md:pb-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <a href="/ru/uslugi/" class="mb-6 inline-flex items-center gap-2 text-sm font-medium text-stone-400 transition hover:text-amber-300" data-aos="fade-up">← Все услуги</a>
+    <div class="max-w-3xl">
+      <p class="mb-6 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400" data-aos="fade-up">
+        <span class="section-num">000 /</span>
+        FinOps
+      </p>
+      <h1 class="font-aspekta text-5xl font-bold leading-[1.02] text-white md:text-6xl" data-aos="fade-up" data-aos-delay="80">Анализ и снижение расходов AWS</h1>
+      <p class="mt-6 max-w-2xl text-lg text-stone-300" data-aos="fade-up" data-aos-delay="160">Аудит, который не состоит из слайдов PowerPoint,, а из пронумерованного списка мер с конкретными цифрами по каждой позиции, который можно начать выполнять завтра. Фиксированная цена, прогноз «до/после» обоснованный, zero downtime при внедрении.</p>
+      <div class="mt-10 flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="240">
+        <a class="inline-flex items-center rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400" href="/ru/?service=aws-kostenanalyse&amp;min=3500#contact">Отправить запрос</a>
+        <a class="inline-flex items-center rounded-full border border-stone-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-orange-500 hover:text-amber-300" href="#leistungsumfang">Что входит</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="leistungsumfang" class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl" data-aos="fade-up">
+      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+        <span class="section-num">001 /</span>
+        Что вы получаете
+      </p>
+      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">Что входит</h2>
+      <p class="mt-4 text-stone-400">Четыре результата. Никакого консультационного жаргона, никаких «вывести рекомендации». Вы получаете материал, с которым можете работать сразу.</p>
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up">
+  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+  <h3 class="font-aspekta text-lg font-bold text-white">Отчёт о расходах</h3>
+  <p class="mt-2 text-sm text-stone-400">PDF, в котором объяснена каждая строка счёта. Плюс: какие ресурсы реально работают, какие существуют только потому, что никто не решился их удалить, и какие на самом деле только притягивают бот-трафик.</p>
+</div>
+          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="80">
+  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+  <h3 class="font-aspekta text-lg font-bold text-white">Список мер в трёх колонках</h3>
+  <p class="mt-2 text-sm text-stone-400">Быстрые победы (дни), структурные меры (недели), архитектура (месяцы). По каждой строке: что делать, какая ожидаемая ежемесячная экономия, какой риск. Отсортировано по ROI.</p>
+</div>
+          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="160">
+  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h7a3 3 0 013 3v6"/></svg></div>
+  <h3 class="font-aspekta text-lg font-bold text-white">Карта зависимостей</h3>
+  <p class="mt-2 text-sm text-stone-400">В одном проекте, казалось бы неиспользуемый ALB на самом деле был частью цепочки доставки email. Без анализа логов отключение заблокировало бы компанию в её собственном почтовом ящике. Карта показывает, что реально связано,, а не что говорят теги.</p>
+</div>
+          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="240">
+  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+  <h3 class="font-aspekta text-lg font-bold text-white">Опционально: внедрение</h3>
+  <p class="mt-2 text-sm text-stone-400">Если хотите, я также внедрю меры, дневной тариф, с планом отката для каждой позиции. Вы одобряете каждое действие до его выполнения.</p>
+</div>
+    </div>
+  </div>
+</section>
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl" data-aos="fade-up">
+      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+        <span class="section-num">002 /</span>
+        Как это идёт
+      </p>
+      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">Как это работает на практике</h2>
+    </div>
+    <ol class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up">
+  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">01</span>
+  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Discovery-звонок</h3>
+  <p class="mt-2 text-sm text-stone-400">Консультация на 30 мин или 1 ч, от €75. Workflow, реализуемость, архитектура. Если бронируете последующий проект, цена звонка зачитывается в него.</p>
+</li>
+          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up" data-aos-delay="80">
+  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">02</span>
+  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Доступ</h3>
+  <p class="mt-2 text-sm text-stone-400">Вы создаёте read-only IAM-роль. Я могу смотреть, но ничего не могу сломать. Пример policy высылаю заранее; NDA по запросу.</p>
+</li>
+          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up" data-aos-delay="160">
+  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">03</span>
+  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Аудит</h3>
+  <p class="mt-2 text-sm text-stone-400">3–5 рабочих дней. Cost Explorer, логи, right-sizing, lifecycle хранилища, zombie-detection. Ежедневный статус, если хотите,, иначе только в конце.</p>
+</li>
+          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up" data-aos-delay="240">
+  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">04</span>
+  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Передача</h3>
+  <p class="mt-2 text-sm text-stone-400">PDF-отчёт плюс часовой звонок, на котором я прохожу roadmap. После: либо ваша команда внедряет, либо я беру это на себя.</p>
+</li>
+    </ol>
+  </div>
+</section>
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="grid gap-10 lg:grid-cols-12 items-start">
+      <div class="lg:col-span-5" data-aos="fade-up">
+        <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+          <span class="section-num">003 /</span>
+          Цена
+        </p>
+        <h2 class="font-aspekta text-3xl font-bold leading-tight text-white md:text-4xl">Фиксированная цена, без табеля</h2>
+        <p class="mt-4 text-stone-400">€3 500 покрывает типичный аудит на одном AWS-аккаунте. Для крупных multi-account-организаций цена адаптируется, но вы знаете цифру до подписания, а не после.</p>
+        <p class="mt-4 text-stone-400">Вы платите за определённый результат, а не за часы. Если я справляюсь быстрее, чем планировал,, это мой риск и ваша уверенность.</p>
+      </div>
+      <div class="lg:col-span-7" data-aos="fade-up" data-aos-delay="120">
+        <div class="rounded-3xl border border-orange-500/30 bg-gradient-to-br from-stone-900/80 to-stone-950 p-8 shadow-xl">
+          <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-amber-400">Аудит-пакет</p>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="font-aspekta text-sm text-stone-400">от</span>
+            <span class="font-aspekta text-5xl font-bold text-white">€3 500</span>
+            <span class="font-aspekta text-sm text-stone-400">нетто</span>
+          </div>
+          <p class="mt-2 text-sm text-stone-400">Single-account, средняя сложность.</p>
+          <ul class="mt-6 space-y-3 text-sm text-stone-200">
+            <li class="flex items-start gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 011.42-1.42L8 12.585l7.29-7.29a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>PDF-отчёт с прогнозом «до/после»</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 011.42-1.42L8 12.585l7.29-7.29a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Список мер, быстрые победы, структурные меры, архитектура, раздельно</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 011.42-1.42L8 12.585l7.29-7.29a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Карта зависимостей из логов, основа zero-downtime</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 011.42-1.42L8 12.585l7.29-7.29a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Звонок-передача (1 ч) плюс письменная документация</li>
+            <li class="flex items-start gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 011.42-1.42L8 12.585l7.29-7.29a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Read-only-доступ на всём протяжении, NDA по запросу</li>
+          </ul>
+          <a href="/ru/?service=aws-kostenanalyse&amp;min=3500#contact" class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">
+            Отправить запрос
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+          </a>
+          <p class="mt-3 text-center text-xs text-stone-500">Ответ в течение 24 ч</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl" data-aos="fade-up">
+      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+        <span class="section-num">004 /</span>
+        Референс
+      </p>
+      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">Реальная история</h2>
+      <p class="mt-4 text-stone-400">Процесс выше не теория, это то, как я работал с клиентом в начале 2026.</p>
+    </div>
+    <a href="/ru/proekty/aws-cost-optimization/" class="mt-12 block overflow-hidden rounded-3xl border border-stone-800 bg-stone-900/60 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="120">
+      <div class="grid md:grid-cols-12">
+        <div class="md:col-span-5">
+          <img src="/static/projects/aws-cost-optimization/images/cover.svg" alt="$3 850 → $1 330 в месяц, без простоев" class="h-full w-full object-cover" loading="lazy">
+        </div>
+        <div class="p-8 md:col-span-7">
+          <div class="mb-4 flex flex-wrap gap-2">
+            <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Blender Networks Inc.</span>
+            <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Рекламное агентство · Канада</span>
+          </div>
+          <h3 class="font-aspekta text-2xl font-bold text-white">$3 850 → $1 330 в месяц, без простоев</h3>
+          <p class="mt-3 text-stone-300">8 zombie-ALB, которые притягивали только бот-сканы. Целый EKS-кластер, которым никто всерьёз не пользовался месяцами. 1,4 ТБ устаревших EBS-снэпшотов. Плюс: WordPress-сайты и MX-записи, которые работали без перерывов, это было условием.</p>
+          <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-amber-400">
+            Полный кейс
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl" data-aos="fade-up">
+      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+        <span class="section-num">005 /</span>
+        Частые вопросы
+      </p>
+      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">Что вы, вероятно, хотите узнать</h2>
+    </div>
+    <div class="mt-12 grid gap-4 md:grid-cols-2 items-start" data-aos="fade-up" data-aos-delay="80">
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    От какого размера счёта аудит окупается?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">От примерно $2 000 в месяц и выше аудит почти всегда окупается за один-два месяца, если setup ещё не идеально оптимизирован. Ниже, приходите на discovery-звонок, но я могу честно сказать, что рычаги слишком малы для затрат.</p>
+</details>
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    Какие доступы нужны конкретно?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">Cost Explorer, CloudWatch Logs и Metrics, плюс describe/list на EC2, EKS, RDS, S3 и ALB. Никаких прав записи. Никакого доступа к содержимому S3-бакетов или баз данных. Policy высылаю до подписания договора, вы видите, что именно даёте.</p>
+</details>
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    Сколько это занимает?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">От трёх до пяти рабочих дней после предоставления доступа. Multi-account-setup с Organizations занимает больше; это я оцениваю на discovery-звонке.</p>
+</details>
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    Вы внедряете или только аудит?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">По желанию, оба. Внедрение по дневному тарифу, шаг за шагом с планом отката для каждой меры. Альтернатива: handoff-спринт, где я сопровождаю вашу команду, а ваши люди выполняют.</p>
+</details>
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    Фиксированная цена или почасовая?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">Сам аудит, фиксированный. Для очень крупных setup цифра адаптируется, но известна до подписания. Последующее внедрение, по дневному тарифу.</p>
+</details>
+          <details class="faq-card rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
+  <summary class="flex items-start justify-between gap-4 font-aspekta text-base font-bold text-white">
+    Что с нашими данными?
+    <span class="faq-icon shrink-0 text-lg" aria-hidden="true">+</span>
+  </summary>
+  <p class="mt-4 text-sm text-stone-400">Всё остаётся в вашем аккаунте. Я читаю в режиме read-only, ничего не копирую из S3 или RDS, работаю с метриками расходов и логами. NDA по запросу, ещё до discovery-звонка.</p>
+</details>
+    </div>
+  </div>
+</section>
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="mb-10 max-w-3xl" data-aos="fade-up">
+      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+        <span class="section-num">006 /</span>
+        Связанные услуги
+      </p>
+      <p class="text-stone-400">Часто заказывают вместе с этой услугой:</p>
+    </div>
+    <div class="grid gap-6 md:grid-cols-2 items-stretch">
+      <a href="/ru/uslugi/legacy-data-migration/" class="group flex flex-col rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up">
+  <p class="mb-2 font-aspekta text-[11px] font-semibold uppercase tracking-widest text-amber-400">Migration</p>
+  <h3 class="font-aspekta text-xl font-bold text-white">Миграция legacy-данных и реверс-инжиниринг</h3>
+  <p class="mt-3 grow text-sm text-stone-400">Миграция данных из legacy-систем (Access, старые экспорты ERP, недокументированные схемы) в современные структуры. С валидацией правил и полным audit trail.</p>
+  <div class="mt-6 flex items-baseline justify-between gap-3 border-t border-stone-800/60 pt-4">
+    <div class="flex items-baseline gap-1.5">
+      <span class="font-aspekta text-xs text-stone-500">от</span>
+      <span class="font-aspekta text-xl font-bold text-white">€4 500</span>
+    </div>
+    <span class="text-xs font-semibold text-amber-400 transition group-hover:text-amber-300">Подробности →</span>
+  </div>
+</a>
+      <a href="/ru/uslugi/product-feed-pipelines/" class="group flex flex-col rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up">
+  <p class="mb-2 font-aspekta text-[11px] font-semibold uppercase tracking-widest text-amber-400">E-Commerce</p>
+  <h3 class="font-aspekta text-xl font-bold text-white">Pipeline для product-feed</h3>
+  <p class="mt-3 grow text-sm text-stone-400">Автоматическая синхронизация крупных affiliate-feed (Connexity, Shopping24) в Merchant Center. С валидацией, мониторингом и восстановлением после ошибок.</p>
+  <div class="mt-6 flex items-baseline justify-between gap-3 border-t border-stone-800/60 pt-4">
+    <div class="flex items-baseline gap-1.5">
+      <span class="font-aspekta text-xs text-stone-500">от</span>
+      <span class="font-aspekta text-xl font-bold text-white">€3 500</span>
+    </div>
+    <span class="text-xs font-semibold text-amber-400 transition group-hover:text-amber-300">Подробности →</span>
+  </div>
+</a>
+    </div>
+  </div>
+</section>
+
+<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-3xl px-4 text-center sm:px-6" data-aos="fade-up">
+    <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">Конкретная цифра?</h2>
+    <p class="mt-4 text-stone-400">Отправьте короткий запрос с диапазоном бюджета, ответ в течение 24 ч, с предложением времени для discovery-звонка.</p>
+    <a href="/ru/?service=aws-kostenanalyse&amp;min=3500#contact" class="mt-10 inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-4 text-sm font-semibold text-white transition hover:bg-orange-400">
+      Отправить запрос
+      <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="relative border-t border-stone-800/60 mt-10">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="grid gap-10 py-12 md:grid-cols-12">
+      <div class="md:col-span-5">
+        <a class="inline-flex items-center gap-3" href="/ru/" aria-label="Teske Systemtechnik">
+          <img src="/static/images/logo_whitemode.svg" class="h-12 w-12" alt="">
+          <span class="font-aspekta text-lg font-bold uppercase tracking-[0.2em] text-stone-100">Teske<br>Systemtechnik</span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm text-stone-400">Quality engineered in Germany.</p>
+      </div>
+      <div class="md:col-span-3">
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Навигация</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/ru/">Главная</a></li>
+          <li data-skeleton-off><a class="text-stone-400 transition hover:text-amber-400" href="/ru/about/">Обо мне</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/ru/uslugi/">Услуги</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/ru/proekty/">Проекты</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer">Консультация на Upwork</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-2">
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Юридическое</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/ru/impressum/">Выходные данные</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/ru/privacy/">Конфиденциальность</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-2">
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Профили</h3>
+        <ul class="flex gap-3">
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white" href="https://pypi.org/user/JanTeske06/" target="_blank" rel="noopener noreferrer" aria-label="PyPI"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12,2L2,7V17L12,22L22,17V7L12,2ZM4,16.06V8.94L11,12.44V19.56L4,16.06ZM12,11.38L5.13,7.94L12,4.5L18.87,7.94L12,11.38ZM20,16.06L13,19.56V12.44L20,8.94V16.06Z"/></svg></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#14a800] hover:bg-[#14a800] hover:text-white" href="https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c" target="_blank" rel="noopener noreferrer" aria-label="Upwork"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-white hover:bg-black hover:text-white" href="https://github.com/JanTeske06" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col items-center justify-between gap-3 border-t border-stone-800/60 py-6 text-xs text-stone-500 md:flex-row">
+      <p>&copy; 2026 Teske Systemtechnik. Все права защищены.</p>
+      <p class="font-aspekta uppercase tracking-widest">Quality engineered in Germany.</p>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script src="/static/js/vendors/alpinejs.min.js" defer></script>
+<script src="/static/js/vendors/aos.js?v=20260430a"></script>
+<script src="/static/js/vendors/swiper-bundle.min.js?v=20260430a"></script>
+<script src="/static/js/main.js?v=20260430a"></script>
+
+</body>
+</html>
