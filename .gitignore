@@ -45,10 +45,8 @@ seo-plan.md
 _*.py
 
 ## Local-only operational artifacts
-## - maintenance.flag: lives in gh-pages branch / deploy target, not in master
 ## - teske-logo-lockup.svg: build output of scripts/build-logo-lockup.mjs
 ## - upwork_links.txt: input data for the local-only add-upwork-sidebar.py
-maintenance.flag
 teske-logo-lockup.svg
 upwork_links.txt
 
