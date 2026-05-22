@@ -31,7 +31,11 @@ from urllib.error import HTTPError, URLError
 ROOT = Path(__file__).resolve().parents[1]
 SITEMAP = ROOT / "sitemap.xml"
 HOST = "teske-systemtechnik.de"
-ENDPOINT = "https://api.indexnow.org/indexnow"
+# Bing's endpoint is used in preference to api.indexnow.org because some
+# networks (Windows Defender, corporate proxies) block the aggregator host.
+# Bing forwards submissions to all IndexNow participants (Yandex, Seznam,
+# Naver) automatically.
+ENDPOINT = "https://www.bing.com/indexnow"
 SITEMAP_NS = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
 KEY_PATTERN = re.compile(r"^[a-zA-Z0-9-]{8,128}$")
 
