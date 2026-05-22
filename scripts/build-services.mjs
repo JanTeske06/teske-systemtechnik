@@ -1591,7 +1591,8 @@ function renderServicePage(service, lang) {
   <link rel="icon" type="image/svg+xml" href="/static/images/logo_favicon.svg">
   <link rel="preload" href="/static/fonts/aspekta/Aspekta-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/static/fonts/aspekta/Aspekta-650.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/static/css/vendors/aos.css">
+  <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
   <link rel="stylesheet" href="/static/style.css?v=20260521a">
   <link rel="stylesheet" href="/static/css/site.css?v=20260521a">
@@ -1731,7 +1732,8 @@ function renderOverviewPage(lang) {
   <link rel="icon" type="image/svg+xml" href="/static/images/logo_favicon.svg">
   <link rel="preload" href="/static/fonts/aspekta/Aspekta-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/static/fonts/aspekta/Aspekta-650.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/static/css/vendors/aos.css">
+  <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
   <link rel="stylesheet" href="/static/style.css?v=20260521a">
   <link rel="stylesheet" href="/static/css/site.css?v=20260521a">
@@ -1907,9 +1909,11 @@ function renderInquiryPage(lang) {
 
   <link rel="canonical" href="${canonicalUrl}">
   <link rel="icon" type="image/svg+xml" href="/static/images/logo_favicon.svg">
+  <link rel="preconnect" href="https://forminit.com" crossorigin>
   <link rel="preload" href="/static/fonts/aspekta/Aspekta-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/static/fonts/aspekta/Aspekta-650.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/static/css/vendors/aos.css">
+  <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
   <link rel="stylesheet" href="/static/style.css?v=20260521a">
   <link rel="stylesheet" href="/static/css/site.css?v=20260521a">

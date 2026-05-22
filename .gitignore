@@ -43,6 +43,10 @@ seo-plan.md
 
 ## Throwaway one-shot scripts (prefix convention) — never commit
 _*.py
+_*.mjs
+
+## Local working files for external directory listings (wlw, etc.)
+bulk-import-excel-template-*.xlsx
 
 ## Local-only operational artifacts
 ## - teske-logo-lockup.svg: build output of scripts/build-logo-lockup.mjs
@@ -51,10 +55,10 @@ teske-logo-lockup.svg
 upwork_links.txt
 
 ## Local working directories (separate projects, not part of the public site)
-BookListerAI/
-High speed data aquision/
-Legacy-Data-Extraction/
-Microsoft feed/
+/BookListerAI/
+/High speed data aquision/
+/Legacy-Data-Extraction/
+/Microsoft feed/
 
 ## Wireframe drafts and design feedback — local design notes, never deploy
 Wireframe-*.txt
