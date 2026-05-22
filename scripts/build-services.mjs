@@ -68,7 +68,7 @@ const LABELS = {
     htmlLang: 'en', ogLocale: 'en_US',
     skipToContent: 'Skip to content',
     navStart: 'Home', navAbout: 'About', navServices: 'Services',
-    navProjects: 'Projects', navConsultation: 'Consulting',
+    navProjects: 'Projects', navConsultation: 'Book a call',
     legal: 'Legal Notice', privacy: 'Privacy Policy',
     quality: 'Quality engineered in Germany.',
     copyright: '&copy; 2026 Teske Systemtechnik. All rights reserved.',
@@ -95,7 +95,7 @@ const LABELS = {
     headlineNavigation: 'Navigation',
     headlineLegal: 'Legal',
     headlineFollow: 'Follow me',
-    consultationViaUpwork: 'Consulting via Upwork',
+    consultationViaUpwork: 'Consultation via Upwork',
   },
   ru: {
     htmlLang: 'ru', ogLocale: 'ru_RU',
