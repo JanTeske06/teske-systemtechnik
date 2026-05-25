@@ -289,16 +289,76 @@
 
   
   <main id="main-content" class="grow">
-    
+  
 <section class="relative pt-28 pb-16 md:pt-32">
-  <div class="mx-auto max-w-3xl px-4 sm:px-6">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
 
-    <header class="mb-10" data-aos="fade-down">
-      <p class="mb-3 font-aspekta text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Legal</p>
-      <h1 class="font-aspekta text-4xl font-bold text-white md:text-5xl">
-        Privacy Policy
-      </h1>
-    </header>
+    <div class="grid gap-10 lg:grid-cols-12 lg:gap-12">
+
+
+      <details class="toc-mobile lg:hidden sticky top-2 z-20 rounded-xl border border-stone-800 bg-stone-900/95 shadow-lg backdrop-blur-md">
+        <summary class="flex cursor-pointer items-center justify-between gap-3 px-4 py-3">
+          <span class="flex items-center gap-2 font-aspekta text-xs font-semibold uppercase tracking-widest text-stone-200">
+            <svg class="toc-accent h-4 w-4 fill-current" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12v2H2zm0 4h12v2H2zm0 4h12v2H2z"/></svg>
+            Table of contents
+          </span>
+          <span class="toc-mobile-current truncate text-xs text-stone-400">§ 1, Definitions</span>
+          <svg class="h-4 w-4 shrink-0 fill-stone-400 transition-transform" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11L3 6h10z"/></svg>
+        </summary>
+        <nav class="max-h-[60vh] overflow-y-auto border-t border-stone-800 p-3" aria-label="Table of contents">
+          <ol class="space-y-0.5">
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#definitions"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">01</span><span class="leading-snug">Definitions</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#controller"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">02</span><span class="leading-snug">Controller</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#hosting"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">03</span><span class="leading-snug">Hosting &amp; CDN</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#general-data"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">04</span><span class="leading-snug">Server logs</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#contact-form"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">05</span><span class="leading-snug">Contact &amp; Forminit</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#external-profiles"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">06</span><span class="leading-snug">External profiles</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#erasure"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">07</span><span class="leading-snug">Erasure</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#rights"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">08</span><span class="leading-snug">Your rights</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#legal-basis"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">09</span><span class="leading-snug">Legal basis</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#legitimate-interests"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">10</span><span class="leading-snug">Legitimate interests</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#storage-period"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">11</span><span class="leading-snug">Storage period</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#provision-obligation"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">12</span><span class="leading-snug">Data provision</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#automated-decision-making"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">13</span><span class="leading-snug">Automated decisions</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#cookies"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">14</span><span class="leading-snug">Cookies</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#dpo"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">15</span><span class="leading-snug">Data protection officer</span></a></li>
+          </ol>
+        </nav>
+      </details>
+
+
+      <aside class="hidden lg:block lg:col-span-3">
+        <nav class="toc-desktop sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto rounded-2xl border border-stone-800 bg-stone-900/60 p-4 backdrop-blur-sm" aria-label="Table of contents">
+          <p class="toc-accent mb-3 px-2 font-aspekta text-[11px] font-semibold uppercase tracking-widest">Contents</p>
+          <ol class="space-y-0.5">
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#definitions"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">01</span><span class="leading-snug">Definitions</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#controller"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">02</span><span class="leading-snug">Controller</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#hosting"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">03</span><span class="leading-snug">Hosting &amp; CDN</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#general-data"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">04</span><span class="leading-snug">Server logs</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#contact-form"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">05</span><span class="leading-snug">Contact &amp; Forminit</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#external-profiles"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">06</span><span class="leading-snug">External profiles</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#erasure"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">07</span><span class="leading-snug">Erasure</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#rights"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">08</span><span class="leading-snug">Your rights</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#legal-basis"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">09</span><span class="leading-snug">Legal basis</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#legitimate-interests"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">10</span><span class="leading-snug">Legitimate interests</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#storage-period"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">11</span><span class="leading-snug">Storage period</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#provision-obligation"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">12</span><span class="leading-snug">Data provision</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#automated-decision-making"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">13</span><span class="leading-snug">Automated decisions</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#cookies"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">14</span><span class="leading-snug">Cookies</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#dpo"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">15</span><span class="leading-snug">Data protection officer</span></a></li>
+          </ol>
+        </nav>
+      </aside>
+
+
+      <div class="min-w-0 lg:col-span-9">
+
+        <header class="mb-10" data-aos="fade-down">
+          <p class="mb-3 font-aspekta text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Legal</p>
+          <h1 class="font-aspekta text-4xl font-bold text-white md:text-5xl">
+            Privacy Policy
+          </h1>
+        </header>
 
     <div class="mb-10 rounded-2xl border border-orange-500/30 bg-orange-500/5 p-5 text-sm text-stone-300"
          data-aos="fade-up">
@@ -537,15 +597,19 @@
 
     </article>
 
-    <div class="mt-10 grid grid-cols-1 items-center gap-3 md:grid-cols-3">
-      <a href="/en/"
-         class="inline-flex items-center justify-self-start rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">
-        ← Back to home
-      </a>
-      <a href="#"
-         class="inline-flex items-center justify-self-start rounded-full border border-stone-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-orange-500 hover:text-amber-300 md:justify-self-center">
-        ↑ Back to top
-      </a>
+        <div class="mt-10 grid grid-cols-1 items-center gap-3 md:grid-cols-3">
+          <a href="/en/"
+             class="inline-flex items-center justify-self-start rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">
+            ← Back to home
+          </a>
+          <a href="#"
+             class="inline-flex items-center justify-self-start rounded-full border border-stone-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-orange-500 hover:text-amber-300 md:justify-self-center">
+            ↑ Back to top
+          </a>
+        </div>
+
+      </div>
+
     </div>
   </div>
 </section>

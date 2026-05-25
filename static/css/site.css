@@ -441,3 +441,37 @@ footer {
   color: rgb(94 122 71);     /* sage-moss green — same as .section-num */
   transform: rotate(180deg);
 }
+
+/* ------------------------------------------------------------------
+   TOC scrollspy — Datenschutz / Privacy / Impressum.
+   Two link lists (desktop aside + mobile collapsible) share .toc-link.
+   .is-active is toggled by initTocScrollSpy() in main.js.
+   Palette: black/orange (primary accent) + sage-moss green (logo echo,
+   shared with .section-num) for the aside header + mobile menu icon.
+   ------------------------------------------------------------------ */
+.toc-link.is-active {
+  background: rgb(28 25 23 / 0.85);            /* stone-900/85 */
+  color: rgb(253 186 116);                      /* orange-300 */
+}
+.toc-link.is-active .toc-num {
+  background: rgb(249 115 22);                  /* orange-500 — primary */
+  color: rgb(255 255 255);
+  --tw-ring-color: transparent;
+  box-shadow: 0 4px 14px -2px rgb(249 115 22 / 0.45);
+}
+
+/* Sage-moss green accent — same hue as .section-num, ties the TOC
+   visually to the editorial section numbering used on the homepage. */
+.toc-accent {
+  color: rgb(94 122 71);                        /* sage-moss green */
+}
+
+/* Chevron rotates when the mobile TOC is open */
+.toc-mobile[open] > summary > svg:last-child {
+  transform: rotate(180deg);
+}
+
+/* Hide the native marker on the mobile TOC summary */
+.toc-mobile > summary { list-style: none; }
+.toc-mobile > summary::-webkit-details-marker { display: none; }
+.toc-mobile > summary::marker { content: ""; }

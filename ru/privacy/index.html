@@ -126,12 +126,64 @@
   <main id="main-content" class="grow">
 
 <section class="relative pt-28 pb-16 md:pt-32">
-  <div class="mx-auto max-w-3xl px-4 sm:px-6">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
 
-    <header class="mb-10" data-aos="fade-down">
-      <p class="mb-3 font-aspekta text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Правовая информация</p>
-      <h1 class="font-aspekta text-4xl font-bold text-white md:text-5xl">Политика конфиденциальности</h1>
-    </header>
+    <div class="grid gap-10 lg:grid-cols-12 lg:gap-12">
+
+
+      <details class="toc-mobile lg:hidden sticky top-2 z-20 rounded-xl border border-stone-800 bg-stone-900/95 shadow-lg backdrop-blur-md">
+        <summary class="flex cursor-pointer items-center justify-between gap-3 px-4 py-3">
+          <span class="flex items-center gap-2 font-aspekta text-xs font-semibold uppercase tracking-widest text-stone-200">
+            <svg class="toc-accent h-4 w-4 fill-current" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12v2H2zm0 4h12v2H2zm0 4h12v2H2z"/></svg>
+            Оглавление
+          </span>
+          <span class="toc-mobile-current truncate text-xs text-stone-400">§ 1, Краткий обзор</span>
+          <svg class="h-4 w-4 shrink-0 fill-stone-400 transition-transform" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11L3 6h10z"/></svg>
+        </summary>
+        <nav class="max-h-[60vh] overflow-y-auto border-t border-stone-800 p-3" aria-label="Оглавление">
+          <ol class="space-y-0.5">
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#overview"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">01</span><span class="leading-snug">Краткий обзор</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#controller"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">02</span><span class="leading-snug">Контроллер</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#hosting"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">03</span><span class="leading-snug">Хостинг и CDN</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#contact-form"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">04</span><span class="leading-snug">Контактная форма</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#external-profiles"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">05</span><span class="leading-snug">Внешние профили</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#log-data"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">06</span><span class="leading-snug">Серверные логи</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#your-rights"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">07</span><span class="leading-snug">Ваши права</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#retention"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">08</span><span class="leading-snug">Срок хранения</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#cookies"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">09</span><span class="leading-snug">Cookies</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#dpo"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">10</span><span class="leading-snug">Уполномоченный</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#automated"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">11</span><span class="leading-snug">Автоматизированные решения</span></a></li>
+          </ol>
+        </nav>
+      </details>
+
+
+      <aside class="hidden lg:block lg:col-span-3">
+        <nav class="toc-desktop sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto rounded-2xl border border-stone-800 bg-stone-900/60 p-4 backdrop-blur-sm" aria-label="Оглавление">
+          <p class="toc-accent mb-3 px-2 font-aspekta text-[11px] font-semibold uppercase tracking-widest">Содержание</p>
+          <ol class="space-y-0.5">
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#overview"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">01</span><span class="leading-snug">Краткий обзор</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#controller"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">02</span><span class="leading-snug">Контроллер</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#hosting"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">03</span><span class="leading-snug">Хостинг и CDN</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#contact-form"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">04</span><span class="leading-snug">Контактная форма</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#external-profiles"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">05</span><span class="leading-snug">Внешние профили</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#log-data"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">06</span><span class="leading-snug">Серверные логи</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#your-rights"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">07</span><span class="leading-snug">Ваши права</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#retention"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">08</span><span class="leading-snug">Срок хранения</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#cookies"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">09</span><span class="leading-snug">Cookies</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#dpo"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">10</span><span class="leading-snug">Уполномоченный</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#automated"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">11</span><span class="leading-snug">Автомат. решения</span></a></li>
+          </ol>
+        </nav>
+      </aside>
+
+
+      <div class="min-w-0 lg:col-span-9">
+
+        <header class="mb-10" data-aos="fade-down">
+          <p class="mb-3 font-aspekta text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Правовая информация</p>
+          <h1 class="font-aspekta text-4xl font-bold text-white md:text-5xl">Политика конфиденциальности</h1>
+        </header>
 
     <div class="mb-10 rounded-2xl border border-orange-500/30 bg-orange-500/5 p-5 text-sm text-stone-300" data-aos="fade-up">
       <p><strong class="text-white">Обратите внимание:</strong> Этот перевод на русский язык предоставляется исключительно для удобства. Юридически обязательной является только <a class="text-amber-400 underline hover:text-amber-300" href="/de/datenschutz/">немецкая версия (Datenschutzerklärung)</a>. Все ссылки на законодательство относятся к праву ЕС и Германии (GDPR / DSGVO).</p>
@@ -230,13 +282,17 @@
 
     </article>
 
-    <div class="mt-10 grid grid-cols-1 items-center gap-3 md:grid-cols-3">
-      <a href="/ru/" class="inline-flex items-center justify-self-start rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">
-        ← На главную
-      </a>
-      <a href="#" class="inline-flex items-center justify-self-start rounded-full border border-stone-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-orange-500 hover:text-amber-300 md:justify-self-center">
-        ↑ Наверх
-      </a>
+        <div class="mt-10 grid grid-cols-1 items-center gap-3 md:grid-cols-3">
+          <a href="/ru/" class="inline-flex items-center justify-self-start rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">
+            ← На главную
+          </a>
+          <a href="#" class="inline-flex items-center justify-self-start rounded-full border border-stone-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-orange-500 hover:text-amber-300 md:justify-self-center">
+            ↑ Наверх
+          </a>
+        </div>
+
+      </div>
+
     </div>
   </div>
 </section>

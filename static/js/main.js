@@ -273,3 +273,78 @@ highlighters.forEach((highlighter) => {
 // via CSS in static/css/site.css. Logo, brand, and the active language
 // button get view-transition-name so the browser animates them
 // smoothly between pages. No JS needed.
+
+
+// --- Table-of-contents scrollspy (Datenschutz / Privacy / Impressum) -
+// Highlights the TOC entry that corresponds to the section currently
+// at the top of the viewport. Works for both the desktop aside list
+// and the mobile collapsible list, and updates the mobile summary
+// label to the current section.
+(function initTocScrollSpy() {
+  const tocLinks = document.querySelectorAll('.toc-link[href^="#"]');
+  if (tocLinks.length === 0) return;
+
+  const linksByTarget = new Map();
+  tocLinks.forEach((link) => {
+    const id = link.getAttribute('href').slice(1);
+    if (!id) return;
+    if (!linksByTarget.has(id)) linksByTarget.set(id, []);
+    linksByTarget.get(id).push(link);
+  });
+
+  const targets = [];
+  linksByTarget.forEach((_links, id) => {
+    const el = document.getElementById(id);
+    if (el) targets.push(el);
+  });
+  if (targets.length === 0) return;
+  targets.sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top);
+
+  const currentLabel = document.querySelector('.toc-mobile-current');
+  let active = null;
+  const setActive = (id) => {
+    if (id === active) return;
+    active = id;
+    document.querySelectorAll('.toc-link.is-active').forEach((l) => l.classList.remove('is-active'));
+    if (!id) return;
+    const links = linksByTarget.get(id) || [];
+    links.forEach((l) => l.classList.add('is-active'));
+    if (currentLabel && links[0]) {
+      const num = links[0].querySelector('.toc-num');
+      const text = links[0].querySelector('span:last-child');
+      if (num && text) {
+        currentLabel.textContent = '§ ' + parseInt(num.textContent, 10) + ' · ' + text.textContent;
+      }
+    }
+  };
+
+  const recompute = () => {
+    const offsetTop = 140;
+    let candidate = targets[0];
+    for (const t of targets) {
+      if (t.getBoundingClientRect().top - offsetTop <= 0) {
+        candidate = t;
+      } else {
+        break;
+      }
+    }
+    setActive(candidate.id);
+  };
+
+  let raf = 0;
+  window.addEventListener('scroll', () => {
+    if (raf) return;
+    raf = requestAnimationFrame(() => { raf = 0; recompute(); });
+  }, { passive: true });
+  window.addEventListener('resize', recompute, { passive: true });
+
+  // Immediate feedback on click — beats the smooth-scroll latency.
+  tocLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      const id = link.getAttribute('href').slice(1);
+      if (id) setActive(id);
+    });
+  });
+
+  recompute();
+})();
