@@ -86,6 +86,7 @@
   ]
 }
   </script>
+  <script src="/static/js/lightbox.js?v=20260529a" defer></script>
 </head>
 
 <body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
@@ -191,8 +192,12 @@
         <p class="mt-4 text-lg text-stone-300">17k LOC Python framework for parallel, fault-tolerant browser workflows, <strong>race-safe worker coordination, cross-process crash bridge, per-phase timeouts</strong>, and full operator UX through Streamlit.</p>
       </div>
 
-      <div class="mt-10 overflow-hidden rounded-3xl border border-stone-800">
-        <img src="/static/projects/browser-automation-framework/images/cover.svg" alt="Multi-Process Browser Automation Framework, case study cover" class="w-full">
+      <div class="mt-10 overflow-hidden rounded-3xl border border-stone-800 transition-colors hover:border-orange-500/60">
+        <a href="/static/projects/browser-automation-framework/images/cover.svg" data-lightbox
+           aria-label="View cover image at full size" title="View cover image at full size"
+           class="group block cursor-zoom-in">
+          <img src="/static/projects/browser-automation-framework/images/cover.svg" alt="Multi-Process Browser Automation Framework, case study cover" class="block w-full transition group-hover:opacity-90">
+        </a>
       </div>
     </div>
   </header>
@@ -320,12 +325,13 @@ Execution     →  Browser workers (as subprocesses)</code></pre>
               <li><strong>Dependency-injection layer for tests.</strong> Every external dependency (DB, Telegram, proxy provider, filesystem) sits behind a thin interface that can be swapped for an in-memory equivalent in test mode. The SQLite tests, however, run against a real SQLite DB in pytest's <code>tmp_path</code>, not a mock, migration bugs would systematically not be detected by mocks.</li>
             </ul>
 
-            <aside class="not-prose mt-10 mb-10 flex aspect-[16/9] items-center justify-center rounded-2xl border border-stone-800 bg-stone-900/60" aria-label="Codebase treemap placeholder">
-              <div class="text-center">
-                <p class="font-aspekta text-xs font-semibold uppercase tracking-widest text-stone-500">Codebase treemap</p>
-                <p class="mt-2 text-sm text-stone-400">17,461 LOC across 25 modules over 4 architecture layers, sized proportionally by module, coming soon</p>
-              </div>
-            </aside>
+            <figure class="not-prose mt-10 mb-10 overflow-hidden rounded-2xl border border-stone-800 transition-colors hover:border-orange-500/60">
+              <a href="/static/projects/browser-automation-framework/images/infographic.png" data-lightbox
+                 aria-label="View infographic at full size" title="View infographic at full size"
+                 class="group block cursor-zoom-in">
+                <img src="/static/projects/browser-automation-framework/images/infographic.png" alt="Multi-Process Browser-Automation Framework — codebase treemap" class="block w-full transition group-hover:opacity-90" loading="lazy">
+              </a>
+            </figure>
             <p class="text-sm text-stone-400">Volume breakdown of the entire codebase across Presentation, Control, Execution Core, and Utility layers, the Execution Core (8,228 LOC) dominates visually as the largest block, while the utility layer shows modularity across 11 small helper modules.</p>
 
             <h2 id="the-result">The result</h2>
@@ -456,7 +462,8 @@ Execution     →  Browser workers (as subprocesses)</code></pre>
           <ul class="flex gap-3">
             <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white" href="https://pypi.org/user/JanTeske06/" target="_blank" rel="noopener noreferrer" aria-label="PyPI"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12,2L2,7V17L12,22L22,17V7L12,2ZM4,16.06V8.94L11,12.44V19.56L4,16.06ZM12,11.38L5.13,7.94L12,4.5L18.87,7.94L12,11.38ZM20,16.06L13,19.56V12.44L20,8.94V16.06Z"/></svg></a></li>
             <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#14a800] hover:bg-[#14a800] hover:text-white" href="https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c" target="_blank" rel="noopener noreferrer" aria-label="Upwork"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg></a></li>
-            <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-white hover:bg-black hover:text-white" href="https://github.com/JanTeske06" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></li>
+            <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-white hover:bg-black hover:text-white" href="https://github.com/JanTeske06" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></li>
+
           </ul>
         </div>
 

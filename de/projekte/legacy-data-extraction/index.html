@@ -192,6 +192,7 @@
   ]
 }
   </script>
+  <script src="/static/js/lightbox.js?v=20260529a" defer></script>
 </head>
 
 <body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
@@ -367,8 +368,12 @@
       </div>
 
 
-      <div class="mt-10 overflow-hidden rounded-3xl border border-stone-800">
-        <img src="/static/projects/legacy-data-extraction/images/cover.svg" alt="Legacy-DB Reverse Engineering &amp; Migration, Case Study Cover" class="w-full">
+      <div class="mt-10 overflow-hidden rounded-3xl border border-stone-800 transition-colors hover:border-orange-500/60">
+        <a href="/static/projects/legacy-data-extraction/images/cover.svg" data-lightbox
+           aria-label="Cover-Bild in voller Größe ansehen" title="Cover-Bild in voller Größe ansehen"
+           class="group block cursor-zoom-in">
+          <img src="/static/projects/legacy-data-extraction/images/cover.svg" alt="Legacy-DB Reverse Engineering &amp; Migration, Case Study Cover" class="block w-full transition group-hover:opacity-90">
+        </a>
       </div>
 
     </div>
@@ -456,12 +461,13 @@
               <li><strong>Trust-By-Transparenz.</strong> Zwei separate Reports werden mitgeliefert. <em>Coverage-Report:</em> alle 386 Master-Bücher aus der Quell-DB mit Mapping zum Verkaufsmodell und Zeilenzahl in der finalen CSV, der Kunde sieht für jedes einzelne Buch, ob und wie viele Bauteile in das neue System überführt wurden. <em>Trash-Analysis:</em> alle 470.276 weggefilterten Zeilen mit Begründung, fehlender englischer Name, manuell geblockte regionale Sondervariante, Teilenummer unter vier Zeichen, sonstiger Bereinigungs-Filter. Der Kunde bekommt nicht nur die Migration, sondern jede einzelne Filter-Entscheidung dokumentiert.</li>
             </ul>
 
-            <aside class="not-prose mt-10 mb-10 flex aspect-[16/9] items-center justify-center rounded-2xl border border-stone-800 bg-stone-900/60" aria-label="Migrations-Pipeline-Platzhalter">
-              <div class="text-center">
-                <p class="font-aspekta text-xs font-semibold uppercase tracking-widest text-stone-500">Migrations-Pipeline</p>
-                <p class="mt-2 text-sm text-stone-400">Eine Legacy-Quelle, fünf Stages, ein modernes Ziel, Diagramm folgt</p>
-              </div>
-            </aside>
+            <figure class="not-prose mt-10 mb-10 overflow-hidden rounded-2xl border border-stone-800 transition-colors hover:border-orange-500/60">
+              <a href="/static/projects/legacy-data-extraction/images/infographic.png" data-lightbox
+                 aria-label="Infografik in voller Größe ansehen" title="Infografik in voller Größe ansehen"
+                 class="group block cursor-zoom-in">
+                <img src="/static/projects/legacy-data-extraction/images/infographic.png" alt="Legacy-DB Reverse Engineering & Migration — Infografik" class="block w-full transition group-hover:opacity-90" loading="lazy">
+              </a>
+            </figure>
             <p class="text-sm text-stone-400">Das Diagramm zeigt den vollständigen Migrationsfluss: von der forensischen Konfigurationsdaten-Wiederherstellung über die geöffnete 1,2-GB MS-Access-Quelldatenbank, den SQLite-Klon, die zentrale Multi-Table-Join-Query und die parallele DjVu-zu-JPG-Konvertierungs-Pipeline bis hin zur Hyperlink-Injektion und der Strict-Mode-Validierung gegen das Schema des neuen Zielsystems.</p>
 
             <h2 id="das-ergebnis">Das Ergebnis</h2>

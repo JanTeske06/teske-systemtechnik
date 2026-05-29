@@ -87,6 +87,7 @@
   ]
 }
   </script>
+  <script src="/static/js/lightbox.js?v=20260529a" defer></script>
 </head>
 
 <body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
@@ -193,8 +194,12 @@
         <p class="mt-4 text-lg text-stone-300">1,47&nbsp;млн деталей извлечены из защищённой паролем БД производителя объёмом 1,2&nbsp;ГБ и перенесены в новую систему клиента, включая <strong>82 076 конвертированных схем</strong>, валидация с <strong>нулём нарушений</strong>, полностью аудируемо.</p>
       </div>
 
-      <div class="mt-10 overflow-hidden rounded-3xl border border-stone-800">
-        <img src="/static/projects/legacy-data-extraction/images/cover.svg" alt="Реверс-инжиниринг и миграция legacy-БД, обложка кейса" class="w-full">
+      <div class="mt-10 overflow-hidden rounded-3xl border border-stone-800 transition-colors hover:border-orange-500/60">
+        <a href="/static/projects/legacy-data-extraction/images/cover.svg" data-lightbox
+           aria-label="Открыть обложку в полном размере" title="Открыть обложку в полном размере"
+           class="group block cursor-zoom-in">
+          <img src="/static/projects/legacy-data-extraction/images/cover.svg" alt="Реверс-инжиниринг и миграция legacy-БД, обложка кейса" class="block w-full transition group-hover:opacity-90">
+        </a>
       </div>
     </div>
   </header>
@@ -288,6 +293,14 @@
               </div>
             </aside>
             <p class="text-sm text-stone-400">Диаграмма показывает полный поток миграции: от криминалистического восстановления конфиг-данных через открытую исходную 1,2-ГБ MS-Access-БД, SQLite-клон, центральный multi-table-join-запрос и параллельный pipeline DjVu→JPG до инжекции гиперссылок и Strict-Mode-валидации против схемы новой целевой системы.</p>
+
+            <figure class="not-prose mt-10 mb-10 overflow-hidden rounded-2xl border border-stone-800 transition-colors hover:border-orange-500/60">
+              <a href="/static/projects/legacy-data-extraction/images/infographic.png" data-lightbox
+                 aria-label="Открыть инфографику в полном размере" title="Открыть инфографику в полном размере"
+                 class="group block cursor-zoom-in">
+                <img src="/static/projects/legacy-data-extraction/images/infographic.png" alt="Реверс-инжиниринг и миграция legacy-БД — инфографика" class="block w-full transition group-hover:opacity-90" loading="lazy">
+              </a>
+            </figure>
 
             <h2 id="rezultat">Результат</h2>
             <ul>
