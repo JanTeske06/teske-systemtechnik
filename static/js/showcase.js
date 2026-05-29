@@ -71,20 +71,29 @@
     const CHAIN_SPEED = 320;
     const swiper = new Swiper('.project-showcase', {
       loop: canLoop,
-      effect: 'slide',
+      // Coverflow: the active project sits centred and full-size while its
+      // neighbours peek in on either side — rotated back in 3D, scaled down
+      // and faded (opacity handled in site.css). Pressing an arrow rotates
+      // the next card to the front.
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      // 'auto' hands the slide width to CSS (clamp), so the preview cards
+      // peek in responsively — one dominant card on phones, a roomy stage
+      // with side previews on desktop.
+      slidesPerView: 'auto',
       speed: BASE_SPEED,
-      spaceBetween: 32,
-      autoplay: canLoop
-        ? {
-            delay: 5000,
-            pauseOnMouseEnter: true,
-            disableOnInteraction: false,
-          }
-        : false,
-      // Swiper's built-in nav ignores clicks during a transition. We replace
-      // it with our own handler that queues rapid presses and chains them
-      // smoothly — single click feels smooth, three quick clicks slide all
-      // the way through to the third project without skipping or stalling.
+      coverflowEffect: {
+        rotate: 32,
+        stretch: 0,
+        depth: 140,
+        modifier: 1,
+        scale: 0.84,
+        slideShadows: false,
+      },
+      // Auto-advance is handled by our own progress clock (see
+      // initProgressClock) — Swiper 8 has no autoplayTimeLeft event to
+      // sync a fill bar against, so the built-in autoplay stays off.
       pagination: {
         el: '.project-showcase .swiper-pagination',
         clickable: true,
@@ -119,15 +128,84 @@
         process();
       };
     }
+    // Swiper's built-in nav ignores clicks during a transition. We replace
+    // it with our own handler that queues rapid presses and chains them
+    // smoothly — a single click feels smooth, three quick clicks rotate all
+    // the way through to the third project without skipping or stalling.
     const prevBtn = document.querySelector('.project-showcase-prev');
     const nextBtn = document.querySelector('.project-showcase-next');
     if (prevBtn) prevBtn.addEventListener('click', enqueue('prev'));
     if (nextBtn) nextBtn.addEventListener('click', enqueue('next'));
+
+    initProgressClock(swiper, slideCount, BASE_SPEED);
   }
 
   function hideSection() {
     const section = document.getElementById('homepage-showcase');
     if (section) section.style.display = 'none';
+  }
+
+  // --------------------------------------------------------------------
+  // Progress clock — fills the active pagination segment over AUTOPLAY_MS,
+  // then advances to the next slide. Swiper 8 ships no autoplayTimeLeft
+  // event, so a single rAF clock drives BOTH the fill and the auto-advance
+  // from one source of truth — the bar and the slide change can't drift.
+  // Pauses while the stage is hovered; resets on every slide change
+  // (auto-advance, arrows, pagination taps and swipes alike).
+  // --------------------------------------------------------------------
+  const AUTOPLAY_MS = 5000;
+
+  function initProgressClock(swiper, slideCount, advanceSpeed) {
+    if (slideCount <= 1) return;
+    const stage = document.querySelector('.project-showcase');
+    const bar = stage && stage.querySelector('.swiper-pagination');
+    if (!bar) return;
+
+    let rafId = null;
+    let startTs = 0;
+    let carried = 0; // elapsed ms banked before the current pause
+    let hovering = false;
+
+    function setFill(frac) {
+      // 0..1, written straight into the active segment's scaleX (site.css).
+      // scaleX is compositor-only, so this per-frame write costs no layout.
+      bar.style.setProperty('--seg-fill', frac.toFixed(4));
+    }
+    function stop() {
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+    }
+    function frame(now) {
+      const elapsed = carried + (now - startTs);
+      if (elapsed >= AUTOPLAY_MS) {
+        stop();
+        setFill(1);
+        swiper.slideNext(advanceSpeed); // slideChange → reset() restarts us
+        return;
+      }
+      setFill(elapsed / AUTOPLAY_MS);
+      rafId = requestAnimationFrame(frame);
+    }
+    function run() {
+      if (rafId || hovering || carried >= AUTOPLAY_MS) return;
+      startTs = performance.now();
+      rafId = requestAnimationFrame(frame);
+    }
+    function reset() {
+      stop();
+      carried = 0;
+      setFill(0);
+      run();
+    }
+    function pause() {
+      if (!rafId) return;
+      carried += performance.now() - startTs;
+      stop();
+    }
+
+    swiper.on('slideChange', reset);
+    stage.addEventListener('mouseenter', function () { hovering = true; pause(); });
+    stage.addEventListener('mouseleave', function () { hovering = false; run(); });
+    reset();
   }
 
   document.addEventListener('DOMContentLoaded', function () {

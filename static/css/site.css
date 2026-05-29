@@ -300,7 +300,7 @@ footer {
  * projects.json fetch completes. Sized for the compact card layout.
  */
 .project-showcase-mount {
-  min-height: 16rem;
+  min-height: 24rem;
 }
 .project-catalog-mount {
   min-height: 14rem;
@@ -317,12 +317,69 @@ footer {
 .project-showcase .swiper-wrapper {
   align-items: stretch;
 }
+.project-showcase .swiper-slide > a {
+  width: 100%;
+}
+
+/* --- Coverflow stage ---------------------------------------------
+ * showcase.js drives the carousel with Swiper's coverflow effect and
+ * slidesPerView:'auto', so the slide WIDTH is owned here. clamp() keeps
+ * one dominant card on phones (neighbours barely peek) and a roomy
+ * stage with side previews on desktop.
+ *
+ * Non-active slides are the "preview" cards: faded back so the centred
+ * project reads as the focus, animating to full opacity as they rotate
+ * to the front. Only the centred card is clickable — the arrows / swipe
+ * bring a preview forward first.
+ */
 .project-showcase .swiper-slide {
+  width: clamp(16.5rem, 76vw, 23rem);
   height: auto;
   display: flex;
 }
-.project-showcase .swiper-slide > a {
-  width: 100%;
+/* Dim the side previews only once Swiper is driving the stage, so a
+ * missing/failed Swiper bundle leaves every card fully visible instead
+ * of greyed out. swiper-initialized is added to the container on init.
+ *
+ * The opacity fade lives on the inner <a>, NOT on .swiper-slide itself.
+ * Swiper owns the slide's transform and animates it by setting only an
+ * inline transition-DURATION (transition-property stays whatever CSS
+ * says). A `transition: opacity` shorthand on the slide would pin
+ * transition-property to `opacity` and freeze the 3D rotate-in/-out.
+ * Fading a separate element keeps the slide's transform fully Swiper's. */
+.project-showcase.swiper-initialized .swiper-slide > a {
+  opacity: 0.35;
+  transition: opacity 0.5s ease;
+}
+.project-showcase.swiper-initialized .swiper-slide-active > a {
+  opacity: 1;
+}
+.project-showcase.swiper-initialized .swiper-slide:not(.swiper-slide-active) > a {
+  pointer-events: none;
+}
+
+/* --- Showcase progress segments ----------------------------------
+ * Size, stone/orange colours and the wider active state come from the
+ * global .swiper-pagination-bullet rules above — that's the look "from
+ * before" (active stays orange-500 from the start). Here we only add the
+ * autoplay fill: a brighter-orange overlay on the ACTIVE segment that
+ * grows left→right as its scaleX runs 0 → 1. showcase.js writes that
+ * scale into --seg-fill every frame.
+ *
+ * scaleX is compositor-only (no per-frame layout), so the fill stays
+ * smooth; it has no CSS transition, so it never eases backwards on reset.
+ */
+.project-showcase .swiper-pagination-bullet {
+  position: relative;
+  overflow: hidden;
+}
+.project-showcase .swiper-pagination-bullet-active::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform-origin: left center;
+  transform: scaleX(var(--seg-fill, 0));
+  background: rgb(253 186 116); /* orange-300 — brighter highlight */
 }
 
 /* --- Graceful fade-in when JS populates the dynamic slots --- */
