@@ -348,3 +348,17 @@ highlighters.forEach((highlighter) => {
 
   recompute();
 })();
+
+
+// --- Sticky header backdrop -
+// The header is pinned with `position: fixed` in site.css so it travels with
+// the page. Here we just toggle `.scrolled` once the page is scrolled past the
+// top, letting site.css fade in the blurred dark backdrop + bottom border.
+// Runs on every content page (all load main.js); guarded for pages without it.
+(function initStickyHeader() {
+  const header = document.getElementById('site-header');
+  if (!header) return;
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 16);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();

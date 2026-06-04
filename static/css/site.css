@@ -111,6 +111,67 @@ footer,
   z-index: 2;
 }
 
+/* The header (and its dropdown menus) must sit above main content, not just
+   above the grain overlay. Without this, the header and main share z-index:2
+   and the later-in-DOM main paints over header dropdowns that overflow
+   downward — making them impossible to hover, cursor or click. */
+header {
+  z-index: 30;
+}
+
+/* --- Primary nav: center the menu buttons in the space between the logo and
+ * the language switcher. Auto margins on the first item (Start) and the last
+ * item (the language switcher) split the free space evenly on both sides of
+ * the button group, so it stays centered while the logo and the switcher
+ * remain pinned to the edges. Overrides any per-page justify-content /
+ * padding utilities on the <ul>. */
+@media (min-width: 768px) {
+  header nav[aria-label="Primary"] > ul {
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+  header nav[aria-label="Primary"] > ul > li:first-child { margin-left: auto; }
+  header nav[aria-label="Primary"] > ul > li:last-child { margin-left: auto; }
+  /* Match the logo's right gap to the inter-button gap (gap-1) so the free
+   * space splits perfectly evenly on both sides of the button group. */
+  header div.mr-4.shrink-0 { margin-right: 0.25rem; }
+}
+
+/* --- Sticky header: the header travels with the page on scroll. site.css sets
+ * an unlayered `header { position: relative }` (for the background layers) that
+ * would beat Tailwind's `.fixed` utility, so we pin via the id (higher
+ * specificity). Transparent over the hero; main.js toggles `.scrolled` to fade
+ * in a blurred dark backdrop once the page is scrolled. */
+#site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* Blur is always on (over the dark hero top it is invisible) and the border
+   * is always 1px transparent. Only the background + border-color fade in on
+   * scroll. Transitioning backdrop-filter from `none` to a blur causes a white
+   * one-frame flash in Chrome, and creating the backdrop layer mid-scroll
+   * flashes too; keeping the filter constant avoids both. */
+  border-bottom: 1px solid transparent;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: background-color .3s ease, border-color .3s ease;
+}
+#site-header.scrolled {
+  background-color: rgb(12 10 9 / 0.82);
+  border-bottom-color: rgb(41 37 36 / 0.6);
+}
+
+/* --- Beratung dropdown: center the panel under its trigger instead of
+ * right-aligning it. A static negative margin (half of w-64 = 8rem) keeps it
+ * centered without a transform, so Alpine's opacity transition can't make the
+ * panel jump sideways on open. */
+header nav[aria-label="Primary"] div.top-full.w-64 {
+  right: auto;
+  left: 50%;
+  margin-left: -8rem;
+}
+
 /* --- Skeleton mode: temporarily hide UI elements without deleting -
  * Add `data-skeleton-off` as an attribute on any element to hide it.
  * To re-enable a section or nav item, simply remove the attribute.
@@ -532,3 +593,35 @@ footer {
 .toc-mobile > summary { list-style: none; }
 .toc-mobile > summary::-webkit-details-marker { display: none; }
 .toc-mobile > summary::marker { content: ""; }
+
+/* ------------------------------------------------------------------
+   Booking widget + price calculator: restore the pointer cursor on
+   interactive controls. Tailwind v4 preflight resets <button> to the
+   default arrow; these are clearly clickable, so show the hand.
+   ------------------------------------------------------------------ */
+#booking-app button:not(:disabled),
+#booking-app a[href],
+#booking-app select,
+#price-calc a[href],
+#price-calc select {
+  cursor: pointer;
+}
+#booking-app button:disabled {
+  cursor: not-allowed;
+}
+
+/* ------------------------------------------------------------------
+   Table-of-contents asides (privacy / legal pages) stay scrollable on
+   short viewports, but the visible scrollbar looked out of place in the
+   rounded card — hide it (content remains wheel/keyboard scrollable).
+   ------------------------------------------------------------------ */
+.toc-desktop,
+.toc-mobile nav {
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* old Edge/IE */
+}
+.toc-desktop::-webkit-scrollbar,
+.toc-mobile nav::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}

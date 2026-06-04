@@ -41,8 +41,8 @@
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
 
   
-  <link rel="stylesheet" href="/static/style.css?v=20260526a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260529a">
+  <link rel="stylesheet" href="/static/style.css?v=20260601d">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260603a">
 
   
 
@@ -156,7 +156,7 @@
 <div class="flex min-h-screen flex-col">
 
   
-  <header class="absolute z-30 w-full">
+  <header id="site-header" class="fixed top-0 z-30 w-full">
     <div class="mx-auto max-w-6xl px-4 sm:px-6">
       <div class="flex h-16 items-center justify-between md:h-20">
 
@@ -169,7 +169,7 @@
 
         
         <nav class="hidden md:flex md:grow" aria-label="Primary">
-          <ul class="flex grow flex-wrap items-center justify-end gap-1">
+          <ul class="flex grow flex-wrap items-center justify-between gap-1 pl-8">
             <li>
               <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
                  href="/de/"
@@ -177,13 +177,15 @@
                 Start
               </a>
             </li>
-            <li data-skeleton-off>
-              <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
-                 href="/de/about/"
-                 >
-                Über uns
-              </a>
-            </li>
+            <li class="relative" x-data="{ open: false }" @mouseenter="open = true" @click.outside="open = false" @keydown.escape="open = false">
+            <button type="button" class="text-stone-300 hover:text-white inline-flex min-w-[6rem] cursor-pointer items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition" @click="open = !open" :aria-expanded="open" aria-haspopup="true">Beratung<svg class="h-3 w-3 transition duration-200" :class="open && 'rotate-180'" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></button>
+            <div x-show="open" x-transition.opacity x-cloak class="absolute right-0 top-full z-40 w-64 pt-2">
+              <div class="overflow-hidden rounded-2xl border border-stone-800 bg-stone-900/95 p-1.5 shadow-xl backdrop-blur-xl">
+                <a class="flex cursor-pointer items-start gap-3 rounded-xl px-3 py-2.5 transition hover:bg-stone-700/70" href="/de/termin/"><span class="mt-0.5 text-orange-400"><svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><span><span class="block text-sm font-medium text-stone-100">Auf dieser Website</span><span class="block text-xs text-stone-400">Termin online buchen</span></span></a>
+                <a class="flex cursor-pointer items-start gap-3 rounded-xl px-3 py-2.5 transition hover:bg-stone-700/70" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer"><span class="mt-0.5"><svg class="h-5 w-5 shrink-0 fill-[#14a800]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg></span><span><span class="block text-sm font-medium text-stone-100">Über Upwork</span><span class="block text-xs text-stone-400">Beratung &amp; Projekte</span></span></a>
+              </div>
+            </div>
+          </li>
             <li>
               <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
                  href="/de/leistungen/">
@@ -200,10 +202,10 @@
 
             
             <li>
-              <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition"
-                 href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer">
-                <svg class="h-3.5 w-3.5 fill-[#14a800]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>
-                Beratung
+              <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
+                 href="/de/about/"
+                 >
+                Über uns
               </a>
             </li>
             <li class="ml-2 flex items-center gap-1 rounded-full border border-stone-800 bg-stone-900/60 p-1">
@@ -234,10 +236,10 @@
         </nav>
 
         
-        <div class="ml-4 flex items-center md:hidden" x-data="{ expanded: false }">
+        <div class="ml-4 flex items-center md:hidden" x-data="{ expanded: false, ber: false, h: 0, remeasure() { this.$nextTick(() => { this.h = this.$refs.mobileNav.scrollHeight }) } }">
           <button
             class="group inline-flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900/60 text-stone-300 transition hover:text-white"
-            aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded">
+            aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded; ber = false; remeasure()">
             <span class="sr-only">Menu</span>
             <svg class="pointer-events-none h-4 w-4 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
               <rect class="origin-center -translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]" y="7" width="16" height="2" rx="1"></rect>
@@ -250,14 +252,21 @@
             <nav id="mobile-nav" aria-label="Mobile"
                  class="fixed top-16 inset-x-0 z-50 overflow-hidden px-4 transition-all duration-300 ease-out sm:px-6"
                  x-ref="mobileNav"
-                 :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1; transform: translateY(0)' : 'max-height: 0; opacity: 0; transform: translateY(-8px)'"
-                 @click.outside="expanded = false" @keydown.escape.window="expanded = false" x-cloak>
+                 :style="expanded ? 'max-height: ' + h + 'px; opacity: 1; transform: translateY(0)' : 'max-height: 0; opacity: 0; transform: translateY(-8px)'"
+                 @click.outside="expanded = false; ber = false" @keydown.escape.window="expanded = false; ber = false" x-cloak>
               <ul class="rounded-2xl border border-stone-800 bg-stone-900/90 px-4 py-3 shadow-xl backdrop-blur-xl">
                 <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/">Start</a></li>
-                <li data-skeleton-off><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/about/">Über uns</a></li>
+                <li class="mt-1">
+                <button type="button" @click="ber = !ber; remeasure()" :aria-expanded="ber" class="flex w-full items-center justify-between gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white"><span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-orange-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Beratung</span><svg class="h-4 w-4 shrink-0 text-stone-500 transition duration-200" :class="ber && 'rotate-180'" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></button>
+                <div x-show="ber" class="mt-1 flex flex-col border-l border-stone-800 pl-3">
+                  <a class="flex items-center gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/termin/"><img src="/static/images/logo_whitemode.svg" width="16" height="16" alt="" class="h-4 w-4 shrink-0">Auf dieser Website</a>
+                  <a class="flex items-center gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer"><svg class="h-3.5 w-3.5 fill-[#14a800]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>Über Upwork</a>
+                  <button type="button" @click="ber = false; remeasure()" class="flex items-center gap-2 py-2 text-left text-sm font-medium text-stone-500 hover:text-white"><svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd"/></svg>Zurück</button>
+                </div>
+              </li>
                 <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/leistungen/">Leistungen</a></li>
                 <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/projekte/">Projekte</a></li>
-                <li><a class="flex items-center gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer"><svg class="h-3.5 w-3.5 fill-[#14a800]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>Beratung</a></li>
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/about/">Über uns</a></li>
                 <li class="mt-2 flex items-center gap-2 border-t border-stone-800 pt-3">
                   <span class="text-xs uppercase tracking-wider text-stone-500">Sprache wechseln:</span>
                   
@@ -322,6 +331,7 @@
             <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#automatisierte-entscheidungsfindung"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">13</span><span class="leading-snug">Automatisierte Entscheidung</span></a></li>
             <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#cookies"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">14</span><span class="leading-snug">Cookies</span></a></li>
             <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#dsb"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">15</span><span class="leading-snug">Datenschutzbeauftragter</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-2 text-sm text-stone-300 transition hover:bg-stone-800/60 hover:text-amber-200" href="#terminbuchung"><span class="toc-num inline-flex h-6 w-6 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-400 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">16</span><span class="leading-snug">Buchung &amp; Zahlung</span></a></li>
           </ol>
         </nav>
       </details>
@@ -346,6 +356,7 @@
             <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#automatisierte-entscheidungsfindung"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">13</span><span class="leading-snug">Automatisierte Entscheidung</span></a></li>
             <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#cookies"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">14</span><span class="leading-snug">Cookies</span></a></li>
             <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#dsb"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">15</span><span class="leading-snug">Datenschutzbeauftragter</span></a></li>
+            <li><a class="toc-link group flex items-baseline gap-3 rounded-lg px-2.5 py-1.5 text-xs text-stone-400 transition hover:bg-stone-800/50 hover:text-amber-200" href="#terminbuchung"><span class="toc-num inline-flex h-5 w-5 shrink-0 items-center justify-center rounded font-aspekta text-[10px] font-bold tabular-nums text-stone-500 ring-1 ring-stone-700 transition group-hover:text-amber-300 group-hover:ring-amber-400/50">16</span><span class="leading-snug">Buchung &amp; Zahlung</span></a></li>
           </ol>
         </nav>
       </aside>
@@ -429,7 +440,7 @@
       Zusätzlich nutzen wir auf unserer Website den Dienst „Cloudflare". Anbieter ist die Cloudflare Inc., 101 Townsend St., San Francisco, CA 94107, USA (im Folgenden „Cloudflare").</p>
       <p>Cloudflare bietet ein weltweit verteiltes Content Delivery Network (CDN) mit Sicherheitsfunktionen an. Technisch wird der Datentransfer zwischen Ihrem Browser und unserer Website über das Netzwerk von Cloudflare geleitet. Dies ermöglicht es uns, die Sicherheit unserer Website zu erhöhen (z.&nbsp;B. Abwehr von DDoS-Attacken) und die Ladezeiten zu optimieren.</p>
       <p>Hierbei verarbeitet Cloudflare IP-Adressen und Metadaten der Website-Besucher, die für die Bereitstellung des Dienstes und die Sicherheit notwendig sind. Zudem nutzen wir Cloudflare Turnstile zur Abwehr von Bots und automatisierten Zugriffen (Spam-Schutz).</p>
-      <p>Die Nutzung von Cloudflare erfolgt auf Grundlage unserer berechtigten Interessen an einer sicheren, störungsfreien und effizienten Bereitstellung unseres Online-Angebots (Art. 6 Abs. 1 lit. f. DSGVO). Wir haben mit Cloudflare einen Vertrag über die Auftragsverarbeitung (Data Processing Addendum) auf Grundlage der EU-Standardvertragsklauseln abgeschlossen, um den Schutz Ihrer Daten auch bei einer Verarbeitung in den USA zu gewährleisten.</p>
+      <p>Die Nutzung von Cloudflare erfolgt auf Grundlage unserer berechtigten Interessen an einer sicheren, störungsfreien und effizienten Bereitstellung unseres Online-Angebots (Art. 6 Abs. 1 lit. f. DSGVO). Wir haben mit Cloudflare einen Vertrag über die Auftragsverarbeitung (Data Processing Addendum) auf Grundlage der EU-Standardvertragsklauseln abgeschlossen; zusätzlich ist die Cloudflare, Inc. unter dem EU-US Data Privacy Framework zertifiziert. Hierdurch gewährleisten wir den Schutz Ihrer Daten auch bei einer Verarbeitung in den USA.</p>
       <p>Weitere Informationen zur Datenerhebung und Speicherung durch Cloudflare finden Sie hier: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">https://www.cloudflare.com/privacypolicy/</a></p>
 
       <h2 id="allgemeine-daten">4. Erfassung von allgemeinen Daten und Informationen</h2>
@@ -463,6 +474,8 @@
         <li><strong>GitHub</strong> (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA), Verlinkung unseres öffentlichen Entwicklerprofils. Datenschutzerklärung: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement</a></li>
         <li><strong>PyPI</strong> (Python Software Foundation, 9450 SW Gemini Dr., ECM #45093, Beaverton, OR 97008, USA), Verlinkung unseres Profils im Python Package Index. Datenschutzerklärung: <a href="https://policies.python.org/pypi.org/Privacy-Notice/" target="_blank" rel="noopener noreferrer">https://policies.python.org/pypi.org/Privacy-Notice/</a></li>
         <li><strong>Google Business Profile</strong> (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland), Verlinkung unseres Google-Unternehmensprofils zur Abgabe einer Bewertung. Datenschutzerklärung: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></li>
+        <li><strong>LinkedIn</strong> (LinkedIn Ireland Unlimited Company, Wilton Plaza, Wilton Place, Dublin 2, Irland; Konzernmutter Microsoft Corporation, USA), Verlinkung unseres beruflichen Profils. Datenschutzerklärung: <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/legal/privacy-policy</a></li>
+        <li><strong>WLW (wlw.de)</strong> (Visable GmbH, Hamburg, Deutschland), Verlinkung unseres Unternehmensprofils im B2B-Verzeichnis. Datenschutzerklärung: <a href="https://www.wlw.de/de/unternehmen/rechtliche-hinweise/datenschutz-20230720" target="_blank" rel="noopener noreferrer">https://www.wlw.de/de/unternehmen/rechtliche-hinweise/datenschutz-20230720</a></li>
       </ul>
       <p>Bei den genannten Verweisen handelt es sich technisch ausschließlich um herkömmliche Hyperlinks; es werden weder iframes noch Plug-ins, Tracking-Pixel oder sonstige Komponenten der Drittanbieter in unsere Website eingebettet. Beim bloßen Aufruf unserer Website werden daher <strong>keine</strong> personenbezogenen Daten an die vorgenannten Anbieter übermittelt. Erst wenn Sie aktiv auf einen dieser Links klicken, baut Ihr Browser eine Verbindung zur jeweiligen Plattform auf; dabei werden die für den Verbindungsaufbau üblichen Daten (insbesondere IP-Adresse, Browsertyp, Betriebssystem sowie die Referrer-URL) an den jeweiligen Plattformbetreiber übermittelt und nach dessen Maßgabe verarbeitet. Auf diese nachgelagerte Verarbeitung haben wir keinen Einfluss.</p>
       <p>Da sich die Server der genannten Anbieter in den Vereinigten Staaten von Amerika befinden, kann es bei einem Klick auf den jeweiligen Link zu einer Übermittlung Ihrer Daten in ein Drittland im Sinne der Art. 44 ff. DS-GVO kommen. Einzelheiten zu den jeweiligen Verarbeitungsvorgängen, Speicherdauern und Ihren Rechten als betroffene Person entnehmen Sie bitte den oben verlinkten Datenschutzerklärungen der jeweiligen Anbieter.</p>
@@ -576,8 +589,9 @@
       <p>Als verantwortungsbewusstes Unternehmen verzichten wir auf eine automatische Entscheidungsfindung oder ein Profiling.</p>
 
       <h2 id="cookies">14. Cookies und ähnliche Technologien</h2>
-      <p>Diese Website setzt selbst <strong>keine</strong> eigenen Cookies und verwendet keine Tracking- oder Analyse-Tools. Es kommen keine Cookies zum Einsatz, die einer Einwilligung nach § 25 Abs. 1 TTDSG bedürften.</p>
-      <p>Unser Hosting-Dienstleister Cloudflare (siehe § 3) setzt jedoch eigene Cookies, die der Sicherheit, der Bot-Abwehr und der korrekten Auslieferung der Website dienen. Diese sind technisch unbedingt erforderlich im Sinne von § 25 Abs. 2 Nr. 2 TTDSG; eine Einwilligung ist hierfür nicht erforderlich. Es handelt sich insbesondere um folgende Cookies:</p>
+      <p>Diese Website setzt selbst <strong>keine</strong> eigenen Cookies und verwendet keine Tracking- oder Analyse-Tools. Es kommen keine Cookies zum Einsatz, die einer Einwilligung nach § 25 Abs. 1 TDDDG (Telekommunikation-Digitale-Dienste-Datenschutz-Gesetz, vormals TTDSG) bedürften.</p>
+      <p>Auf der Terminbuchungsseite nutzen wir zudem den lokalen Sitzungsspeicher (sessionStorage) Ihres Browsers rein technisch-funktional: Nach Rückkehr von der Bezahlung werden die Eckdaten Ihrer Buchung kurzzeitig dort vorgehalten, um Ihnen die Bestätigung anzuzeigen. Diese Daten verbleiben ausschließlich in Ihrem Browser, werden nicht an uns übertragen und nach Anzeige der Bestätigung, spätestens beim Schließen des Browser-Tabs, wieder entfernt. Eine Einwilligung ist hierfür nach § 25 Abs. 2 Nr. 2 TDDDG nicht erforderlich.</p>
+      <p>Unser Hosting-Dienstleister Cloudflare (siehe § 3) setzt jedoch eigene Cookies, die der Sicherheit, der Bot-Abwehr und der korrekten Auslieferung der Website dienen. Diese sind technisch unbedingt erforderlich im Sinne von § 25 Abs. 2 Nr. 2 TDDDG; eine Einwilligung ist hierfür nicht erforderlich. Es handelt sich insbesondere um folgende Cookies:</p>
       <ul>
         <li><code>__cf_bm</code> (Cloudflare Bot Management): erkennt automatisierte Zugriffe, dient der Abwehr von Bot-Angriffen. Speicherdauer: 30 Minuten ab letzter Aktivität.</li>
         <li><code>_cfuvid</code>: stellt sicher, dass Anfragen vom selben Besucher konsistent geroutet werden. Speicherdauer: nur während der aktuellen Browser-Session.</li>
@@ -589,7 +603,17 @@
       <p>Ein Datenschutzbeauftragter ist nicht benannt, da die Voraussetzungen des § 38 Abs. 1 BDSG für die Pflicht zur Bestellung eines Datenschutzbeauftragten nicht erfüllt sind (kein in der Regel mehr als 20 Personen umfassendes ständig mit der automatisierten Verarbeitung personenbezogener Daten beschäftigtes Personal; keine Verarbeitungen, die einer Datenschutz-Folgenabschätzung nach Art. 35 DS-GVO unterliegen; keine geschäftsmäßige Verarbeitung personenbezogener Daten zum Zweck der Übermittlung, anonymisierten Übermittlung oder für Zwecke der Markt- und Meinungsforschung).</p>
       <p>Für sämtliche datenschutzrechtliche Anfragen, Fragen zur Verarbeitung Ihrer Daten oder zur Ausübung Ihrer Betroffenenrechte wenden Sie sich bitte an: <a class="text-amber-400 underline hover:text-amber-300" href="mailto:support@teske-systemtechnik.de">support@teske-systemtechnik.de</a>.</p>
 
-      <p class="mt-12 text-sm text-stone-500">Stand dieser Datenschutzerklärung: Mai 2026</p>
+      <h2 id="terminbuchung">16. Terminbuchung, Zahlungsabwicklung (Stripe) und Online-Gespräche (Google Meet)</h2>
+      <p>Über unsere Internetseite bieten wir unter <a class="text-amber-400 underline hover:text-amber-300" href="/de/termin/">/de/termin/</a> die Möglichkeit, einen kostenpflichtigen Online-Beratungstermin zu buchen. Im Rahmen der Buchung verarbeiten wir die von Ihnen angegebenen Daten (Name, E-Mail-Adresse, optional Unternehmen und Telefonnummer, Ihr Anliegen, den von Ihnen gewählten Termin nebst Zeitzone sowie, für die Rechnungsstellung, die bei der Bezahlung erhobene Rechnungsanschrift). Die Bereitstellung dieser Daten ist für das Zustandekommen und die Durchführung des Beratungsvertrages erforderlich; ohne sie können wir die Buchung nicht abwickeln. Die Verarbeitung erfolgt zur Durchführung vorvertraglicher Maßnahmen und zur Erfüllung des Beratungsvertrages auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, hinsichtlich der gesetzlich vorgeschriebenen Aufbewahrung von Rechnungen zusätzlich auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO.</p>
+      <p><strong>Verarbeitung über unser Buchungs-Backend (Google Cloud Run):</strong><br>
+      Die im Buchungsformular eingegebenen Daten werden an eine von uns betriebene Server-Anwendung (Backend) übermittelt und dort verarbeitet, um verfügbare Zeiten mit unserem Kalender abzugleichen, den Zahlungsvorgang anzustoßen und den Termin anzulegen. Dieses Backend betreiben wir auf Google Cloud Run, einem Dienst der Google Cloud EMEA Limited, Velasco, Clanwilliam Place, Dublin 2, Irland. Der Verarbeitungs- und Serverstandort liegt in der Region Frankfurt am Main (Deutschland, EU). Die Verarbeitung erfolgt zur Durchführung vorvertraglicher Maßnahmen und zur Vertragserfüllung auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO. Soweit hierbei eine Übermittlung an die Google LLC in den USA erfolgt, wird diese auf die EU-Standardvertragsklauseln nach Durchführungsbeschluss (EU) 2021/914 sowie das EU-US Data Privacy Framework gestützt. Mit Google besteht für die Verarbeitung in unserem Auftrag ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO (Google Cloud Data Processing Addendum).</p>
+      <p><strong>Zahlungsabwicklung und Rechnung über Stripe:</strong><br>
+      Für die Bezahlung der gebuchten Beratung nutzen wir den Zahlungsdienstleister Stripe. Verantwortliche Stelle für Nutzer innerhalb des Europäischen Wirtschaftsraums ist die Stripe Payments Europe, Limited, 1 Grand Canal Street Lower, Grand Canal Dock, Dublin, Irland. Wenn Sie eine Buchung kostenpflichtig abschließen, werden Sie zur Bezahlung an Stripe weitergeleitet; die von Ihnen dort eingegebenen Zahlungsdaten (z.&nbsp;B. Karten- oder Kontodaten) werden ausschließlich von Stripe verarbeitet und sind für uns zu keinem Zeitpunkt einsehbar. Zur Rechnungsstellung erhebt Stripe in unserem Auftrag Ihre Rechnungsanschrift und erstellt eine Rechnung, die Ihnen bereitgestellt und per E-Mail zugesandt wird. Von Stripe erhalten wir die Bestätigung über den Zahlungsstatus, Ihre Rechnungsanschrift sowie die erzeugte Rechnung; diese rechnungsrelevanten Daten bewahren wir zur Erfüllung gesetzlicher Aufbewahrungspflichten auf (vgl. § 14 UStG, § 147 AO; siehe Ziffer 11). Die Verarbeitung erfolgt zur Vertragserfüllung auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO sowie zur Erfüllung einer rechtlichen Verpflichtung auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Stripe wird dabei teilweise als unser Auftragsverarbeiter (etwa bei der Rechnungserstellung) tätig, wofür ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO besteht, und teilweise als eigenständig Verantwortlicher: Für eigene Zwecke wie Betrugsprävention, die Absicherung des Zahlungsverkehrs sowie die Einhaltung gesetzlicher und aufsichtsrechtlicher Pflichten entscheidet Stripe eigenverantwortlich über die Verarbeitung; hierauf haben wir keinen Einfluss. Einzelheiten entnehmen Sie der Datenschutzerklärung von Stripe unter <a href="https://stripe.com/de/privacy" target="_blank" rel="noopener noreferrer">stripe.com/de/privacy</a>.</p>
+      <p><strong>Drittlandsübermittlung (Stripe):</strong> Stripe kann personenbezogene Daten an die Stripe, Inc. mit Sitz in den Vereinigten Staaten von Amerika übermitteln. Stripe stützt diese Übermittlung auf die EU-Standardvertragsklauseln nach Durchführungsbeschluss (EU) 2021/914; die Stripe, Inc. ist zudem unter dem EU-US Data Privacy Framework zertifiziert. Hierdurch soll ein im Sinne der Art. 44&nbsp;ff. DSGVO angemessenes Datenschutzniveau gewährleistet werden.</p>
+      <p><strong>Kalendereintrag und Videogespräch (Google):</strong><br>
+      Der gebuchte Termin wird in unserem Kalender (Google Calendar) eingetragen, und das Beratungsgespräch findet als Videokonferenz über Google Meet statt. Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Zu diesem Zweck werden Ihr Name, Ihre E-Mail-Adresse, Ihr Anliegen, optional Unternehmen und Telefonnummer sowie der Termin an Google übermittelt und in den Kalendereintrag aufgenommen; Sie erhalten eine Termineinladung mit dem Link zum Videogespräch. Während des Gesprächs verarbeitet Google die zur Durchführung der Videokonferenz erforderlichen Verbindungs- und Nutzungsdaten. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO. Auch hierbei kann eine Übermittlung in die USA (Google LLC) erfolgen, die auf die EU-Standardvertragsklauseln sowie das EU-US Data Privacy Framework gestützt wird. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</p>
+
+      <p class="mt-12 text-sm text-stone-500">Stand dieser Datenschutzerklärung: Juni 2026</p>
 
     </article>
 
@@ -614,83 +638,67 @@
 
   
   <footer class="relative border-t border-stone-800/60 mt-10">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6">
-      <div class="grid gap-10 py-12 md:grid-cols-12">
-
-        <div class="md:col-span-4">
-          <a class="inline-flex items-center gap-3" href="/de/" aria-label="Teske Systemtechnik">
-            <img src="/static/images/logo_whitemode.svg" class="h-12 w-12" alt="">
-            <span class="font-aspekta text-lg font-bold uppercase tracking-[0.2em] text-stone-100">Teske<br>Systemtechnik</span>
-          </a>
-          <p class="mt-4 max-w-sm text-sm text-stone-400">Quality engineered in Germany.</p>
-        </div>
-
-        <div class="md:col-span-2">
-          <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Bewertung</h3>
-          <a href="https://g.page/r/CWYcIXLQXe1oEBM/review" target="_blank" rel="noopener noreferrer" class="group block text-sm" aria-label="Bei Google bewerten">
-            <div class="flex items-center gap-2"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><div class="flex gap-0.5 text-amber-400 transition group-hover:text-amber-300"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div></div>
-            <span class="mt-2 inline-block text-stone-400 transition group-hover:text-amber-400">Bei Google bewerten</span>
-          </a>
-        </div>
-
-        <div class="md:col-span-2">
-          <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Navigation</h3>
-          <ul class="space-y-2 text-sm">
-            <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/">Start</a></li>
-            <li data-skeleton-off><a class="text-stone-400 transition hover:text-amber-400" href="/de/about/">Über uns</a></li>
-            <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/leistungen/">Leistungen</a></li>
-            <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/projekte/">Projekte</a></li>
-            <li><a class="text-stone-400 transition hover:text-amber-400" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer">Beratung via Upwork</a></li>
-          </ul>
-        </div>
-
-        <div class="md:col-span-2">
-          <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Rechtliches</h3>
-          <ul class="space-y-2 text-sm">
-            <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/impressum/">Impressum</a></li>
-            <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/datenschutz/">Datenschutz</a></li>
-          </ul>
-        </div>
-
-        <div class="md:col-span-2">
-          <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Folgen Sie mir</h3>
-          <ul class="flex gap-3">
-            <li>
-              <a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white"
-                 href="https://pypi.org/user/JanTeske06/" target="_blank" rel="noopener noreferrer" aria-label="PyPI">
-                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12,2L2,7V17L12,22L22,17V7L12,2ZM4,16.06V8.94L11,12.44V19.56L4,16.06ZM12,11.38L5.13,7.94L12,4.5L18.87,7.94L12,11.38ZM20,16.06L13,19.56V12.44L20,8.94V16.06Z"/></svg>
-              </a>
-            </li>
-            <li>
-              <a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#14a800] hover:bg-[#14a800] hover:text-white"
-                 href="https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c" target="_blank" rel="noopener noreferrer" aria-label="Upwork">
-                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>
-              </a>
-            </li>
-            <li>
-              <a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-white hover:bg-black hover:text-white"
-                 href="https://github.com/JanTeske06" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="grid gap-10 py-12 md:grid-cols-12">
+      <div class="md:col-span-4">
+        <a class="inline-flex items-center gap-3" href="/de/" aria-label="Teske Systemtechnik">
+          <img src="/static/images/logo_whitemode.svg" class="h-12 w-12" alt="">
+          <span class="font-aspekta text-lg font-bold uppercase tracking-[0.2em] text-stone-100">Teske<br>Systemtechnik</span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm text-stone-400">Quality engineered in Germany.</p>
       </div>
-
-      <div class="flex flex-col items-center justify-between gap-3 border-t border-stone-800/60 py-6 text-xs text-stone-500 md:flex-row">
-        <p>&copy; 2026 Teske Systemtechnik. Alle Rechte vorbehalten.</p>
-        <p class="font-aspekta uppercase tracking-widest">Quality engineered in Germany.</p>
+      <div class="md:col-span-2">
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Bewertung</h3>
+        <a href="https://g.page/r/CWYcIXLQXe1oEBM/review" target="_blank" rel="noopener noreferrer" class="group block text-sm" aria-label="Bei Google bewerten">
+          <div class="flex items-center gap-2">
+            <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            <div class="flex gap-0.5 text-amber-400 transition group-hover:text-amber-300"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          </div>
+          <span class="mt-2 inline-block text-stone-400 transition group-hover:text-amber-400">Bei Google bewerten</span>
+        </a>
+      </div>
+      <div class="md:col-span-2">
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Navigation</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/">Start</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/projekte/">Projekte</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/leistungen/">Leistungen</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer">Beratung via Upwork</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/about/">Über uns</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-2">
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Rechtliches</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/impressum/">Impressum</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/datenschutz/">Datenschutz</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-2">
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Folgen Sie uns</h3>
+        <ul class="grid w-max grid-cols-3 gap-3">
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white" href="https://pypi.org/user/JanTeske06/" target="_blank" rel="noopener noreferrer" aria-label="PyPI"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12,2L2,7V17L12,22L22,17V7L12,2ZM4,16.06V8.94L11,12.44V19.56L4,16.06ZM12,11.38L5.13,7.94L12,4.5L18.87,7.94L12,11.38ZM20,16.06L13,19.56V12.44L20,8.94V16.06Z"/></svg></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#14a800] hover:bg-[#14a800] hover:text-white" href="https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c" target="_blank" rel="noopener noreferrer" aria-label="Upwork"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-white hover:bg-black hover:text-white" href="https://github.com/JanTeske06" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#0a66c2] hover:bg-[#0a66c2] hover:text-white" href="https://www.linkedin.com/in/jan-teske-a9b768342/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#009b94] hover:bg-[#009b94] hover:text-white" href="https://www.wlw.de/de/firma/teske-systemtechnik-inh-jan-teske-22390516" target="_blank" rel="noopener noreferrer" aria-label="wlw.de"><span class="font-aspekta text-[10px] font-bold lowercase leading-none">wlw</span></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-white hover:bg-white" href="https://share.google/iHfqrYi4O0FGgQBrF" target="_blank" rel="noopener noreferrer" aria-label="Google"><svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></a></li>
+        </ul>
       </div>
     </div>
-  </footer>
+    <div class="flex flex-col items-center justify-between gap-3 border-t border-stone-800/60 py-6 text-xs text-stone-500 md:flex-row">
+      <p>&copy; 2026 Teske Systemtechnik. Alle Rechte vorbehalten.</p>
+      <p class="font-aspekta uppercase tracking-widest">Quality engineered in Germany.</p>
+    </div>
+  </div>
+</footer>
 
 </div>
 
 <script src="/static/js/vendors/alpinejs.min.js" defer></script>
 <script src="/static/js/vendors/aos.js?v=20260430a"></script>
 <script src="/static/js/vendors/swiper-bundle.min.js?v=20260430a"></script>
-<script src="/static/js/main.js?v=20260526a"></script>
+<script src="/static/js/main.js?v=20260603a"></script>
 
 
 

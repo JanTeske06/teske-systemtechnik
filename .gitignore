@@ -45,6 +45,9 @@ seo-plan.md
 _*.py
 _*.mjs
 
+## Booking backend — deployed separately to Cloud Run, not served by GitHub Pages
+booking-backend/
+
 ## Local working files for external directory listings (wlw, etc.)
 bulk-import-excel-template-*.xlsx
 
@@ -65,6 +68,8 @@ Wireframe-*.txt
 Wireframe-*.pdf
 Teske Systemtechnik-WIREFRAMES-*.pdf
 Teske Systemtechnik-Infographics-*.pdf
+Teske Systemtechnik-Thumbnails-*.pdf
+Thumbnails-*.txt
 
 ## Signed legal documents — keep locally only, must NEVER be committed
 *DPA*.pdf

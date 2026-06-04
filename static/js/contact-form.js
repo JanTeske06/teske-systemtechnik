@@ -136,6 +136,22 @@
     }
     applyState(select.value);
 
+    // Prefill the budget from URL ?min= (the codebase-review calculator passes
+    // its computed estimate this way); overrides the service's static minimum.
+    const minFromUrl = params.get('min');
+    if (minFromUrl && /^\d+$/.test(minFromUrl)) {
+      budget.value = minFromUrl;
+      validateBudget();
+    }
+
+    // Prefill the message with the calculator's configuration summary (?details=),
+    // so the inquiry carries what the visitor picked. Never overwrite typed text.
+    const detailsFromUrl = params.get('details');
+    if (detailsFromUrl) {
+      const msg = form.querySelector('#contact-message');
+      if (msg && !msg.value) msg.value = detailsFromUrl;
+    }
+
     select.addEventListener('change', function () { applyState(select.value); });
     budget.addEventListener('input', validateBudget);
     budget.addEventListener('blur', validateBudget);

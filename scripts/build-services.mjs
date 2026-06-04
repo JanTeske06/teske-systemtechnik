@@ -57,11 +57,11 @@ const LABELS = {
     secFaq: 'Häufige Fragen',
     secOverviewLabel: 'Leistungen',
     overviewTitle: 'Leistungen mit Festpreis',
-    overviewIntro: 'Sechs Leistungspakete, jeweils mit klarem Deliverable und durchsichtigem Einstiegspreis. Kein Stundenzettel-Geschäft, keine offene Endrechnung. Sie wissen vor Vertragsabschluss, was Sie bekommen und was es kostet.',
+    overviewIntro: 'Sieben Leistungspakete, jeweils mit klarem Deliverable und durchsichtigem Einstiegspreis. Kein Stundenzettel-Geschäft, keine offene Endrechnung. Sie wissen vor Vertragsabschluss, was Sie bekommen und was es kostet.',
     overviewCardCta: 'Details ansehen →',
     headlineNavigation: 'Navigation',
     headlineLegal: 'Rechtliches',
-    headlineFollow: 'Folgen Sie mir',
+    headlineFollow: 'Folgen Sie uns',
     headlineReview: 'Bewertung',
     consultationViaUpwork: 'Beratung via Upwork',
     reviewCta: 'Bei Google bewerten',
@@ -93,11 +93,11 @@ const LABELS = {
     secFaq: 'Frequent questions',
     secOverviewLabel: 'Services',
     overviewTitle: 'Fixed-price services',
-    overviewIntro: 'Six service packages, each with a clear deliverable and a transparent starting price. No hourly-bill business, no open-ended invoice. You know what you get and what it costs before you sign.',
+    overviewIntro: 'Seven service packages, each with a clear deliverable and a transparent starting price. No hourly-bill business, no open-ended invoice. You know what you get and what it costs before you sign.',
     overviewCardCta: 'See details →',
     headlineNavigation: 'Navigation',
     headlineLegal: 'Legal',
-    headlineFollow: 'Follow me',
+    headlineFollow: 'Follow us',
     headlineReview: 'Review',
     consultationViaUpwork: 'Consultation via Upwork',
     reviewCta: 'Rate us on Google',
@@ -129,7 +129,7 @@ const LABELS = {
     secFaq: 'Частые вопросы',
     secOverviewLabel: 'Услуги',
     overviewTitle: 'Услуги с фиксированной ценой',
-    overviewIntro: 'Шесть пакетов услуг с чётким результатом и прозрачной стартовой ценой. Никакой почасовки, никакого открытого счёта. Вы знаете, что получаете и сколько это стоит, до подписания.',
+    overviewIntro: 'Семь пакетов услуг с чётким результатом и прозрачной стартовой ценой. Никакой почасовки, никакого открытого счёта. Вы знаете, что получаете и сколько это стоит, до подписания.',
     overviewCardCta: 'Подробности →',
     headlineNavigation: 'Навигация',
     headlineLegal: 'Юридическое',
@@ -153,6 +153,148 @@ const PATHS = {
 };
 
 const SERVICES = [
+  // ============================================================
+  // Codebase Review (with metric-based price calculator)
+  // ============================================================
+  {
+    slug: 'codebase-review',
+    urlSlugs: { de: 'codebase-review', en: 'codebase-review', ru: 'codebase-review' },
+    inquirySlug: 'codebase-review',
+    related: ['custom-ai-app', 'browser-automation'],
+    eyebrow: 'Code Review',
+    calculator: true,
+    priceMin: 1200, // Platzhalter-Einstiegspreis, der Kalkulator verfeinert den Richtwert
+    priceFmt: { de: '1.200&nbsp;€', en: '€1,200', ru: '€1 200' },
+    i18n: {
+      de: {
+        title: 'Codebase-Review',
+        subtitle: 'Ein strukturierter, unabhängiger Blick auf Ihre Codebasis: Wo liegen Risiken, technische Schulden und schnelle Hebel? Sie bekommen eine priorisierte, umsetzbare Findings-Liste, keine vagen Eindrücke.',
+        meta: 'Unabhängiges Codebase-Review mit priorisierter Findings-Liste zu Architektur, Sicherheit, Performance und Wartbarkeit. Festpreis nach Umfang, Richtwert per Kalkulator.',
+        overviewSummary: 'Unabhängige Analyse Ihrer Codebasis: Architektur, Sicherheit, Performance, Wartbarkeit. Mit priorisierter, umsetzbarer Maßnahmenliste und Preis-Kalkulator.',
+        deliverIntro: 'Was am Ende auf Ihrem Tisch liegt, drei konkrete Deliverables, kein „Bauchgefühl".',
+        outcomes: [
+          { icon: 'doc', title: 'Priorisierte Findings-Liste', body: 'Jeder Befund mit Schweregrad, betroffener Stelle, Begründung und konkreter Empfehlung. Sortiert nach Wirkung gegen Aufwand, damit Sie sofort wissen, was zuerst dran ist.' },
+          { icon: 'graph', title: 'Architektur- & Risiko-Überblick', body: 'Wo konzentriert sich Komplexität, wo liegen Klumpenrisiken, welche Stellen brechen beim nächsten Feature? Inklusive Abhängigkeits- und Hotspot-Sicht.' },
+          { icon: 'check', title: 'Quick Wins separat ausgewiesen', body: 'Maßnahmen, die in Stunden statt Wochen Wirkung zeigen, getrennt markiert, damit Ihr Team sofort liefern kann.' },
+          { icon: 'bolt', title: 'Optional: Live-Walkthrough', body: 'Auf Wunsch gehe ich die Findings in einem Call mit Ihrem Team durch, statt nur ein PDF zu übergeben.' },
+        ],
+        processIntro: 'Wie ein Review abläuft',
+        process: [
+          { title: 'Zugang & Scope', body: 'Read-only-Zugriff auf das Repository, kurzer Abgleich, worauf der Fokus liegt: Sicherheit, Performance, Architektur oder Wartbarkeit.' },
+          { title: 'Analyse', body: 'Statische Analyse, manuelle Durchsicht der kritischen Pfade, Abhängigkeits- und Hotspot-Auswertung.' },
+          { title: 'Report', body: 'Priorisierte Findings-Liste mit Empfehlungen, getrennt nach Quick Wins, mittelfristig und strukturell.' },
+          { title: 'Übergabe', body: 'Schriftlicher Report, auf Wunsch plus Live-Walkthrough mit Q&A für Ihr Team.' },
+        ],
+        pricingTitle: 'Festpreis nach Umfang',
+        pricingBody1: 'Der Preis richtet sich nach Größe der Codebasis, Technologie-Vielfalt, gewünschtem Ergebnisumfang und Zeitfenster. Den Richtwert ermitteln Sie unten selbst, der verbindliche Festpreis folgt nach einem kurzen Discovery-Call.',
+        pricingBody2: 'Der angezeigte Einstiegspreis ist ein vorläufiger Richtwert für ein kompaktes Review, kein Stundenzettel und keine offene Endrechnung.',
+        packageLabel: 'Review-Paket',
+        packageSubtitle: 'Kompaktes Review, eine Codebasis, ein Fokusbereich.',
+        includes: [
+          'Priorisierte Findings-Liste (PDF)',
+          'Schweregrad, Fundstelle und Empfehlung pro Befund',
+          'Quick Wins separat ausgewiesen',
+          'Architektur- & Hotspot-Überblick',
+          'Read-only-Zugriff, NDA auf Wunsch',
+        ],
+        faqIntro: 'Was Sie vermutlich wissen wollen',
+        faq: [
+          { q: 'Welche Sprachen und Stacks decken Sie ab?', a: 'Schwerpunkt ist Python und das übliche Web- und Backend-Umfeld; weitere Sprachen nach Absprache. Im Discovery-Call klären wir, ob Ihr Stack sinnvoll abgedeckt ist, bevor Sie buchen.' },
+          { q: 'Welchen Zugriff brauchen Sie?', a: 'Read-only-Zugriff auf das Repository genügt, keine Schreibrechte, kein Zugriff auf Produktivsysteme. Ein NDA gibt es auf Wunsch vorab.' },
+          { q: 'Setzen Sie die Findings auch um?', a: 'Das Review selbst ist Analyse. Die Umsetzung kann ich auf Tagessatz übernehmen oder Ihr Team begleiten, das ist aber ein separater Schritt.' },
+          { q: 'Wie lange dauert ein Review?', a: 'Ein kompaktes Review liegt typischerweise bei rund zwei Wochen; Express in fünf Werktagen ist gegen Aufschlag möglich. Der Kalkulator bildet beides ab.' },
+          { q: 'Ist der Kalkulator-Preis verbindlich?', a: 'Nein, er ist ein Richtwert zur Orientierung. Den verbindlichen Festpreis nenne ich nach einem kurzen Discovery-Call, in dem wir Umfang und Fokus klären.' },
+        ],
+        finalCtaTitle: 'Unsicher, was in Ihrer Codebasis steckt?',
+        finalCtaBody: 'Ermitteln Sie oben einen Richtwert und senden Sie eine kurze Anfrage, Antwort binnen 24 h mit Einschätzung und Termin-Vorschlag.',
+      },
+      en: {
+        title: 'Codebase Review',
+        subtitle: 'A structured, independent look at your codebase: where are the risks, the technical debt, the quick wins? You get a prioritised, actionable findings list, not vague impressions.',
+        meta: 'Independent codebase review with a prioritised findings list on architecture, security, performance and maintainability. Fixed price by scope, estimate via calculator.',
+        overviewSummary: 'Independent analysis of your codebase: architecture, security, performance, maintainability. With a prioritised, actionable action list and a price calculator.',
+        deliverIntro: 'What you end up with, three concrete deliverables, no "gut feeling".',
+        outcomes: [
+          { icon: 'doc', title: 'Prioritised findings list', body: 'Every finding with severity, location, rationale and a concrete recommendation. Sorted by impact versus effort, so you know what to tackle first.' },
+          { icon: 'graph', title: 'Architecture & risk overview', body: 'Where complexity concentrates, where the cluster risks are, which spots break with the next feature. Including a dependency and hotspot view.' },
+          { icon: 'check', title: 'Quick wins called out separately', body: 'Measures that pay off in hours rather than weeks, flagged separately so your team can ship immediately.' },
+          { icon: 'bolt', title: 'Optional: live walkthrough', body: 'On request I walk your team through the findings in a call, instead of just handing over a PDF.' },
+        ],
+        processIntro: 'How a review runs',
+        process: [
+          { title: 'Access & scope', body: 'Read-only access to the repository, a short alignment on the focus: security, performance, architecture or maintainability.' },
+          { title: 'Analysis', body: 'Static analysis, manual review of the critical paths, dependency and hotspot evaluation.' },
+          { title: 'Report', body: 'Prioritised findings list with recommendations, split into quick wins, mid-term and structural.' },
+          { title: 'Handover', body: 'Written report, on request plus a live walkthrough with Q&A for your team.' },
+        ],
+        pricingTitle: 'Fixed price by scope',
+        pricingBody1: 'The price depends on codebase size, technology spread, the depth of output you want and the turnaround. Work out the estimate below yourself; the binding fixed price follows after a short discovery call.',
+        pricingBody2: 'The shown starting price is a provisional estimate for a compact review, no timesheet, no open-ended invoice.',
+        packageLabel: 'Review package',
+        packageSubtitle: 'Compact review, one codebase, one focus area.',
+        includes: [
+          'Prioritised findings list (PDF)',
+          'Severity, location and recommendation per finding',
+          'Quick wins called out separately',
+          'Architecture & hotspot overview',
+          'Read-only access, NDA on request',
+        ],
+        faqIntro: 'What you probably want to know',
+        faq: [
+          { q: 'Which languages and stacks do you cover?', a: 'The focus is Python and the usual web/backend ecosystem; other languages by arrangement. In the discovery call we check whether your stack is sensibly covered before you book.' },
+          { q: 'What access do you need?', a: 'Read-only access to the repository is enough, no write permissions, no access to production systems. An NDA on request beforehand.' },
+          { q: 'Do you also implement the findings?', a: 'The review itself is analysis. Implementation I can take on at a day rate or guide your team, but that is a separate step.' },
+          { q: 'How long does a review take?', a: 'A compact review is typically around two weeks; express in five business days is possible for a surcharge. The calculator reflects both.' },
+          { q: 'Is the calculator price binding?', a: 'No, it is an orientation estimate. The binding fixed price I give after a short discovery call where we clarify scope and focus.' },
+        ],
+        finalCtaTitle: 'Unsure what is hiding in your codebase?',
+        finalCtaBody: 'Work out an estimate above and send a short inquiry, reply within 24 h with an assessment and a proposed call time.',
+      },
+      ru: {
+        title: 'Ревью кодовой базы',
+        subtitle: 'Структурированный независимый взгляд на вашу кодовую базу: где риски, технический долг и быстрые победы? Вы получаете приоритизированный, применимый список находок, а не размытые впечатления.',
+        meta: 'Независимое ревью кодовой базы с приоритизированным списком находок по архитектуре, безопасности, производительности и поддерживаемости. Фиксированная цена по объёму, ориентир через калькулятор.',
+        overviewSummary: 'Независимый анализ вашей кодовой базы: архитектура, безопасность, производительность, поддерживаемость. С приоритизированным списком мер и калькулятором цены.',
+        deliverIntro: 'Что в итоге у вас на столе, три конкретных результата, без «интуиции».',
+        outcomes: [
+          { icon: 'doc', title: 'Приоритизированный список находок', body: 'Каждая находка с уровнем серьёзности, местом, обоснованием и конкретной рекомендацией. Отсортировано по эффекту против затрат, чтобы вы сразу знали, за что браться первым.' },
+          { icon: 'graph', title: 'Обзор архитектуры и рисков', body: 'Где концентрируется сложность, где кластерные риски, какие места ломаются при следующей фиче. Включая карту зависимостей и hotspot.' },
+          { icon: 'check', title: 'Быстрые победы отдельно', body: 'Меры, которые дают эффект за часы, а не недели, помечены отдельно, чтобы команда могла начать сразу.' },
+          { icon: 'bolt', title: 'Опционально: live-walkthrough', body: 'По желанию я разбираю находки с вашей командой в звонке, а не просто передаю PDF.' },
+        ],
+        processIntro: 'Как идёт ревью',
+        process: [
+          { title: 'Доступ и scope', body: 'Read-only доступ к репозиторию, короткое согласование фокуса: безопасность, производительность, архитектура или поддерживаемость.' },
+          { title: 'Анализ', body: 'Статический анализ, ручной просмотр критических путей, оценка зависимостей и hotspot.' },
+          { title: 'Отчёт', body: 'Приоритизированный список находок с рекомендациями, разделённый на быстрые победы, средний срок и структурные.' },
+          { title: 'Передача', body: 'Письменный отчёт, по желанию плюс live-walkthrough с Q&A для вашей команды.' },
+        ],
+        pricingTitle: 'Фиксированная цена по объёму',
+        pricingBody1: 'Цена зависит от размера кодовой базы, разнообразия технологий, желаемого объёма результата и срока. Ориентир вы рассчитываете ниже сами, обязывающая фиксированная цена, после короткого discovery-звонка.',
+        pricingBody2: 'Показанная стартовая цена, предварительный ориентир для компактного ревью, без табеля и без открытого счёта.',
+        packageLabel: 'Пакет ревью',
+        packageSubtitle: 'Компактное ревью, одна кодовая база, один фокус.',
+        includes: [
+          'Приоритизированный список находок (PDF)',
+          'Серьёзность, место и рекомендация по каждой находке',
+          'Быстрые победы отдельно',
+          'Обзор архитектуры и hotspot',
+          'Read-only-доступ, NDA по запросу',
+        ],
+        faqIntro: 'Что вы, вероятно, хотите узнать',
+        faq: [
+          { q: 'Какие языки и стеки вы покрываете?', a: 'Фокус, Python и обычное web/backend-окружение; другие языки по согласованию. На discovery-звонке проверяем, разумно ли покрыт ваш стек, до бронирования.' },
+          { q: 'Какой доступ нужен?', a: 'Достаточно read-only доступа к репозиторию, без прав записи, без доступа к продакшену. NDA по запросу заранее.' },
+          { q: 'Вы внедряете находки?', a: 'Само ревью, это анализ. Внедрение могу взять на дневной тариф или сопровождать вашу команду, но это отдельный шаг.' },
+          { q: 'Сколько длится ревью?', a: 'Компактное ревью обычно около двух недель; экспресс за пять рабочих дней возможен за доплату. Калькулятор отражает оба варианта.' },
+          { q: 'Цена из калькулятора обязывающая?', a: 'Нет, это ориентир. Обязывающую фиксированную цену я называю после короткого discovery-звонка, где уточняем объём и фокус.' },
+        ],
+        finalCtaTitle: 'Не уверены, что скрыто в вашей кодовой базе?',
+        finalCtaBody: 'Рассчитайте ориентир выше и отправьте короткий запрос, ответ в течение 24 ч с оценкой и предложением времени.',
+      },
+    },
+  },
+
   // ============================================================
   // AWS Cost Analysis & Reduction
   // ============================================================
@@ -1151,9 +1293,40 @@ const UPWORK_URL = 'https://www.upwork.com/services/product/development-it-jan-1
 const CHECK_SVG = `<svg class="mt-0.5 h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 011.42-1.42L8 12.585l7.29-7.29a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>`;
 const ARROW_SVG = `<svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>`;
 
+// Consultation dropdown: "Beratung" opens a menu (this website + Upwork).
+// Only languages with a booking page get the dropdown; others keep the
+// plain Upwork link (no 404 to a not-yet-existing localised booking page).
+const BOOKING_PATHS = { de: '/de/termin/', en: '/en/booking/', ru: '/ru/zapis/' };
+const CONSULT_MENU = {
+  de: { onSite: 'Auf dieser Website', onSiteSub: 'Termin online buchen', up: 'Über Upwork', upSub: 'Beratung & Projekte', back: 'Zurück' },
+  en: { onSite: 'On this website', onSiteSub: 'Book a call online', up: 'Via Upwork', upSub: 'Consulting & projects', back: 'Back' },
+  ru: { onSite: 'На этом сайте', onSiteSub: 'Записаться онлайн', up: 'Через Upwork', upSub: 'Консультации и проекты', back: 'Назад' },
+};
+const CHEVRON_SVG = `<svg class="h-3 w-3 transition duration-200 group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>`;
+const CAL_MENU_SVG = `<svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>`;
+const UPWORK_MENU_SVG = `<svg class="h-5 w-5 shrink-0 fill-[#14a800]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>`;
+
 function header(lang, currentPath, langSwitcher) {
   const L = LABELS[lang];
-  const consultationLi = `<li><a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition" href="${UPWORK_URL}" target="_blank" rel="noopener noreferrer">${UPWORK_SVG}${L.navConsultation}</a></li>`;
+  const bookingPath = BOOKING_PATHS[lang];
+  const cm = CONSULT_MENU[lang];
+  const consultationLi = bookingPath ? `<li class="relative" x-data="{ open: false }" @mouseenter="open = true" @click.outside="open = false" @keydown.escape="open = false">
+            <button type="button" class="text-stone-300 hover:text-white inline-flex min-w-[6rem] cursor-pointer items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition" @click="open = !open" :aria-expanded="open" aria-haspopup="true">${L.navConsultation}<svg class="h-3 w-3 transition duration-200" :class="open && 'rotate-180'" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></button>
+            <div x-show="open" x-transition.opacity x-cloak class="absolute right-0 top-full z-40 w-64 pt-2">
+              <div class="overflow-hidden rounded-2xl border border-stone-800 bg-stone-900/95 p-1.5 shadow-xl backdrop-blur-xl">
+                <a class="flex cursor-pointer items-start gap-3 rounded-xl px-3 py-2.5 transition hover:bg-stone-700/70" href="${bookingPath}"><span class="mt-0.5 text-orange-400">${CAL_MENU_SVG}</span><span><span class="block text-sm font-medium text-stone-100">${cm.onSite}</span><span class="block text-xs text-stone-400">${cm.onSiteSub}</span></span></a>
+                <a class="flex cursor-pointer items-start gap-3 rounded-xl px-3 py-2.5 transition hover:bg-stone-700/70" href="${UPWORK_URL}" target="_blank" rel="noopener noreferrer"><span class="mt-0.5">${UPWORK_MENU_SVG}</span><span><span class="block text-sm font-medium text-stone-100">${cm.up}</span><span class="block text-xs text-stone-400">${cm.upSub}</span></span></a>
+              </div>
+            </div>
+          </li>` : `<li><a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition" href="${UPWORK_URL}" target="_blank" rel="noopener noreferrer">${UPWORK_SVG}${L.navConsultation}</a></li>`;
+  const mobileConsult = bookingPath ? `<li class="mt-1">
+                <button type="button" @click="ber = !ber; remeasure()" :aria-expanded="ber" class="flex w-full items-center justify-between gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white"><span class="inline-flex items-center gap-2">${CAL_MENU_SVG.replace('h-5 w-5', 'h-4 w-4 text-orange-400')}${L.navConsultation}</span><svg class="h-4 w-4 shrink-0 text-stone-500 transition duration-200" :class="ber && 'rotate-180'" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></button>
+                <div x-show="ber" class="mt-1 flex flex-col border-l border-stone-800 pl-3">
+                  <a class="flex items-center gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white" href="${bookingPath}"><img src="/static/images/logo_whitemode.svg" width="16" height="16" alt="" class="h-4 w-4 shrink-0">${cm.onSite}</a>
+                  <a class="flex items-center gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white" href="${UPWORK_URL}" target="_blank" rel="noopener noreferrer">${UPWORK_SVG}${cm.up}</a>
+                  <button type="button" @click="ber = false; remeasure()" class="flex items-center gap-2 py-2 text-left text-sm font-medium text-stone-500 hover:text-white"><svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd"/></svg>${cm.back}</button>
+                </div>
+              </li>` : `<li><a class="flex items-center gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white" href="${UPWORK_URL}" target="_blank" rel="noopener noreferrer">${UPWORK_SVG}${L.navConsultation}</a></li>`;
   // Home matches only exact; other paths match by prefix
   const isActive = (path) => {
     const homePath = PATHS.home[lang];
@@ -1165,7 +1338,7 @@ function header(lang, currentPath, langSwitcher) {
     if (path === homePath) return currentPath === homePath ? ' aria-current="page"' : '';
     return currentPath.startsWith(path) ? ' aria-current="page"' : '';
   };
-  return `<header class="absolute z-30 w-full">
+  return `<header id="site-header" class="fixed top-0 z-30 w-full">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <div class="flex h-16 items-center justify-between md:h-20">
       <div class="mr-4 shrink-0">
@@ -1175,19 +1348,19 @@ function header(lang, currentPath, langSwitcher) {
         </a>
       </div>
       <nav class="hidden md:flex md:grow" aria-label="Primary">
-        <ul class="flex grow flex-wrap items-center justify-end gap-1">
+        <ul class="flex grow flex-wrap items-center justify-between gap-1 pl-8">
           <li><a class="${isActive(PATHS.home[lang])} inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="${PATHS.home[lang]}"${currentPath === PATHS.home[lang] ? ' aria-current="page"' : ''}>${L.navStart}</a></li>
-          <li data-skeleton-off><a class="${isActive(PATHS.about[lang])} inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="${PATHS.about[lang]}">${L.navAbout}</a></li>
+          ${consultationLi}
           <li><a class="${isActive(OVERVIEW_PATHS[lang])} inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="${OVERVIEW_PATHS[lang]}"${ariaCurrent(OVERVIEW_PATHS[lang])}>${L.navServices}</a></li>
           <li><a class="${isActive(PATHS.projects[lang])} inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="${PATHS.projects[lang]}">${L.navProjects}</a></li>
-          ${consultationLi}
+          <li><a class="${isActive(PATHS.about[lang])} inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="${PATHS.about[lang]}">${L.navAbout}</a></li>
           <li class="ml-2 flex items-center gap-1 rounded-full border border-stone-800 bg-stone-900/60 p-1">
             ${langSwitcher}
           </li>
         </ul>
       </nav>
-      <div class="ml-4 flex items-center md:hidden" x-data="{ expanded: false }">
-        <button class="group inline-flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900/60 text-stone-300 transition hover:text-white" aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded">
+      <div class="ml-4 flex items-center md:hidden" x-data="{ expanded: false, ber: false, h: 0, remeasure() { this.$nextTick(() => { this.h = this.$refs.mobileNav.scrollHeight }) } }">
+        <button class="group inline-flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900/60 text-stone-300 transition hover:text-white" aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded; ber = false; remeasure()">
           <span class="sr-only">Menu</span>
           <svg class="pointer-events-none h-4 w-4 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
             <rect class="origin-center -translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]" y="7" width="16" height="2" rx="1"></rect>
@@ -1197,14 +1370,14 @@ function header(lang, currentPath, langSwitcher) {
         </button>
         <template x-teleport="body">
           <nav id="mobile-nav" aria-label="Mobile" class="fixed top-16 inset-x-0 z-50 overflow-hidden px-4 transition-all duration-300 ease-out sm:px-6" x-ref="mobileNav"
-               :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1; transform: translateY(0)' : 'max-height: 0; opacity: 0; transform: translateY(-8px)'"
-               @click.outside="expanded = false" @keydown.escape.window="expanded = false" x-cloak>
+               :style="expanded ? 'max-height: ' + h + 'px; opacity: 1; transform: translateY(0)' : 'max-height: 0; opacity: 0; transform: translateY(-8px)'"
+               @click.outside="expanded = false; ber = false" @keydown.escape.window="expanded = false; ber = false" x-cloak>
             <ul class="rounded-2xl border border-stone-800 bg-stone-900/90 px-4 py-3 shadow-xl backdrop-blur-xl">
               <li><a class="flex py-2 text-sm font-medium ${currentPath === PATHS.home[lang] ? 'text-white' : 'text-stone-300 hover:text-white'}" href="${PATHS.home[lang]}">${L.navStart}</a></li>
-              <li data-skeleton-off><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="${PATHS.about[lang]}">${L.navAbout}</a></li>
+              ${mobileConsult}
               <li><a class="flex py-2 text-sm font-medium ${currentPath.startsWith(OVERVIEW_PATHS[lang]) ? 'text-white' : 'text-stone-300 hover:text-white'}" href="${OVERVIEW_PATHS[lang]}">${L.navServices}</a></li>
               <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="${PATHS.projects[lang]}">${L.navProjects}</a></li>
-              <li><a class="flex items-center gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white" href="${UPWORK_URL}" target="_blank" rel="noopener noreferrer">${UPWORK_SVG}${L.navConsultation}</a></li>
+              <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="${PATHS.about[lang]}">${L.navAbout}</a></li>
               <li class="mt-2 flex items-center gap-2 border-t border-stone-800 pt-3">
                 <span class="text-xs uppercase tracking-wider text-stone-500">${L.switchLanguage}:</span>
                 ${langSwitcher.replace(/min-w-\[6rem\]/g, '').replace(/px-3/g, 'px-2.5')}
@@ -1235,6 +1408,8 @@ const SOCIAL_SVGS = {
   pypi: `<svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12,2L2,7V17L12,22L22,17V7L12,2ZM4,16.06V8.94L11,12.44V19.56L4,16.06ZM12,11.38L5.13,7.94L12,4.5L18.87,7.94L12,11.38ZM20,16.06L13,19.56V12.44L20,8.94V16.06Z"/></svg>`,
   upwork: `<svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>`,
   github: `<svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>`,
+  linkedin: `<svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>`,
+  google: `<svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>`,
 };
 
 const GOOGLE_REVIEW_URL = 'https://g.page/r/CWYcIXLQXe1oEBM/review';
@@ -1267,10 +1442,10 @@ function footer(lang) {
         <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">${L.headlineNavigation}</h3>
         <ul class="space-y-2 text-sm">
           <li><a class="text-stone-400 transition hover:text-amber-400" href="${PATHS.home[lang]}">${L.navStart}</a></li>
-          <li data-skeleton-off><a class="text-stone-400 transition hover:text-amber-400" href="${PATHS.about[lang]}">${L.navAbout}</a></li>
-          <li><a class="text-stone-400 transition hover:text-amber-400" href="${OVERVIEW_PATHS[lang]}">${L.navServices}</a></li>
           <li><a class="text-stone-400 transition hover:text-amber-400" href="${PATHS.projects[lang]}">${L.navProjects}</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="${OVERVIEW_PATHS[lang]}">${L.navServices}</a></li>
           <li><a class="text-stone-400 transition hover:text-amber-400" href="${UPWORK_URL}" target="_blank" rel="noopener noreferrer">${L.consultationViaUpwork}</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="${PATHS.about[lang]}">${L.navAbout}</a></li>
         </ul>
       </div>
       <div class="md:col-span-2">
@@ -1282,10 +1457,13 @@ function footer(lang) {
       </div>
       <div class="md:col-span-2">
         <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">${L.headlineFollow}</h3>
-        <ul class="flex gap-3">
+        <ul class="grid w-max grid-cols-3 gap-3">
           <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white" href="https://pypi.org/user/JanTeske06/" target="_blank" rel="noopener noreferrer" aria-label="PyPI">${SOCIAL_SVGS.pypi}</a></li>
           <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#14a800] hover:bg-[#14a800] hover:text-white" href="https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c" target="_blank" rel="noopener noreferrer" aria-label="Upwork">${SOCIAL_SVGS.upwork}</a></li>
           <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-white hover:bg-black hover:text-white" href="https://github.com/JanTeske06" target="_blank" rel="noopener noreferrer" aria-label="GitHub">${SOCIAL_SVGS.github}</a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#0a66c2] hover:bg-[#0a66c2] hover:text-white" href="https://www.linkedin.com/in/jan-teske-a9b768342/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">${SOCIAL_SVGS.linkedin}</a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#009b94] hover:bg-[#009b94] hover:text-white" href="https://www.wlw.de/de/firma/teske-systemtechnik-inh-jan-teske-22390516" target="_blank" rel="noopener noreferrer" aria-label="wlw.de"><span class="font-aspekta text-[10px] font-bold lowercase leading-none">wlw</span></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-white hover:bg-white" href="https://share.google/iHfqrYi4O0FGgQBrF" target="_blank" rel="noopener noreferrer" aria-label="Google">${SOCIAL_SVGS.google}</a></li>
         </ul>
       </div>
     </div>
@@ -1313,8 +1491,41 @@ function scriptsFooter() {
   return `<script src="/static/js/vendors/alpinejs.min.js" defer></script>
 <script src="/static/js/vendors/aos.js?v=20260430a"></script>
 <script src="/static/js/vendors/swiper-bundle.min.js?v=20260430a"></script>
-<script src="/static/js/main.js?v=20260430a"></script>`;
+<script src="/static/js/main.js?v=20260603a"></script>`;
 }
+
+// Price-calculator UI labels + option factors (used by services with
+// `calculator: true`). Option value = numeric factor read by price-calc.js:
+// size/depth/speed are multipliers on data-base, stack is a € addition.
+const CALC_LABELS = {
+  de: {
+    title: 'Preis-Kalkulator', subtitle: 'Stellen Sie Ihr Review zusammen, der Richtwert aktualisiert sich live.',
+    sizeLabel: 'Größe der Codebasis', stackLabel: 'Technologie-Vielfalt', depthLabel: 'Umfang des Ergebnisses', speedLabel: 'Zeitfenster',
+    resultLabel: 'Unverbindlicher Richtwert', estimateNote: 'Schätzwert auf Basis Ihrer Angaben. Den verbindlichen Festpreis nenne ich nach einem kurzen Discovery-Call.', cta: 'Anfrage mit diesem Richtwert',
+    size: [['< 5.000 Zeilen', '1'], ['5.000–20.000 Zeilen', '1.6'], ['20.000–50.000 Zeilen', '2.4'], ['50.000–100.000 Zeilen', '3.4'], ['> 100.000 Zeilen', '4.6']],
+    stack: [['1 Sprache / Framework', '0'], ['2–3 Sprachen / Frameworks', '300'], ['Polyglott (> 3)', '700']],
+    depth: [['Priorisierte Findings-Liste', '1'], ['Ausführlicher Report', '1.35'], ['Report + Live-Walkthrough', '1.7']],
+    speed: [['Standard (≈ 2 Wochen)', '1'], ['Express (5 Werktage)', '1.3']],
+  },
+  en: {
+    title: 'Price calculator', subtitle: 'Configure your review, the estimate updates live.',
+    sizeLabel: 'Codebase size', stackLabel: 'Technology spread', depthLabel: 'Depth of output', speedLabel: 'Turnaround',
+    resultLabel: 'Non-binding estimate', estimateNote: 'An estimate based on your input. The fixed price follows after a short discovery call.', cta: 'Inquire with this estimate',
+    size: [['< 5,000 lines', '1'], ['5,000–20,000 lines', '1.6'], ['20,000–50,000 lines', '2.4'], ['50,000–100,000 lines', '3.4'], ['> 100,000 lines', '4.6']],
+    stack: [['1 language / framework', '0'], ['2–3 languages / frameworks', '300'], ['Polyglot (> 3)', '700']],
+    depth: [['Prioritised findings list', '1'], ['Detailed report', '1.35'], ['Report + live walkthrough', '1.7']],
+    speed: [['Standard (≈ 2 weeks)', '1'], ['Express (5 business days)', '1.3']],
+  },
+  ru: {
+    title: 'Калькулятор цены', subtitle: 'Соберите своё ревью, ориентир обновляется вживую.',
+    sizeLabel: 'Размер кодовой базы', stackLabel: 'Разнообразие технологий', depthLabel: 'Объём результата', speedLabel: 'Срок',
+    resultLabel: 'Ориентир (необязывающий)', estimateNote: 'Оценка на основе ваших данных. Фиксированную цену я называю после короткого discovery-звонка.', cta: 'Запрос с этим ориентиром',
+    size: [['< 5 000 строк', '1'], ['5 000–20 000 строк', '1.6'], ['20 000–50 000 строк', '2.4'], ['50 000–100 000 строк', '3.4'], ['> 100 000 строк', '4.6']],
+    stack: [['1 язык / фреймворк', '0'], ['2–3 языка / фреймворка', '300'], ['Полиглот (> 3)', '700']],
+    depth: [['Приоритизированный список находок', '1'], ['Подробный отчёт', '1.35'], ['Отчёт + live-walkthrough', '1.7']],
+    speed: [['Стандарт (≈ 2 недели)', '1'], ['Экспресс (5 рабочих дней)', '1.3']],
+  },
+};
 
 // ============================================================
 // SERVICE PAGE TEMPLATE
@@ -1408,6 +1619,35 @@ function renderServicePage(service, lang) {
 
   // Pricing
   const includesList = i18n.includes.map(item => `<li class="flex items-start gap-3">${CHECK_SVG}${item}</li>`).join('\n            ');
+  // Optional metric-based price calculator (services with `calculator: true`).
+  const C = CALC_LABELS[lang];
+  const calcOpts = (arr) => arr.map(o => `<option value="${o[1]}">${o[0]}</option>`).join('');
+  const calcField = (id, label, arr) => `<label class="block"><span class="mb-1 block text-sm font-medium text-stone-300">${label}</span><select id="${id}" class="w-full rounded-lg border border-stone-700 bg-stone-950/60 px-3 py-2.5 text-sm text-stone-100 transition focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 [color-scheme:dark]">${calcOpts(arr)}</select></label>`;
+  const calcBlock = service.calculator ? `<div class="lg:col-span-12" data-aos="fade-up">
+        <div id="price-calc" data-base="${service.priceMin}" class="rounded-3xl border border-stone-800 bg-stone-900/40 p-6 md:p-8">
+          <div class="flex items-start gap-3">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h3m-3 4h3"/></svg></span>
+            <div>
+              <h3 class="font-aspekta text-xl font-bold text-white">${C.title}</h3>
+              <p class="text-sm text-stone-400">${C.subtitle}</p>
+            </div>
+          </div>
+          <div class="mt-6 grid gap-5 sm:grid-cols-2">
+            ${calcField('calc-size', C.sizeLabel, C.size)}
+            ${calcField('calc-stack', C.stackLabel, C.stack)}
+            ${calcField('calc-depth', C.depthLabel, C.depth)}
+            ${calcField('calc-speed', C.speedLabel, C.speed)}
+          </div>
+          <div class="mt-6 flex flex-col gap-4 rounded-2xl border border-orange-500/30 bg-orange-500/5 p-5 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-wider text-stone-500">${C.resultLabel}</p>
+              <p class="font-aspekta text-3xl font-bold text-white"><span id="calc-amount">—</span> <span class="text-base font-normal text-stone-400">${L.netSuffix}</span></p>
+              <p class="mt-1 max-w-md text-xs text-stone-500">${C.estimateNote}</p>
+            </div>
+            <a id="calc-cta" href="${inquiryHref}" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">${C.cta}${ARROW_SVG}</a>
+          </div>
+        </div>
+      </div>` : '';
   const pricingSection = `<section class="relative border-t border-stone-900 py-20 md:py-24">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <div class="grid gap-10 lg:grid-cols-12 items-start">
@@ -1439,6 +1679,7 @@ function renderServicePage(service, lang) {
           <p class="mt-3 text-center text-xs text-stone-500">${L.response24h}</p>
         </div>
       </div>
+      ${calcBlock}
     </div>
   </div>
 </section>`;
@@ -1617,8 +1858,8 @@ function renderServicePage(service, lang) {
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260526a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260526a">
+  <link rel="stylesheet" href="/static/style.css?v=20260601d">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260603a">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="${i18n.title}, Teske Systemtechnik">
@@ -1668,6 +1909,7 @@ ${footer(lang)}
 </div>
 
 ${scriptsFooter()}
+${service.calculator ? '<script src="/static/js/price-calc.js?v=20260601b"></script>' : ''}
 
 </body>
 </html>
@@ -1758,8 +2000,8 @@ function renderOverviewPage(lang) {
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260526a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260526a">
+  <link rel="stylesheet" href="/static/style.css?v=20260601d">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260603a">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="${L.overviewTitle}, Teske Systemtechnik">
@@ -1938,8 +2180,8 @@ function renderInquiryPage(lang) {
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260526a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260526a">
+  <link rel="stylesheet" href="/static/style.css?v=20260601d">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260603a">
 </head>
 
 <body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
@@ -2146,6 +2388,251 @@ ${servicesMapJs}
 }
 
 // ============================================================
+// BOOKING PAGE TEMPLATE (/de/termin/, /en/booking/, /ru/zapis/)
+// ============================================================
+
+const BOOKING_I18N = {
+  de: {
+    title: 'Beratungstermin buchen', backHome: '← Zurück zur Startseite', kicker: 'Terminbuchung',
+    meta: 'Buchen Sie einen Online-Beratungstermin (30 oder 60 Minuten) per Google Meet. Termin wählen, sicher per Stripe bezahlen, Bestätigung mit Meeting-Link und Kalendereintrag erhalten.',
+    subtitle: 'Wählen Sie Dauer und einen freien Termin für eine persönliche Online-Beratung per Google Meet. Wir klären Ihr Vorhaben, mögliche Lösungswege und die nächsten Schritte. Nach der sicheren Bezahlung erhalten Sie umgehend die Bestätigung mit Meeting-Link.',
+    chip1: 'Online via Google Meet', chip2: 'Sichere Zahlung via Stripe', chip3: 'Direkte Terminbestätigung',
+    step1: 'Termin', step2: 'Ihre Daten', step3: 'Bestätigung',
+    durLegend: 'Dauer wählen', dur30: '30 Minuten', dur30sub: 'Fokussierte Kurzberatung', dur60: '60 Minuten', dur60sub: 'Ausführliche Beratung', net: 'inkl. USt.',
+    tzLabel: 'Ihre Zeitzone', weekdays: ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'],
+    prevMonth: 'Vorheriger Monat', nextMonth: 'Nächster Monat', calAria: 'Kalender', legendSelected: 'Gewählt', legendAvailable: 'Verfügbar',
+    slotsTitle: 'Verfügbare Zeiten', placeholder: 'Bitte wählen Sie zunächst ein Datum aus.', empty: 'An diesem Tag sind keine Termine mehr frei. Bitte wählen Sie einen anderen Tag.',
+    availHint: 'Verfügbar Mo–Fr, 12:00–18:00 Uhr (Zeit in Deutschland). Die angezeigten Zeiten gelten in Ihrer gewählten Zeitzone. Termine frühestens 48 Stunden im Voraus.',
+    yourAppt: 'Ihr Termin', change: 'Ändern', name: 'Name', namePh: 'Max Mustermann', emailPh: 'max@firma.de',
+    company: 'Unternehmen', optional: '(optional)', companyPh: 'Firma GmbH', phone: 'Telefon', phonePh: '+49 …',
+    topic: 'Worum geht es?', maxChars: 'max. 600 Zeichen', topicPh: 'Kurz Ihr Anliegen, damit ich mich auf das Gespräch vorbereiten kann.',
+    submitBase: 'Zahlungspflichtig buchen',
+    consentPre: 'Kostenpflichtige Buchung — sichere Bezahlung über Stripe. Alle Preise inkl. gesetzl. USt. Mit der Buchung stimmen Sie der', consentLink: 'Datenverarbeitung', consentPost: ' zu.',
+    confirmTitle: 'Termin gebucht!', addToCal: 'Zum Kalender hinzufügen', restart: 'Weiteren Termin buchen',
+    noscript: 'Für die Online-Terminbuchung wird JavaScript benötigt. Alternativ erreichen Sie mich direkt unter <a class="text-amber-400 underline" href="mailto:jt@teske-systemtechnik.de">jt@teske-systemtechnik.de</a>.',
+  },
+  en: {
+    title: 'Book a consultation', backHome: '← Back to home', kicker: 'Booking',
+    meta: 'Book an online consultation (30 or 60 minutes) via Google Meet. Pick a slot, pay securely via Stripe, get a confirmation with meeting link and calendar entry.',
+    subtitle: 'Pick a duration and a free slot for a personal online consultation via Google Meet. We\'ll discuss your project, possible approaches and the next steps. After secure payment you\'ll get an instant confirmation with the meeting link.',
+    chip1: 'Online via Google Meet', chip2: 'Secure payment via Stripe', chip3: 'Instant confirmation',
+    step1: 'Time', step2: 'Your details', step3: 'Confirmation',
+    durLegend: 'Choose duration', dur30: '30 minutes', dur30sub: 'Focused short session', dur60: '60 minutes', dur60sub: 'In-depth session', net: 'incl. VAT',
+    tzLabel: 'Your timezone', weekdays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    prevMonth: 'Previous month', nextMonth: 'Next month', calAria: 'Calendar', legendSelected: 'Selected', legendAvailable: 'Available',
+    slotsTitle: 'Available times', placeholder: 'Please select a date first.', empty: 'No slots left on this day. Please pick another day.',
+    availHint: 'Available Mon–Fri, 12:00–18:00 (time in Germany). Times shown are in your selected timezone. Bookings at least 48 hours in advance.',
+    yourAppt: 'Your appointment', change: 'Change', name: 'Name', namePh: 'Jane Doe', emailPh: 'jane@company.com',
+    company: 'Company', optional: '(optional)', companyPh: 'Company Ltd.', phone: 'Phone', phonePh: '+1 …',
+    topic: 'What\'s it about?', maxChars: 'max. 600 characters', topicPh: 'Briefly describe your request so I can prepare for the call.',
+    submitBase: 'Book (payment required)',
+    consentPre: 'Paid booking — secure payment via Stripe. All prices include statutory VAT. By booking you agree to the', consentLink: 'processing of your data', consentPost: '.',
+    confirmTitle: 'Booked!', addToCal: 'Add to calendar', restart: 'Book another',
+    noscript: 'Online booking requires JavaScript. Alternatively, reach me directly at <a class="text-amber-400 underline" href="mailto:jt@teske-systemtechnik.de">jt@teske-systemtechnik.de</a>.',
+  },
+  ru: {
+    title: 'Записаться на консультацию', backHome: '← На главную', kicker: 'Запись',
+    meta: 'Запишитесь на онлайн-консультацию (30 или 60 минут) через Google Meet. Выберите время, безопасно оплатите через Stripe, получите подтверждение со ссылкой и записью в календарь.',
+    subtitle: 'Выберите длительность и свободное время для личной онлайн-консультации через Google Meet. Обсудим вашу задачу, возможные решения и следующие шаги. После безопасной оплаты вы сразу получите подтверждение со ссылкой на встречу.',
+    chip1: 'Онлайн через Google Meet', chip2: 'Безопасная оплата через Stripe', chip3: 'Мгновенное подтверждение',
+    step1: 'Время', step2: 'Ваши данные', step3: 'Подтверждение',
+    durLegend: 'Выберите длительность', dur30: '30 минут', dur30sub: 'Короткая консультация', dur60: '60 минут', dur60sub: 'Подробная консультация', net: 'включая НДС',
+    tzLabel: 'Ваш часовой пояс', weekdays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+    prevMonth: 'Предыдущий месяц', nextMonth: 'Следующий месяц', calAria: 'Календарь', legendSelected: 'Выбрано', legendAvailable: 'Доступно',
+    slotsTitle: 'Доступное время', placeholder: 'Сначала выберите дату.', empty: 'На этот день свободных слотов нет. Выберите другой день.',
+    availHint: 'Доступно Пн–Пт, 12:00–18:00 (время в Германии). Показанное время — в вашем часовом поясе. Запись не менее чем за 48 часов.',
+    yourAppt: 'Ваша запись', change: 'Изменить', name: 'Имя', namePh: 'Иван Иванов', emailPh: 'ivan@company.com',
+    company: 'Компания', optional: '(необязательно)', companyPh: 'ООО «Компания»', phone: 'Телефон', phonePh: '+7 …',
+    topic: 'О чём речь?', maxChars: 'макс. 600 символов', topicPh: 'Кратко опишите ваш вопрос, чтобы я мог подготовиться к разговору.',
+    submitBase: 'Оплатить и записаться',
+    consentPre: 'Платная запись — безопасная оплата через Stripe. Все цены включают установленный законом НДС. Оформляя запись, вы соглашаетесь на', consentLink: 'обработку данных', consentPost: '.',
+    confirmTitle: 'Готово!', addToCal: 'Добавить в календарь', restart: 'Записаться ещё',
+    noscript: 'Для онлайн-записи нужен JavaScript. Либо свяжитесь со мной напрямую: <a class="text-amber-400 underline" href="mailto:jt@teske-systemtechnik.de">jt@teske-systemtechnik.de</a>.',
+  },
+};
+
+function renderBookingPage(lang) {
+  const L = LABELS[lang];
+  const B = BOOKING_I18N[lang];
+  const path = BOOKING_PATHS[lang];
+  const canonicalUrl = `https://teske-systemtechnik.de${path}`;
+  const privacy = PATHS.privacy[lang];
+  const langSwitcher = languageSwitcher(lang, BOOKING_PATHS);
+  const wd = B.weekdays.map((w) => `<span>${w}</span>`).join('');
+
+  const body = `<section class="relative pt-32 pb-24 md:pt-44 md:pb-32">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6">
+
+      <a href="${PATHS.home[lang]}" class="mb-6 inline-flex items-center gap-2 text-sm font-medium text-stone-400 transition hover:text-amber-300" data-aos="fade-up">${B.backHome}</a>
+
+      <div class="mb-10 max-w-2xl" data-aos="fade-up">
+        <p class="mb-6 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400"><span class="section-num">000 /</span>${B.kicker}</p>
+        <h1 class="font-aspekta text-4xl font-bold leading-tight text-white md:text-5xl">${B.title}</h1>
+        <p class="mt-6 text-lg text-stone-300">${B.subtitle}</p>
+      </div>
+
+      <ul class="mb-8 flex flex-wrap gap-3 text-sm" data-aos="fade-up" data-aos-delay="80">
+        <li class="inline-flex items-center gap-2 rounded-full border border-stone-800 bg-stone-900/40 px-4 py-2 text-stone-300"><svg class="h-4 w-4 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></svg>${B.chip1}</li>
+        <li class="inline-flex items-center gap-2 rounded-full border border-stone-800 bg-stone-900/40 px-4 py-2 text-stone-300"><svg class="h-4 w-4 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>${B.chip2}</li>
+        <li class="inline-flex items-center gap-2 rounded-full border border-stone-800 bg-stone-900/40 px-4 py-2 text-stone-300"><svg class="h-4 w-4 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>${B.chip3}</li>
+      </ul>
+
+      <div id="booking-app" class="rounded-3xl border border-stone-800 bg-stone-900/40 p-6 md:p-10" data-aos="fade-up" data-aos-delay="120">
+
+        <ol id="booking-steps" class="mb-8 flex items-center gap-2 font-aspekta text-xs font-semibold uppercase tracking-wider">
+          <li data-step="1" class="booking-step inline-flex items-center gap-2 text-stone-500"><span class="step-dot flex h-6 w-6 items-center justify-center rounded-full border border-stone-700 text-[11px]">1</span><span class="hidden sm:inline">${B.step1}</span></li>
+          <li class="h-px w-6 bg-stone-700 sm:w-10" aria-hidden="true"></li>
+          <li data-step="2" class="booking-step inline-flex items-center gap-2 text-stone-500"><span class="step-dot flex h-6 w-6 items-center justify-center rounded-full border border-stone-700 text-[11px]">2</span><span class="hidden sm:inline">${B.step2}</span></li>
+          <li class="h-px w-6 bg-stone-700 sm:w-10" aria-hidden="true"></li>
+          <li data-step="3" class="booking-step inline-flex items-center gap-2 text-stone-500"><span class="step-dot flex h-6 w-6 items-center justify-center rounded-full border border-stone-700 text-[11px]">3</span><span class="hidden sm:inline">${B.step3}</span></li>
+        </ol>
+
+        <fieldset class="mb-6">
+          <legend class="mb-3 font-aspekta text-sm font-semibold uppercase tracking-wider text-stone-300">${B.durLegend}</legend>
+          <div id="duration-options" class="grid gap-3 sm:grid-cols-2">
+            <button type="button" class="duration-card flex items-center justify-between gap-3 rounded-2xl border border-orange-500 bg-orange-500/10 px-5 py-4 text-left transition hover:border-orange-400" data-duration="30" data-price="75" aria-pressed="true">
+              <span><span class="block font-aspekta text-base font-semibold text-white">${B.dur30}</span><span class="text-sm text-stone-400">${B.dur30sub}</span></span>
+              <span class="text-right"><span class="block font-aspekta text-lg font-bold text-white">75 €</span><span class="text-xs text-stone-500">${B.net}</span></span>
+            </button>
+            <button type="button" class="duration-card flex items-center justify-between gap-3 rounded-2xl border border-stone-700 bg-stone-950/40 px-5 py-4 text-left transition hover:border-stone-600" data-duration="60" data-price="150" aria-pressed="false">
+              <span><span class="block font-aspekta text-base font-semibold text-white">${B.dur60}</span><span class="text-sm text-stone-400">${B.dur60sub}</span></span>
+              <span class="text-right"><span class="block font-aspekta text-lg font-bold text-white">150 €</span><span class="text-xs text-stone-500">${B.net}</span></span>
+            </button>
+          </div>
+        </fieldset>
+
+        <div class="mb-6 flex flex-wrap items-center justify-end gap-2 text-sm">
+          <label for="tz-select" class="inline-flex items-center gap-1.5 text-stone-400"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>${B.tzLabel}</label>
+          <select id="tz-select" class="rounded-lg border border-stone-700 bg-stone-950/60 px-3 py-2 text-sm text-stone-100 transition focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 [color-scheme:dark]"></select>
+        </div>
+
+        <div id="booking-step-1" class="grid gap-8 md:grid-cols-2">
+          <div>
+            <div class="mb-4 flex items-center justify-between">
+              <h2 id="cal-month-label" class="font-aspekta text-base font-semibold text-white">&nbsp;</h2>
+              <div class="flex items-center gap-1">
+                <button type="button" id="cal-prev" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-stone-700 text-stone-300 transition hover:border-orange-500 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-stone-700 disabled:hover:text-stone-300" aria-label="${B.prevMonth}"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+                <button type="button" id="cal-next" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-stone-700 text-stone-300 transition hover:border-orange-500 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-stone-700 disabled:hover:text-stone-300" aria-label="${B.nextMonth}"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+              </div>
+            </div>
+            <div class="mb-2 grid grid-cols-7 gap-1 text-center text-xs font-medium uppercase tracking-wider text-stone-500" aria-hidden="true">${wd}</div>
+            <div id="cal-grid" class="grid grid-cols-7 gap-1" role="grid" aria-label="${B.calAria}"></div>
+            <p class="mt-4 flex items-center gap-4 text-xs text-stone-500"><span class="inline-flex items-center gap-1.5"><span class="h-2.5 w-2.5 rounded-full bg-orange-500"></span>${B.legendSelected}</span><span class="inline-flex items-center gap-1.5"><span class="h-2.5 w-2.5 rounded-full border border-stone-600"></span>${B.legendAvailable}</span></p>
+          </div>
+          <div class="md:border-l md:border-stone-800 md:pl-8">
+            <h2 id="slots-label" class="mb-4 font-aspekta text-base font-semibold text-white">${B.slotsTitle}</h2>
+            <div id="slots-grid" class="grid grid-cols-3 gap-2"></div>
+            <p id="slots-placeholder" class="rounded-xl border border-dashed border-stone-800 px-4 py-8 text-center text-sm text-stone-500">${B.placeholder}</p>
+            <p id="slots-empty" class="hidden rounded-xl border border-dashed border-stone-800 px-4 py-8 text-center text-sm text-stone-500">${B.empty}</p>
+            <p class="mt-5 flex items-start gap-2 text-xs text-stone-500"><svg class="mt-0.5 h-3.5 w-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>${B.availHint}</span></p>
+          </div>
+        </div>
+
+        <form id="booking-step-2" class="mt-8 hidden border-t border-stone-800 pt-8" novalidate>
+          <div class="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-orange-500/30 bg-orange-500/5 px-5 py-4">
+            <div class="flex items-center gap-3"><svg class="h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><div><p class="text-xs uppercase tracking-wider text-stone-500">${B.yourAppt}</p><p id="summary-slot" class="font-medium text-stone-100">—</p><p id="summary-meta" class="mt-0.5 text-sm text-stone-400"></p></div></div>
+            <button type="button" id="change-slot" class="rounded-full px-3 py-1.5 text-xs font-semibold text-amber-400 underline transition hover:text-amber-300">${B.change}</button>
+          </div>
+          <div class="grid gap-5">
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div><label class="mb-1 block text-sm font-medium text-stone-300" for="booking-name">${B.name}</label><input id="booking-name" type="text" name="name" required autocomplete="name" class="w-full rounded-lg border border-stone-700 bg-stone-950/60 px-4 py-3 text-sm text-stone-100 placeholder-stone-500 transition focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" placeholder="${B.namePh}"></div>
+              <div><label class="mb-1 block text-sm font-medium text-stone-300" for="booking-email">E-Mail</label><input id="booking-email" type="email" name="email" required autocomplete="email" class="w-full rounded-lg border border-stone-700 bg-stone-950/60 px-4 py-3 text-sm text-stone-100 placeholder-stone-500 transition focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" placeholder="${B.emailPh}"></div>
+            </div>
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div><label class="mb-1 block text-sm font-medium text-stone-300" for="booking-company">${B.company} <span class="text-stone-500">${B.optional}</span></label><input id="booking-company" type="text" name="company" autocomplete="organization" class="w-full rounded-lg border border-stone-700 bg-stone-950/60 px-4 py-3 text-sm text-stone-100 placeholder-stone-500 transition focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" placeholder="${B.companyPh}"></div>
+              <div><label class="mb-1 block text-sm font-medium text-stone-300" for="booking-phone">${B.phone} <span class="text-stone-500">${B.optional}</span></label><input id="booking-phone" type="tel" name="phone" autocomplete="tel" class="w-full rounded-lg border border-stone-700 bg-stone-950/60 px-4 py-3 text-sm text-stone-100 placeholder-stone-500 transition focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" placeholder="${B.phonePh}"></div>
+            </div>
+            <div><div class="mb-1 flex items-baseline justify-between"><label class="block text-sm font-medium text-stone-300" for="booking-topic">${B.topic}</label><span class="text-xs text-stone-500">${B.maxChars}</span></div><textarea id="booking-topic" name="topic" rows="4" maxlength="600" required class="w-full resize-none rounded-lg border border-stone-700 bg-stone-950/60 px-4 py-3 text-sm text-stone-100 placeholder-stone-500 transition focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" placeholder="${B.topicPh}"></textarea></div>
+          </div>
+          <p id="booking-error" class="mt-4 hidden text-sm text-orange-400" role="alert"></p>
+          <button id="booking-submit" type="submit" class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400 disabled:opacity-70 disabled:cursor-not-allowed"><svg id="booking-spinner" class="hidden h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-90" fill="currentColor" d="M4 12a8 8 0 0 1 8-8v4a4 4 0 0 0-4 4H4z"/></svg><span id="booking-submit-text">${B.submitBase}</span></button>
+          <p class="mt-4 text-center text-xs text-stone-500">${B.consentPre} <a class="text-amber-400 underline hover:text-amber-300" href="${privacy}">${B.consentLink}</a>${B.consentPost}</p>
+        </form>
+
+        <div id="booking-step-3" class="hidden py-4 text-center">
+          <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-emerald-500/30 bg-emerald-500/10"><svg class="h-8 w-8 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h2 class="font-aspekta text-2xl font-bold text-white">${B.confirmTitle}</h2>
+          <p id="confirm-text" class="mx-auto mt-3 max-w-md text-stone-300"></p>
+          <div class="mx-auto mt-8 max-w-md rounded-2xl border border-stone-800 bg-stone-950/40 p-5 text-left">
+            <div class="flex items-center gap-3"><svg class="h-5 w-5 shrink-0 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><p id="confirm-slot" class="font-medium text-stone-100">—</p></div>
+            <div class="mt-3 flex items-center gap-3 text-sm text-stone-400"><svg class="h-5 w-5 shrink-0 text-stone-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></svg><span id="confirm-meta">${B.chip1}</span></div>
+          </div>
+          <div class="mt-6">
+            <p class="mb-3 text-xs uppercase tracking-wider text-stone-500">${B.addToCal}</p>
+            <div class="flex flex-wrap justify-center gap-2">
+              <a id="confirm-gcal" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-stone-700 px-4 py-2 text-sm font-medium text-stone-200 transition hover:border-orange-500 hover:text-white"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Google Calendar</a>
+              <a id="confirm-ics" href="#" download="booking-teske.ics" class="inline-flex items-center gap-2 rounded-full border border-stone-700 px-4 py-2 text-sm font-medium text-stone-200 transition hover:border-orange-500 hover:text-white"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>iCal (.ics)</a>
+            </div>
+          </div>
+          <button type="button" id="booking-restart" class="mt-8 text-sm font-medium text-amber-400 underline transition hover:text-amber-300">${B.restart}</button>
+        </div>
+
+      </div>
+
+      <noscript><p class="mt-6 rounded-2xl border border-stone-800 bg-stone-900/40 p-5 text-sm text-stone-400">${B.noscript}</p></noscript>
+
+    </div>
+  </section>`;
+
+  return `<!DOCTYPE html>
+<html lang="${L.htmlLang}" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  ${maintenanceGuard()}
+  <meta name="robots" content="index,follow">
+
+  <title>${B.title} · Teske Systemtechnik</title>
+  <meta name="description" content="${B.meta}">
+
+  <link rel="canonical" href="${canonicalUrl}">
+  ${LANGUAGES.map((l) => `<link rel="alternate" hreflang="${l}" href="https://teske-systemtechnik.de${BOOKING_PATHS[l]}">`).join('\n  ')}
+  <link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de${BOOKING_PATHS.de}">
+
+  <link rel="icon" type="image/svg+xml" href="/static/images/logo_favicon.svg">
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-650.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
+  <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/static/style.css?v=20260601d">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260603a">
+
+  <meta property="og:site_name" content="Teske Systemtechnik">
+  <meta property="og:title" content="${B.title}, Teske Systemtechnik">
+  <meta property="og:description" content="${B.meta}">
+  <meta property="og:url" content="${canonicalUrl}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="${L.ogLocale}">
+</head>
+
+<body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-orange-500 focus:px-4 focus:py-2 focus:text-white">${L.skipToContent}</a>
+
+<div class="flex min-h-screen flex-col">
+
+${header(lang, path, langSwitcher)}
+
+<main id="main-content" class="grow">
+
+${body}
+
+</main>
+
+${footer(lang)}
+
+</div>
+
+${scriptsFooter()}
+<script src="/static/js/booking.js?v=20260602c"></script>
+
+</body>
+</html>
+`;
+}
+
+// ============================================================
 // MAIN
 // ============================================================
 
@@ -2178,6 +2665,13 @@ console.log('\n=== Inquiry pages ===');
 for (const lang of LANGUAGES) {
   const path = `${PATHS.inquiry[lang].slice(1)}index.html`;
   writeFile(path, renderInquiryPage(lang));
+  count++;
+}
+
+console.log('\n=== Booking pages ===');
+for (const lang of LANGUAGES) {
+  const path = `${BOOKING_PATHS[lang].slice(1)}index.html`;
+  writeFile(path, renderBookingPage(lang));
   count++;
 }
 
