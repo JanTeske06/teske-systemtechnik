@@ -1491,7 +1491,7 @@ function scriptsFooter() {
   return `<script src="/static/js/vendors/alpinejs.min.js" defer></script>
 <script src="/static/js/vendors/aos.js?v=20260430a"></script>
 <script src="/static/js/vendors/swiper-bundle.min.js?v=20260430a"></script>
-<script src="/static/js/main.js?v=20260603a"></script>`;
+<script src="/static/js/main.js?v=20260603b"></script>`;
 }
 
 // Price-calculator UI labels + option factors (used by services with
@@ -1859,7 +1859,7 @@ function renderServicePage(service, lang) {
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
   <link rel="stylesheet" href="/static/style.css?v=20260601d">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260603a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260603b">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="${i18n.title}, Teske Systemtechnik">
@@ -2001,7 +2001,7 @@ function renderOverviewPage(lang) {
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
   <link rel="stylesheet" href="/static/style.css?v=20260601d">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260603a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260603b">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="${L.overviewTitle}, Teske Systemtechnik">
@@ -2181,7 +2181,7 @@ function renderInquiryPage(lang) {
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
   <link rel="stylesheet" href="/static/style.css?v=20260601d">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260603a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260603b">
 </head>
 
 <body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
@@ -2597,7 +2597,7 @@ function renderBookingPage(lang) {
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
   <link rel="stylesheet" href="/static/style.css?v=20260601d">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260603a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260603b">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="${B.title}, Teske Systemtechnik">

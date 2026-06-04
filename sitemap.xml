@@ -5,7 +5,7 @@
   <!-- Homepages -->
   <url>
     <loc>https://teske-systemtechnik.de/de/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/"/>
@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/"/>
@@ -23,7 +23,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/"/>
@@ -31,13 +31,39 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/"/>
   </url>
 
-  <!-- About — temporarily disabled, redirects to /404.html.
-       Re-add /de/about/, /en/about/, /ru/about/ blocks here when re-enabled. -->
+  <!-- About -->
+  <url>
+    <loc>https://teske-systemtechnik.de/de/about/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/about/"/>
+  </url>
+  <url>
+    <loc>https://teske-systemtechnik.de/en/about/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/about/"/>
+  </url>
+  <url>
+    <loc>https://teske-systemtechnik.de/ru/about/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/about/"/>
+  </url>
 
   <!-- Legal pages -->
   <url>
     <loc>https://teske-systemtechnik.de/de/impressum/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/impressum/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/legal-notice/"/>
@@ -46,7 +72,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/de/datenschutz/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/datenschutz/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/privacy-policy/"/>
@@ -55,7 +81,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/legal-notice/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/impressum/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/legal-notice/"/>
@@ -64,7 +90,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/privacy-policy/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/datenschutz/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/privacy-policy/"/>
@@ -73,7 +99,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/impressum/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/impressum/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/legal-notice/"/>
@@ -82,7 +108,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/privacy/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/datenschutz/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/privacy-policy/"/>
@@ -93,7 +119,7 @@
   <!-- Project catalog -->
   <url>
     <loc>https://teske-systemtechnik.de/de/projekte/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/"/>
@@ -102,7 +128,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/projects/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/"/>
@@ -111,7 +137,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/proekty/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/"/>
@@ -122,7 +148,7 @@
   <!-- Project: AWS Cost Optimization -->
   <url>
     <loc>https://teske-systemtechnik.de/de/projekte/aws-cost-optimization/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/aws-cost-optimization/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/aws-cost-optimization/"/>
@@ -131,7 +157,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/projects/aws-cost-optimization/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/aws-cost-optimization/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/aws-cost-optimization/"/>
@@ -140,7 +166,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/proekty/aws-cost-optimization/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/aws-cost-optimization/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/aws-cost-optimization/"/>
@@ -151,7 +177,7 @@
   <!-- Project: Legacy-DB Reverse Engineering & Migration -->
   <url>
     <loc>https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/legacy-data-extraction/"/>
@@ -160,7 +186,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/projects/legacy-data-extraction/</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/legacy-data-extraction/"/>
@@ -169,7 +195,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/proekty/legacy-data-extraction/</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/legacy-data-extraction/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/legacy-data-extraction/"/>
@@ -180,7 +206,7 @@
   <!-- Project: Book Lister AI -->
   <url>
     <loc>https://teske-systemtechnik.de/de/projekte/book-lister-ai/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/book-lister-ai/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/book-lister-ai/"/>
@@ -189,7 +215,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/projects/book-lister-ai/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/book-lister-ai/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/book-lister-ai/"/>
@@ -198,7 +224,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/proekty/book-lister-ai/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/book-lister-ai/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/book-lister-ai/"/>
@@ -209,7 +235,7 @@
   <!-- Project: Microsoft Shopping Feed Pipeline -->
   <url>
     <loc>https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/microsoft-shopping-feed/"/>
@@ -218,7 +244,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/projects/microsoft-shopping-feed/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/microsoft-shopping-feed/"/>
@@ -227,7 +253,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/proekty/microsoft-shopping-feed/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/microsoft-shopping-feed/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/microsoft-shopping-feed/"/>
@@ -238,7 +264,7 @@
   <!-- Project: Multi-Process Browser-Automation Framework -->
   <url>
     <loc>https://teske-systemtechnik.de/de/projekte/browser-automation-framework/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/browser-automation-framework/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/browser-automation-framework/"/>
@@ -247,7 +273,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/projects/browser-automation-framework/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/browser-automation-framework/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/browser-automation-framework/"/>
@@ -256,7 +282,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/proekty/browser-automation-framework/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/browser-automation-framework/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/browser-automation-framework/"/>
@@ -268,7 +294,7 @@
   <!-- Service overview pages -->
   <url>
     <loc>https://teske-systemtechnik.de/de/leistungen/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/"/>
@@ -277,7 +303,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/services/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/"/>
@@ -286,7 +312,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/uslugi/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/"/>
@@ -297,7 +323,7 @@
   <!-- Service detail pages -->
   <url>
     <loc>https://teske-systemtechnik.de/de/leistungen/discovery-call/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/discovery-call/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/discovery-call/"/>
@@ -306,7 +332,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/services/discovery-call/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/discovery-call/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/discovery-call/"/>
@@ -315,7 +341,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/uslugi/discovery-call/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/discovery-call/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/discovery-call/"/>
@@ -324,7 +350,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/de/leistungen/aws-kostenanalyse/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/aws-kostenanalyse/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/aws-cost-analysis/"/>
@@ -333,7 +359,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/services/aws-cost-analysis/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/aws-kostenanalyse/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/aws-cost-analysis/"/>
@@ -342,7 +368,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/uslugi/aws-cost-analysis/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/aws-kostenanalyse/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/aws-cost-analysis/"/>
@@ -351,7 +377,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/de/leistungen/product-feed-pipelines/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/product-feed-pipelines/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/product-feed-pipelines/"/>
@@ -360,7 +386,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/services/product-feed-pipelines/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/product-feed-pipelines/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/product-feed-pipelines/"/>
@@ -369,7 +395,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/uslugi/product-feed-pipelines/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/product-feed-pipelines/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/product-feed-pipelines/"/>
@@ -378,7 +404,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/de/leistungen/legacy-datenmigration/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/legacy-datenmigration/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/legacy-data-migration/"/>
@@ -387,7 +413,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/services/legacy-data-migration/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/legacy-datenmigration/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/legacy-data-migration/"/>
@@ -396,7 +422,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/uslugi/legacy-data-migration/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/legacy-datenmigration/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/legacy-data-migration/"/>
@@ -405,7 +431,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/de/leistungen/browser-automation/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/browser-automation/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/browser-automation/"/>
@@ -414,7 +440,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/services/browser-automation/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/browser-automation/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/browser-automation/"/>
@@ -423,7 +449,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/uslugi/browser-automation/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/browser-automation/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/browser-automation/"/>
@@ -432,7 +458,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/de/leistungen/custom-ai-app/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/custom-ai-app/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/custom-ai-app/"/>
@@ -441,7 +467,7 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/en/services/custom-ai-app/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/custom-ai-app/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/custom-ai-app/"/>
@@ -450,12 +476,70 @@
   </url>
   <url>
     <loc>https://teske-systemtechnik.de/ru/uslugi/custom-ai-app/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/custom-ai-app/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/custom-ai-app/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/uslugi/custom-ai-app/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/leistungen/custom-ai-app/"/>
+  </url>
+
+  <!-- Service: Codebase Review -->
+  <url>
+    <loc>https://teske-systemtechnik.de/de/leistungen/codebase-review/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/codebase-review/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/codebase-review/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/uslugi/codebase-review/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/leistungen/codebase-review/"/>
+  </url>
+  <url>
+    <loc>https://teske-systemtechnik.de/en/services/codebase-review/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/codebase-review/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/codebase-review/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/uslugi/codebase-review/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/leistungen/codebase-review/"/>
+  </url>
+  <url>
+    <loc>https://teske-systemtechnik.de/ru/uslugi/codebase-review/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/leistungen/codebase-review/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/services/codebase-review/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/uslugi/codebase-review/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/leistungen/codebase-review/"/>
+  </url>
+
+  <!-- Booking / appointment pages -->
+  <url>
+    <loc>https://teske-systemtechnik.de/de/termin/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/termin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/booking/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/zapis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/termin/"/>
+  </url>
+  <url>
+    <loc>https://teske-systemtechnik.de/en/booking/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/termin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/booking/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/zapis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/termin/"/>
+  </url>
+  <url>
+    <loc>https://teske-systemtechnik.de/ru/zapis/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/termin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/booking/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/zapis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/termin/"/>
   </url>
 
   <!-- Inquiry pages intentionally omitted: noindex,follow + linked-only from service pages -->

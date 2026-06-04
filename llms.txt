@@ -10,6 +10,9 @@
 - [Project catalog (German)](https://teske-systemtechnik.de/de/projekte/): List of selected project case studies
 - [Project catalog (English)](https://teske-systemtechnik.de/en/projects/): List of selected project case studies
 - [Project catalog (Russian)](https://teske-systemtechnik.de/ru/proekty/): List of selected project case studies
+- [About (German)](https://teske-systemtechnik.de/de/about/): Company / about page: owner-led studio for automation and custom software, founded November 2025, small team, 25+ delivered projects
+- [About (English)](https://teske-systemtechnik.de/en/about/): Same about page in English
+- [About (Russian)](https://teske-systemtechnik.de/ru/about/): Same about page in Russian
 
 ## Case studies
 
@@ -35,7 +38,7 @@ Fixed-price service packages with starting prices. Every service links to its in
 
 ### Service overview
 
-- [Leistungen (German)](https://teske-systemtechnik.de/de/leistungen/): All six fixed-price services with starting prices, sorted cheapest-first.
+- [Leistungen (German)](https://teske-systemtechnik.de/de/leistungen/): All seven fixed-price services with starting prices, sorted cheapest-first.
 - [Services (English)](https://teske-systemtechnik.de/en/services/): Same overview in English.
 - [Услуги (Russian)](https://teske-systemtechnik.de/ru/uslugi/): Same overview in Russian.
 
@@ -44,6 +47,12 @@ Fixed-price service packages with starting prices. Every service links to its in
 - [Discovery-Call (German)](https://teske-systemtechnik.de/de/leistungen/discovery-call/): 30-minute (€75) or 60-minute (€150) consultation. Workflow analysis, feasibility check, architecture recommendation. Written summary + cost estimate within 24h. Call price credited against any follow-up project.
 - [Discovery Call (English)](https://teske-systemtechnik.de/en/services/discovery-call/): Same service in English.
 - [Discovery-звонок (Russian)](https://teske-systemtechnik.de/ru/uslugi/discovery-call/): Same service in Russian.
+
+### Codebase Review & Audit (from €1,200)
+
+- [Codebase-Review (German)](https://teske-systemtechnik.de/de/leistungen/codebase-review/): Fixed-price external review of an existing codebase (architecture, code quality, security, performance, test coverage) with a prioritised, actionable report. Includes an interactive price calculator (size, depth, speed, stack).
+- [Codebase Review (English)](https://teske-systemtechnik.de/en/services/codebase-review/): Same service in English.
+- [Codebase Review (Russian)](https://teske-systemtechnik.de/ru/uslugi/codebase-review/): Same service in Russian.
 
 ### AWS Cost Analysis & Reduction (from €3,500)
 
@@ -74,6 +83,14 @@ Fixed-price service packages with starting prices. Every service links to its in
 - [Custom AI Desktop App (German)](https://teske-systemtechnik.de/de/leistungen/custom-ai-app/): Bespoke Windows app with AI backend (Gemini, Claude, GPT or local), hardware integration (camera, scanner, USB) and API pipelines. Vertical-slice prototype in two weeks, full app with installer, pytest coverage, code docs. Backed by the Book Lister AI case (30 seconds per book instead of 10 minutes).
 - [Custom AI Desktop App (English)](https://teske-systemtechnik.de/en/services/custom-ai-app/): Same service in English.
 - [Custom AI Desktop App (Russian)](https://teske-systemtechnik.de/ru/uslugi/custom-ai-app/): Same service in Russian.
+
+## Booking / appointments
+
+Paid online consultation booking, self-built (Google Calendar + Stripe Checkout); a Google Meet link is created on payment. 30 minutes (€75) or 60 minutes (€150), prices incl. German VAT. Mon to Fri, Europe/Berlin timezone.
+
+- [Beratungstermin buchen (German)](https://teske-systemtechnik.de/de/termin/): Book a paid online consultation
+- [Book a call (English)](https://teske-systemtechnik.de/en/booking/): Same booking page in English
+- [Запись (Russian)](https://teske-systemtechnik.de/ru/zapis/): Same booking page in Russian
 
 ## Legal
 
