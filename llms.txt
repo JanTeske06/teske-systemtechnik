@@ -4,9 +4,9 @@
 
 ## Core pages
 
-- [Homepage (German)](https://teske-systemtechnik.de/de/): Primary business landing page in German
-- [Homepage (English)](https://teske-systemtechnik.de/en/): Primary business landing page in English
-- [Homepage (Russian)](https://teske-systemtechnik.de/ru/): Primary business landing page in Russian
+- [Homepage (German)](https://teske-systemtechnik.de/de/): Primary business landing page in German; selected projects, fixed-price services and verified 5-star client reviews (Upwork, Google)
+- [Homepage (English)](https://teske-systemtechnik.de/en/): Primary business landing page in English; selected projects, fixed-price services and verified 5-star client reviews (Upwork, Google)
+- [Homepage (Russian)](https://teske-systemtechnik.de/ru/): Primary business landing page in Russian; selected projects, fixed-price services and verified 5-star client reviews (Upwork, Google)
 - [Project catalog (German)](https://teske-systemtechnik.de/de/projekte/): List of selected project case studies
 - [Project catalog (English)](https://teske-systemtechnik.de/en/projects/): List of selected project case studies
 - [Project catalog (Russian)](https://teske-systemtechnik.de/ru/proekty/): List of selected project case studies

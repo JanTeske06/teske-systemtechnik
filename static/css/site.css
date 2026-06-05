@@ -625,3 +625,110 @@ footer {
   width: 0;
   height: 0;
 }
+
+/* ------------------------------------------------------------------
+   Kundenstimmen-Laufband (Homepage-Sektion 002) — von reviews.js aus
+   /static/data/reviews.json gefuellt. Zwei Reihen laufen gegenlaeufig
+   als reine CSS-Marquee. Karten sind keine Links; ein Klick oeffnet die
+   ganze Bewertung im Overlay (.rv-modal). Der Abstand sitzt als margin
+   pro Karte, damit er auch am nahtlosen Block-Uebergang greift.
+   ------------------------------------------------------------------ */
+[data-reviews] { min-height: 26rem; }
+.rv-rows { position: relative; }
+/* sanfte Ausblendung an den Raendern -> "im Vorbeigehen"-Wirkung */
+.rv-rows::before,
+.rv-rows::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 9%;
+  z-index: 2;
+  pointer-events: none;
+}
+.rv-rows::before { left: 0; background: linear-gradient(90deg, rgb(12 10 9), rgb(12 10 9 / 0)); }
+.rv-rows::after { right: 0; background: linear-gradient(270deg, rgb(12 10 9), rgb(12 10 9 / 0)); }
+
+.rv-row { display: flex; overflow: hidden; padding: 0.6rem 0; }
+.rv-track {
+  display: flex;
+  width: max-content;
+  flex-shrink: 0;
+  will-change: transform;
+  animation: rv-left 64s linear infinite;
+}
+.rv-track.rev { animation-name: rv-right; animation-duration: 74s; }
+@keyframes rv-left { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+@keyframes rv-right { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .rv-track { animation: none; flex-wrap: wrap; }
+  .rv-track.rev[aria-hidden="true"], .rv-track[aria-hidden="true"] { display: none; }
+}
+
+.rv-card {
+  flex: 0 0 auto;
+  width: 340px;
+  margin-right: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid rgb(41 37 36);
+  background: rgb(28 25 23 / 0.5);
+  border-radius: 1.1rem;
+  padding: 1.4rem 1.5rem;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+.rv-card:hover { border-color: rgb(249 115 22 / 0.45); background: rgb(28 25 23 / 0.75); }
+.rv-card:focus-visible { outline: 2px solid rgb(249 115 22 / 0.6); outline-offset: 2px; }
+.rv-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.9rem; }
+.rv-stars { display: inline-flex; gap: 2px; color: rgb(251 191 36); }
+.rv-stars svg { width: 16px; height: 16px; fill: currentColor; }
+.rv-src {
+  display: inline-flex; align-items: center;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(120 113 108);
+}
+.rv-src svg { height: 16px; width: auto; display: block; }
+.rv-modal-card .rv-src svg { height: 19px; }
+.rv-quote {
+  color: rgb(231 229 228); font-size: 0.95rem; line-height: 1.6; margin: 0;
+  display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden;
+}
+.rv-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.rv-tag {
+  font-size: 0.66rem; font-weight: 500; color: rgb(252 211 77);
+  border: 1px solid rgb(249 115 22 / 0.28); background: rgb(249 115 22 / 0.08);
+  border-radius: 9999px; padding: 0.18rem 0.6rem;
+}
+.rv-proj { margin-top: auto; padding-top: 1.1rem; font-size: 0.72rem; color: rgb(120 113 108); line-height: 1.35; }
+.rv-proj b { display: block; color: rgb(168 162 158); font-weight: 600; margin-bottom: 0.1rem; }
+.rv-expand {
+  position: absolute; bottom: 1.15rem; right: 1.25rem; width: 15px; height: 15px;
+  color: rgb(87 83 78); opacity: 0; transition: opacity 0.2s, color 0.2s; pointer-events: none;
+}
+.rv-expand svg { width: 100%; height: 100%; }
+.rv-card:hover .rv-expand { opacity: 1; color: rgb(251 146 60); }
+
+.rv-modal {
+  position: fixed; inset: 0; z-index: 50; display: none;
+  align-items: center; justify-content: center; padding: 1.5rem;
+  background: rgb(12 10 9 / 0.82); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.rv-modal.is-open { display: flex; }
+.rv-modal-card {
+  position: relative; max-width: 42rem; width: 100%; max-height: 85vh; overflow-y: auto;
+  border: 1px solid rgb(68 64 60); background: rgb(28 25 23); border-radius: 1.25rem; padding: 2.6rem 2.6rem 2rem;
+}
+.rv-modal-card .rv-quote { -webkit-line-clamp: unset; font-size: 1.12rem; line-height: 1.72; color: rgb(231 229 228); }
+.rv-modal-card .rv-top { margin-bottom: 1.2rem; }
+.rv-modal-card .rv-stars svg { width: 20px; height: 20px; }
+.rv-modal-card .rv-tags { margin-bottom: 0.4rem; }
+.rv-modal-card .rv-proj { font-size: 0.85rem; padding-top: 1.5rem; }
+.rv-modal-close {
+  position: absolute; top: 1.1rem; right: 1.1rem; display: inline-flex; align-items: center; justify-content: center;
+  width: 2rem; height: 2rem; border-radius: 9999px; border: 1px solid rgb(41 37 36);
+  background: rgb(12 10 9 / 0.5); color: rgb(168 162 158); cursor: pointer; transition: color 0.2s, border-color 0.2s;
+}
+.rv-modal-close:hover { color: rgb(255 255 255); border-color: rgb(87 83 78); }
+.rv-modal-close svg { width: 1rem; height: 1rem; }

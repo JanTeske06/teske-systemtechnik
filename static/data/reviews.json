@@ -1,0 +1,61 @@
+{
+  "_hinweis": "Kundenstimmen fuer die Homepage-Sektion (002). Mehr Bewertungen hinzufuegen: einfach ein Objekt unten ergaenzen, fertig. Die erste Haelfte der Liste laeuft in der oberen Reihe, die zweite in der unteren. Felder pro Eintrag: source ('Upwork' oder 'Google'), stars (1-5), entweder 'text' (Zitat) ODER 'tags' (Liste von Skill-Tags), dazu 'project' + 'projectSub' als Kontext. Bewertungstexte bleiben in Originalsprache (authentisch). Keine Kundennamen.",
+  "reviews": [
+    {
+      "source": "Upwork",
+      "stars": 5,
+      "text": "Jan did exceptional work and was fully committed to ensuring that all bugs were found and resolved. I would highly recommend working with him.",
+      "project": "Microsoft Shopping Feed",
+      "projectSub": "Bing / Merchant Center Integration"
+    },
+    {
+      "source": "Upwork",
+      "stars": 5,
+      "text": "Jan hat alle meine Wünsche umgesetzt, das Tool komplett von 0 aufgebaut und erfolgreich in die Umsetzung gebracht. Stets schnell erreichbar, professionell und lösungsorientiert. 110% Empfehlung von meiner Seite.",
+      "project": "Kamera-Scan & Daten-Abgleich",
+      "projectSub": "Automatisierungs-Tool"
+    },
+    {
+      "source": "Upwork",
+      "stars": 5,
+      "text": "Jan has exceptional skills and did an amazing job at very short notice. I'll definitely hire him again!",
+      "project": "Browser Network API",
+      "projectSub": "Python Code Update"
+    },
+    {
+      "source": "Upwork",
+      "stars": 5,
+      "tags": ["Clear Communicator", "Accountable", "Detail Oriented"],
+      "project": "High-Speed Data Acquisition",
+      "projectSub": "Mess- & Erfassungssystem"
+    },
+    {
+      "source": "Google",
+      "stars": 5,
+      "text": "Herr Teske hat mir brillant bei meiner Wunschsoftware geholfen und hat diese komplett von 0 an aufgebaut. Sein Know-How, seine sympathische und schnelle Arbeit haben mich von Tag 1 überzeugt. Ich bin wirklich begeistert und kann ihn nur wärmstens weiterempfehlen.",
+      "project": "Individuelle Wunschsoftware",
+      "projectSub": "Komplettentwicklung"
+    },
+    {
+      "source": "Upwork",
+      "stars": 5,
+      "text": "I enjoyed working with Jan. He delivered promptly and responded quickly to changes. I look forward to working with him again.",
+      "project": "eBird Bird Monitoring",
+      "projectSub": "Python Script Setup"
+    },
+    {
+      "source": "Upwork",
+      "stars": 5,
+      "tags": ["Committed to Quality", "Clear Communicator", "Detail Oriented"],
+      "project": "Joint Rotation Data Conversion",
+      "projectSub": "Python Developer"
+    },
+    {
+      "source": "Upwork",
+      "stars": 5,
+      "tags": ["Clear Communicator", "Accountable", "Detail Oriented"],
+      "project": "AWS Cost Reduction",
+      "projectSub": "FinOps"
+    }
+  ]
+}

@@ -41,6 +41,10 @@ rework.md
 CHANGELOG.md222
 seo-plan.md
 blog-anleitung.md
+reviews-anleitung.md
+
+## Local raw source for reviews (data lives in static/data/reviews.json)
+rezensionen.txt
 
 ## Throwaway one-shot scripts (prefix convention) — never commit
 _*.py

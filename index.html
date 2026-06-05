@@ -50,7 +50,7 @@
 
   
   <link rel="stylesheet" href="/static/style.css?v=20260605a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260605a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
 
   
 
@@ -419,12 +419,30 @@
 
 
 
+<!-- 002 / Kundenstimmen — Laufband aus /static/data/reviews.json (reviews.js). Keine eigene Seite. -->
+<section class="relative border-t border-stone-900 py-20 md:py-28 overflow-hidden">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6" data-aos="fade-up">
+    <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+      <span class="section-num">002 /</span>
+      Kundenstimmen
+    </p>
+    <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">Vertrauen Sie nicht meinen Worten, sondern meinen Kunden</h2>
+    <p class="mt-4 max-w-xl text-stone-400">Echte 5-Sterne-Bewertungen aus abgeschlossenen Projekten auf Upwork und Google. Tippen Sie auf eine Stimme, um die ganze Bewertung zu lesen.</p>
+  </div>
+  <div class="rv-rows mt-12" data-reviews data-aos="fade-up" data-aos-delay="120"></div>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <p class="mt-8 text-xs text-stone-600">Echte Bewertungen aus abgeschlossenen Projekten. Namen der Auftraggeber sind zum Schutz ihrer Privatsphäre nicht genannt.</p>
+  </div>
+</section>
+
+
+
 <section class="relative border-t border-stone-900 py-20 md:py-28">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <div class="flex items-end justify-between gap-6" data-aos="fade-up">
       <div class="max-w-2xl">
         <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
-          <span class="section-num">002 /</span>
+          <span class="section-num">003 /</span>
           Leistungen
         </p>
         <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">Festpreis-Leistungen mit klarem Deliverable</h2>
@@ -508,7 +526,7 @@
 
     <div class="md:col-span-4" data-aos="fade-up">
       <p class="mb-4 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
-        <span class="section-num">004 /</span>
+        <span class="section-num">005 /</span>
         Über mich
       </p>
       <h2 class="font-aspekta text-3xl font-bold leading-tight text-white md:text-4xl">Python-Entwickler mit Fokus auf Ergebnisse.</h2>
@@ -530,7 +548,7 @@
 
     <div class="md:col-span-4" data-aos="fade-up">
       <p class="mb-4 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
-        <span class="section-num">003 /</span>
+        <span class="section-num">004 /</span>
         Kontakt
       </p>
       <h2 class="font-aspekta text-3xl font-bold leading-tight text-white md:text-4xl">Ein Projekt im Kopf?</h2>
@@ -727,6 +745,9 @@
 <!-- Projekt-Showcase wird aus /static/data/projects.json gerendert -->
 <script src="/static/js/projects-data.js?v=20260430a"></script>
 <script src="/static/js/showcase.js?v=20260529a"></script>
+
+<!-- Kundenstimmen-Laufband (Sektion 002) aus /static/data/reviews.json -->
+<script src="/static/js/reviews.js?v=20260605b" defer></script>
 
 <!-- Kontakt-Formular → Forminit -->
 <script src="https://forminit.com/sdk/v1/forminit.js"></script>

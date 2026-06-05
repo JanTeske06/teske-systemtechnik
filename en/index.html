@@ -50,7 +50,7 @@
 
   
   <link rel="stylesheet" href="/static/style.css?v=20260605a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260605a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
 
   
 
@@ -419,12 +419,30 @@
 
 
 
+<!-- 002 / Testimonials — marquee from /static/data/reviews.json (reviews.js). Not a separate page. -->
+<section class="relative border-t border-stone-900 py-20 md:py-28 overflow-hidden">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6" data-aos="fade-up">
+    <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+      <span class="section-num">002 /</span>
+      Testimonials
+    </p>
+    <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">Don't trust my words, trust my clients</h2>
+    <p class="mt-4 max-w-xl text-stone-400">Real 5-star reviews from completed projects on Upwork and Google. Tap a review to read it in full.</p>
+  </div>
+  <div class="rv-rows mt-12" data-reviews data-aos="fade-up" data-aos-delay="120"></div>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <p class="mt-8 text-xs text-stone-600">Real reviews from completed projects. Client names are withheld to protect their privacy.</p>
+  </div>
+</section>
+
+
+
 <section class="relative border-t border-stone-900 py-20 md:py-28">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <div class="flex items-end justify-between gap-6" data-aos="fade-up">
       <div class="max-w-2xl">
         <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
-          <span class="section-num">002 /</span>
+          <span class="section-num">003 /</span>
           Services
         </p>
         <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">Fixed-price services with a clear deliverable</h2>
@@ -508,7 +526,7 @@
 
     <div class="md:col-span-4" data-aos="fade-up">
       <p class="mb-4 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
-        <span class="section-num">004 /</span>
+        <span class="section-num">005 /</span>
         About me
       </p>
       <h2 class="font-aspekta text-3xl font-bold leading-tight text-white md:text-4xl">A Python developer focused on outcomes.</h2>
@@ -530,7 +548,7 @@
 
     <div class="md:col-span-4" data-aos="fade-up">
       <p class="mb-4 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
-        <span class="section-num">003 /</span>
+        <span class="section-num">004 /</span>
         Contact
       </p>
       <h2 class="font-aspekta text-3xl font-bold leading-tight text-white md:text-4xl">A project in mind?</h2>
@@ -725,6 +743,9 @@
 <!-- Project showcase is rendered from /static/data/projects.json -->
 <script src="/static/js/projects-data.js?v=20260430a"></script>
 <script src="/static/js/showcase.js?v=20260529a"></script>
+
+<!-- Testimonials marquee (section 002) from /static/data/reviews.json -->
+<script src="/static/js/reviews.js?v=20260605b" defer></script>
 
 <!-- Contact form → Forminit -->
 <script src="https://forminit.com/sdk/v1/forminit.js"></script>
