@@ -362,3 +362,60 @@ highlighters.forEach((highlighter) => {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
+
+
+// --- Keep scroll position across a language switch -
+// Clicking a language link (DE/EN/RU, desktop or mobile) remembers the relative
+// scroll position (percent of scrollable height); on the target page we scroll
+// roughly back there instead of jumping to the top. The language versions share
+// the same section structure, so the percentage lands close. A language link is
+// detected by its 2-letter text + an href into a /de|en|ru/ path; the active
+// one (href="#") is skipped. Delegated + capture, so it also covers the
+// Alpine-rendered mobile menu. Works on desktop and mobile.
+(function initLangScrollMemory() {
+  const KEY = 'tsk:langScroll';
+
+  const maxScroll = () =>
+    Math.max(
+      document.documentElement.scrollHeight,
+      document.body ? document.body.scrollHeight : 0
+    ) - window.innerHeight;
+
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+    const href = a.getAttribute('href') || '';
+    if (!/^\/(de|en|ru)\//.test(href)) return;
+    const txt = (a.textContent || '').trim();
+    if (txt !== 'DE' && txt !== 'EN' && txt !== 'RU') return;
+    const max = maxScroll();
+    const pct = max > 0 ? (window.scrollY || window.pageYOffset || 0) / max : 0;
+    try { sessionStorage.setItem(KEY, pct.toFixed(4)); } catch (err) {}
+  }, true);
+
+  let raw = null;
+  try { raw = sessionStorage.getItem(KEY); } catch (err) {}
+  if (raw === null) return;
+  try { sessionStorage.removeItem(KEY); } catch (err) {}
+  const pct = parseFloat(raw);
+  if (!(pct > 0)) return;
+
+  const restore = () => {
+    const html = document.documentElement;
+    const prev = html.style.scrollBehavior;
+    html.style.scrollBehavior = 'auto';   // instant, bypass scroll-smooth
+    window.scrollTo(0, Math.round(pct * maxScroll()));
+    html.style.scrollBehavior = prev;
+  };
+  let userScrolled = false;
+  const tryRestore = () => { if (!userScrolled) restore(); };
+  if (document.readyState === 'complete') restore();
+  else window.addEventListener('load', restore);
+  // Stop re-applying the moment the user takes over scrolling.
+  ['wheel', 'touchmove'].forEach((ev) =>
+    window.addEventListener(ev, () => { userScrolled = true; }, { passive: true, once: true })
+  );
+  // Re-apply after late reflow (fonts, lazy images, carousel change page height).
+  setTimeout(tryRestore, 160);
+  setTimeout(tryRestore, 440);
+})();
