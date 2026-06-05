@@ -35,7 +35,7 @@ const LABELS = {
     htmlLang: 'de', ogLocale: 'de_DE',
     skipToContent: 'Zum Inhalt springen',
     navStart: 'Start', navAbout: 'Über uns', navServices: 'Leistungen',
-    navProjects: 'Projekte', navConsultation: 'Beratung',
+    navProjects: 'Projekte', navConsultation: 'Beratung', navBlog: 'Blog',
     legal: 'Impressum', privacy: 'Datenschutz',
     quality: 'Quality engineered in Germany.',
     copyright: '&copy; 2026 Teske Systemtechnik. Alle Rechte vorbehalten.',
@@ -62,7 +62,7 @@ const LABELS = {
     headlineNavigation: 'Navigation',
     headlineLegal: 'Rechtliches',
     headlineFollow: 'Folgen Sie uns',
-    headlineReview: 'Bewertung',
+    headlineReview: 'Bewertung', headlineWork: 'Unsere Arbeit', navBooking: 'Termin buchen',
     consultationViaUpwork: 'Beratung via Upwork',
     reviewCta: 'Bei Google bewerten',
     googleReviewAria: 'Bei Google bewerten',
@@ -71,7 +71,7 @@ const LABELS = {
     htmlLang: 'en', ogLocale: 'en_US',
     skipToContent: 'Skip to content',
     navStart: 'Home', navAbout: 'About', navServices: 'Services',
-    navProjects: 'Projects', navConsultation: 'Book a call',
+    navProjects: 'Projects', navConsultation: 'Book a call', navBlog: 'Blog',
     legal: 'Legal Notice', privacy: 'Privacy Policy',
     quality: 'Quality engineered in Germany.',
     copyright: '&copy; 2026 Teske Systemtechnik. All rights reserved.',
@@ -98,7 +98,7 @@ const LABELS = {
     headlineNavigation: 'Navigation',
     headlineLegal: 'Legal',
     headlineFollow: 'Follow us',
-    headlineReview: 'Review',
+    headlineReview: 'Review', headlineWork: 'Our work', navBooking: 'Book a call',
     consultationViaUpwork: 'Consultation via Upwork',
     reviewCta: 'Rate us on Google',
     googleReviewAria: 'Write a Google review',
@@ -107,7 +107,7 @@ const LABELS = {
     htmlLang: 'ru', ogLocale: 'ru_RU',
     skipToContent: 'Перейти к содержимому',
     navStart: 'Главная', navAbout: 'Обо мне', navServices: 'Услуги',
-    navProjects: 'Проекты', navConsultation: 'Консультация',
+    navProjects: 'Проекты', navConsultation: 'Консультация', navBlog: 'Блог',
     legal: 'Выходные данные', privacy: 'Конфиденциальность',
     quality: 'Quality engineered in Germany.',
     copyright: '&copy; 2026 Teske Systemtechnik. Все права защищены.',
@@ -134,7 +134,7 @@ const LABELS = {
     headlineNavigation: 'Навигация',
     headlineLegal: 'Юридическое',
     headlineFollow: 'Профили',
-    headlineReview: 'Отзыв',
+    headlineReview: 'Отзыв', headlineWork: 'Наши работы', navBooking: 'Записаться',
     consultationViaUpwork: 'Консультация на Upwork',
     reviewCta: 'Оценить нас в Google',
     googleReviewAria: 'Оставить отзыв в Google',
@@ -1297,6 +1297,10 @@ const ARROW_SVG = `<svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" 
 // Only languages with a booking page get the dropdown; others keep the
 // plain Upwork link (no 404 to a not-yet-existing localised booking page).
 const BOOKING_PATHS = { de: '/de/termin/', en: '/en/booking/', ru: '/ru/zapis/' };
+// Blog/Updates: Nav-Punkt nur in Sprachen mit existierendem Blog-Content
+// (DE-first, wie /termin). Muss mit BUILD_LANGUAGES in build-blog.mjs synchron sein.
+const BLOG_PATHS = { de: '/de/blog/', en: '/en/blog/', ru: '/ru/blog/' };
+const BLOG_NAV_LANGS = ['de', 'en', 'ru'];
 const CONSULT_MENU = {
   de: { onSite: 'Auf dieser Website', onSiteSub: 'Termin online buchen', up: 'Über Upwork', upSub: 'Beratung & Projekte', back: 'Zurück' },
   en: { onSite: 'On this website', onSiteSub: 'Book a call online', up: 'Via Upwork', upSub: 'Consulting & projects', back: 'Back' },
@@ -1338,6 +1342,9 @@ function header(lang, currentPath, langSwitcher) {
     if (path === homePath) return currentPath === homePath ? ' aria-current="page"' : '';
     return currentPath.startsWith(path) ? ' aria-current="page"' : '';
   };
+  const showBlog = BLOG_NAV_LANGS.includes(lang);
+  const blogLi = showBlog ? `\n          <li><a class="${isActive(BLOG_PATHS[lang])} inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="${BLOG_PATHS[lang]}"${ariaCurrent(BLOG_PATHS[lang])}>${L.navBlog}</a></li>` : '';
+  const blogMobileLi = showBlog ? `\n              <li><a class="flex py-2 text-sm font-medium ${currentPath.startsWith(BLOG_PATHS[lang]) ? 'text-white' : 'text-stone-300 hover:text-white'}" href="${BLOG_PATHS[lang]}">${L.navBlog}</a></li>` : '';
   return `<header id="site-header" class="fixed top-0 z-30 w-full">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <div class="flex h-16 items-center justify-between md:h-20">
@@ -1352,7 +1359,7 @@ function header(lang, currentPath, langSwitcher) {
           <li><a class="${isActive(PATHS.home[lang])} inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="${PATHS.home[lang]}"${currentPath === PATHS.home[lang] ? ' aria-current="page"' : ''}>${L.navStart}</a></li>
           ${consultationLi}
           <li><a class="${isActive(OVERVIEW_PATHS[lang])} inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="${OVERVIEW_PATHS[lang]}"${ariaCurrent(OVERVIEW_PATHS[lang])}>${L.navServices}</a></li>
-          <li><a class="${isActive(PATHS.projects[lang])} inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="${PATHS.projects[lang]}">${L.navProjects}</a></li>
+          <li><a class="${isActive(PATHS.projects[lang])} inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="${PATHS.projects[lang]}">${L.navProjects}</a></li>${blogLi}
           <li><a class="${isActive(PATHS.about[lang])} inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition" href="${PATHS.about[lang]}">${L.navAbout}</a></li>
           <li class="ml-2 flex items-center gap-1 rounded-full border border-stone-800 bg-stone-900/60 p-1">
             ${langSwitcher}
@@ -1376,7 +1383,7 @@ function header(lang, currentPath, langSwitcher) {
               <li><a class="flex py-2 text-sm font-medium ${currentPath === PATHS.home[lang] ? 'text-white' : 'text-stone-300 hover:text-white'}" href="${PATHS.home[lang]}">${L.navStart}</a></li>
               ${mobileConsult}
               <li><a class="flex py-2 text-sm font-medium ${currentPath.startsWith(OVERVIEW_PATHS[lang]) ? 'text-white' : 'text-stone-300 hover:text-white'}" href="${OVERVIEW_PATHS[lang]}">${L.navServices}</a></li>
-              <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="${PATHS.projects[lang]}">${L.navProjects}</a></li>
+              <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="${PATHS.projects[lang]}">${L.navProjects}</a></li>${blogMobileLi}
               <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="${PATHS.about[lang]}">${L.navAbout}</a></li>
               <li class="mt-2 flex items-center gap-2 border-t border-stone-800 pt-3">
                 <span class="text-xs uppercase tracking-wider text-stone-500">${L.switchLanguage}:</span>
@@ -1418,19 +1425,27 @@ const GOOGLE_LOGO_SVG = `<svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" aria-
 
 function footer(lang) {
   const L = LABELS[lang];
+  const fl = (href, label, ext) => `<li><a class="text-stone-400 transition hover:text-amber-400" href="${href}"${ext ? ' target="_blank" rel="noopener noreferrer"' : ''}>${label}</a></li>`;
+  const navItems = [
+    fl(PATHS.home[lang], L.navStart),
+    BLOG_NAV_LANGS.includes(lang) ? fl(BLOG_PATHS[lang], L.navBlog) : '',
+    fl(PATHS.about[lang], L.navAbout),
+  ].filter(Boolean).join('\n          ');
+  const workItems = [
+    fl(PATHS.projects[lang], L.navProjects),
+    fl(OVERVIEW_PATHS[lang], L.navServices),
+    fl(BOOKING_PATHS[lang], L.navBooking),
+  ].join('\n          ');
   return `<footer class="relative border-t border-stone-800/60 mt-10">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="grid gap-10 py-12 md:grid-cols-12">
-      <div class="md:col-span-4">
+    <div class="flex flex-col items-start gap-10 py-12 md:flex-row">
+      <div class="md:shrink-0">
         <a class="inline-flex items-center gap-3" href="${PATHS.home[lang]}" aria-label="Teske Systemtechnik">
           <img src="/static/images/logo_whitemode.svg" class="h-12 w-12" alt="">
           <span class="font-aspekta text-lg font-bold uppercase tracking-[0.2em] text-stone-100">Teske<br>Systemtechnik</span>
         </a>
         <p class="mt-4 max-w-sm text-sm text-stone-400">${L.quality}</p>
-      </div>
-      <div class="md:col-span-2">
-        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">${L.headlineReview}</h3>
-        <a href="${GOOGLE_REVIEW_URL}" target="_blank" rel="noopener noreferrer" class="group block text-sm" aria-label="${L.googleReviewAria}">
+        <a href="${GOOGLE_REVIEW_URL}" target="_blank" rel="noopener noreferrer" class="group mt-6 inline-block text-sm" aria-label="${L.googleReviewAria}">
           <div class="flex items-center gap-2">
             ${GOOGLE_LOGO_SVG}
             <div class="flex gap-0.5 text-amber-400 transition group-hover:text-amber-300">${STAR_SVG.repeat(5)}</div>
@@ -1438,24 +1453,28 @@ function footer(lang) {
           <span class="mt-2 inline-block text-stone-400 transition group-hover:text-amber-400">${L.reviewCta}</span>
         </a>
       </div>
-      <div class="md:col-span-2">
+      <div class="flex flex-col gap-10 md:grow md:flex-row md:items-start md:justify-evenly">
+      <div>
         <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">${L.headlineNavigation}</h3>
         <ul class="space-y-2 text-sm">
-          <li><a class="text-stone-400 transition hover:text-amber-400" href="${PATHS.home[lang]}">${L.navStart}</a></li>
-          <li><a class="text-stone-400 transition hover:text-amber-400" href="${PATHS.projects[lang]}">${L.navProjects}</a></li>
-          <li><a class="text-stone-400 transition hover:text-amber-400" href="${OVERVIEW_PATHS[lang]}">${L.navServices}</a></li>
-          <li><a class="text-stone-400 transition hover:text-amber-400" href="${UPWORK_URL}" target="_blank" rel="noopener noreferrer">${L.consultationViaUpwork}</a></li>
-          <li><a class="text-stone-400 transition hover:text-amber-400" href="${PATHS.about[lang]}">${L.navAbout}</a></li>
+          ${navItems}
         </ul>
       </div>
-      <div class="md:col-span-2">
+      <div>
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">${L.headlineWork}</h3>
+        <ul class="space-y-2 text-sm">
+          ${workItems}
+        </ul>
+      </div>
+      <div>
         <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">${L.headlineLegal}</h3>
         <ul class="space-y-2 text-sm">
           <li><a class="text-stone-400 transition hover:text-amber-400" href="${PATHS.legal[lang]}">${L.legal}</a></li>
           <li><a class="text-stone-400 transition hover:text-amber-400" href="${PATHS.privacy[lang]}">${L.privacy}</a></li>
         </ul>
       </div>
-      <div class="md:col-span-2">
+      </div>
+      <div>
         <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">${L.headlineFollow}</h3>
         <ul class="grid w-max grid-cols-3 gap-3">
           <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white" href="https://pypi.org/user/JanTeske06/" target="_blank" rel="noopener noreferrer" aria-label="PyPI">${SOCIAL_SVGS.pypi}</a></li>
@@ -1491,7 +1510,7 @@ function scriptsFooter() {
   return `<script src="/static/js/vendors/alpinejs.min.js" defer></script>
 <script src="/static/js/vendors/aos.js?v=20260430a"></script>
 <script src="/static/js/vendors/swiper-bundle.min.js?v=20260430a"></script>
-<script src="/static/js/main.js?v=20260603b"></script>`;
+<script src="/static/js/main.js?v=20260605a"></script>`;
 }
 
 // Price-calculator UI labels + option factors (used by services with
@@ -1858,8 +1877,8 @@ function renderServicePage(service, lang) {
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260601d">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260603b">
+  <link rel="stylesheet" href="/static/style.css?v=20260605a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260605a">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="${i18n.title}, Teske Systemtechnik">
@@ -2000,8 +2019,8 @@ function renderOverviewPage(lang) {
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260601d">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260603b">
+  <link rel="stylesheet" href="/static/style.css?v=20260605a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260605a">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="${L.overviewTitle}, Teske Systemtechnik">
@@ -2180,8 +2199,8 @@ function renderInquiryPage(lang) {
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260601d">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260603b">
+  <link rel="stylesheet" href="/static/style.css?v=20260605a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260605a">
 </head>
 
 <body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
@@ -2596,8 +2615,8 @@ function renderBookingPage(lang) {
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260601d">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260603b">
+  <link rel="stylesheet" href="/static/style.css?v=20260605a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260605a">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="${B.title}, Teske Systemtechnik">

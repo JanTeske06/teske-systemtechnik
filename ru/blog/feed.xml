@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teske Systemtechnik · Блог</title>
+    <link>https://teske-systemtechnik.de/ru/blog/</link>
+    <atom:link href="https://teske-systemtechnik.de/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Новости, обновления и заметки от Teske Systemtechnik.</description>
+    <language>ru</language>
+    <item>
+      <title>Консультацию теперь можно забронировать онлайн</title>
+      <link>https://teske-systemtechnik.de/ru/blog/online-terminbuchung-live/</link>
+      <guid isPermaLink="true">https://teske-systemtechnik.de/ru/blog/online-terminbuchung-live/</guid>
+      <pubDate>Wed, 03 Jun 2026 07:00:00 GMT</pubDate>
+      <description>Выберите время, оплатите безопасно через Stripe и сразу получите ссылку на Google Meet по почте. Онлайн-запись уже работает.</description>
+    </item>
+    <item>
+      <title>Новый сайт запущен</title>
+      <link>https://teske-systemtechnik.de/ru/blog/website-launch/</link>
+      <guid isPermaLink="true">https://teske-systemtechnik.de/ru/blog/website-launch/</guid>
+      <pubDate>Fri, 02 Jan 2026 07:00:00 GMT</pubDate>
+      <description>teske-systemtechnik.de работает: проекты, услуги и понятный взгляд на то, как я работаю. Сделано на лёгком и быстром статическом стеке.</description>
+    </item>
+    <item>
+      <title>Основана Teske Systemtechnik</title>
+      <link>https://teske-systemtechnik.de/ru/blog/studio-gegruendet/</link>
+      <guid isPermaLink="true">https://teske-systemtechnik.de/ru/blog/studio-gegruendet/</guid>
+      <pubDate>Sat, 01 Nov 2025 07:00:00 GMT</pubDate>
+      <description>Отдельные фриланс-проекты превращаются в собственную студию автоматизации и разработки ПО на заказ.</description>
+    </item>
+  </channel>
+</rss>

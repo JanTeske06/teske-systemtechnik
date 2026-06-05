@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teske Systemtechnik · Blog</title>
+    <link>https://teske-systemtechnik.de/en/blog/</link>
+    <atom:link href="https://teske-systemtechnik.de/en/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>News, updates and insights from Teske Systemtechnik.</description>
+    <language>en</language>
+    <item>
+      <title>Book a consultation directly online</title>
+      <link>https://teske-systemtechnik.de/en/blog/online-terminbuchung-live/</link>
+      <guid isPermaLink="true">https://teske-systemtechnik.de/en/blog/online-terminbuchung-live/</guid>
+      <pubDate>Wed, 03 Jun 2026 07:00:00 GMT</pubDate>
+      <description>Pick a slot, pay securely via Stripe, get the Google Meet link by email right away. Online booking is now live.</description>
+    </item>
+    <item>
+      <title>The new website is live</title>
+      <link>https://teske-systemtechnik.de/en/blog/website-launch/</link>
+      <guid isPermaLink="true">https://teske-systemtechnik.de/en/blog/website-launch/</guid>
+      <pubDate>Fri, 02 Jan 2026 07:00:00 GMT</pubDate>
+      <description>teske-systemtechnik.de is live: projects, services and a clear look at how I work. Built on a lean, fast static setup.</description>
+    </item>
+    <item>
+      <title>Teske Systemtechnik is founded</title>
+      <link>https://teske-systemtechnik.de/en/blog/studio-gegruendet/</link>
+      <guid isPermaLink="true">https://teske-systemtechnik.de/en/blog/studio-gegruendet/</guid>
+      <pubDate>Sat, 01 Nov 2025 07:00:00 GMT</pubDate>
+      <description>Individual freelance projects become a dedicated studio for automation and custom software development.</description>
+    </item>
+  </channel>
+</rss>

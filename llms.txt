@@ -32,6 +32,14 @@
 - [Multi-Process Browser-Automation Framework (English)](https://teske-systemtechnik.de/en/projects/browser-automation-framework/): Same case study in English.
 - [Multi-Process Browser-Automation Framework (Russian)](https://teske-systemtechnik.de/ru/proekty/browser-automation-framework/): Same case study in Russian.
 
+## Blog
+
+News, product updates and engineering notes: new website features, projects and behind-the-scenes posts.
+
+- [Blog (German)](https://teske-systemtechnik.de/de/blog/): News and updates from Teske Systemtechnik (RSS: https://teske-systemtechnik.de/de/blog/feed.xml)
+- [Blog (English)](https://teske-systemtechnik.de/en/blog/): Same blog in English (RSS: https://teske-systemtechnik.de/en/blog/feed.xml)
+- [Блог (Russian)](https://teske-systemtechnik.de/ru/blog/): Same blog in Russian (RSS: https://teske-systemtechnik.de/ru/blog/feed.xml)
+
 ## Service / pricing pages
 
 Fixed-price service packages with starting prices. Every service links to its inquiry form on the home page (`?service=<slug>&min=<eur>#contact`) which pre-fills the project dropdown and budget. The home-page contact form replaces the standalone inquiry pages.

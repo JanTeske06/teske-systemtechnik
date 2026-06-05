@@ -68,6 +68,7 @@
    card markup from template strings that Tailwind must detect.   */
 @source "../../de/**/*.html";
 @source "../../en/**/*.html";
+@source "../../ru/**/*.html";
 @source "../../static/js/**/*.js";
 @source "../../404.html";
 @source "../../index.html";

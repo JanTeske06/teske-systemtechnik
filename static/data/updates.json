@@ -1,0 +1,80 @@
+{
+  "_comment": "Quelle der Wahrheit fuer den Blog. /<lang>/blog/ Index und Detailseiten werden von scripts/build-blog.mjs aus dieser Datei generiert. Neuen Post anlegen: (1) Eintrag hier ergaenzen (sortiert wird nach date), (2) static/blog/<slug>/cover.png optional + <lang>.md (Body) je Sprache anlegen, (3) npm run build-blog. category-Keys werden in build-blog.mjs (CATEGORY_LABELS) uebersetzt: feature | projekt | unternehmen | technik. Ein Post erscheint nur in Sprachen mit i18n.<code>-Block.",
+  "posts": [
+    {
+      "slug": "online-terminbuchung-live",
+      "date": "2026-06-03",
+      "category": "feature",
+      "featured": true,
+      "cover": "/static/blog/online-terminbuchung-live/cover.png",
+      "metrics": [
+        { "label": "30 Min", "value": "75 €" },
+        { "label": "60 Min", "value": "150 €" }
+      ],
+      "i18n": {
+        "de": {
+          "eyebrow": "Neu auf der Website",
+          "title": "Beratung jetzt direkt online buchen",
+          "summary": "Termin wählen, sicher per Stripe bezahlen, Google-Meet-Link sofort per E-Mail. Online-Terminbuchung ist ab sofort live.",
+          "cta": { "label": "Jetzt buchen", "href": "/de/termin/" }
+        },
+        "en": {
+          "eyebrow": "New on the website",
+          "title": "Book a consultation directly online",
+          "summary": "Pick a slot, pay securely via Stripe, get the Google Meet link by email right away. Online booking is now live.",
+          "cta": { "label": "Book now", "href": "/en/booking/" }
+        },
+        "ru": {
+          "eyebrow": "Новое на сайте",
+          "title": "Консультацию теперь можно забронировать онлайн",
+          "summary": "Выберите время, оплатите безопасно через Stripe и сразу получите ссылку на Google Meet по почте. Онлайн-запись уже работает.",
+          "cta": { "label": "Записаться", "href": "/ru/zapis/" }
+        }
+      }
+    },
+    {
+      "slug": "website-launch",
+      "date": "2026-01-02",
+      "category": "feature",
+      "i18n": {
+        "de": {
+          "eyebrow": "Launch",
+          "title": "Die neue Website ist online",
+          "summary": "teske-systemtechnik.de ist live: Projekte, Leistungen und ein klarer Blick darauf, wie ich arbeite. Aufgebaut auf einem schlanken, schnellen Static-Setup."
+        },
+        "en": {
+          "eyebrow": "Launch",
+          "title": "The new website is live",
+          "summary": "teske-systemtechnik.de is live: projects, services and a clear look at how I work. Built on a lean, fast static setup."
+        },
+        "ru": {
+          "eyebrow": "Запуск",
+          "title": "Новый сайт запущен",
+          "summary": "teske-systemtechnik.de работает: проекты, услуги и понятный взгляд на то, как я работаю. Сделано на лёгком и быстром статическом стеке."
+        }
+      }
+    },
+    {
+      "slug": "studio-gegruendet",
+      "date": "2025-11-01",
+      "category": "unternehmen",
+      "i18n": {
+        "de": {
+          "eyebrow": "Meilenstein",
+          "title": "Teske Systemtechnik ist gegründet",
+          "summary": "Aus einzelnen Freelance-Projekten wird ein eigenes Studio für Automatisierung und individuelle Softwareentwicklung."
+        },
+        "en": {
+          "eyebrow": "Milestone",
+          "title": "Teske Systemtechnik is founded",
+          "summary": "Individual freelance projects become a dedicated studio for automation and custom software development."
+        },
+        "ru": {
+          "eyebrow": "Веха",
+          "title": "Основана Teske Systemtechnik",
+          "summary": "Отдельные фриланс-проекты превращаются в собственную студию автоматизации и разработки ПО на заказ."
+        }
+      }
+    }
+  ]
+}

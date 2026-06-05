@@ -40,6 +40,7 @@ anleitung.md
 rework.md
 CHANGELOG.md222
 seo-plan.md
+blog-anleitung.md
 
 ## Throwaway one-shot scripts (prefix convention) — never commit
 _*.py
@@ -47,6 +48,9 @@ _*.mjs
 
 ## Booking backend — deployed separately to Cloud Run, not served by GitHub Pages
 booking-backend/
+
+## Google Business Profile updates: local-only, one folder per update (DATE-PURPOSE) with update.txt + thumbnail
+google-updates/
 
 ## Local working files for external directory listings (wlw, etc.)
 bulk-import-excel-template-*.xlsx
