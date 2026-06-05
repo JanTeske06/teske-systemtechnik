@@ -21,6 +21,13 @@
       <description>teske-systemtechnik.de ist live: Projekte, Leistungen und ein klarer Blick darauf, wie ich arbeite. Aufgebaut auf einem schlanken, schnellen Static-Setup.</description>
     </item>
     <item>
+      <title>Math Engine: ein eval()-freier Ausdrucks-Interpreter für Python</title>
+      <link>https://teske-systemtechnik.de/de/blog/math-engine/</link>
+      <guid isPermaLink="true">https://teske-systemtechnik.de/de/blog/math-engine/</guid>
+      <pubDate>Sun, 23 Nov 2025 07:00:00 GMT</pubDate>
+      <description>Eine von Grund auf gebaute Auswertungs-Engine für mathematische Ausdrücke, ganz ohne Pythons eval(): Tokenizer, Recursive-Descent-Parser, exakte Decimal-Arithmetik und zeichengenaue Fehler. Jetzt live auf PyPI, mit 399 Tests und 90 % Coverage.</description>
+    </item>
+    <item>
       <title>Teske Systemtechnik ist gegründet</title>
       <link>https://teske-systemtechnik.de/de/blog/studio-gegruendet/</link>
       <guid isPermaLink="true">https://teske-systemtechnik.de/de/blog/studio-gegruendet/</guid>

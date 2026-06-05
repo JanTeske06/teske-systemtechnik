@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Math Engine, eval-free expression interpreter for Python">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c0a09"/>
+      <stop offset="1" stop-color="#1c1917"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.85" cy="0.9" r="0.7">
+      <stop offset="0" stop-color="#f97316" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.05" cy="0.0" r="0.5">
+      <stop offset="0" stop-color="#fcd34d" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#fcd34d" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse">
+      <path d="M38 0H0V38" fill="none" stroke="#78716c" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <rect width="1200" height="750" fill="url(#grid)"/>
+  <rect width="1200" height="750" fill="url(#glow)"/>
+  <rect width="1200" height="750" fill="url(#glow2)"/>
+
+  <!-- eyebrow -->
+  <text x="90" y="106" font-family="ui-monospace, 'SFMono-Regular', Menlo, monospace" font-size="24" letter-spacing="5" fill="#5e7a47">OPEN SOURCE · PYPI · MIT</text>
+
+  <!-- title -->
+  <text x="86" y="214" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="112" font-weight="700" fill="#fafaf9" letter-spacing="-2">Math Engine</text>
+
+  <!-- subtitle -->
+  <text x="90" y="272" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="33" fill="#d6d3d1">Sicherer, eval()-freier Ausdrucks-Interpreter für Python</text>
+
+  <!-- terminal card -->
+  <g transform="translate(88 308)">
+    <rect width="1024" height="292" rx="20" fill="#0a0908" stroke="#292524" stroke-width="1.5"/>
+    <circle cx="42" cy="44" r="8" fill="#44403c"/>
+    <circle cx="70" cy="44" r="8" fill="#44403c"/>
+    <circle cx="98" cy="44" r="8" fill="#44403c"/>
+    <text x="982" y="51" font-family="ui-monospace, monospace" font-size="19" fill="#57534e" text-anchor="end">math-engine</text>
+
+    <g font-family="ui-monospace, 'SFMono-Regular', Menlo, monospace" font-size="27">
+      <!-- binary / programmer's calculator -->
+      <text x="44" y="116"><tspan fill="#78716c">&gt;&gt;&gt;</tspan> <tspan fill="#e7e5e4">math_engine.evaluate(</tspan><tspan fill="#fcd34d">"0b1010 * 3"</tspan><tspan fill="#e7e5e4">)</tspan>  <tspan fill="#57534e">→</tspan>  <tspan fill="#6fda44">30</tspan></text>
+      <!-- linear equation solver -->
+      <text x="44" y="164"><tspan fill="#78716c">&gt;&gt;&gt;</tspan> <tspan fill="#e7e5e4">math_engine.evaluate(</tspan><tspan fill="#fcd34d">"2x + 5 = 13"</tspan><tspan fill="#e7e5e4">)</tspan>  <tspan fill="#57534e">→</tspan>  <tspan fill="#6fda44">x = 4</tspan></text>
+      <!-- char-precise error -->
+      <text x="44" y="224"><tspan fill="#78716c">&gt;&gt;&gt;</tspan> <tspan fill="#e7e5e4">math_engine.evaluate(</tspan><tspan fill="#fcd34d">"8 + * 3"</tspan><tspan fill="#e7e5e4">)</tspan></text>
+      <text x="44" y="258"><tspan fill="#0a0908">&gt;&gt;&gt; math_engine.evaluate("8 + </tspan><tspan fill="#f97316" font-weight="700">^</tspan> <tspan fill="#f87171">value expected · 3001</tspan></text>
+    </g>
+  </g>
+
+  <!-- metric pills (horizontal row) -->
+  <g font-family="ui-monospace, 'SFMono-Regular', Menlo, monospace" font-weight="600">
+    <g transform="translate(88 624)">
+      <rect width="210" height="64" rx="16" fill="#f97316" fill-opacity="0.10" stroke="#f97316" stroke-opacity="0.30"/>
+      <text x="30" y="42" font-size="34" fill="#fcd34d">399</text>
+      <text x="104" y="40" font-size="18" fill="#a8a29e">TESTS</text>
+    </g>
+    <g transform="translate(318 624)">
+      <rect width="250" height="64" rx="16" fill="#f97316" fill-opacity="0.10" stroke="#f97316" stroke-opacity="0.30"/>
+      <text x="30" y="42" font-size="34" fill="#fcd34d">90 %</text>
+      <text x="116" y="40" font-size="18" fill="#a8a29e">COVERAGE</text>
+    </g>
+    <g transform="translate(588 624)">
+      <rect width="210" height="64" rx="16" fill="#5e7a47" fill-opacity="0.16" stroke="#5e7a47" stroke-opacity="0.5"/>
+      <text x="30" y="42" font-size="34" fill="#a3c585">0×</text>
+      <text x="86" y="40" font-size="18" fill="#8ca372">EVAL()</text>
+    </g>
+  </g>
+
+  <!-- footer brand -->
+  <text x="1112" y="662" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" letter-spacing="3" fill="#78716c" text-anchor="end">TESKE SYSTEMTECHNIK</text>
+</svg>

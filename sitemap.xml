@@ -290,6 +290,35 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/browser-automation-framework/"/>
   </url>
 
+  <!-- Project: Math Engine (eval-free expression interpreter, open source) -->
+  <url>
+    <loc>https://teske-systemtechnik.de/de/projekte/math-engine/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/math-engine/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/math-engine/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/proekty/math-engine/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/math-engine/"/>
+  </url>
+  <url>
+    <loc>https://teske-systemtechnik.de/en/projects/math-engine/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/math-engine/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/math-engine/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/proekty/math-engine/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/math-engine/"/>
+  </url>
+  <url>
+    <loc>https://teske-systemtechnik.de/ru/proekty/math-engine/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/math-engine/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/math-engine/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/proekty/math-engine/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/math-engine/"/>
+  </url>
+
 
   <!-- Service overview pages -->
   <url>
@@ -561,6 +590,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://teske-systemtechnik.de/de/blog/math-engine/</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://teske-systemtechnik.de/de/blog/studio-gegruendet/</loc>
     <lastmod>2025-11-01</lastmod>
     <priority>0.6</priority>
@@ -581,6 +615,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://teske-systemtechnik.de/en/blog/math-engine/</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://teske-systemtechnik.de/en/blog/studio-gegruendet/</loc>
     <lastmod>2025-11-01</lastmod>
     <priority>0.6</priority>
@@ -598,6 +637,11 @@
   <url>
     <loc>https://teske-systemtechnik.de/ru/blog/website-launch/</loc>
     <lastmod>2026-01-02</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://teske-systemtechnik.de/ru/blog/math-engine/</loc>
+    <lastmod>2025-11-23</lastmod>
     <priority>0.6</priority>
   </url>
   <url>

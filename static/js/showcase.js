@@ -29,6 +29,10 @@
         );
       })
       .join('');
+    const badge = project.badge
+      ? '<span class="rounded-full border px-2 py-0.5 text-[11px] font-medium" style="border-color:rgba(94,122,71,0.55);background-color:rgba(94,122,71,0.16);color:#c3d6ad">' +
+        helpers.escapeHtml(project.badge) + '</span>'
+      : '';
 
     return (
       '<div class="swiper-slide h-auto">' +
@@ -42,6 +46,7 @@
       '</div>' +
       '<div class="flex flex-1 flex-col p-4 md:p-5">' +
       '<div class="mb-3 flex flex-wrap gap-1.5">' +
+      badge +
       techHtml +
       '</div>' +
       '<h3 class="font-aspekta text-lg font-bold text-white md:text-2xl">' +

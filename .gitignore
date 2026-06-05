@@ -49,6 +49,7 @@ rezensionen.txt
 ## Throwaway one-shot scripts (prefix convention) — never commit
 _*.py
 _*.mjs
+scripts/scratch/
 
 ## Booking backend — deployed separately to Cloud Run, not served by GitHub Pages
 booking-backend/

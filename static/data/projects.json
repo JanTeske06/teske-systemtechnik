@@ -155,6 +155,35 @@
           "summary": "Python-фреймворк на 17k LOC для параллельных отказоустойчивых browser-воркфлоу — race-safe координация воркеров, cross-process crash-bridge и полный operator-UX через Streamlit."
         }
       }
+    },
+    {
+      "slug": "math-engine",
+      "featured": true,
+      "showcase_order": 6,
+      "catalog_order": 6,
+      "date": "2025-11-23",
+      "cover": "/static/projects/math-engine/images/cover.svg",
+      "repo": "https://github.com/JanTeske06/math_engine",
+      "pypi": "https://pypi.org/project/math-engine/",
+      "badge": "Open Source",
+      "tech": [
+        "AST",
+        "Recursive-Descent-Parser"
+      ],
+      "i18n": {
+        "de": {
+          "title": "Math Engine",
+          "summary": "Ein von Grund auf gebauter, eval()-freier Ausdrucks-Interpreter für Python: Tokenizer, Recursive-Descent-Parser, AST und exakte Decimal-Arithmetik. Live auf PyPI, 399 Tests, 90 % Coverage über fünf Python-Versionen."
+        },
+        "en": {
+          "title": "Math Engine",
+          "summary": "A from-scratch, eval()-free expression interpreter for Python: tokenizer, recursive-descent parser, AST and exact Decimal arithmetic. Live on PyPI, 399 tests, 90 % coverage across five Python versions."
+        },
+        "ru": {
+          "title": "Math Engine",
+          "summary": "Созданный с нуля интерпретатор выражений для Python без eval(): токенизатор, парсер рекурсивного спуска, AST и точная Decimal-арифметика. Опубликован на PyPI, 399 тестов, 90 % покрытие на пяти версиях Python."
+        }
+      }
     }
   ]
 }

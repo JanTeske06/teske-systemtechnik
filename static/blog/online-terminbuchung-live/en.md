@@ -17,4 +17,6 @@ Both prices include VAT.
 
 A consultation is the right entry point when you have an automation or software project in mind and want a sound, honest assessment: what is feasible, roughly what it costs, and what a sensible first step looks like. If you then book a project, the price of the call is credited against it.
 
+This update is also on our [Google Business profile](https://share.google/HO7dfWWxz6Bmo12Mm).
+
 [Book an appointment now](/en/booking/)

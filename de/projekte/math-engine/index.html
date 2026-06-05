@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <script>
+    // Maintenance guard: if /maintenance.flag contains "on", redirect to /maintenance.html.
+    (function () {
+      if (location.pathname.endsWith('/maintenance.html')) return;
+      fetch('/maintenance.flag', { cache: 'no-store' })
+        .then(function (r) { return r.text(); })
+        .then(function (t) { if (t.trim() === 'on') location.replace('/maintenance.html'); })
+        .catch(function () {});
+    })();
+  </script>
+  <meta name="robots" content="index,follow">
+
+  <title>Math Engine, eval()-freier Ausdrucks-Interpreter für Python · Teske Systemtechnik</title>
+
+  <meta name="description" content="Ein von Grund auf gebauter, eval()-freier Ausdrucks-Interpreter für Python: Tokenizer, Recursive-Descent-Parser, AST und exakte Decimal-Arithmetik. Live auf PyPI, 399 Tests, 90 % Coverage.">
+
+  <link rel="canonical" href="https://teske-systemtechnik.de/de/projekte/math-engine/">
+
+  <link rel="alternate" hreflang="de" href="https://teske-systemtechnik.de/de/projekte/math-engine/">
+  <link rel="alternate" hreflang="en" href="https://teske-systemtechnik.de/en/projects/math-engine/">
+  <link rel="alternate" hreflang="ru" href="https://teske-systemtechnik.de/ru/proekty/math-engine/">
+  <link rel="alternate" hreflang="x-default" href="https://teske-systemtechnik.de/de/projekte/math-engine/">
+
+  <link rel="icon" type="image/svg+xml" href="/static/images/logo_favicon.svg">
+
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-650.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
+  <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
+
+  <link rel="stylesheet" href="/static/style.css?v=20260605d">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
+
+  <meta property="og:site_name" content="Teske Systemtechnik">
+  <meta property="og:title" content="Math Engine, eval()-freier Ausdrucks-Interpreter, Case Study">
+  <meta property="og:description" content="Ein von Grund auf gebauter, eval()-freier Ausdrucks-Interpreter für Python: Tokenizer, Recursive-Descent-Parser, AST und exakte Decimal-Arithmetik. Live auf PyPI, 399 Tests, 90 % Coverage.">
+  <meta property="og:url" content="https://teske-systemtechnik.de/de/projekte/math-engine/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://teske-systemtechnik.de/static/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Teske Systemtechnik - Python-Automation, API-Entwicklung, maßgeschneiderte Software">
+  <meta name="twitter:image" content="https://teske-systemtechnik.de/static/images/og-default.png">
+  <meta name="twitter:image:alt" content="Teske Systemtechnik - Python-Automation, API-Entwicklung, maßgeschneiderte Software">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://teske-systemtechnik.de/#organization",
+      "name": "Teske Systemtechnik",
+      "alternateName": "Teske Systemtechnik Inhaber: Jan Teske",
+      "url": "https://teske-systemtechnik.de",
+      "logo": "https://teske-systemtechnik.de/static/images/logo_favicon.svg",
+      "image": "https://teske-systemtechnik.de/static/images/og-default.png",
+      "description": "Freelance Python automation, API development and custom software engineering from Germany.",
+      "founder": {
+        "@id": "https://teske-systemtechnik.de/#jan-teske"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Elschers Kamp 13",
+        "addressLocality": "Melle",
+        "postalCode": "49324",
+        "addressCountry": "DE"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "jt@teske-systemtechnik.de",
+        "telephone": "+49-1522-5166058",
+        "availableLanguage": [
+          "de",
+          "en"
+        , "ru"]
+      },
+      "vatID": "DE459634758",
+      "priceRange": "€75 - €8500+",
+      "sameAs": [
+        "https://github.com/JanTeske06",
+        "https://pypi.org/user/JanTeske06/",
+        "https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c"
+      ],
+      "knowsAbout": [
+        "Python",
+        "API Development",
+        "Workflow Automation",
+        "Data Pipelines",
+        "Web Scraping",
+        "FastAPI",
+        "Reverse Engineering",
+        "Software Engineering",
+        "Parser Development",
+        "Open Source"
+      ],
+      "areaServed": "Worldwide"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://teske-systemtechnik.de/#website-de",
+      "url": "https://teske-systemtechnik.de/de/",
+      "name": "Teske Systemtechnik",
+      "inLanguage": "de",
+      "publisher": {
+        "@id": "https://teske-systemtechnik.de/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://teske-systemtechnik.de/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Projekte",
+          "item": "https://teske-systemtechnik.de/de/projekte/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Math Engine"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://teske-systemtechnik.de/de/projekte/math-engine/#creativework",
+      "name": "Math Engine",
+      "headline": "Math Engine, eval()-freier Ausdrucks-Interpreter für Python",
+      "description": "Ein von Grund auf gebauter, eval()-freier Ausdrucks-Interpreter für Python: Tokenizer, Recursive-Descent-Parser, AST und exakte Decimal-Arithmetik. Live auf PyPI, 399 Tests, 90 % Coverage.",
+      "author": {
+        "@id": "https://teske-systemtechnik.de/#jan-teske"
+      },
+      "creator": {
+        "@id": "https://teske-systemtechnik.de/#jan-teske"
+      },
+      "publisher": {
+        "@id": "https://teske-systemtechnik.de/#organization"
+      },
+      "inLanguage": "de",
+      "datePublished": "2025-11-23",
+      "codeRepository": "https://github.com/JanTeske06/math_engine",
+      "programmingLanguage": "Python",
+      "license": "https://opensource.org/licenses/MIT",
+      "image": "https://teske-systemtechnik.de/static/projects/math-engine/images/cover.svg",
+      "url": "https://teske-systemtechnik.de/de/projekte/math-engine/",
+      "about": [
+        "Python",
+        "Recursive-Descent-Parser",
+        "AST",
+        "decimal.Decimal",
+        "pytest",
+        "PyPI",
+        "Expression Interpreter",
+        "Open Source"
+      ],
+      "keywords": "Python, Recursive-Descent-Parser, AST, decimal.Decimal, pytest, PyPI, Expression Interpreter, eval-free, Open Source"
+    }
+  ]
+}
+  </script>
+  <script src="/static/js/lightbox.js?v=20260529a" defer></script>
+</head>
+
+<body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
+
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-orange-500 focus:px-4 focus:py-2 focus:text-white">
+  Zum Inhalt springen
+</a>
+
+<div class="flex min-h-screen flex-col">
+
+
+  <header id="site-header" class="fixed top-0 z-30 w-full">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="flex h-16 items-center justify-between md:h-20">
+
+        <div class="mr-4 shrink-0">
+          <a class="inline-flex items-center gap-3" href="/de/" aria-label="Teske Systemtechnik">
+            <img class="max-w-none" src="/static/images/logo_whitemode.svg" width="40" height="40" alt="">
+            <span class="font-aspekta text-[17px] font-bold uppercase tracking-[0.1em] text-stone-100 leading-[20px]">Teske<br>Systemtechnik</span>
+          </a>
+        </div>
+
+
+        <nav class="hidden md:flex md:grow" aria-label="Primary">
+          <ul class="flex grow flex-wrap items-center justify-end gap-1 pl-8">
+            <li>
+              <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
+                 href="/de/"
+                 >
+                Start
+              </a>
+            </li>
+            <li class="relative" x-data="{ open: false }" @mouseenter="open = true" @click.outside="open = false" @keydown.escape="open = false">
+            <button type="button" class="text-stone-300 hover:text-white inline-flex min-w-[6rem] cursor-pointer items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition" @click="open = !open" :aria-expanded="open" aria-haspopup="true">Beratung<svg class="h-3 w-3 transition duration-200" :class="open && 'rotate-180'" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></button>
+            <div x-show="open" x-transition.opacity x-cloak class="absolute right-0 top-full z-40 w-64 pt-2">
+              <div class="overflow-hidden rounded-2xl border border-stone-800 bg-stone-900/95 p-1.5 shadow-xl backdrop-blur-xl">
+                <a class="flex cursor-pointer items-start gap-3 rounded-xl px-3 py-2.5 transition hover:bg-stone-700/70" href="/de/termin/"><span class="mt-0.5 text-orange-400"><svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><span><span class="block text-sm font-medium text-stone-100">Auf dieser Website</span><span class="block text-xs text-stone-400">Termin online buchen</span></span></a>
+                <a class="flex cursor-pointer items-start gap-3 rounded-xl px-3 py-2.5 transition hover:bg-stone-700/70" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer"><span class="mt-0.5"><svg class="h-5 w-5 shrink-0 fill-[#14a800]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg></span><span><span class="block text-sm font-medium text-stone-100">Über Upwork</span><span class="block text-xs text-stone-400">Beratung &amp; Projekte</span></span></a>
+              </div>
+            </div>
+          </li>
+            <li>
+              <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
+                 href="/de/leistungen/">
+                Leistungen
+              </a>
+            </li>
+            <li>
+              <a class="text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
+                 href="/de/projekte/"
+                 aria-current="page">
+                Projekte
+              </a>
+            </li>
+            <li>
+              <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
+                 href="/de/blog/">
+                Blog
+              </a>
+            </li>
+
+
+            <li>
+              <a class="text-stone-300 hover:text-white inline-flex min-w-[6rem] items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition"
+                 href="/de/about/"
+                 >
+                Über uns
+              </a>
+            </li>
+            <li class="ml-2 flex items-center gap-1 rounded-full border border-stone-800 bg-stone-900/60 p-1">
+
+              <a class="bg-orange-500 text-white shadow rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition"
+                 href="#"
+                 aria-current="true"
+                 aria-label="Sprache wechseln: DE">
+                DE
+              </a>
+
+              <a class="text-stone-400 hover:text-white rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition"
+                 href="/en/projects/math-engine/"
+
+                 aria-label="Sprache wechseln: EN">
+                EN
+              </a>
+
+
+              <a class="text-stone-400 hover:text-white rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition"
+                 href="/ru/proekty/math-engine/"
+                 aria-label="Sprache wechseln: RU">
+                RU
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+
+        <div class="ml-4 flex items-center md:hidden" x-data="{ expanded: false, ber: false, h: 0, remeasure() { this.$nextTick(() => { this.h = this.$refs.mobileNav.scrollHeight }) } }">
+          <button
+            class="group inline-flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900/60 text-stone-300 transition hover:text-white"
+            aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded; ber = false; remeasure()">
+            <span class="sr-only">Menu</span>
+            <svg class="pointer-events-none h-4 w-4 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <rect class="origin-center -translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]" y="7" width="16" height="2" rx="1"></rect>
+              <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45" y="7" width="16" height="2" rx="1"></rect>
+              <rect class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]" y="7" width="16" height="2" rx="1"></rect>
+            </svg>
+          </button>
+
+          <template x-teleport="body">
+            <nav id="mobile-nav" aria-label="Mobile"
+                 class="fixed top-16 inset-x-0 z-50 overflow-hidden px-4 transition-all duration-300 ease-out sm:px-6"
+                 x-ref="mobileNav"
+                 :style="expanded ? 'max-height: ' + h + 'px; opacity: 1; transform: translateY(0)' : 'max-height: 0; opacity: 0; transform: translateY(-8px)'"
+                 @click.outside="expanded = false; ber = false" @keydown.escape.window="expanded = false; ber = false" x-cloak>
+              <ul class="rounded-2xl border border-stone-800 bg-stone-900/90 px-4 py-3 shadow-xl backdrop-blur-xl">
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/">Start</a></li>
+                <li class="mt-1">
+                <button type="button" @click="ber = !ber; remeasure()" :aria-expanded="ber" class="flex w-full items-center justify-between gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white"><span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-orange-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Beratung</span><svg class="h-4 w-4 shrink-0 text-stone-500 transition duration-200" :class="ber && 'rotate-180'" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></button>
+                <div x-show="ber" class="mt-1 flex flex-col border-l border-stone-800 pl-3">
+                  <a class="flex items-center gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/termin/"><img src="/static/images/logo_whitemode.svg" width="16" height="16" alt="" class="h-4 w-4 shrink-0">Auf dieser Website</a>
+                  <a class="flex items-center gap-2 py-2 text-sm font-medium text-stone-300 hover:text-white" href="https://www.upwork.com/services/product/development-it-jan-1998498914122187359?ref=project_share" target="_blank" rel="noopener noreferrer"><svg class="h-3.5 w-3.5 fill-[#14a800]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg>Über Upwork</a>
+                  <button type="button" @click="ber = false; remeasure()" class="flex items-center gap-2 py-2 text-left text-sm font-medium text-stone-500 hover:text-white"><svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd"/></svg>Zurück</button>
+                </div>
+              </li>
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/leistungen/">Leistungen</a></li>
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/projekte/">Projekte</a></li>
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/blog/">Blog</a></li>
+                <li><a class="flex py-2 text-sm font-medium text-stone-300 hover:text-white" href="/de/about/">Über uns</a></li>
+                <li class="mt-2 flex items-center gap-2 border-t border-stone-800 pt-3">
+                  <span class="text-xs uppercase tracking-wider text-stone-500">Sprache wechseln:</span>
+
+                  <a class="bg-orange-500 text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition"
+                     href="#">
+                    DE
+                  </a>
+
+                  <a class="text-stone-400 hover:text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition"
+                     href="/en/projects/math-engine/">
+                    EN
+                  </a>
+
+
+                  <a class="text-stone-400 hover:text-white rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition"
+                     href="/ru/proekty/math-engine/">
+                    RU
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </template>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <main id="main-content" class="grow">
+
+<article>
+
+  <header class="relative isolate pt-32 pb-12 md:pt-40">
+    <div class="relative mx-auto max-w-5xl px-4 sm:px-6" data-aos="fade-up">
+      <a href="/de/projekte/"
+         class="mb-6 inline-flex items-center gap-2 text-sm font-medium text-stone-400 transition hover:text-amber-300">
+        ← Zurück zur Übersicht
+      </a>
+
+      <div class="max-w-3xl">
+
+        <div class="mb-4 flex flex-wrap gap-2">
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Recursive-Descent-Parser</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">AST</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">pytest</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">PyPI</span>
+          <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Open Source</span>
+        </div>
+
+        <h1 class="font-aspekta text-4xl font-bold leading-tight text-white md:text-5xl">Math Engine, eval()-freier Ausdrucks-Interpreter für Python</h1>
+        <p class="mt-4 text-lg text-stone-300">Eine von Grund auf gebaute, sichere Auswertungs-Engine für mathematische Ausdrücke: Tokenizer, Recursive-Descent-Parser, AST, linearer Gleichungslöser und typsicheres Ausgabesystem, ganz ohne Pythons eval(). Live auf PyPI, 399 Tests, 90 % Coverage, grün über fünf Python-Versionen.</p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
+          <a href="https://badge.fury.io/py/math-engine" target="_blank" rel="noopener noreferrer" aria-label="PyPI Version"><img src="https://badge.fury.io/py/math-engine.svg" alt="PyPI version" class="h-6" loading="lazy"></a>
+          <a href="https://pypi.org/project/math-engine/" target="_blank" rel="noopener noreferrer" aria-label="Unterstützte Python-Versionen"><img src="https://img.shields.io/pypi/pyversions/math-engine.svg" alt="Python Versions" class="h-6" loading="lazy"></a>
+          <a href="https://codecov.io/gh/JanTeske06/math_engine" target="_blank" rel="noopener noreferrer" aria-label="Codecov Coverage"><img src="https://codecov.io/gh/JanTeske06/math_engine/graph/badge.svg" alt="codecov" class="h-6" loading="lazy"></a>
+          <a href="https://pepy.tech/projects/math-engine" target="_blank" rel="noopener noreferrer" aria-label="PyPI Downloads"><img src="https://static.pepy.tech/personalized-badge/math-engine?period=total&units=NONE&left_color=GREY&right_color=BLACK&left_text=downloads" alt="PyPI Downloads" class="h-6" loading="lazy"></a>
+        </div>
+      </div>
+
+      <div class="mt-10 overflow-hidden rounded-3xl border border-stone-800 transition-colors hover:border-orange-500/60">
+        <a href="/static/projects/math-engine/images/cover.svg" data-lightbox
+           aria-label="Cover in voller Größe ansehen" title="Cover in voller Größe ansehen"
+           class="group block cursor-zoom-in">
+          <img src="/static/projects/math-engine/images/cover.svg" alt="Math Engine, eval()-freier Ausdrucks-Interpreter für Python" class="block w-full transition group-hover:opacity-90">
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="relative pb-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6">
+      <div class="grid gap-12 lg:grid-cols-12">
+
+        <aside class="lg:col-span-3">
+          <div class="sticky top-16 space-y-5 rounded-2xl border border-stone-800 bg-stone-900/60 p-6" style="top: 6rem">
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Projekt</p>
+              <p class="mt-1 text-sm text-stone-200">Open-Source · Eigenentwicklung</p>
+            </div>
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Aktuelle Version</p>
+              <p class="mt-1 text-sm text-stone-200">v0.6.7 · live auf PyPI</p>
+            </div>
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Tests &amp; Coverage</p>
+              <p class="mt-1 text-sm text-stone-200">399 Tests · 90 % Coverage · 0 × eval()</p>
+            </div>
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Umfang</p>
+              <p class="mt-1 text-sm text-stone-200">rund 4.200 LOC Code + 2.400 LOC Tests</p>
+            </div>
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Technologie</p>
+              <ul class="mt-2 flex flex-wrap gap-1.5">
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">Recursive-Descent-Parser</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">AST</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">pytest</li>
+                <li class="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[11px] text-stone-300">GitHub Actions</li>
+              </ul>
+            </div>
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Zeitraum &amp; Lizenz</p>
+              <p class="mt-1 text-sm text-stone-200">Nov 2025 – Apr 2026 · MIT</p>
+            </div>
+
+            <div>
+              <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Plattform</p>
+              <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+                <a href="https://pypi.org/project/math-engine/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-medium text-amber-400 transition hover:text-amber-300">
+                  PyPI
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+                </a>
+                <a href="https://github.com/JanTeske06/math_engine" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-medium text-amber-400 transition hover:text-amber-300">
+                  GitHub
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </aside>
+
+        <div class="lg:col-span-9">
+          <div class="prose prose-invert max-w-none prose-headings:font-aspekta prose-headings:text-white prose-a:text-amber-400 hover:prose-a:text-amber-300 prose-strong:text-white prose-code:text-amber-200 prose-img:rounded-2xl prose-img:border prose-img:border-stone-800">
+
+            <h2 id="die-herausforderung">Die Herausforderung</h2>
+            <p>Der naheliegende Weg, in Python einen Ausdruck wie <code>3 + 4 * 2</code> auszuwerten, ist eine einzige Zeile: <code>eval("3 + 4 * 2")</code>. Genau diese Zeile ist das Problem. <code>eval()</code> führt beliebigen Python-Code aus, eine als Zahleneingabe getarnte Zeichenkette wie <code>__import__('os').system('rm -rf …')</code> wird klaglos ausgeführt. Für jede Anwendung, die Ausdrücke aus einer Datei, einem Formularfeld, einer API oder einem Konfigurations-String entgegennimmt, ist <code>eval()</code> damit ein direkter Code-Execution-Vektor, kein Taschenrechner.</p>
+            <p>Der zweite, leisere Defekt ist Korrektheit. <code>eval()</code> und Pythons <code>float</code> rechnen binär: <code>0.1 + 0.2</code> ergibt <code>0.30000000000000004</code>, <code>1/3</code> ist abgeschnitten, große Ganzzahlen kippen in wissenschaftliche Notation. Für einen Taschenrechner, eine Finanz-Formel oder einen Lehrkontext ist das nicht „fast richtig", sondern falsch.</p>
+            <p>Der dritte Defekt ist Diagnostik. Wer <code>eval()</code> einen kaputten Ausdruck gibt, bekommt einen Python-Traceback an einer internen Zeilennummer, nicht die Stelle im Eingabe-String, an der das Problem sitzt. Für ein Tool, das Endnutzer-Eingaben verarbeitet, ist das unbrauchbar.</p>
+            <p>Die Aufgabe also: eine vollständige Auswertungs-Engine von Grund auf, die <strong>(1) niemals fremden Code ausführt, (2) exakt statt binär-näherungsweise rechnet, (3) jeden Fehler zeichengenau lokalisiert</strong>, und (4) das alles in Bibliotheks-Qualität, getestet, dokumentiert, versioniert und auf PyPI installierbar. Nicht ein Wochenend-Parser, sondern eine Engine mit der Disziplin eines kleinen Compilers.</p>
+
+            <h2 id="die-umsetzung">Die Umsetzung</h2>
+
+            <h3>eval()-frei per Konstruktion</h3>
+            <p>Die gesamte Bibliothek ruft an keiner Stelle Pythons <code>eval()</code>, <code>exec()</code> oder <code>compile()</code> auf, das ist kein nachträglicher Filter, sondern die Architektur selbst. Eingabe-Strings durchlaufen eine geschlossene Pipeline (Input → Tokenizer → Parser → Evaluator/Solver → Formatter → Output-Converter), deren Alphabet ein endliches Set aus Zahlen, Operatoren, Klammern und einer Whitelist von Funktionsnamen ist. Ein angreifergesteuerter String kann im schlimmsten Fall einen typisierten <code>MathError</code> auslösen, niemals Code-Ausführung. Selbst die einzige Stelle, die eine vom Nutzer gelieferte Datenstruktur parst, nutzt das sichere <code>ast.literal_eval</code>, das ausschließlich Literale akzeptiert.</p>
+
+            <h3>Recursive-Descent-Parser mit 10-Ebenen-Präzedenzkette</h3>
+            <p>Operator-Präzedenz wird nicht per Regex oder Shunting-Yard-Tabelle hineingehackt, sondern strukturell als zehn ineinander geschachtelte Parser-Closures kodiert, jede mit genau einer Präzedenzebene: von <code>parse_gleichung</code> (=) über bitweise Operatoren, Schiebeoperationen, Summe und Term bis zu <code>parse_power</code> (**) und <code>parse_factor</code>. Links- vs. Rechtsassoziativität fällt aus der Struktur: wer in einer Schleife konsumiert, ist linksassoziativ (<code>a - b - c = (a - b) - c</code>); <code>parse_power</code> rekursiert nach rechts und macht <code>**</code> korrekt rechtsassoziativ. Eine bewusste Entscheidung: <code>^</code> ist Bitwise XOR, nicht Potenz, exakt wie in C und Python.</p>
+
+            <h3>Decimal-Präzision mit dynamischem Scaling</h3>
+            <p>Jede Zahl ist vom Tokenizer bis zur Ausgabe ein <code>decimal.Decimal</code>, nie ein <code>float</code>, deshalb ist <code>0.1 + 0.2</code> exakt <code>0.3</code>. Die Präzision des Decimal-Kontexts wird pro Berechnung neu bestimmt (zwischen 100 und 10.000 Stellen, je nach Eingabe), dazu eine harte Eingabe-Obergrenze von 20.000 Stellen. Der Sinn: ein langes Ergebnis wird nie still abgeschnitten, ein kurzes verbraucht nie unnötig Speicher. Genau die Klasse Korrektheit, die float-basierte Rechner hier leise verlieren.</p>
+
+            <h3>Zeichen-genaue Fehlerpositionierung</h3>
+            <p>Parallel zur Token-Liste führt der Tokenizer eine Span-Liste: zu jedem Token ein <code>(start_col, end_col, original_text)</code>-Tripel. Jeder AST-Knoten und jeder <code>MathError</code> trägt <code>position_start</code> / <code>position_end</code>. Der Ertrag: ein Fehler sagt nicht „Syntaxfehler irgendwo", sondern zeigt auf das exakte Zeichen. Diese Buchführung ist der Grund, warum die Engine über eine API hinweg debugbar ist. Über ein einziges Setting (<code>readable_error</code>) schaltet dieselbe Positionsinfo zwischen zwei Verträgen um: typisierte Exceptions für die Bibliothek, eine visuelle Diagnostik mit <code>^</code>-Zeiger unter der fehlerhaften Spalte für die Konsole.</p>
+
+            <h3>Typisiertes, katalogisiertes Fehlersystem</h3>
+            <p>Eine Basisklasse <code>MathError</code> plus genau sieben Domänen-Subklassen, darunter ein Katalog von 78 eindeutigen, vierstelligen Fehlercodes in neun Familien. Die Ziffern sind strukturiert: erste Ziffer = Familie, zweite = Komponente, Rest = laufende Nummer. Code <code>3008</code> heißt damit „Calculator-Familie, Kern-Parser, mehr als ein '.' in einer Zahl". Diese Codes werden bewusst nie umnummeriert, sie sind Vertrag gegenüber UI und externen Log-Parsern. Die öffentliche <code>calculate()</code>-Funktion kapselt die ganze Pipeline in einem geschichteten <code>except</code>-Block, sodass kein roher <code>ZeroDivisionError</code> oder <code>ValueError</code> je den Aufrufer erreicht, alles landet typisiert in der <code>MathError</code>-Hierarchie.</p>
+
+            <h3>Mehr als ein Taschenrechner</h3>
+            <p>Auf demselben AST sitzen zwei weitere Fähigkeiten. Enthält ein Ausdruck ein <code>=</code> und eine Variable, löst die Engine die lineare Gleichung symbolisch: jeder Knoten liefert ein <code>(Faktor, Konstante)</code>-Paar, der Solver bringt beide Seiten in die Form <code>A·x + B = C·x + D</code> und berechnet <code>x</code>. Nicht-Linearität wird strukturell abgefangen (Variable·Variable, Variable im Nenner, Variable im Exponenten), entartete Fälle sauber benannt („No Solution", „Inf. Solutions"). Dazu ein Programmer's-Calculator-Modus mit fester Wortbreite (8/16/32/64 Bit), Zweierkomplement und bitweisen Operatoren, sodass <code>127 + 1</code> im 8-Bit-signed-Modus korrekt zu <code>-128</code> überläuft. Ein prefix-gesteuertes Output-System (<code>dec:</code>, <code>int:</code>, <code>hex:</code> …) bestimmt den Python-Rückgabetyp und verweigert verlustbehaftete Konvertierungen, statt still abzuschneiden.</p>
+
+            <h2 id="engineering-highlights">Engineering Highlights &amp; Test-Disziplin</h2>
+            <p>Zuverlässigkeit war hier kein Feature, sondern die Daseinsberechtigung, eine sichere Engine, der man nicht vertrauen kann, ist nutzlos.</p>
+            <ul>
+              <li><strong>399 pytest-Tests, 90 % Coverage.</strong> Die Suite wurde von 234 auf 399 Tests erweitert, die Coverage von 69 % auf 90 % gehoben. Ein eigener Helper <code>assert_error_location(expr, code, start, end)</code> prüft nicht nur, dass ein Ausdruck fehlschlägt, sondern dass er mit dem exakten Fehlercode an der exakten Zeichenposition fehlschlägt, die Positionsdaten sind selbst Teil des Test-Vertrags.</li>
+              <li><strong>CI-Matrix über fünf Python-Versionen.</strong> GitHub Actions fährt die volle Suite bei jedem Push und Pull Request gegen Python 3.8, 3.9, 3.10, 3.11 und 3.12; der Coverage-Report geht an Codecov. Toter und Work-in-Progress-Code wird ehrlich aus der Coverage genommen, statt die Zahl zu schönen.</li>
+              <li><strong>Saubere Schichtung, gebrochene Zyklen.</strong> Klar getrennte Module (calculator / utility / cli / plugins); zirkuläre Importe werden über bewusst verzögerte Importe aufgelöst. Jede Klasse und Funktion trägt einen Docstring, eine eigenständige <code>DOCUMENTATION.md</code> hält Architektur, vollständige API, Parser-Interna und den kompletten Fehlercode-Katalog fest.</li>
+              <li><strong>Bibliotheks-Qualität bei Auslieferung.</strong> Reines-Python-Wheel, drei Konsolen-Einstiegspunkte, exakt zwei Laufzeit-Abhängigkeiten (<code>rich</code>, <code>prompt_toolkit</code>). Das interaktive REPL bietet persistente History und Tab-Completion. Sechs Minor-Releases (0.1.0 → 0.6.7) in rund fünf Monaten, durchgehend nach Semantic Versioning.</li>
+            </ul>
+
+            <h2 id="das-ergebnis">Das Ergebnis</h2>
+            <ul>
+              <li><strong>Live auf PyPI</strong> als <code>math-engine</code>, installierbar per <code>pip install math-engine</code>, MIT-lizenziert, reines-Python-Wheel für Python 3.8+, mit drei Konsolen-Kommandos out of the box.</li>
+              <li><strong>eval()-frei per Konstruktion.</strong> Geschlossenes Eingabe-Alphabet, der schlimmste Fall einer feindlichen Eingabe ist ein typisierter Fehler, niemals Code-Ausführung.</li>
+              <li><strong>399 Tests, 90 % Coverage</strong>, grün über fünf Python-Versionen (3.8–3.12) bei jedem Push, mit Test-Fällen, die exakte Fehlercodes an exakten Zeichenpositionen festschreiben.</li>
+              <li><strong>Exakte Decimal-Arithmetik</strong> mit adaptiver Präzision (100 … 10.000 Stellen) und 20.000-Stellen-Eingabegrenze, keine stille Float-Drift, keine stille Trunkierung.</li>
+              <li><strong>Zeichengenaue Diagnostik:</strong> 78 Fehlercodes in neun Familien, achtklassige typisierte Exception-Hierarchie, <code>position_start</code> / <code>position_end</code> an jedem Fehler.</li>
+              <li><strong>Rund 4.200 LOC Produktionscode</strong> in sauber geschichteten Modulen, abgesichert durch ~2.400 LOC Tests, dazu eine vollständige technische Dokumentation und ein katalogisiertes Fehlersystem.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <section class="border-t border-stone-800/60 py-16">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <h2 class="mb-8 font-aspekta text-2xl font-bold text-white">Weitere Projekte</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+
+        <a href="/de/projekte/browser-automation-framework/"
+           class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/static/projects/browser-automation-framework/images/cover.svg" alt="" loading="lazy"
+                 class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-5">
+            <h3 class="font-aspekta text-lg font-bold text-white">Multi-Process Browser-Automation Framework</h3>
+            <p class="mt-1 line-clamp-2 text-sm text-stone-400">17k LOC Python-Framework für parallele, fehlertolerante Browser-Workflows, race-safe Worker-Koordination, Cross-Process Crash-Bridge und vollständige Operator-UX über Streamlit.</p>
+          </div>
+        </a>
+
+        <a href="/de/projekte/book-lister-ai/"
+           class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/static/projects/book-lister-ai/images/cover.svg" alt="" loading="lazy"
+                 class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-5">
+            <h3 class="font-aspekta text-lg font-bold text-white">Book Lister AI</h3>
+            <p class="mt-1 line-clamp-2 text-sm text-stone-400">Desktop-App, die gebrauchte Bücher in unter 30 Sekunden scannt, per Gemini-Vision erfasst, live bepreist und bei eBay listet, +400 % Durchsatz.</p>
+          </div>
+        </a>
+
+        <a href="/de/projekte/legacy-data-extraction/"
+           class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/static/projects/legacy-data-extraction/images/cover.svg" alt="" loading="lazy"
+                 class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-5">
+            <h3 class="font-aspekta text-lg font-bold text-white">Legacy-DB Reverse Engineering &amp; Migration</h3>
+            <p class="mt-1 line-clamp-2 text-sm text-stone-400">1,47 Mio. Bauteile aus einer 1,2 GB passwortgeschützten Hersteller-Datenbank befreit und ins neue System migriert, null Regelverstöße, vollständig auditierbar.</p>
+          </div>
+        </a>
+
+      </div>
+      <div class="mt-12 flex justify-center">
+        <a href="/de/projekte/"
+           class="inline-flex items-center gap-2 rounded-full border border-stone-800 bg-stone-900 px-6 py-3 text-sm font-semibold text-stone-200 transition hover:border-orange-500/50 hover:text-amber-300">
+          Alle Case Studies ansehen
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+</article>
+
+  </main>
+
+
+  <footer class="relative border-t border-stone-800/60 mt-10">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="flex flex-col items-start gap-10 py-12 md:flex-row">
+      <div class="md:shrink-0">
+        <a class="inline-flex items-center gap-3" href="/de/" aria-label="Teske Systemtechnik">
+          <img src="/static/images/logo_whitemode.svg" class="h-12 w-12" alt="">
+          <span class="font-aspekta text-lg font-bold uppercase tracking-[0.2em] text-stone-100">Teske<br>Systemtechnik</span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm text-stone-400">Quality engineered in Germany.</p>
+        <a href="https://g.page/r/CWYcIXLQXe1oEBM/review" target="_blank" rel="noopener noreferrer" class="group mt-6 inline-block text-sm" aria-label="Bei Google bewerten">
+          <div class="flex items-center gap-2">
+            <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            <div class="flex gap-0.5 text-amber-400 transition group-hover:text-amber-300"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          </div>
+          <span class="mt-2 inline-block text-stone-400 transition group-hover:text-amber-400">Bei Google bewerten</span>
+        </a>
+      </div>
+      <div class="flex flex-col gap-10 md:grow md:flex-row md:items-start md:justify-evenly">
+      <div>
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Navigation</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/">Start</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/blog/">Blog</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/about/">Über uns</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Unsere Arbeit</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/projekte/">Projekte</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/leistungen/">Leistungen</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/termin/">Termin buchen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Rechtliches</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/impressum/">Impressum</a></li>
+          <li><a class="text-stone-400 transition hover:text-amber-400" href="/de/datenschutz/">Datenschutz</a></li>
+        </ul>
+      </div>
+      </div>
+      <div>
+        <h3 class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-300">Folgen Sie uns</h3>
+        <ul class="grid w-max grid-cols-3 gap-3">
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white" href="https://pypi.org/user/JanTeske06/" target="_blank" rel="noopener noreferrer" aria-label="PyPI"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12,2L2,7V17L12,22L22,17V7L12,2ZM4,16.06V8.94L11,12.44V19.56L4,16.06ZM12,11.38L5.13,7.94L12,4.5L18.87,7.94L12,11.38ZM20,16.06L13,19.56V12.44L20,8.94V16.06Z"/></svg></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#14a800] hover:bg-[#14a800] hover:text-white" href="https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c" target="_blank" rel="noopener noreferrer" aria-label="Upwork"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.816v6.629c0 .943-.702 1.71-1.572 1.71-.869 0-1.572-.767-1.572-1.71V3.492H0v6.629c0 3.326 2.48 6.031 5.529 6.462V24h4.745v-7.396c2.513 1.968 5.253 2.539 7.421 2.539 2.551 0 4.962-1.42 5.922-3.839 1.151.782 2.158 1.942 2.385 4.696h4.86c-.521-4.723-3.238-7.738-6.19-9.177C24.47 6.427 21.652 5.018 18.561 5.018z"/></svg></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-white hover:bg-black hover:text-white" href="https://github.com/JanTeske06" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#0a66c2] hover:bg-[#0a66c2] hover:text-white" href="https://www.linkedin.com/in/jan-teske-a9b768342/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-[#009b94] hover:bg-[#009b94] hover:text-white" href="https://www.wlw.de/de/firma/teske-systemtechnik-inh-jan-teske-22390516" target="_blank" rel="noopener noreferrer" aria-label="wlw.de"><span class="font-aspekta text-[10px] font-bold lowercase leading-none">wlw</span></a></li>
+          <li><a class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-800 bg-stone-900 text-stone-400 transition hover:border-white hover:bg-white" href="https://share.google/iHfqrYi4O0FGgQBrF" target="_blank" rel="noopener noreferrer" aria-label="Google"><svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col items-center justify-between gap-3 border-t border-stone-800/60 py-6 text-xs text-stone-500 md:flex-row">
+      <p>&copy; 2026 Teske Systemtechnik. Alle Rechte vorbehalten.</p>
+      <p class="font-aspekta uppercase tracking-widest">Quality engineered in Germany.</p>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script src="/static/js/vendors/alpinejs.min.js" defer></script>
+<script src="/static/js/vendors/aos.js?v=20260430a"></script>
+<script src="/static/js/vendors/swiper-bundle.min.js?v=20260430a"></script>
+<script src="/static/js/main.js?v=20260605c"></script>
+
+</body>
+</html>

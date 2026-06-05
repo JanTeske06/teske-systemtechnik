@@ -55,6 +55,38 @@
       }
     },
     {
+      "slug": "math-engine",
+      "date": "2025-11-23",
+      "category": "projekt",
+      "cover": "/static/images/og-default.png",
+      "metrics": [
+        { "label": "PyPI", "value": "v0.6.7" },
+        { "label": "Tests", "value": "399" },
+        { "label": "Coverage", "value": "90 %" },
+        { "label": "eval()-Aufrufe", "value": "0" }
+      ],
+      "i18n": {
+        "de": {
+          "eyebrow": "Open Source",
+          "title": "Math Engine: ein eval()-freier Ausdrucks-Interpreter für Python",
+          "summary": "Eine von Grund auf gebaute Auswertungs-Engine für mathematische Ausdrücke, ganz ohne Pythons eval(): Tokenizer, Recursive-Descent-Parser, exakte Decimal-Arithmetik und zeichengenaue Fehler. Jetzt live auf PyPI, mit 399 Tests und 90 % Coverage.",
+          "cta": { "label": "Auf PyPI ansehen", "href": "https://pypi.org/project/math-engine/" }
+        },
+        "en": {
+          "eyebrow": "Open Source",
+          "title": "Math Engine: an eval()-free expression interpreter for Python",
+          "summary": "A from-scratch evaluation engine for mathematical expressions, entirely without Python's eval(): tokenizer, recursive-descent parser, exact Decimal arithmetic and character-precise errors. Now live on PyPI, with 399 tests and 90% coverage.",
+          "cta": { "label": "View on PyPI", "href": "https://pypi.org/project/math-engine/" }
+        },
+        "ru": {
+          "eyebrow": "Open Source",
+          "title": "Math Engine: интерпретатор выражений для Python без eval()",
+          "summary": "Созданный с нуля движок вычисления математических выражений, полностью без eval() из Python: токенизатор, парсер рекурсивного спуска, точная Decimal-арифметика и посимвольная диагностика ошибок. Теперь опубликован на PyPI, 399 тестов и 90 % покрытие.",
+          "cta": { "label": "Открыть на PyPI", "href": "https://pypi.org/project/math-engine/" }
+        }
+      }
+    },
+    {
       "slug": "studio-gegruendet",
       "date": "2025-11-01",
       "category": "unternehmen",

@@ -21,6 +21,13 @@
       <description>teske-systemtechnik.de работает: проекты, услуги и понятный взгляд на то, как я работаю. Сделано на лёгком и быстром статическом стеке.</description>
     </item>
     <item>
+      <title>Math Engine: интерпретатор выражений для Python без eval()</title>
+      <link>https://teske-systemtechnik.de/ru/blog/math-engine/</link>
+      <guid isPermaLink="true">https://teske-systemtechnik.de/ru/blog/math-engine/</guid>
+      <pubDate>Sun, 23 Nov 2025 07:00:00 GMT</pubDate>
+      <description>Созданный с нуля движок вычисления математических выражений, полностью без eval() из Python: токенизатор, парсер рекурсивного спуска, точная Decimal-арифметика и посимвольная диагностика ошибок. Теперь опубликован на PyPI, 399 тестов и 90 % покрытие.</description>
+    </item>
+    <item>
       <title>Основана Teske Systemtechnik</title>
       <link>https://teske-systemtechnik.de/ru/blog/studio-gegruendet/</link>
       <guid isPermaLink="true">https://teske-systemtechnik.de/ru/blog/studio-gegruendet/</guid>

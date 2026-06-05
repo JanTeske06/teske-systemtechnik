@@ -1300,6 +1300,21 @@ const BOOKING_PATHS = { de: '/de/termin/', en: '/en/booking/', ru: '/ru/zapis/' 
 // Blog/Updates: Nav-Punkt nur in Sprachen mit existierendem Blog-Content
 // (DE-first, wie /termin). Muss mit BUILD_LANGUAGES in build-blog.mjs synchron sein.
 const BLOG_PATHS = { de: '/de/blog/', en: '/en/blog/', ru: '/ru/blog/' };
+
+// Featured-Projekte fuer die "Referenzprojekte"-Sektion auf Service-Seiten
+// (interne Verlinkung Leistung -> Case Studies, gut fuer SEO). Schliesst das
+// bereits prominent verlinkte caseStudy-Projekt aus.
+const RELATED_PROJECTS_LABEL = { de: 'Referenzprojekte', en: 'Case studies', ru: 'Кейсы' };
+function loadFeaturedProjects(lang, limit, excludeSlug) {
+  try {
+    const raw = JSON.parse(readFileSync(join(ROOT, 'static/data/projects.json'), 'utf-8'));
+    return (raw.projects || [])
+      .filter((p) => p.featured && p.i18n && p.i18n[lang] && p.slug !== excludeSlug)
+      .sort((a, b) => (a.showcase_order || 99) - (b.showcase_order || 99))
+      .slice(0, limit || 3)
+      .map((p) => ({ slug: p.slug, cover: p.cover, title: p.i18n[lang].title, summary: p.i18n[lang].summary }));
+  } catch (e) { return []; }
+}
 const BLOG_NAV_LANGS = ['de', 'en', 'ru'];
 const CONSULT_MENU = {
   de: { onSite: 'Auf dieser Website', onSiteSub: 'Termin online buchen', up: 'Über Upwork', upSub: 'Beratung & Projekte', back: 'Zurück' },
@@ -1510,7 +1525,7 @@ function scriptsFooter() {
   return `<script src="/static/js/vendors/alpinejs.min.js" defer></script>
 <script src="/static/js/vendors/aos.js?v=20260430a"></script>
 <script src="/static/js/vendors/swiper-bundle.min.js?v=20260430a"></script>
-<script src="/static/js/main.js?v=20260605a"></script>`;
+<script src="/static/js/main.js?v=20260605c"></script>`;
 }
 
 // Price-calculator UI labels + option factors (used by services with
@@ -1799,6 +1814,26 @@ function renderServicePage(service, lang) {
 </section>`
     : '';
 
+  const relatedProjectsSection = (() => {
+    const projects = loadFeaturedProjects(lang, 3, service.caseStudy);
+    if (!projects.length) return '';
+    const cards = projects.map((p) => `<a href="${PATHS.projects[lang]}${p.slug}/" class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50" data-aos="fade-up">
+        <div class="aspect-[4/3] overflow-hidden"><img src="${p.cover}" alt="" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105"></div>
+        <div class="p-5"><h3 class="font-aspekta text-lg font-bold text-white">${p.title}</h3><p class="mt-1 line-clamp-2 text-sm text-stone-400">${p.summary}</p></div>
+      </a>`).join('\n      ');
+    return `<section class="relative border-t border-stone-900 py-20 md:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <h2 class="mb-8 font-aspekta text-2xl font-bold text-white" data-aos="fade-up">${RELATED_PROJECTS_LABEL[lang]}</h2>
+    <div class="grid gap-6 md:grid-cols-3">
+      ${cards}
+    </div>
+    <div class="mt-10">
+      <a href="${PATHS.projects[lang]}" class="inline-flex items-center gap-2 text-sm font-semibold text-amber-400 hover:text-amber-300">${L.navProjects} →</a>
+    </div>
+  </div>
+</section>`;
+  })();
+
   const finalCta = `<section class="relative border-t border-stone-900 py-20 md:py-24">
   <div class="mx-auto max-w-3xl px-4 text-center sm:px-6" data-aos="fade-up">
     <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">${i18n.finalCtaTitle}</h2>
@@ -1878,7 +1913,7 @@ function renderServicePage(service, lang) {
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
   <link rel="stylesheet" href="/static/style.css?v=20260605a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260605a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="${i18n.title}, Teske Systemtechnik">
@@ -1918,6 +1953,8 @@ ${referenceSection}
 ${faqSection}
 
 ${relatedSection}
+
+${relatedProjectsSection}
 
 ${finalCta}
 
@@ -2020,7 +2057,7 @@ function renderOverviewPage(lang) {
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
   <link rel="stylesheet" href="/static/style.css?v=20260605a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260605a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="${L.overviewTitle}, Teske Systemtechnik">
@@ -2200,7 +2237,7 @@ function renderInquiryPage(lang) {
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
   <link rel="stylesheet" href="/static/style.css?v=20260605a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260605a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
 </head>
 
 <body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
@@ -2616,7 +2653,7 @@ function renderBookingPage(lang) {
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
   <link rel="stylesheet" href="/static/style.css?v=20260605a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260605a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="${B.title}, Teske Systemtechnik">

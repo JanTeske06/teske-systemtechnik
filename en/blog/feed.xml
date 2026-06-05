@@ -21,6 +21,13 @@
       <description>teske-systemtechnik.de is live: projects, services and a clear look at how I work. Built on a lean, fast static setup.</description>
     </item>
     <item>
+      <title>Math Engine: an eval()-free expression interpreter for Python</title>
+      <link>https://teske-systemtechnik.de/en/blog/math-engine/</link>
+      <guid isPermaLink="true">https://teske-systemtechnik.de/en/blog/math-engine/</guid>
+      <pubDate>Sun, 23 Nov 2025 07:00:00 GMT</pubDate>
+      <description>A from-scratch evaluation engine for mathematical expressions, entirely without Python's eval(): tokenizer, recursive-descent parser, exact Decimal arithmetic and character-precise errors. Now live on PyPI, with 399 tests and 90% coverage.</description>
+    </item>
+    <item>
       <title>Teske Systemtechnik is founded</title>
       <link>https://teske-systemtechnik.de/en/blog/studio-gegruendet/</link>
       <guid isPermaLink="true">https://teske-systemtechnik.de/en/blog/studio-gegruendet/</guid>

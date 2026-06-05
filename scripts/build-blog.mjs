@@ -145,10 +145,18 @@ const LABELS = {
 };
 
 const CATEGORY_LABELS = {
-  de: { feature: 'Neu', projekt: 'Projekt', unternehmen: 'Unternehmen', technik: 'Technik' },
-  en: { feature: 'New', projekt: 'Project', unternehmen: 'Company', technik: 'Tech' },
-  ru: { feature: 'Новое', projekt: 'Проект', unternehmen: 'Компания', technik: 'Технологии' },
+  de: { feature: 'Update', projekt: 'Projekt', unternehmen: 'Unternehmen', technik: 'Technik' },
+  en: { feature: 'Update', projekt: 'Project', unternehmen: 'Company', technik: 'Tech' },
+  ru: { feature: 'Обновление', projekt: 'Проект', unternehmen: 'Компания', technik: 'Технологии' },
 };
+
+// Zeitlicher "Neu"-Marker: nur der jeweils AKTUELLSTE Beitrag traegt ihn,
+// unabhaengig von der Kategorie. Aeltere Beitraege zeigen ihre Kategorie.
+const LATEST_LABEL = { de: 'Neu', en: 'New', ru: 'Новое' };
+
+// Ueberschrift der "Verwandte Projekte"-Sektion am Ende jedes Blog-Beitrags
+// (interne Verlinkung Blog -> Case Studies + Leistungen, gut fuer SEO).
+const RELATED_HEADING = { de: 'Ausgewählte Projekte', en: 'Selected projects', ru: 'Избранные проекты' };
 
 const MONTHS = {
   de: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
@@ -398,7 +406,7 @@ function maintenanceGuard() {
 function scriptsFooter() {
   return `<script src="/static/js/vendors/alpinejs.min.js" defer></script>
 <script src="/static/js/vendors/aos.js?v=20260430a"></script>
-<script src="/static/js/main.js?v=20260605a"></script>`;
+<script src="/static/js/main.js?v=20260605c"></script>`;
 }
 
 function headCommon(lang) {
@@ -408,7 +416,7 @@ function headCommon(lang) {
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/style.css?v=20260605a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260605a">`;
+  <link rel="stylesheet" href="/static/css/site.css?v=20260605b">`;
 }
 
 // ============================================================
@@ -424,7 +432,10 @@ function inlineMd(text) {
   let s = text.replace(/`([^`]+)`/g, (_, c) => { codes.push(c); return `C${codes.length - 1}`; });
   s = escapeHtml(s);
   s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_, alt, src) => `<img src="${src}" alt="${alt}" loading="lazy">`);
-  s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, t, href) => `<a href="${href}">${t}</a>`);
+  s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, t, href) => {
+    const ext = /^https?:\/\//.test(href);
+    return `<a href="${href}"${ext ? ' target="_blank" rel="noopener noreferrer"' : ''}>${t}</a>`;
+  });
   s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   s = s.replace(/(^|[^*])\*([^*]+)\*/g, '$1<em>$2</em>');
   s = s.replace(/C(\d+)/g, (_, i) => `<code>${escapeHtml(codes[+i])}</code>`);
@@ -494,7 +505,51 @@ function loadPosts(lang) {
 // DETAIL-SEITE
 // ============================================================
 
-function renderPostPage(post, lang) {
+// Liest die featured Projekte (Top nach showcase_order) fuer die interne
+// "Verwandte Projekte"-Verlinkung am Ende der Blog-Beitraege.
+function loadFeaturedProjects(lang, limit) {
+  try {
+    const raw = JSON.parse(readFileSync(join(ROOT, 'static/data/projects.json'), 'utf-8'));
+    return (raw.projects || [])
+      .filter((p) => p.featured && p.i18n && p.i18n[lang])
+      .sort((a, b) => (a.showcase_order || 99) - (b.showcase_order || 99))
+      .slice(0, limit || 3)
+      .map((p) => ({ slug: p.slug, cover: p.cover, title: p.i18n[lang].title, summary: p.i18n[lang].summary }));
+  } catch (e) {
+    return [];
+  }
+}
+
+function relatedProjectsSection(lang) {
+  const projects = loadFeaturedProjects(lang, 3);
+  if (!projects.length) return '';
+  const L = LABELS[lang];
+  const cards = projects.map((p) => `
+        <a href="${PATHS.projects[lang]}${p.slug}/" class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="${p.cover}" alt="" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-5">
+            <h3 class="font-aspekta text-lg font-bold text-white">${p.title}</h3>
+            <p class="mt-1 line-clamp-2 text-sm text-stone-400">${p.summary}</p>
+          </div>
+        </a>`).join('\n');
+  return `
+  <section class="relative border-t border-stone-900 py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <h2 class="mb-8 font-aspekta text-2xl font-bold text-white" data-aos="fade-up">${RELATED_HEADING[lang]}</h2>
+      <div class="grid gap-6 md:grid-cols-3" data-aos="fade-up">
+        ${cards}
+      </div>
+      <div class="mt-10 flex flex-wrap gap-4" data-aos="fade-up">
+        <a href="${PATHS.projects[lang]}" class="inline-flex items-center gap-2 rounded-full border border-stone-800 bg-stone-900 px-6 py-3 text-sm font-semibold text-stone-200 transition hover:border-orange-500/50 hover:text-amber-300">${L.navProjects} →</a>
+        <a href="${OVERVIEW_PATHS[lang]}" class="inline-flex items-center gap-2 rounded-full border border-stone-800 bg-stone-900 px-6 py-3 text-sm font-semibold text-stone-200 transition hover:border-orange-500/50 hover:text-amber-300">${L.navServices} →</a>
+      </div>
+    </div>
+  </section>`;
+}
+
+function renderPostPage(post, lang, isLatest) {
   const L = LABELS[lang];
   const meta = LANG_META[lang];
   const loc = post.loc;
@@ -502,7 +557,9 @@ function renderPostPage(post, lang) {
   const canonicalUrl = `${ORIGIN}${blogPath}${post.slug}/`;
   const coverUrl = `${ORIGIN}${post.cover || '/static/images/og-default.png'}`;
   const dateText = formatDate(post.date, lang);
-  const catLabel = (CATEGORY_LABELS[lang] || {})[post.category] || post.category;
+  const catLabel = isLatest
+    ? (LATEST_LABEL[lang] || (CATEGORY_LABELS[lang] || {})[post.category] || post.category)
+    : ((CATEGORY_LABELS[lang] || {})[post.category] || post.category);
 
   // Sprachumschalter: ohne uebersetzten Post fuehren EN/RU auf die Sprach-Startseite.
   // Sprachumschalter: Post-URL je Sprache, Fallback auf den Blog-Index wenn die Uebersetzung fehlt.
@@ -626,6 +683,8 @@ ${header(lang, blogPath, langSwitcher)}
 
   ${bodySection}
 
+  ${relatedProjectsSection(lang)}
+
   <section class="relative border-t border-stone-900 py-12">
     <div class="mx-auto max-w-6xl px-4 sm:px-6">
       <a href="${blogPath}" class="inline-flex items-center gap-2 rounded-full border border-stone-800 bg-stone-900 px-6 py-3 text-sm font-semibold text-stone-200 transition hover:border-orange-500/50 hover:text-amber-300">
@@ -692,7 +751,7 @@ function renderIndexPage(posts, lang) {
             <span class="bl-date"><b>${day}</b><span>${mon}</span></span>
             <span class="bl-rail"><span class="bl-dot"></span></span>
             <span class="bl-body">
-              <span class="bl-tag">${catLabel}</span>
+              <span class="bl-tag">${gi === 0 ? (LATEST_LABEL[lang] || catLabel) : catLabel}</span>
               <span class="bl-title">${loc.title}</span>
               <span class="bl-summary">${loc.summary}</span>
               <span class="bl-more">${L.readMore.replace(/\s*→\s*$/, '')} ${ARROW}</span>
@@ -1065,7 +1124,7 @@ if (argv[0] === '--google') {
     writeFile(`${BLOG_PATHS[lang].slice(1)}index.html`, renderIndexPage(posts, lang));
     count++;
     for (const post of posts) {
-      writeFile(`${BLOG_PATHS[lang].slice(1)}${post.slug}/index.html`, renderPostPage(post, lang));
+      writeFile(`${BLOG_PATHS[lang].slice(1)}${post.slug}/index.html`, renderPostPage(post, lang, post === posts[0]));
       count++;
     }
     writeFile(`${BLOG_PATHS[lang].slice(1)}feed.xml`, renderFeed(posts, lang));

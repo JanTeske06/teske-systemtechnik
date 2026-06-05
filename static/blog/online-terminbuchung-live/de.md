@@ -17,4 +17,6 @@ Beide Preise verstehen sich inklusive Umsatzsteuer.
 
 Ein Beratungsgespräch ist der richtige Einstieg, wenn Sie ein Automatisierungs- oder Softwareprojekt im Kopf haben und eine fundierte, ehrliche Einschätzung suchen: Was ist machbar, was kostet es ungefähr, und wie sieht ein sinnvoller erster Schritt aus. Buchen Sie anschließend ein Projekt, wird der Preis des Gesprächs darauf angerechnet.
 
+Diese Neuigkeit gibt es auch in unserem [Google-Unternehmensprofil](https://share.google/HO7dfWWxz6Bmo12Mm).
+
 [Jetzt Termin buchen](/de/termin/)
