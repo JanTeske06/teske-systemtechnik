@@ -106,7 +106,7 @@
   }
 
   function init() {
-    fetch('/static/data/reviews.json', { cache: 'no-cache' })
+    fetch('/static/data/reviews.json?v=20260606a', { cache: 'no-cache' })
       .then(function (r) { return r.json(); })
       .then(render)
       .catch(function () {});

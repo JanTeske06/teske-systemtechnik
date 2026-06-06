@@ -112,13 +112,13 @@
   }
 
   function loadConfig() {
-    return memoFetch('/static/data/i18n.json', '__teskeI18nPromise').then(
+    return memoFetch('/static/data/i18n.json?v=20260606a', '__teskeI18nPromise').then(
       function (data) { return data || FALLBACK_I18N; }
     );
   }
 
   function loadProjects() {
-    return memoFetch('/static/data/projects.json', '__teskeProjectsPromise').then(
+    return memoFetch('/static/data/projects.json?v=20260606a', '__teskeProjectsPromise').then(
       function (data) {
         return Array.isArray(data && data.projects) ? data.projects : [];
       }
