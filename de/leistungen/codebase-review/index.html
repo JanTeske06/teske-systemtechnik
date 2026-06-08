@@ -30,7 +30,7 @@
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260606a">
+  <link rel="stylesheet" href="/static/style.css?v=20260608c">
   <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
@@ -217,7 +217,7 @@
       <p class="mt-6 max-w-2xl text-lg text-stone-300" data-aos="fade-up" data-aos-delay="160">Ein strukturierter, unabhängiger Blick auf Ihre Codebasis: Wo liegen Risiken, technische Schulden und schnelle Hebel? Sie bekommen eine priorisierte, umsetzbare Findings-Liste, keine vagen Eindrücke.</p>
       <div class="mt-10 flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="240">
         <a class="inline-flex items-center rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400" href="/de/?service=codebase-review&amp;min=1200#contact">Anfrage senden</a>
-        <a class="inline-flex items-center rounded-full border border-stone-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-orange-500 hover:text-amber-300" href="#leistungsumfang">Was ist drin?</a>
+        <a class="inline-flex items-center rounded-full border border-stone-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-orange-500 hover:text-amber-300" href="#leistungsumfang">Lieferumfang ansehen</a>
       </div>
     </div>
   </div>
@@ -225,70 +225,116 @@
 
 <section id="leistungsumfang" class="relative border-t border-stone-900 py-20 md:py-24">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="max-w-2xl" data-aos="fade-up">
-      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
-        <span class="section-num">001 /</span>
-        Lieferumfang
-      </p>
-      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">Was ist drin?</h2>
-      <p class="mt-4 text-stone-400">Was am Ende auf Ihrem Tisch liegt, drei konkrete Deliverables, kein „Bauchgefühl".</p>
-    </div>
-    <div class="mt-12 grid gap-6 md:grid-cols-2">
-          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up">
-  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-  <h3 class="font-aspekta text-lg font-bold text-white">Priorisierte Findings-Liste</h3>
-  <p class="mt-2 text-sm text-stone-400">Jeder Befund mit Schweregrad, betroffener Stelle, Begründung und konkreter Empfehlung. Sortiert nach Wirkung gegen Aufwand, damit Sie sofort wissen, was zuerst dran ist.</p>
-</div>
-          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="80">
-  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h7a3 3 0 013 3v6"/></svg></div>
-  <h3 class="font-aspekta text-lg font-bold text-white">Architektur- & Risiko-Überblick</h3>
-  <p class="mt-2 text-sm text-stone-400">Wo konzentriert sich Komplexität, wo liegen Klumpenrisiken, welche Stellen brechen beim nächsten Feature? Inklusive Abhängigkeits- und Hotspot-Sicht.</p>
-</div>
-          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="160">
-  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-  <h3 class="font-aspekta text-lg font-bold text-white">Quick Wins separat ausgewiesen</h3>
-  <p class="mt-2 text-sm text-stone-400">Maßnahmen, die in Stunden statt Wochen Wirkung zeigen, getrennt markiert, damit Ihr Team sofort liefern kann.</p>
-</div>
-          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="240">
-  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-  <h3 class="font-aspekta text-lg font-bold text-white">Optional: Live-Walkthrough</h3>
-  <p class="mt-2 text-sm text-stone-400">Auf Wunsch gehe ich die Findings in einem Call mit Ihrem Team durch, statt nur ein PDF zu übergeben.</p>
-</div>
+    <div class="grid gap-10 md:grid-cols-12 md:gap-14">
+      <div class="md:col-span-4" data-aos="fade-up">
+        <div class="md:sticky md:top-28">
+          <p class="mb-4 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+            <span class="section-num">001 /</span>
+            Lieferumfang
+          </p>
+          <h2 class="font-aspekta text-3xl font-bold leading-tight text-white md:text-4xl">Drei Dinge, die Sie am Ende in der Hand halten.</h2>
+          <p class="mt-4 text-stone-400">Die Findings-Liste ist das Herzstück. Architektur-Überblick und Quick Wins gehören dazu, der Walkthrough ist optional.</p>
+        </div>
+      </div>
+      <div class="md:col-span-7 md:col-start-6">
+        <div class="border-t border-stone-800 pt-8" data-aos="fade-up">
+          <div class="flex items-baseline gap-4">
+            <span class="font-aspekta text-sm font-bold tabular-nums text-amber-400">01</span>
+            <h3 class="font-aspekta text-2xl font-bold text-white">Die priorisierte Findings-Liste</h3>
+          </div>
+          <p class="mt-4 max-w-xl text-lg leading-relaxed text-stone-300">Jeder Befund ist konkret und umsetzbar beschrieben und nach Wirkung gegen Aufwand sortiert. Oben steht also, was am meisten bewegt.</p>
+          <p class="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 font-aspekta text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">
+            <span class="text-amber-400">Pro Befund:</span>
+            <span>Schweregrad</span><span class="text-stone-700" aria-hidden="true">·</span>
+            <span>Fundstelle</span><span class="text-stone-700" aria-hidden="true">·</span>
+            <span>Begründung</span><span class="text-stone-700" aria-hidden="true">·</span>
+            <span>Empfehlung</span>
+          </p>
+        </div>
+        <div class="mt-2" data-aos="fade-up" data-aos-delay="80">
+          <div class="grid gap-x-6 gap-y-1 border-t border-stone-800 py-7 sm:grid-cols-12">
+            <div class="flex items-baseline gap-4 sm:col-span-5">
+              <span class="font-aspekta text-sm font-bold tabular-nums text-amber-400">02</span>
+              <h3 class="font-aspekta text-lg font-bold text-white">Architektur- und Risiko-Überblick</h3>
+            </div>
+            <p class="leading-relaxed text-stone-400 sm:col-span-7">Wo sich Komplexität ballt, wo die Klumpenrisiken liegen, welche Stellen beim nächsten Feature brechen. Mit Abhängigkeits- und Hotspot-Sicht.</p>
+          </div>
+          <div class="grid gap-x-6 gap-y-1 border-t border-stone-800 py-7 sm:grid-cols-12">
+            <div class="flex items-baseline gap-4 sm:col-span-5">
+              <span class="font-aspekta text-sm font-bold tabular-nums text-amber-400">03</span>
+              <h3 class="font-aspekta text-lg font-bold text-white">Quick Wins, separat ausgewiesen</h3>
+            </div>
+            <p class="leading-relaxed text-stone-400 sm:col-span-7">Die Handvoll Punkte, die mit wenig Aufwand am meisten bewegen.</p>
+          </div>
+          <div class="grid gap-x-6 gap-y-1 border-t border-b border-stone-800 py-7 sm:grid-cols-12">
+            <div class="flex items-baseline gap-4 sm:col-span-5">
+              <span class="font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-500">Optional</span>
+              <h3 class="font-aspekta text-lg font-bold text-white">Live-Walkthrough</h3>
+            </div>
+            <p class="leading-relaxed text-stone-400 sm:col-span-7">Auf Wunsch gehe ich die Findings mit Ihrem Team in einem Call durch.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="relative border-t border-stone-900 py-20 md:py-24">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="max-w-2xl" data-aos="fade-up">
-      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
-        <span class="section-num">002 /</span>
-        Ablauf
-      </p>
-      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">Wie ein Review abläuft</h2>
+    <div class="grid gap-10 md:grid-cols-12 md:gap-14">
+      <div class="md:col-span-4" data-aos="fade-up">
+        <div class="md:sticky md:top-28">
+          <p class="mb-4 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+            <span class="section-num">002 /</span>
+            Ablauf
+          </p>
+          <h2 class="font-aspekta text-3xl font-bold leading-tight text-white md:text-4xl">Wie ein Review abläuft</h2>
+        </div>
+      </div>
+      <div class="md:col-span-7 md:col-start-6">
+        <ol>
+          <li class="flex gap-x-5" data-aos="fade-up">
+            <div class="flex flex-col items-center">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-400/40 bg-stone-950 font-aspekta text-sm font-bold tabular-nums text-amber-400">01</span>
+              <span class="my-2 w-px grow bg-stone-700/70" aria-hidden="true"></span>
+            </div>
+            <div class="flex-1 pb-10">
+              <h3 class="font-aspekta text-lg font-bold text-white">Zugang und Scope</h3>
+              <p class="mt-2 leading-relaxed text-stone-400">Read-only-Zugriff auf das Repository, kurzer Abgleich, worauf der Fokus liegt: Sicherheit, Performance, Architektur oder Wartbarkeit.</p>
+            </div>
+          </li>
+          <li class="flex gap-x-5" data-aos="fade-up" data-aos-delay="80">
+            <div class="flex flex-col items-center">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-400/40 bg-stone-950 font-aspekta text-sm font-bold tabular-nums text-amber-400">02</span>
+              <span class="my-2 w-px grow bg-stone-700/70" aria-hidden="true"></span>
+            </div>
+            <div class="flex-1 pb-10">
+              <h3 class="font-aspekta text-lg font-bold text-white">Analyse</h3>
+              <p class="mt-2 leading-relaxed text-stone-400">Statische Analyse, manuelle Durchsicht der kritischen Pfade, Abhängigkeits- und Hotspot-Auswertung.</p>
+            </div>
+          </li>
+          <li class="flex gap-x-5" data-aos="fade-up" data-aos-delay="160">
+            <div class="flex flex-col items-center">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-400/40 bg-stone-950 font-aspekta text-sm font-bold tabular-nums text-amber-400">03</span>
+              <span class="my-2 w-px grow bg-stone-700/70" aria-hidden="true"></span>
+            </div>
+            <div class="flex-1 pb-10">
+              <h3 class="font-aspekta text-lg font-bold text-white">Report</h3>
+              <p class="mt-2 leading-relaxed text-stone-400">Priorisierte Findings-Liste mit Empfehlungen, getrennt nach Quick Wins, mittelfristig und strukturell.</p>
+            </div>
+          </li>
+          <li class="flex gap-x-5" data-aos="fade-up" data-aos-delay="240">
+            <div class="flex flex-col items-center">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-400 bg-amber-400 font-aspekta text-sm font-bold tabular-nums text-stone-950">04</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-aspekta text-lg font-bold text-white">Übergabe</h3>
+              <p class="mt-2 leading-relaxed text-stone-400">Schriftlicher Report, auf Wunsch plus Live-Walkthrough mit Q&amp;A für Ihr Team.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
     </div>
-    <ol class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up">
-  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">01</span>
-  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Zugang & Scope</h3>
-  <p class="mt-2 text-sm text-stone-400">Read-only-Zugriff auf das Repository, kurzer Abgleich, worauf der Fokus liegt: Sicherheit, Performance, Architektur oder Wartbarkeit.</p>
-</li>
-          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up" data-aos-delay="80">
-  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">02</span>
-  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Analyse</h3>
-  <p class="mt-2 text-sm text-stone-400">Statische Analyse, manuelle Durchsicht der kritischen Pfade, Abhängigkeits- und Hotspot-Auswertung.</p>
-</li>
-          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up" data-aos-delay="160">
-  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">03</span>
-  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Report</h3>
-  <p class="mt-2 text-sm text-stone-400">Priorisierte Findings-Liste mit Empfehlungen, getrennt nach Quick Wins, mittelfristig und strukturell.</p>
-</li>
-          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up" data-aos-delay="240">
-  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">04</span>
-  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Übergabe</h3>
-  <p class="mt-2 text-sm text-stone-400">Schriftlicher Report, auf Wunsch plus Live-Walkthrough mit Q&A für Ihr Team.</p>
-</li>
-    </ol>
   </div>
 </section>
 

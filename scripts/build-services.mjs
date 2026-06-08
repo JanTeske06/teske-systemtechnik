@@ -42,6 +42,8 @@ const LABELS = {
     switchLanguage: 'Sprache wechseln',
     inquirySend: 'Anfrage senden',
     whatsInside: 'Was ist drin?',
+    viewDeliverables: 'Lieferumfang ansehen',
+    deliverHeadline: 'Das bekommen Sie',
     backToOverview: '← Alle Leistungen',
     backToHome: 'Zurück zur Startseite',
     relatedServices: 'Verwandte Leistungen',
@@ -78,6 +80,8 @@ const LABELS = {
     switchLanguage: 'Switch language',
     inquirySend: 'Send inquiry',
     whatsInside: 'What you get',
+    viewDeliverables: 'See what you get',
+    deliverHeadline: 'What you get',
     backToOverview: '← All services',
     backToHome: 'Back to home',
     relatedServices: 'Related services',
@@ -114,6 +118,8 @@ const LABELS = {
     switchLanguage: 'Сменить язык',
     inquirySend: 'Отправить запрос',
     whatsInside: 'Что входит',
+    viewDeliverables: 'Что входит',
+    deliverHeadline: 'Что вы получаете',
     backToOverview: '← Все услуги',
     backToHome: 'На главную',
     relatedServices: 'Связанные услуги',
@@ -171,19 +177,20 @@ const SERVICES = [
         subtitle: 'Ein strukturierter, unabhängiger Blick auf Ihre Codebasis: Wo liegen Risiken, technische Schulden und schnelle Hebel? Sie bekommen eine priorisierte, umsetzbare Findings-Liste, keine vagen Eindrücke.',
         meta: 'Unabhängiges Codebase-Review mit priorisierter Findings-Liste zu Architektur, Sicherheit, Performance und Wartbarkeit. Festpreis nach Umfang, Richtwert per Kalkulator.',
         overviewSummary: 'Unabhängige Analyse Ihrer Codebasis: Architektur, Sicherheit, Performance, Wartbarkeit. Mit priorisierter, umsetzbarer Maßnahmenliste und Preis-Kalkulator.',
-        deliverIntro: 'Was am Ende auf Ihrem Tisch liegt, drei konkrete Deliverables, kein „Bauchgefühl".',
+        deliverTitle: 'Drei Dinge, die Sie am Ende in der Hand halten.',
+        deliverIntro: 'Die Findings-Liste ist das Herzstück. Architektur-Überblick und Quick Wins gehören dazu, der Walkthrough ist optional.',
         outcomes: [
-          { icon: 'doc', title: 'Priorisierte Findings-Liste', body: 'Jeder Befund mit Schweregrad, betroffener Stelle, Begründung und konkreter Empfehlung. Sortiert nach Wirkung gegen Aufwand, damit Sie sofort wissen, was zuerst dran ist.' },
-          { icon: 'graph', title: 'Architektur- & Risiko-Überblick', body: 'Wo konzentriert sich Komplexität, wo liegen Klumpenrisiken, welche Stellen brechen beim nächsten Feature? Inklusive Abhängigkeits- und Hotspot-Sicht.' },
-          { icon: 'check', title: 'Quick Wins separat ausgewiesen', body: 'Maßnahmen, die in Stunden statt Wochen Wirkung zeigen, getrennt markiert, damit Ihr Team sofort liefern kann.' },
-          { icon: 'bolt', title: 'Optional: Live-Walkthrough', body: 'Auf Wunsch gehe ich die Findings in einem Call mit Ihrem Team durch, statt nur ein PDF zu übergeben.' },
+          { icon: 'doc', title: 'Die priorisierte Findings-Liste', fieldsLabel: 'Pro Befund:', fields: ['Schweregrad', 'Fundstelle', 'Begründung', 'Empfehlung'], body: 'Jeder Befund ist konkret und umsetzbar beschrieben und nach Wirkung gegen Aufwand sortiert. Oben steht also, was am meisten bewegt.' },
+          { icon: 'graph', title: 'Architektur- und Risiko-Überblick', body: 'Wo sich Komplexität ballt, wo die Klumpenrisiken liegen, welche Stellen beim nächsten Feature brechen. Mit Abhängigkeits- und Hotspot-Sicht.' },
+          { icon: 'check', title: 'Quick Wins, separat ausgewiesen', body: 'Die Handvoll Punkte, die mit wenig Aufwand am meisten bewegen.' },
+          { icon: 'bolt', optional: true, title: 'Live-Walkthrough', body: 'Auf Wunsch gehe ich die Findings mit Ihrem Team in einem Call durch.' },
         ],
         processIntro: 'Wie ein Review abläuft',
         process: [
-          { title: 'Zugang & Scope', body: 'Read-only-Zugriff auf das Repository, kurzer Abgleich, worauf der Fokus liegt: Sicherheit, Performance, Architektur oder Wartbarkeit.' },
+          { title: 'Zugang und Scope', body: 'Read-only-Zugriff auf das Repository, kurzer Abgleich, worauf der Fokus liegt: Sicherheit, Performance, Architektur oder Wartbarkeit.' },
           { title: 'Analyse', body: 'Statische Analyse, manuelle Durchsicht der kritischen Pfade, Abhängigkeits- und Hotspot-Auswertung.' },
           { title: 'Report', body: 'Priorisierte Findings-Liste mit Empfehlungen, getrennt nach Quick Wins, mittelfristig und strukturell.' },
-          { title: 'Übergabe', body: 'Schriftlicher Report, auf Wunsch plus Live-Walkthrough mit Q&A für Ihr Team.' },
+          { title: 'Übergabe', body: 'Schriftlicher Report, auf Wunsch plus Live-Walkthrough mit Q&amp;A für Ihr Team.' },
         ],
         pricingTitle: 'Festpreis nach Umfang',
         pricingBody1: 'Der Preis richtet sich nach Größe der Codebasis, Technologie-Vielfalt, gewünschtem Ergebnisumfang und Zeitfenster. Den Richtwert ermitteln Sie unten selbst, der verbindliche Festpreis folgt nach einem kurzen Discovery-Call.',
@@ -313,7 +320,7 @@ const SERVICES = [
         subtitle: 'Ein Audit, der nicht aus PowerPoint-Slides besteht, sondern aus einer durchnummerierten Maßnahmenliste mit konkreten Zahlen pro Position, die Sie morgen umsetzen können. Festpreis, Vorher-Nachher-Prognose, Zero-Downtime in der Umsetzung.',
         meta: 'Festpreis-Audit Ihrer AWS-Rechnung mit konkreter Maßnahmenliste. Zero-Downtime bei der Umsetzung, Vorher-Nachher-Prognose belastbar. Ab 3.500 €.',
         overviewSummary: 'Festpreis-Audit Ihrer AWS-Rechnung. Maßnahmenliste mit Quick Wins, Strukturmaßnahmen und Architektur-Refactorings, sortiert nach ROI. Zero-Downtime bei der Umsetzung.',
-        deliverIntro: 'Vier Deliverables. Kein Beratungs-Speak, kein „Empfehlungen ableiten". Sie kriegen Material, mit dem Sie sofort weiterarbeiten können.',
+        deliverIntro: 'Vier Deliverables. Konkretes Material, mit dem Sie direkt weiterarbeiten können.',
         outcomes: [
           { icon: 'doc',   title: 'Cost-Audit-Report', body: 'Eine PDF, in der jede Position Ihrer Rechnung erklärt ist. Plus: welche Ressourcen produktiv arbeiten, welche nur noch existieren weil niemand sie löschen wollte, und welche tatsächlich nur Bot-Traffic anziehen.' },
           { icon: 'check', title: 'Maßnahmenliste in drei Spalten', body: 'Quick Wins (Tage), Strukturmaßnahmen (Wochen), Architektur (Monate). Pro Zeile: was zu tun ist, wieviel Ersparnis pro Monat zu erwarten, wie groß das Risiko. Sortiert nach ROI.' },
@@ -1600,54 +1607,100 @@ function renderServicePage(service, lang) {
       <p class="mt-6 max-w-2xl text-lg text-stone-300" data-aos="fade-up" data-aos-delay="160">${i18n.subtitle}</p>
       <div class="mt-10 flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="240">
         <a class="inline-flex items-center rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400" href="${inquiryHref}">${L.inquirySend}</a>
-        <a class="inline-flex items-center rounded-full border border-stone-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-orange-500 hover:text-amber-300" href="#leistungsumfang">${L.whatsInside}</a>
+        <a class="inline-flex items-center rounded-full border border-stone-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-orange-500 hover:text-amber-300" href="#leistungsumfang">${L.viewDeliverables}</a>
       </div>
     </div>
   </div>
 </section>`;
 
-  // Outcomes
-  const outcomesCards = i18n.outcomes.map((o, i) => `<div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up"${i > 0 ? ` data-aos-delay="${i * 80}"` : ''}>
-  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400">${ICONS[o.icon]}</div>
-  <h3 class="font-aspekta text-lg font-bold text-white">${o.title}</h3>
-  <p class="mt-2 text-sm text-stone-400">${o.body}</p>
-</div>`).join('\n          ');
+  // Outcomes — editoriale Liste: erstes Item ist das Herzstück (groß), der Rest ordnet sich unter.
+  const lead = i18n.outcomes[0];
+  const rest = i18n.outcomes.slice(1);
+  const leadFields = lead.fields ? `
+          <p class="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 font-aspekta text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">
+            <span class="text-amber-400">${lead.fieldsLabel}</span>
+            ${lead.fields.map((f, fi) => `<span>${f}</span>${fi < lead.fields.length - 1 ? '<span class="text-stone-700" aria-hidden="true">·</span>' : ''}`).join('\n            ')}
+          </p>` : '';
+  const restItems = rest.map((o, i) => {
+    const last = i === rest.length - 1;
+    const marker = o.optional
+      ? `<span class="font-aspekta text-xs font-semibold uppercase tracking-wider text-stone-500">Optional</span>`
+      : `<span class="font-aspekta text-sm font-bold tabular-nums text-amber-400">0${i + 2}</span>`;
+    return `<div class="grid gap-x-6 gap-y-1 border-t ${last ? 'border-b ' : ''}border-stone-800 py-7 sm:grid-cols-12">
+            <div class="flex items-baseline gap-4 sm:col-span-5">
+              ${marker}
+              <h3 class="font-aspekta text-lg font-bold text-white">${o.title}</h3>
+            </div>
+            <p class="leading-relaxed text-stone-400 sm:col-span-7">${o.body}</p>
+          </div>`;
+  }).join('\n          ');
 
+  const deliverTitle = i18n.deliverTitle || L.deliverHeadline;
   const outcomesSection = `<section id="leistungsumfang" class="relative border-t border-stone-900 py-20 md:py-24">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="max-w-2xl" data-aos="fade-up">
-      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
-        <span class="section-num">001 /</span>
-        ${L.secDeliverables}
-      </p>
-      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">${L.whatsInside}</h2>
-      <p class="mt-4 text-stone-400">${i18n.deliverIntro}</p>
-    </div>
-    <div class="mt-12 grid gap-6 md:grid-cols-2">
-          ${outcomesCards}
+    <div class="grid gap-10 md:grid-cols-12 md:gap-14">
+      <div class="md:col-span-4" data-aos="fade-up">
+        <div class="md:sticky md:top-28">
+          <p class="mb-4 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+            <span class="section-num">001 /</span>
+            ${L.secDeliverables}
+          </p>
+          <h2 class="font-aspekta text-3xl font-bold leading-tight text-white md:text-4xl">${deliverTitle}</h2>
+          <p class="mt-4 text-stone-400">${i18n.deliverIntro}</p>
+        </div>
+      </div>
+      <div class="md:col-span-7 md:col-start-6">
+        <div class="border-t border-stone-800 pt-8" data-aos="fade-up">
+          <div class="flex items-baseline gap-4">
+            <span class="font-aspekta text-sm font-bold tabular-nums text-amber-400">01</span>
+            <h3 class="font-aspekta text-2xl font-bold text-white">${lead.title}</h3>
+          </div>
+          <p class="mt-4 max-w-xl text-lg leading-relaxed text-stone-300">${lead.body}</p>${leadFields}
+        </div>
+        <div class="mt-2" data-aos="fade-up" data-aos-delay="80">
+          ${restItems}
+        </div>
+      </div>
     </div>
   </div>
 </section>`;
 
-  // Process
-  const processSteps = i18n.process.map((p, i) => `<li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up"${i > 0 ? ` data-aos-delay="${i * 80}"` : ''}>
-  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">0${i+1}</span>
-  <h3 class="mt-3 font-aspekta text-base font-bold text-white">${p.title}</h3>
-  <p class="mt-2 text-sm text-stone-400">${p.body}</p>
-</li>`).join('\n          ');
+  // Process — vertikale Timeline mit durchgehender Zeitlinie, letzter Knoten gefüllt als Ziel.
+  const processSteps = i18n.process.map((p, i) => {
+    const last = i === i18n.process.length - 1;
+    const marker = last
+      ? `<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-400 bg-amber-400 font-aspekta text-sm font-bold tabular-nums text-stone-950">0${i + 1}</span>`
+      : `<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-400/40 bg-stone-950 font-aspekta text-sm font-bold tabular-nums text-amber-400">0${i + 1}</span>`;
+    const line = last ? '' : '\n              <span class="my-2 w-px grow bg-stone-700/70" aria-hidden="true"></span>';
+    return `<li class="flex gap-x-5" data-aos="fade-up"${i > 0 ? ` data-aos-delay="${i * 80}"` : ''}>
+            <div class="flex flex-col items-center">
+              ${marker}${line}
+            </div>
+            <div class="flex-1${last ? '' : ' pb-10'}">
+              <h3 class="font-aspekta text-lg font-bold text-white">${p.title}</h3>
+              <p class="mt-2 leading-relaxed text-stone-400">${p.body}</p>
+            </div>
+          </li>`;
+  }).join('\n          ');
 
   const processSection = `<section class="relative border-t border-stone-900 py-20 md:py-24">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="max-w-2xl" data-aos="fade-up">
-      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
-        <span class="section-num">002 /</span>
-        ${L.secProcess}
-      </p>
-      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">${i18n.processIntro}</h2>
-    </div>
-    <ol class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-${i18n.process.length}">
+    <div class="grid gap-10 md:grid-cols-12 md:gap-14">
+      <div class="md:col-span-4" data-aos="fade-up">
+        <div class="md:sticky md:top-28">
+          <p class="mb-4 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+            <span class="section-num">002 /</span>
+            ${L.secProcess}
+          </p>
+          <h2 class="font-aspekta text-3xl font-bold leading-tight text-white md:text-4xl">${i18n.processIntro}</h2>
+        </div>
+      </div>
+      <div class="md:col-span-7 md:col-start-6">
+        <ol>
           ${processSteps}
-    </ol>
+        </ol>
+      </div>
+    </div>
   </div>
 </section>`;
 
@@ -1912,7 +1965,7 @@ function renderServicePage(service, lang) {
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260605a">
+  <link rel="stylesheet" href="/static/style.css?v=20260608c">
   <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
@@ -2056,7 +2109,7 @@ function renderOverviewPage(lang) {
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260605a">
+  <link rel="stylesheet" href="/static/style.css?v=20260608c">
   <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
@@ -2236,7 +2289,7 @@ function renderInquiryPage(lang) {
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260605a">
+  <link rel="stylesheet" href="/static/style.css?v=20260608c">
   <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
 </head>
 
@@ -2652,7 +2705,7 @@ function renderBookingPage(lang) {
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260605a">
+  <link rel="stylesheet" href="/static/style.css?v=20260608c">
   <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
@@ -2699,11 +2752,21 @@ function writeFile(relPath, content) {
   console.log(`  wrote ${relPath} (${content.length} bytes)`);
 }
 
+// Optionaler Sprach-Filter: `node build-services.mjs de` baut nur DE und lässt EN/RU-Dateien unberührt.
+// Ohne Argument werden wie gehabt alle Sprachen gebaut.
+const ONLY_LANG = process.argv[2];
+const BUILD_LANGS = ONLY_LANG ? LANGUAGES.filter((l) => l === ONLY_LANG) : LANGUAGES;
+if (ONLY_LANG && BUILD_LANGS.length === 0) {
+  console.error(`Unbekannte Sprache "${ONLY_LANG}". Erlaubt: ${LANGUAGES.join(', ')}`);
+  process.exit(1);
+}
+console.log(`Sprachen: ${BUILD_LANGS.join(', ')}`);
+
 let count = 0;
 
 console.log('=== Service detail pages ===');
 for (const service of SERVICES) {
-  for (const lang of LANGUAGES) {
+  for (const lang of BUILD_LANGS) {
     const path = `${OVERVIEW_PATHS[lang].slice(1)}${service.urlSlugs[lang]}/index.html`;
     writeFile(path, renderServicePage(service, lang));
     count++;
@@ -2711,21 +2774,21 @@ for (const service of SERVICES) {
 }
 
 console.log('\n=== Overview pages ===');
-for (const lang of LANGUAGES) {
+for (const lang of BUILD_LANGS) {
   const path = `${OVERVIEW_PATHS[lang].slice(1)}index.html`;
   writeFile(path, renderOverviewPage(lang));
   count++;
 }
 
 console.log('\n=== Inquiry pages ===');
-for (const lang of LANGUAGES) {
+for (const lang of BUILD_LANGS) {
   const path = `${PATHS.inquiry[lang].slice(1)}index.html`;
   writeFile(path, renderInquiryPage(lang));
   count++;
 }
 
 console.log('\n=== Booking pages ===');
-for (const lang of LANGUAGES) {
+for (const lang of BUILD_LANGS) {
   const path = `${BOOKING_PATHS[lang].slice(1)}index.html`;
   writeFile(path, renderBookingPage(lang));
   count++;

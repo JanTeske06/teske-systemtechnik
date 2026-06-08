@@ -1,4 +1,5 @@
 AOS.init({
+  disable: true, // Scroll-Reveal bewusst aus: ruhigerer, wertigerer Eindruck; Elemente sofort sichtbar
   once: true,
   duration: 700,
   offset: 60,

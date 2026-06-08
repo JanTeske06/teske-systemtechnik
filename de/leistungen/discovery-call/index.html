@@ -30,7 +30,7 @@
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260606a">
+  <link rel="stylesheet" href="/static/style.css?v=20260608c">
   <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
@@ -225,7 +225,7 @@
       <p class="mt-6 max-w-2xl text-lg text-stone-300" data-aos="fade-up" data-aos-delay="160">30 Minuten oder eine Stunde am Telefon, Workflow-Analyse, Machbarkeits-Check, Architektur-Empfehlung. Sie bekommen eine Kostenschätzung für die Umsetzung und eine schriftliche Zusammenfassung. Buchen Sie nach dem Call ein Projekt, wird der Call-Preis vollständig angerechnet.</p>
       <div class="mt-10 flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="240">
         <a class="inline-flex items-center rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400" href="/de/?service=discovery-call&amp;min=75#contact">Anfrage senden</a>
-        <a class="inline-flex items-center rounded-full border border-stone-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-orange-500 hover:text-amber-300" href="#leistungsumfang">Was ist drin?</a>
+        <a class="inline-flex items-center rounded-full border border-stone-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-orange-500 hover:text-amber-300" href="#leistungsumfang">Lieferumfang ansehen</a>
       </div>
     </div>
   </div>
@@ -233,70 +233,109 @@
 
 <section id="leistungsumfang" class="relative border-t border-stone-900 py-20 md:py-24">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="max-w-2xl" data-aos="fade-up">
-      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
-        <span class="section-num">001 /</span>
-        Lieferumfang
-      </p>
-      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">Was ist drin?</h2>
-      <p class="mt-4 text-stone-400">Vier konkrete Sachen, die Sie nach dem Call in der Hand haben, auch wenn Sie sich gegen ein Folgeprojekt entscheiden.</p>
-    </div>
-    <div class="mt-12 grid gap-6 md:grid-cols-2">
-          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up">
-  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-  <h3 class="font-aspekta text-lg font-bold text-white">Schriftliche Zusammenfassung</h3>
-  <p class="mt-2 text-sm text-stone-400">Was besprochen wurde, welche Optionen es gibt, welche ich für Ihren Fall empfehle. Per Mail innerhalb von 24 h nach dem Call, auch wenn Sie nicht weitermachen.</p>
-</div>
-          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="80">
-  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-  <h3 class="font-aspekta text-lg font-bold text-white">Machbarkeits-Einschätzung</h3>
-  <p class="mt-2 text-sm text-stone-400">Ehrliche Antwort: ist das, was Sie vorhaben, technisch realistisch und stabil zu bauen? Wenn nein, sage ich Ihnen das im Call, bevor Sie Zeit oder Geld investieren.</p>
-</div>
-          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="160">
-  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h7a3 3 0 013 3v6"/></svg></div>
-  <h3 class="font-aspekta text-lg font-bold text-white">Architektur-Empfehlung</h3>
-  <p class="mt-2 text-sm text-stone-400">Welche Werkzeuge zu Ihrem Fall passen (z. B. Python + Docker, FastAPI, Playwright, Scraping vs. APIs). Damit bauen Sie kein fragiles System, das in drei Monaten neu gemacht werden muss.</p>
-</div>
-          <div class="rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up" data-aos-delay="240">
-  <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-400"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-  <h3 class="font-aspekta text-lg font-bold text-white">Realistische Kostenschätzung</h3>
-  <p class="mt-2 text-sm text-stone-400">Falls ein Folgeprojekt sinnvoll ist: Range plus Voraussetzungen. Keine Überraschungen später, kein Bait-and-Switch.</p>
-</div>
+    <div class="grid gap-10 md:grid-cols-12 md:gap-14">
+      <div class="md:col-span-4" data-aos="fade-up">
+        <div class="md:sticky md:top-28">
+          <p class="mb-4 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+            <span class="section-num">001 /</span>
+            Lieferumfang
+          </p>
+          <h2 class="font-aspekta text-3xl font-bold leading-tight text-white md:text-4xl">Das bekommen Sie</h2>
+          <p class="mt-4 text-stone-400">Vier konkrete Sachen, die Sie nach dem Call in der Hand haben, auch wenn Sie sich gegen ein Folgeprojekt entscheiden.</p>
+        </div>
+      </div>
+      <div class="md:col-span-7 md:col-start-6">
+        <div class="border-t border-stone-800 pt-8" data-aos="fade-up">
+          <div class="flex items-baseline gap-4">
+            <span class="font-aspekta text-sm font-bold tabular-nums text-amber-400">01</span>
+            <h3 class="font-aspekta text-2xl font-bold text-white">Schriftliche Zusammenfassung</h3>
+          </div>
+          <p class="mt-4 max-w-xl text-lg leading-relaxed text-stone-300">Was besprochen wurde, welche Optionen es gibt, welche ich für Ihren Fall empfehle. Per Mail innerhalb von 24 h nach dem Call, auch wenn Sie nicht weitermachen.</p>
+        </div>
+        <div class="mt-2" data-aos="fade-up" data-aos-delay="80">
+          <div class="grid gap-x-6 gap-y-1 border-t border-stone-800 py-7 sm:grid-cols-12">
+            <div class="flex items-baseline gap-4 sm:col-span-5">
+              <span class="font-aspekta text-sm font-bold tabular-nums text-amber-400">02</span>
+              <h3 class="font-aspekta text-lg font-bold text-white">Machbarkeits-Einschätzung</h3>
+            </div>
+            <p class="leading-relaxed text-stone-400 sm:col-span-7">Ehrliche Antwort: ist das, was Sie vorhaben, technisch realistisch und stabil zu bauen? Wenn nein, sage ich Ihnen das im Call, bevor Sie Zeit oder Geld investieren.</p>
+          </div>
+          <div class="grid gap-x-6 gap-y-1 border-t border-stone-800 py-7 sm:grid-cols-12">
+            <div class="flex items-baseline gap-4 sm:col-span-5">
+              <span class="font-aspekta text-sm font-bold tabular-nums text-amber-400">03</span>
+              <h3 class="font-aspekta text-lg font-bold text-white">Architektur-Empfehlung</h3>
+            </div>
+            <p class="leading-relaxed text-stone-400 sm:col-span-7">Welche Werkzeuge zu Ihrem Fall passen (z. B. Python + Docker, FastAPI, Playwright, Scraping vs. APIs). Damit bauen Sie kein fragiles System, das in drei Monaten neu gemacht werden muss.</p>
+          </div>
+          <div class="grid gap-x-6 gap-y-1 border-t border-b border-stone-800 py-7 sm:grid-cols-12">
+            <div class="flex items-baseline gap-4 sm:col-span-5">
+              <span class="font-aspekta text-sm font-bold tabular-nums text-amber-400">04</span>
+              <h3 class="font-aspekta text-lg font-bold text-white">Realistische Kostenschätzung</h3>
+            </div>
+            <p class="leading-relaxed text-stone-400 sm:col-span-7">Falls ein Folgeprojekt sinnvoll ist: Range plus Voraussetzungen. Keine Überraschungen später, kein Bait-and-Switch.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="relative border-t border-stone-900 py-20 md:py-24">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="max-w-2xl" data-aos="fade-up">
-      <p class="mb-3 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
-        <span class="section-num">002 /</span>
-        Ablauf
-      </p>
-      <h2 class="font-aspekta text-3xl font-bold text-white md:text-4xl">Wie der Call abläuft</h2>
+    <div class="grid gap-10 md:grid-cols-12 md:gap-14">
+      <div class="md:col-span-4" data-aos="fade-up">
+        <div class="md:sticky md:top-28">
+          <p class="mb-4 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+            <span class="section-num">002 /</span>
+            Ablauf
+          </p>
+          <h2 class="font-aspekta text-3xl font-bold leading-tight text-white md:text-4xl">Wie der Call abläuft</h2>
+        </div>
+      </div>
+      <div class="md:col-span-7 md:col-start-6">
+        <ol>
+          <li class="flex gap-x-5" data-aos="fade-up">
+            <div class="flex flex-col items-center">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-400/40 bg-stone-950 font-aspekta text-sm font-bold tabular-nums text-amber-400">01</span>
+              <span class="my-2 w-px grow bg-stone-700/70" aria-hidden="true"></span>
+            </div>
+            <div class="flex-1 pb-10">
+              <h3 class="font-aspekta text-lg font-bold text-white">Anfrage</h3>
+              <p class="mt-2 leading-relaxed text-stone-400">Sie schicken eine kurze Anfrage mit Frage oder Problem. Antwort innerhalb von 24 h mit Terminvorschlag und Hinweis, welches Tier (30 oder 60 Min) sinnvoll ist.</p>
+            </div>
+          </li>
+          <li class="flex gap-x-5" data-aos="fade-up" data-aos-delay="80">
+            <div class="flex flex-col items-center">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-400/40 bg-stone-950 font-aspekta text-sm font-bold tabular-nums text-amber-400">02</span>
+              <span class="my-2 w-px grow bg-stone-700/70" aria-hidden="true"></span>
+            </div>
+            <div class="flex-1 pb-10">
+              <h3 class="font-aspekta text-lg font-bold text-white">Optionale Vorbereitung</h3>
+              <p class="mt-2 leading-relaxed text-stone-400">Schicken Sie Material vorab, Code-Repo, Screenshots, ein bestehendes Tool, schaue ich es vor dem Call an. Macht die Minuten effizienter, kein Aufpreis.</p>
+            </div>
+          </li>
+          <li class="flex gap-x-5" data-aos="fade-up" data-aos-delay="160">
+            <div class="flex flex-col items-center">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-400/40 bg-stone-950 font-aspekta text-sm font-bold tabular-nums text-amber-400">03</span>
+              <span class="my-2 w-px grow bg-stone-700/70" aria-hidden="true"></span>
+            </div>
+            <div class="flex-1 pb-10">
+              <h3 class="font-aspekta text-lg font-bold text-white">Der Call</h3>
+              <p class="mt-2 leading-relaxed text-stone-400">30 oder 60 Minuten, je nach gewähltem Tier. Live (Video oder Audio) oder asynchron (Audio-Nachrichten plus Notizen, falls Zeitzonen schwierig sind).</p>
+            </div>
+          </li>
+          <li class="flex gap-x-5" data-aos="fade-up" data-aos-delay="240">
+            <div class="flex flex-col items-center">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-400 bg-amber-400 font-aspekta text-sm font-bold tabular-nums text-stone-950">04</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-aspekta text-lg font-bold text-white">Zusammenfassung</h3>
+              <p class="mt-2 leading-relaxed text-stone-400">Innerhalb von 24 h nach dem Call: schriftliche Zusammenfassung, Architektur-Empfehlung, ggf. Kostenschätzung. Per E-Mail.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
     </div>
-    <ol class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up">
-  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">01</span>
-  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Anfrage</h3>
-  <p class="mt-2 text-sm text-stone-400">Sie schicken eine kurze Anfrage mit Frage oder Problem. Antwort innerhalb von 24 h mit Terminvorschlag und Hinweis, welches Tier (30 oder 60 Min) sinnvoll ist.</p>
-</li>
-          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up" data-aos-delay="80">
-  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">02</span>
-  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Optionale Vorbereitung</h3>
-  <p class="mt-2 text-sm text-stone-400">Schicken Sie Material vorab, Code-Repo, Screenshots, ein bestehendes Tool, schaue ich es vor dem Call an. Macht die Minuten effizienter, kein Aufpreis.</p>
-</li>
-          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up" data-aos-delay="160">
-  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">03</span>
-  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Der Call</h3>
-  <p class="mt-2 text-sm text-stone-400">30 oder 60 Minuten, je nach gewähltem Tier. Live (Video oder Audio) oder asynchron (Audio-Nachrichten plus Notizen, falls Zeitzonen schwierig sind).</p>
-</li>
-          <li class="relative rounded-2xl border border-stone-800 bg-stone-900/60 p-6" data-aos="fade-up" data-aos-delay="240">
-  <span class="absolute -top-3 left-6 inline-flex h-7 items-center rounded-full bg-orange-500 px-3 font-aspekta text-xs font-bold uppercase tracking-wider text-white">04</span>
-  <h3 class="mt-3 font-aspekta text-base font-bold text-white">Zusammenfassung</h3>
-  <p class="mt-2 text-sm text-stone-400">Innerhalb von 24 h nach dem Call: schriftliche Zusammenfassung, Architektur-Empfehlung, ggf. Kostenschätzung. Per E-Mail.</p>
-</li>
-    </ol>
   </div>
 </section>
 
