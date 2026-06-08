@@ -48,7 +48,7 @@
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
 
 
-  <link rel="stylesheet" href="/static/style.css?v=20260605d">
+  <link rel="stylesheet" href="/static/style.css?v=20260606a">
   <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
 
 
@@ -376,10 +376,10 @@
         <p class="mt-4 text-lg text-stone-300">A safe evaluation engine for mathematical expressions, built from scratch: tokenizer, recursive-descent parser, AST, linear equation solver and a type-safe output system, entirely without Python's eval(). Live on PyPI, 399 tests, 90% coverage, green across five Python versions.</p>
 
         <div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
-          <a href="https://badge.fury.io/py/math-engine" target="_blank" rel="noopener noreferrer" aria-label="PyPI Version"><img src="https://badge.fury.io/py/math-engine.svg" alt="PyPI version" class="h-6" loading="lazy"></a>
-          <a href="https://pypi.org/project/math-engine/" target="_blank" rel="noopener noreferrer" aria-label="Supported Python versions"><img src="https://img.shields.io/pypi/pyversions/math-engine.svg" alt="Python Versions" class="h-6" loading="lazy"></a>
-          <a href="https://codecov.io/gh/JanTeske06/math_engine" target="_blank" rel="noopener noreferrer" aria-label="Codecov Coverage"><img src="https://codecov.io/gh/JanTeske06/math_engine/graph/badge.svg" alt="codecov" class="h-6" loading="lazy"></a>
-          <a href="https://pepy.tech/projects/math-engine" target="_blank" rel="noopener noreferrer" aria-label="PyPI Downloads"><img src="https://static.pepy.tech/personalized-badge/math-engine?period=total&units=NONE&left_color=GREY&right_color=BLACK&left_text=downloads" alt="PyPI Downloads" class="h-6" loading="lazy"></a>
+          <a href="https://pypi.org/project/math-engine/" target="_blank" rel="noopener noreferrer" aria-label="PyPI Version"><img src="/static/projects/math-engine/badges/pypi-version.svg" alt="PyPI version" class="h-6" loading="lazy"></a>
+          <a href="https://pypi.org/project/math-engine/" target="_blank" rel="noopener noreferrer" aria-label="Supported Python versions"><img src="/static/projects/math-engine/badges/python-versions.svg" alt="Python Versions" class="h-6" loading="lazy"></a>
+          <a href="https://codecov.io/gh/JanTeske06/math_engine" target="_blank" rel="noopener noreferrer" aria-label="Codecov Coverage"><img src="/static/projects/math-engine/badges/codecov.svg" alt="codecov" class="h-6" loading="lazy"></a>
+          <a href="https://pepy.tech/projects/math-engine" target="_blank" rel="noopener noreferrer" aria-label="PyPI Downloads"><img src="/static/projects/math-engine/badges/downloads.svg" alt="PyPI Downloads" class="h-6" loading="lazy"></a>
         </div>
       </div>
 
@@ -509,6 +509,63 @@
 
 
 
+  <section class="border-t border-stone-900 py-16 md:py-20">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6" data-aos="fade-up">
+      <style>
+        [data-me-console] .me-line { white-space: pre-wrap; word-break: break-word; line-height: 1.55; }
+        [data-me-console] .me-sys { color: #78716c; }
+        [data-me-console] .me-in { color: #d6d3d1; }
+        [data-me-console] .me-ok { color: #6fda44; }
+        [data-me-console] .me-err { color: #f87171; }
+      </style>
+      <div data-me-console
+           data-t-loading="Loading Python environment (~12 MB, first time only)…"
+           data-t-ready="math-engine v0.6.7 · evaluate() ready. Type an expression and press Enter."
+           data-t-failed="The demo could not load. Please reload the page."
+           data-t-hide="Collapse demo"
+           data-t-show="Expand demo">
+        <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-amber-400">Interactive</p>
+        <h2 class="mt-3 font-aspekta text-2xl font-bold text-white md:text-3xl">Try it live</h2>
+        <p class="mt-3 max-w-2xl text-stone-300">The real engine runs directly in your browser, Python compiled to WebAssembly. Nothing is sent to a server, every calculation stays on your device.</p>
+
+        <button data-me-start type="button" class="mt-6 inline-flex cursor-pointer items-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400 disabled:opacity-60">
+          <span data-me-btnlabel>Start demo</span>
+          <span data-me-btnhint class="text-xs font-normal opacity-80">~12 MB</span>
+          <svg data-me-chevron class="hidden h-4 w-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </button>
+        <p data-me-status class="mt-3 text-xs text-stone-500" aria-live="polite"></p>
+
+        <div data-me-ui class="mt-6 hidden">
+          <div class="overflow-hidden rounded-2xl border border-stone-800 bg-stone-950">
+            <div class="flex items-center gap-1.5 border-b border-stone-800/70 px-4 py-2.5">
+              <span class="h-2.5 w-2.5 rounded-full bg-stone-700"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-stone-700"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-stone-700"></span>
+              <span class="ml-2 font-mono text-xs text-stone-600">math-engine</span>
+            </div>
+            <div data-me-output class="max-h-72 min-h-24 space-y-1 overflow-y-auto px-4 py-3 font-mono text-sm"></div>
+            <form data-me-form class="flex items-center gap-2 border-t border-stone-800/70 px-4 py-3 font-mono text-sm">
+              <span class="select-none text-stone-600">&gt;&gt;&gt;</span>
+              <input data-me-input type="text" autocomplete="off" autocapitalize="off" spellcheck="false"
+                     placeholder="2x + 5 = 13"
+                     class="flex-1 bg-transparent text-stone-100 outline-none placeholder:text-stone-700">
+              <button type="submit" class="shrink-0 cursor-pointer rounded-md bg-stone-800 px-3 py-1 text-xs font-medium text-stone-200 transition hover:bg-stone-700">Run</button>
+            </form>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <button type="button" data-me-ex="0b1010 * 3" class="cursor-pointer rounded-full border border-stone-700 bg-stone-900 px-3 py-1 font-mono text-[11px] text-stone-300 transition hover:border-orange-500/50 hover:text-amber-200">0b1010 * 3</button>
+            <button type="button" data-me-ex="2x + 5 = 13" class="cursor-pointer rounded-full border border-stone-700 bg-stone-900 px-3 py-1 font-mono text-[11px] text-stone-300 transition hover:border-orange-500/50 hover:text-amber-200">2x + 5 = 13</button>
+            <button type="button" data-me-ex="0.1 + 0.2" class="cursor-pointer rounded-full border border-stone-700 bg-stone-900 px-3 py-1 font-mono text-[11px] text-stone-300 transition hover:border-orange-500/50 hover:text-amber-200">0.1 + 0.2</button>
+            <button type="button" data-me-ex="255 & 0x0F" class="cursor-pointer rounded-full border border-stone-700 bg-stone-900 px-3 py-1 font-mono text-[11px] text-stone-300 transition hover:border-orange-500/50 hover:text-amber-200">255 &amp; 0x0F</button>
+            <button type="button" data-me-ex="8 + * 3" class="cursor-pointer rounded-full border border-stone-700 bg-stone-900 px-3 py-1 font-mono text-[11px] text-stone-300 transition hover:border-orange-500/50 hover:text-amber-200">8 + * 3</button>
+          </div>
+          <p class="mt-4 text-xs text-stone-600">Runs entirely locally via Pyodide (Python in WebAssembly). No server request, no data transfer, self-hosted.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <section class="border-t border-stone-800/60 py-16">
     <div class="mx-auto max-w-6xl px-4 sm:px-6">
       <h2 class="mb-8 font-aspekta text-2xl font-bold text-white">More projects</h2>
@@ -635,6 +692,7 @@
 <script src="/static/js/vendors/aos.js?v=20260430a"></script>
 <script src="/static/js/vendors/swiper-bundle.min.js?v=20260430a"></script>
 <script src="/static/js/main.js?v=20260605c"></script>
+<script src="/static/js/math-engine-console.js?v=20260606a" defer></script>
 
 
 
