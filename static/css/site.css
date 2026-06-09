@@ -39,6 +39,56 @@
   src: url("/static/fonts/aspekta/Aspekta-650.woff2") format("woff2");
 }
 
+
+/* --- Premium-Mikrodetails ------------------------------------------
+ * Ruhe statt Scroll-Effekte: gezielte, schnelle Reaktionen auf
+ * Interaktion plus ein markenkonformer Fokus-Ring.
+ */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid rgb(251 191 36 / 0.75); /* amber-400 */
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Unterstreichung, die beim Hover von links reinwächst */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.35s cubic-bezier(0.2, 0.6, 0.3, 1);
+  padding-bottom: 2px;
+}
+.link-underline:hover,
+.link-underline:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* Subtiler Lift für primäre Buttons */
+.btn-lift {
+  transition: transform 0.2s cubic-bezier(0.2, 0.6, 0.3, 1),
+    box-shadow 0.25s ease, background-color 0.2s ease,
+    border-color 0.2s ease, color 0.2s ease;
+}
+.btn-lift:hover {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link-underline,
+  .btn-lift {
+    transition: none;
+  }
+  .btn-lift:hover {
+    transform: none;
+  }
+}
+
 /* Force the baseline body font in case Tailwind's preflight doesn't
    pick up --font-inter via a utility class. Also set the site background
    on <html> so page-fade transitions (opacity on body) don't flash the

@@ -37,8 +37,8 @@
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
 
-  <link rel="stylesheet" href="/static/style.css?v=20260606a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
+  <link rel="stylesheet" href="/static/style.css?v=20260609a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260609a">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="Multi-Process Browser Automation Framework, кейс">
@@ -187,12 +187,13 @@
 
 <article>
 
-  <header class="relative isolate pt-32 pb-12 md:pt-40">
+  <header class="relative isolate pt-36 pb-14 md:pt-44 md:pb-16">
     <div class="relative mx-auto max-w-5xl px-4 sm:px-6" data-aos="fade-up">
       <a href="/ru/proekty/" class="mb-6 inline-flex items-center gap-2 text-sm font-medium text-stone-400 transition hover:text-amber-300">← Назад к списку проектов</a>
 
       <div class="max-w-3xl">
-        <div class="mb-4 flex flex-wrap gap-2">
+        <p class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-[0.2em] text-amber-400">Кейс · Браузерная автоматизация</p>
+        <div class="mb-5 flex flex-wrap gap-2">
           <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">asyncio</span>
           <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Playwright</span>
           <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Chrome DevTools Protocol</span>
@@ -204,8 +205,8 @@
           <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">Windows Job Objects</span>
         </div>
 
-        <h1 class="font-aspekta text-4xl font-bold leading-tight text-white md:text-5xl">Multi-Process Browser Automation Framework</h1>
-        <p class="mt-4 text-lg text-stone-300">Python-фреймворк на 17k LOC для параллельных отказоустойчивых browser-воркфлоу, <strong>race-safe координация воркеров, cross-process crash-bridge, per-phase таймауты</strong> и полный operator-UX через Streamlit.</p>
+        <h1 class="font-aspekta text-5xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl">Multi-Process Browser Automation Framework</h1>
+        <p class="mt-6 max-w-2xl text-xl leading-relaxed text-stone-300">Python-фреймворк на 17k LOC для параллельных отказоустойчивых browser-воркфлоу, <strong>race-safe координация воркеров, cross-process crash-bridge, per-phase таймауты</strong> и полный operator-UX через Streamlit.</p>
       </div>
 
       <div class="mt-10 overflow-hidden rounded-3xl border border-stone-800 transition-colors hover:border-orange-500/60">
@@ -218,12 +219,31 @@
     </div>
   </header>
 
-  <div class="relative pb-24">
+  <section class="border-y border-stone-800" aria-label="Результаты в цифрах">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 py-14 md:py-16">
+      <dl class="grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8">
+        <div>
+          <dt class="font-aspekta text-5xl font-bold leading-none tracking-tight tabular-nums text-white md:text-6xl"><span data-count-to="17461">0</span></dt>
+          <dd class="mt-3 text-sm leading-relaxed text-stone-400">строк production-кода на Python</dd>
+        </div>
+        <div>
+          <dt class="font-aspekta text-5xl font-bold leading-none tracking-tight tabular-nums text-white md:text-6xl"><span data-count-to="260">0</span><span class="text-amber-400">+</span></dt>
+          <dd class="mt-3 text-sm leading-relaxed text-stone-400">pytest-тестов, CI на каждый push</dd>
+        </div>
+        <div>
+          <dt class="font-aspekta text-5xl font-bold leading-none tracking-tight tabular-nums text-white md:text-6xl"><span data-count-to="25">0</span></dt>
+          <dd class="mt-3 text-sm leading-relaxed text-stone-400">модулей, без циклических импортов</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <div class="relative pt-16 pb-24 md:pt-20">
     <div class="mx-auto max-w-5xl px-4 sm:px-6">
-      <div class="grid gap-12 lg:grid-cols-12">
+      <div class="grid gap-12 lg:grid-cols-10">
 
         <aside class="lg:col-span-3">
-          <div class="sticky top-16 space-y-6 rounded-2xl border border-stone-800 bg-stone-900/60 p-6" style="top: 3rem">
+          <div class="lg:sticky lg:top-24 space-y-6 rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
 
             <div>
               <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Заказчик</p>
@@ -295,7 +315,7 @@
           </div>
         </aside>
 
-        <div class="lg:col-span-9">
+        <div class="lg:col-span-7">
           <div class="prose prose-invert max-w-none prose-headings:font-aspekta prose-headings:text-white prose-a:text-amber-400 hover:prose-a:text-amber-300 prose-strong:text-white prose-code:text-amber-200 prose-img:rounded-2xl prose-img:border prose-img:border-stone-800">
             <h2 id="zadacha">Задача</h2>
             <p>Частному клиенту требовался постоянно работающий backend для browser-автоматизации. Требования с самого начала были инженерными, а не feature-ориентированными:</p>
@@ -381,7 +401,7 @@ Execution     →  Browser-воркеры (как subprocesses)</code></pre>
       <h2 class="mt-3 font-aspekta text-3xl font-bold text-white md:text-4xl">Browser-automation на production-уровне</h2>
       <p class="mt-4 max-w-2xl text-stone-300">Multi-worker, crash recovery, CDP-based auth, архитектура, которая держит здесь 17 461 LOC. Адаптируется под ваши workflow.</p>
       <div class="mt-8 flex flex-wrap items-center gap-4">
-        <a href="/ru/uslugi/browser-automation/" class="inline-flex items-center rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">Посмотреть услугу</a>
+        <a href="/ru/uslugi/browser-automation/" class="btn-lift inline-flex items-center rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">Посмотреть услугу</a>
         <a href="/ru/?service=browser-automation&amp;min=6500#contact" class="inline-flex items-center gap-1.5 text-sm font-semibold text-amber-400 hover:text-amber-300">Сразу запросить →</a>
       </div>
     </div>
@@ -395,7 +415,7 @@ Execution     →  Browser-воркеры (как subprocesses)</code></pre>
       <h2 class="mb-8 font-aspekta text-2xl font-bold text-white">Другие проекты</h2>
       <div class="grid gap-6 md:grid-cols-3">
 
-        <a href="/ru/proekty/aws-cost-optimization/" class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+        <a href="/ru/proekty/aws-cost-optimization/" class="btn-lift group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
           <div class="aspect-[4/3] overflow-hidden">
             <img src="/static/projects/aws-cost-optimization/images/cover.svg" alt="" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
           </div>
@@ -405,7 +425,7 @@ Execution     →  Browser-воркеры (как subprocesses)</code></pre>
           </div>
         </a>
 
-        <a href="/ru/proekty/book-lister-ai/" class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+        <a href="/ru/proekty/book-lister-ai/" class="btn-lift group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
           <div class="aspect-[4/3] overflow-hidden">
             <img src="/static/projects/book-lister-ai/images/cover.svg" alt="" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
           </div>
@@ -415,7 +435,7 @@ Execution     →  Browser-воркеры (как subprocesses)</code></pre>
           </div>
         </a>
 
-        <a href="/ru/proekty/microsoft-shopping-feed/" class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+        <a href="/ru/proekty/microsoft-shopping-feed/" class="btn-lift group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
           <div class="aspect-[4/3] overflow-hidden">
             <img src="/static/projects/microsoft-shopping-feed/images/cover.svg" alt="" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
           </div>
@@ -507,7 +527,7 @@ Execution     →  Browser-воркеры (как subprocesses)</code></pre>
 <script src="/static/js/vendors/alpinejs.min.js?v=20260430a" defer></script>
 <script src="/static/js/vendors/aos.js?v=20260430a"></script>
 <script src="/static/js/vendors/swiper-bundle.min.js?v=20260430a"></script>
-<script src="/static/js/main.js?v=20260605c"></script>
+<script src="/static/js/main.js?v=20260609a"></script>
 
 </body>
 </html>

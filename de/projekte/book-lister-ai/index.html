@@ -48,8 +48,8 @@
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
 
 
-  <link rel="stylesheet" href="/static/style.css?v=20260606a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
+  <link rel="stylesheet" href="/static/style.css?v=20260609a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260609a">
 
 
 
@@ -354,7 +354,7 @@
 
 <article>
 
-  <header class="relative isolate pt-32 pb-12 md:pt-40">
+  <header class="relative isolate pt-36 pb-14 md:pt-44 md:pb-16">
     <div class="relative mx-auto max-w-5xl px-4 sm:px-6" data-aos="fade-up">
       <a href="/de/projekte/"
          class="mb-6 inline-flex items-center gap-2 text-sm font-medium text-stone-400 transition hover:text-amber-300">
@@ -363,7 +363,8 @@
 
       <div class="max-w-3xl">
 
-        <div class="mb-4 flex flex-wrap gap-2">
+        <p class="mb-4 font-aspekta text-xs font-semibold uppercase tracking-[0.2em] text-amber-400">Case Study · Computer Vision &amp; GenAI</p>
+        <div class="mb-5 flex flex-wrap gap-2">
 
 
           <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-amber-200">OpenCV</span>
@@ -376,8 +377,8 @@
 
         </div>
 
-        <h1 class="font-aspekta text-4xl font-bold leading-tight text-white md:text-5xl">Book Lister AI</h1>
-        <p class="mt-4 text-lg text-stone-300">Desktop-App, die gebrauchte Bücher in unter 30 Sekunden scannt, per Gemini-Vision erfasst, live bepreist und bei eBay listet, <strong>+400 % Durchsatz</strong> durch Computer Vision und GenAI.</p>
+        <h1 class="font-aspekta text-5xl font-bold leading-[1.04] tracking-tight text-white md:text-7xl">Book Lister AI</h1>
+        <p class="mt-6 max-w-2xl text-xl leading-relaxed text-stone-300">Desktop-App, die gebrauchte Bücher in unter 30 Sekunden scannt, per Gemini-Vision erfasst, live bepreist und bei eBay listet. <strong class="font-semibold text-white">+400 % Durchsatz</strong> durch Computer Vision und GenAI.</p>
       </div>
 
 
@@ -392,12 +393,31 @@
     </div>
   </header>
 
-  <div class="relative pb-24">
+  <section class="border-y border-stone-800" aria-label="Ergebnis in Zahlen">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 py-14 md:py-16">
+      <dl class="grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8">
+        <div>
+          <dt class="font-aspekta text-5xl font-bold leading-none tracking-tight tabular-nums text-white md:text-6xl">+<span data-count-to="400">0</span><span class="text-amber-400">%</span></dt>
+          <dd class="mt-3 text-sm leading-relaxed text-stone-400">mehr Durchsatz pro Mitarbeiter</dd>
+        </div>
+        <div>
+          <dt class="font-aspekta text-5xl font-bold leading-none tracking-tight tabular-nums text-white md:text-6xl"><span data-count-from="300" data-count-to="30">300</span><span class="text-amber-400"> Sek</span></dt>
+          <dd class="mt-3 text-sm leading-relaxed text-stone-400">pro Buch statt 3 bis 5 Minuten von Hand</dd>
+        </div>
+        <div>
+          <dt class="font-aspekta text-5xl font-bold leading-none tracking-tight tabular-nums text-white md:text-6xl"><span data-count-to="5">0</span><span class="text-amber-400"> / 5</span></dt>
+          <dd class="mt-3 text-sm leading-relaxed text-stone-400">Kundenbewertung via Upwork</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <div class="relative pt-16 pb-24 md:pt-20">
     <div class="mx-auto max-w-5xl px-4 sm:px-6">
-      <div class="grid gap-12 lg:grid-cols-12">
+      <div class="grid gap-12 lg:grid-cols-10">
 
         <aside class="lg:col-span-3">
-          <div class="sticky top-16 space-y-6 rounded-2xl border border-stone-800 bg-stone-900/60 p-6" style="top: 3rem">
+          <div class="lg:sticky lg:top-24 space-y-6 rounded-2xl border border-stone-800 bg-stone-900/60 p-6">
 
             <div>
               <p class="font-aspekta text-[11px] font-semibold uppercase tracking-widest text-stone-500">Kunde</p>
@@ -481,7 +501,7 @@
           </div>
         </aside>
 
-        <div class="lg:col-span-9">
+        <div class="lg:col-span-7">
           <div class="prose prose-invert max-w-none prose-headings:font-aspekta prose-headings:text-white prose-a:text-amber-400 hover:prose-a:text-amber-300 prose-strong:text-white prose-code:text-amber-200 prose-img:rounded-2xl prose-img:border prose-img:border-stone-800">
             <h2 id="die-herausforderung">Die Herausforderung</h2>
             <p>Im Gebrauchtbuchhandel ist der Flaschenhals nicht der Verkauf, sondern die Datenerfassung. Pro Buch verbrachte das Personal bisher <strong>3 bis 5 Minuten</strong> mit Fotografieren, Abtippen (Titel, Autor, ISBN), Preisrecherche, SEO-Optimierung und Upload. Bei tausenden Büchern pro Monat summiert sich das zu enormen Personalkosten, <strong>bevor der erste Euro verdient ist.</strong></p>
@@ -535,7 +555,7 @@
       <h2 class="mt-3 font-aspekta text-3xl font-bold text-white md:text-4xl">Custom AI Desktop App</h2>
       <p class="mt-4 max-w-2xl text-stone-300">Eine Windows-App mit AI-Backend, Hardware-Integration und API-Pipeline, wie hier gebaut, mit Tests und Installer. Für Workflows, die kein SaaS-Tool abdeckt.</p>
       <div class="mt-8 flex flex-wrap items-center gap-4">
-        <a href="/de/leistungen/custom-ai-app/" class="inline-flex items-center rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">Leistung ansehen</a>
+        <a href="/de/leistungen/custom-ai-app/" class="btn-lift inline-flex items-center rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">Leistung ansehen</a>
         <a href="/de/?service=custom-ai-app&amp;min=8500#contact" class="inline-flex items-center gap-1.5 text-sm font-semibold text-amber-400 hover:text-amber-300">Direkt anfragen →</a>
       </div>
     </div>
@@ -550,7 +570,7 @@
       <div class="grid gap-6 md:grid-cols-3">
 
         <a href="/de/projekte/aws-cost-optimization/"
-           class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+           class="btn-lift group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
 
           <div class="aspect-[4/3] overflow-hidden">
             <img src="/static/projects/aws-cost-optimization/images/cover.svg" alt="" loading="lazy"
@@ -564,7 +584,7 @@
         </a>
 
         <a href="/de/projekte/legacy-data-extraction/"
-           class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+           class="btn-lift group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
 
           <div class="aspect-[4/3] overflow-hidden">
             <img src="/static/projects/legacy-data-extraction/images/cover.svg" alt="" loading="lazy"
@@ -578,7 +598,7 @@
         </a>
 
         <a href="/de/projekte/microsoft-shopping-feed/"
-           class="group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
+           class="btn-lift group block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">
 
           <div class="aspect-[4/3] overflow-hidden">
             <img src="/static/projects/microsoft-shopping-feed/images/cover.svg" alt="" loading="lazy"
@@ -675,7 +695,7 @@
 <script src="/static/js/vendors/alpinejs.min.js" defer></script>
 <script src="/static/js/vendors/aos.js?v=20260430a"></script>
 <script src="/static/js/vendors/swiper-bundle.min.js?v=20260430a"></script>
-<script src="/static/js/main.js?v=20260605c"></script>
+<script src="/static/js/main.js?v=20260609a"></script>
 
 
 

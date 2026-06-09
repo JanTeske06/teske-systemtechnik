@@ -25,8 +25,8 @@
   <link rel="preload" href="/static/fonts/aspekta/Aspekta-650.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
-  <link rel="stylesheet" href="/static/style.css?v=20260606a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
+  <link rel="stylesheet" href="/static/style.css?v=20260609a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260609a">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="Math Engine: an eval()-free expression interpreter for Python">
@@ -190,7 +190,7 @@
         </p>
         <p class="mt-6 max-w-2xl text-lg text-stone-300" data-aos="fade-up" data-aos-delay="160">A from-scratch evaluation engine for mathematical expressions, entirely without Python's eval(): tokenizer, recursive-descent parser, exact Decimal arithmetic and character-precise errors. Now live on PyPI, with 399 tests and 90% coverage.</p>
         <div class="mt-8 flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="240">
-        <span class="inline-flex items-center gap-1.5 rounded-full border border-stone-800 bg-stone-900/60 px-4 py-2 text-sm text-stone-300">PyPI · <b class="font-semibold text-white">v0.6.6</b></span>
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-stone-800 bg-stone-900/60 px-4 py-2 text-sm text-stone-300">PyPI · <b class="font-semibold text-white">v0.6.7</b></span>
         <span class="inline-flex items-center gap-1.5 rounded-full border border-stone-800 bg-stone-900/60 px-4 py-2 text-sm text-stone-300">Tests · <b class="font-semibold text-white">399</b></span>
         <span class="inline-flex items-center gap-1.5 rounded-full border border-stone-800 bg-stone-900/60 px-4 py-2 text-sm text-stone-300">Coverage · <b class="font-semibold text-white">90 %</b></span>
         <span class="inline-flex items-center gap-1.5 rounded-full border border-stone-800 bg-stone-900/60 px-4 py-2 text-sm text-stone-300">eval()-Aufrufe · <b class="font-semibold text-white">0</b></span>
@@ -205,7 +205,7 @@
   <section class="relative border-t border-stone-900 py-16 md:py-20">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <div class="prose prose-invert max-w-3xl prose-headings:font-aspekta prose-headings:text-white prose-a:text-amber-400 hover:prose-a:text-amber-300 prose-strong:text-white prose-code:text-amber-200 prose-img:rounded-2xl prose-img:border prose-img:border-stone-800" data-aos="fade-up">
-<p>Evaluating a number that arrives as text, say <code>3 + 4 * 2</code> from a form field, a configuration file or an API, sounds like one line of Python: <code>eval("3 + 4 * 2")</code>. That very line is the problem. With <strong>Math Engine</strong> I built a complete evaluation engine from scratch that computes mathematical expressions safely, exactly and traceably, entirely without Python's <code>eval()</code>. Since this week it is live on PyPI as version 0.6.6.</p>
+<p>Evaluating a number that arrives as text, say <code>3 + 4 * 2</code> from a form field, a configuration file or an API, sounds like one line of Python: <code>eval("3 + 4 * 2")</code>. That very line is the problem. With <strong>Math Engine</strong> I built a complete evaluation engine from scratch that computes mathematical expressions safely, exactly and traceably, entirely without Python's <code>eval()</code>. Since this week it is live on PyPI as version 0.6.7.</p>
 <h2>Why not just eval()</h2>
 <p><code>eval()</code> executes arbitrary Python code. An input disguised as a number, like <code>__import__('os').system(...)</code>, runs without complaint. For any application that takes expressions from a file, a form or an API, <code>eval()</code> is therefore not a calculator but an open path to code execution.</p>
 <p>On top of that come two quieter defects. First, correctness: Python's <code>float</code> computes in binary, <code>0.1 + 0.2</code> yields <code>0.30000000000000004</code>. For a financial formula or an educational context, that is not almost right, it is wrong. Second, diagnostics: a broken expression returns a Python traceback at an internal line number, not the spot in the input string where the problem actually sits.</p>
@@ -358,7 +358,7 @@ a value was expected here, not an operator</code></pre>
 
 <script src="/static/js/vendors/alpinejs.min.js" defer></script>
 <script src="/static/js/vendors/aos.js?v=20260430a"></script>
-<script src="/static/js/main.js?v=20260605c"></script>
+<script src="/static/js/main.js?v=20260609a"></script>
 
 </body>
 </html>

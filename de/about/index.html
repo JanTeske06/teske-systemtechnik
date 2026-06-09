@@ -47,8 +47,8 @@
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
 
-  <link rel="stylesheet" href="/static/style.css?v=20260608c">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
+  <link rel="stylesheet" href="/static/style.css?v=20260609a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260609a">
 </head>
 
 <body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
@@ -153,7 +153,7 @@
             <span class="section-num">000 /</span>
             Über uns
           </p>
-          <h1 class="font-aspekta text-4xl font-bold leading-[1.06] tracking-tight text-white sm:text-5xl md:text-6xl" data-aos="fade-up" data-aos-delay="80">
+          <h1 class="font-aspekta text-5xl font-bold leading-[1.04] tracking-tight text-white sm:text-6xl md:text-7xl" data-aos="fade-up" data-aos-delay="80">
             Ein inhabergeführtes Studio für <span class="text-amber-400">Automatisierung und individuelle Software.</span>
           </h1>
           <p class="mt-7 max-w-2xl text-lg leading-relaxed text-stone-300" data-aos="fade-up" data-aos-delay="160">
@@ -304,8 +304,8 @@
     <section class="relative border-t border-stone-900 py-16 md:py-20">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center" data-aos="fade-up">
-          <p class="max-w-xl text-lg leading-relaxed text-stone-300">Sie wollen wissen, woran wir konkret arbeiten? Die <a class="font-medium text-amber-400 underline-offset-4 hover:underline" href="/de/leistungen/">Leistungen</a> zeigen es im Detail. Oder schreiben Sie einfach kurz.</p>
-          <a href="mailto:jt@teske-systemtechnik.de" class="shrink-0 font-aspekta text-sm font-semibold text-stone-300 underline-offset-4 transition hover:text-white hover:underline">jt@teske-systemtechnik.de →</a>
+          <p class="max-w-xl text-lg leading-relaxed text-stone-300">Sie wollen wissen, woran wir konkret arbeiten? Die <a class="link-underline font-medium text-amber-400" href="/de/leistungen/">Leistungen</a> zeigen es im Detail. Oder schreiben Sie einfach kurz.</p>
+          <a href="mailto:jt@teske-systemtechnik.de" class="link-underline shrink-0 font-aspekta text-sm font-semibold text-stone-300 transition hover:text-white">jt@teske-systemtechnik.de →</a>
         </div>
       </div>
     </section>
@@ -378,38 +378,7 @@
 
 <script src="/static/js/vendors/alpinejs.min.js" defer></script>
 <script src="/static/js/vendors/aos.js?v=20260430a"></script>
-<script src="/static/js/main.js?v=20260605c"></script>
-
-<!-- Count-up für die Werdegang-Zahlen: startet bei 0, zählt beim Reinscrollen schnell hoch -->
-<script>
-(function () {
-  var els = document.querySelectorAll('[data-count-to]');
-  if (!els.length) return;
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var fmt = function (n) { return Math.round(n).toLocaleString('de-DE'); };
-  function run(el) {
-    var target = parseFloat(el.getAttribute('data-count-to')) || 0;
-    if (reduce) { el.textContent = fmt(target); return; }
-    var dur = 1000, start = null;
-    function step(ts) {
-      if (start === null) start = ts;
-      var p = Math.min((ts - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3); // easeOutCubic: schnell hoch, sanft einrasten
-      el.textContent = fmt(target * eased);
-      if (p < 1) requestAnimationFrame(step); else el.textContent = fmt(target);
-    }
-    requestAnimationFrame(step);
-  }
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } });
-    }, { threshold: 0.4 });
-    els.forEach(function (el) { io.observe(el); });
-  } else {
-    els.forEach(run);
-  }
-})();
-</script>
+<script src="/static/js/main.js?v=20260609a"></script>
 
 </body>
 </html>

@@ -1532,7 +1532,7 @@ function scriptsFooter() {
   return `<script src="/static/js/vendors/alpinejs.min.js" defer></script>
 <script src="/static/js/vendors/aos.js?v=20260430a"></script>
 <script src="/static/js/vendors/swiper-bundle.min.js?v=20260430a"></script>
-<script src="/static/js/main.js?v=20260605c"></script>`;
+<script src="/static/js/main.js?v=20260609a"></script>`;
 }
 
 // Price-calculator UI labels + option factors (used by services with
@@ -1603,10 +1603,10 @@ function renderServicePage(service, lang) {
         <span class="section-num">000 /</span>
         ${eyebrowText}
       </p>
-      <h1 class="font-aspekta text-5xl font-bold leading-[1.02] text-white md:text-6xl" data-aos="fade-up" data-aos-delay="80">${i18n.title}</h1>
+      <h1 class="font-aspekta text-5xl font-bold leading-[1.02] tracking-tight text-white md:text-6xl" data-aos="fade-up" data-aos-delay="80">${i18n.title}</h1>
       <p class="mt-6 max-w-2xl text-lg text-stone-300" data-aos="fade-up" data-aos-delay="160">${i18n.subtitle}</p>
       <div class="mt-10 flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="240">
-        <a class="inline-flex items-center rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400" href="${inquiryHref}">${L.inquirySend}</a>
+        <a class="inline-flex items-center btn-lift rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400" href="${inquiryHref}">${L.inquirySend}</a>
         <a class="inline-flex items-center rounded-full border border-stone-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-orange-500 hover:text-amber-300" href="#leistungsumfang">${L.viewDeliverables}</a>
       </div>
     </div>
@@ -1731,7 +1731,7 @@ function renderServicePage(service, lang) {
               <p class="font-aspekta text-3xl font-bold text-white"><span id="calc-amount">—</span> <span class="text-base font-normal text-stone-400">${L.netSuffix}</span></p>
               <p class="mt-1 max-w-md text-xs text-stone-500">${C.estimateNote}</p>
             </div>
-            <a id="calc-cta" href="${inquiryHref}" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">${C.cta}${ARROW_SVG}</a>
+            <a id="calc-cta" href="${inquiryHref}" class="inline-flex shrink-0 items-center justify-center gap-2 btn-lift rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">${C.cta}${ARROW_SVG}</a>
           </div>
         </div>
       </div>` : '';
@@ -1759,7 +1759,7 @@ function renderServicePage(service, lang) {
           <ul class="mt-6 space-y-3 text-sm text-stone-200">
             ${includesList}
           </ul>
-          <a href="${inquiryHref}" class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">
+          <a href="${inquiryHref}" class="mt-8 inline-flex w-full items-center justify-center gap-2 btn-lift rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">
             ${L.inquirySend}
             ${ARROW_SVG}
           </a>
@@ -1849,7 +1849,7 @@ function renderServicePage(service, lang) {
         const i18nR = s.i18n[lang];
         const ebR = typeof s.eyebrow === 'string' ? s.eyebrow : (s.eyebrow[lang] || s.eyebrow.en);
         const detailHref = `${OVERVIEW_PATHS[lang]}${s.urlSlugs[lang]}/`;
-        return `<a href="${detailHref}" class="group flex flex-col rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up">
+        return `<a href="${detailHref}" class="btn-lift group flex flex-col rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up">
   <p class="mb-2 font-aspekta text-[11px] font-semibold uppercase tracking-widest text-amber-400">${ebR}</p>
   <h3 class="font-aspekta text-xl font-bold text-white">${i18nR.title}</h3>
   <p class="mt-3 grow text-sm text-stone-400">${i18nR.overviewSummary}</p>
@@ -1965,8 +1965,8 @@ function renderServicePage(service, lang) {
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260608c">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
+  <link rel="stylesheet" href="/static/style.css?v=20260609a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260609a">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="${i18n.title}, Teske Systemtechnik">
@@ -2039,7 +2039,7 @@ function renderOverviewPage(lang) {
     const i18n = s.i18n[lang];
     const eb = typeof s.eyebrow === 'string' ? s.eyebrow : (s.eyebrow[lang] || s.eyebrow.en);
     const detailHref = `${overviewPath}${s.urlSlugs[lang]}/`;
-    return `<a href="${detailHref}" class="group flex flex-col rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up"${i > 0 ? ` data-aos-delay="${(i % 3) * 80}"` : ''}>
+    return `<a href="${detailHref}" class="btn-lift group flex flex-col rounded-2xl border border-stone-800 bg-stone-900/60 p-6 transition hover:border-orange-500/50" data-aos="fade-up"${i > 0 ? ` data-aos-delay="${(i % 3) * 80}"` : ''}>
   <p class="mb-2 font-aspekta text-[11px] font-semibold uppercase tracking-widest text-amber-400">${eb}</p>
   <h3 class="font-aspekta text-xl font-bold text-white">${i18n.title}</h3>
   <p class="mt-3 grow text-sm text-stone-400">${i18n.overviewSummary}</p>
@@ -2109,8 +2109,8 @@ function renderOverviewPage(lang) {
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260608c">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
+  <link rel="stylesheet" href="/static/style.css?v=20260609a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260609a">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="${L.overviewTitle}, Teske Systemtechnik">
@@ -2142,7 +2142,7 @@ ${header(lang, overviewPath, langSwitcher)}
           <span class="section-num">000 /</span>
           ${L.secOverviewLabel}
         </p>
-        <h1 class="font-aspekta text-5xl font-bold leading-[1.02] text-white md:text-6xl" data-aos="fade-up" data-aos-delay="80">${L.overviewTitle}</h1>
+        <h1 class="font-aspekta text-5xl font-bold leading-[1.02] tracking-tight text-white md:text-6xl" data-aos="fade-up" data-aos-delay="80">${L.overviewTitle}</h1>
         <p class="mt-6 max-w-2xl text-lg text-stone-300" data-aos="fade-up" data-aos-delay="160">${L.overviewIntro}</p>
       </div>
     </div>
@@ -2289,8 +2289,8 @@ function renderInquiryPage(lang) {
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260608c">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
+  <link rel="stylesheet" href="/static/style.css?v=20260609a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260609a">
 </head>
 
 <body class="font-inter antialiased bg-stone-950 text-stone-100 tracking-tight selection:bg-orange-500/40 selection:text-white">
@@ -2378,7 +2378,7 @@ ${header(lang, inquiryPath, langSwitcher)}
         <p id="inquiry-result" class="mt-4 hidden text-sm" role="status" aria-live="polite"></p>
 
         <button id="inquiry-submit" type="submit"
-                class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400 disabled:opacity-70 disabled:cursor-not-allowed">
+                class="mt-8 inline-flex w-full items-center justify-center gap-2 btn-lift rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400 disabled:opacity-70 disabled:cursor-not-allowed">
           <span id="inquiry-submit-text">${I.submit}</span>
         </button>
 
@@ -2654,7 +2654,7 @@ function renderBookingPage(lang) {
             <div><div class="mb-1 flex items-baseline justify-between"><label class="block text-sm font-medium text-stone-300" for="booking-topic">${B.topic}</label><span class="text-xs text-stone-500">${B.maxChars}</span></div><textarea id="booking-topic" name="topic" rows="4" maxlength="600" required class="w-full resize-none rounded-lg border border-stone-700 bg-stone-950/60 px-4 py-3 text-sm text-stone-100 placeholder-stone-500 transition focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" placeholder="${B.topicPh}"></textarea></div>
           </div>
           <p id="booking-error" class="mt-4 hidden text-sm text-orange-400" role="alert"></p>
-          <button id="booking-submit" type="submit" class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400 disabled:opacity-70 disabled:cursor-not-allowed"><svg id="booking-spinner" class="hidden h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-90" fill="currentColor" d="M4 12a8 8 0 0 1 8-8v4a4 4 0 0 0-4 4H4z"/></svg><span id="booking-submit-text">${B.submitBase}</span></button>
+          <button id="booking-submit" type="submit" class="mt-8 inline-flex w-full items-center justify-center gap-2 btn-lift rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400 disabled:opacity-70 disabled:cursor-not-allowed"><svg id="booking-spinner" class="hidden h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-90" fill="currentColor" d="M4 12a8 8 0 0 1 8-8v4a4 4 0 0 0-4 4H4z"/></svg><span id="booking-submit-text">${B.submitBase}</span></button>
           <p class="mt-4 text-center text-xs text-stone-500">${B.consentPre} <a class="text-amber-400 underline hover:text-amber-300" href="${privacy}">${B.consentLink}</a>${B.consentPost}</p>
         </form>
 
@@ -2705,8 +2705,8 @@ function renderBookingPage(lang) {
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
   <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/static/style.css?v=20260608c">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260605b">
+  <link rel="stylesheet" href="/static/style.css?v=20260609a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260609a">
 
   <meta property="og:site_name" content="Teske Systemtechnik">
   <meta property="og:title" content="${B.title}, Teske Systemtechnik">
