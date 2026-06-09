@@ -406,7 +406,7 @@ function maintenanceGuard() {
 function scriptsFooter() {
   return `<script src="/static/js/vendors/alpinejs.min.js" defer></script>
 <script src="/static/js/vendors/aos.js?v=20260430a"></script>
-<script src="/static/js/main.js?v=20260609a"></script>`;
+<script src="/static/js/main.js?v=20260609b"></script>`;
 }
 
 function headCommon(lang) {
@@ -415,8 +415,8 @@ function headCommon(lang) {
   <link rel="preload" href="/static/fonts/aspekta/Aspekta-650.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
-  <link rel="stylesheet" href="/static/style.css?v=20260609a">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260609a">`;
+  <link rel="stylesheet" href="/static/style.css?v=20260609b">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260609b">`;
 }
 
 // ============================================================

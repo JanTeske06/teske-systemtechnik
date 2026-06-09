@@ -39,6 +39,26 @@
   src: url("/static/fonts/aspekta/Aspekta-650.woff2") format("woff2");
 }
 
+/* --- Page transitions (View Transitions API) -----------------------
+ * Soft cross-fade on same-origin navigation. CSS-only, no JS, no
+ * third-party request. Chromium + Safari animate it; Firefox falls
+ * back to a plain load. Reduced-motion users get no animation.
+ */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.32s;
+  animation-timing-function: cubic-bezier(0.2, 0.6, 0.3, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
 
 /* --- Premium-Mikrodetails ------------------------------------------
  * Ruhe statt Scroll-Effekte: gezielte, schnelle Reaktionen auf
