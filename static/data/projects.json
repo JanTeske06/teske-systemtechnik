@@ -38,7 +38,7 @@
       "showcase_order": 2,
       "catalog_order": 2,
       "date": "2026-02-28",
-      "cover": "/static/projects/legacy-data-extraction/images/cover.svg",
+      "cover": "/static/projects/legacy-data-extraction/images/cover.png?v=20260611a",
       "upwork": "https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c?p=2057447749556867072",
       "tech": [
         "Python",
@@ -70,7 +70,7 @@
       "showcase_order": 3,
       "catalog_order": 3,
       "date": "2026-04-15",
-      "cover": "/static/projects/book-lister-ai/images/cover.svg",
+      "cover": "/static/projects/book-lister-ai/images/cover.png?v=20260611a",
       "upwork": "https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c?p=2053850828435623936",
       "tech": [
         "OpenCV",
@@ -99,7 +99,7 @@
       "showcase_order": 4,
       "catalog_order": 4,
       "date": "2026-04-10",
-      "cover": "/static/projects/microsoft-shopping-feed/images/cover.svg",
+      "cover": "/static/projects/microsoft-shopping-feed/images/cover.png?v=20260611a",
       "upwork": "https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c?p=2053851934259679232",
       "tech": [
         "Python",
@@ -130,7 +130,7 @@
       "showcase_order": 5,
       "catalog_order": 5,
       "date": "2026-04-26",
-      "cover": "/static/projects/browser-automation-framework/images/cover.svg",
+      "cover": "/static/projects/browser-automation-framework/images/cover.png?v=20260611b",
       "upwork": "https://www.upwork.com/freelancers/~015b43fa57ecfc1b1c?p=2053851495754145792",
       "tech": [
         "asyncio",

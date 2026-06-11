@@ -39,10 +39,10 @@
       '<a href="' +
       helpers.escapeHtml(href) +
       '" class="group flex h-full flex-col overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 transition hover:border-orange-500/50">' +
-      '<div class="aspect-[3/2] overflow-hidden">' +
+      '<div class="aspect-[4/3] overflow-hidden bg-stone-950">' +
       '<img src="' +
       cover +
-      '" alt="' + title + '" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">' +
+      '" alt="' + title + '" loading="lazy" class="h-full w-full object-contain transition duration-700 group-hover:scale-105">' +
       '</div>' +
       '<div class="flex flex-1 flex-col p-4 md:p-5">' +
       '<div class="mb-3 flex flex-wrap gap-1.5">' +
