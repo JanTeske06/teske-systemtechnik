@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Math Engine, eval-free expression interpreter for Python">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="Math Engine, eval-free expression interpreter for Python">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0c0a09"/>
@@ -17,11 +17,13 @@
     </pattern>
   </defs>
 
-  <rect width="1200" height="750" fill="url(#bg)"/>
-  <rect width="1200" height="750" fill="url(#grid)"/>
-  <rect width="1200" height="750" fill="url(#glow)"/>
-  <rect width="1200" height="750" fill="url(#glow2)"/>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#grid)"/>
+  <rect width="1200" height="900" fill="url(#glow)"/>
+  <rect width="1200" height="900" fill="url(#glow2)"/>
 
+  <!-- content shifted down by 75px to center vertically in the new 4:3 canvas -->
+  <g transform="translate(0 75)">
   <!-- eyebrow -->
   <text x="90" y="106" font-family="ui-monospace, 'SFMono-Regular', Menlo, monospace" font-size="24" letter-spacing="5" fill="#5e7a47">OPEN SOURCE · PYPI · MIT</text>
 
@@ -71,4 +73,5 @@
 
   <!-- footer brand -->
   <text x="1112" y="662" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" letter-spacing="3" fill="#78716c" text-anchor="end">TESKE SYSTEMTECHNIK</text>
+  </g>
 </svg>

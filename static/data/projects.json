@@ -162,7 +162,7 @@
       "showcase_order": 6,
       "catalog_order": 6,
       "date": "2025-11-23",
-      "cover": "/static/projects/math-engine/images/cover.svg",
+      "cover": "/static/projects/math-engine/images/cover.svg?v=20260611d",
       "repo": "https://github.com/JanTeske06/math_engine",
       "pypi": "https://pypi.org/project/math-engine/",
       "badge": "Open Source",
