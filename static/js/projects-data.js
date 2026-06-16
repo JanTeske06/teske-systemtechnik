@@ -118,7 +118,7 @@
   }
 
   function loadProjects() {
-    return memoFetch('/static/data/projects.json?v=20260611d', '__teskeProjectsPromise').then(
+    return memoFetch('/static/data/projects.json?v=20260616c', '__teskeProjectsPromise').then(
       function (data) {
         return Array.isArray(data && data.projects) ? data.projects : [];
       }

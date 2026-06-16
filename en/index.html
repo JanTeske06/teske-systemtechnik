@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>html{background-color:#0c0a09}</style>
 
   <script>
     // Maintenance guard: if /maintenance.flag contains "on", redirect to /maintenance.html.
@@ -40,17 +41,18 @@
   <link rel="preconnect" href="https://forminit.com" crossorigin>
 
   
-  <link rel="preload" href="/static/fonts/aspekta/Aspekta-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/static/fonts/aspekta/Aspekta-650.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-400.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low">
+  <link rel="preload" href="/static/fonts/aspekta/Aspekta-650.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
 
   
   <link rel="preload" href="/static/css/vendors/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/vendors/aos.css"></noscript>
-  <link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css">
+  <link rel="preload" href="/static/css/vendors/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/static/css/vendors/swiper-bundle.min.css"></noscript>
 
   
-  <link rel="stylesheet" href="/static/style.css?v=20260609b">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260609b">
+  <link rel="stylesheet" href="/static/style.css?v=20260616a">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260616a">
 
   
 
@@ -343,24 +345,20 @@
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <div class="max-w-3xl">
 
-      <p class="mb-6 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400"
-         data-aos="fade-up">
+      <p class="mb-6 inline-flex items-center gap-3 font-aspekta text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
         <span class="section-num">000 /</span>
         Teske Systemtechnik
       </p>
 
-      <h1 class="font-aspekta text-5xl font-bold leading-[1.02] tracking-tight text-white md:text-6xl lg:text-7xl"
-          data-aos="fade-up" data-aos-delay="80">
+      <h1 class="font-aspekta text-5xl font-bold leading-[1.02] tracking-tight text-white md:text-6xl lg:text-7xl">
         Your vision becomes reality.
       </h1>
 
-      <p class="mt-6 max-w-xl text-lg text-stone-300"
-         data-aos="fade-up" data-aos-delay="160">
+      <p class="mt-6 max-w-xl text-lg text-stone-300">
         Custom Python automation, robust APIs, and intelligent data pipelines. All from one source, engineered in Germany.
       </p>
 
-      <div class="mt-10 flex flex-wrap gap-3"
-           data-aos="fade-up" data-aos-delay="240">
+      <div class="mt-10 flex flex-wrap gap-3">
         <a class="inline-flex items-center btn-lift rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-400"
            href="/en/projects/">
           See projects
@@ -735,21 +733,21 @@
 
 </div>
 
-<script src="/static/js/vendors/alpinejs.min.js" defer></script>
-<script src="/static/js/vendors/aos.js?v=20260430a"></script>
-<script src="/static/js/vendors/swiper-bundle.min.js?v=20260430a"></script>
-<script src="/static/js/main.js?v=20260609b"></script>
+<script src="/static/js/vendors/alpinejs.min.js" defer fetchpriority="low"></script>
+<script src="/static/js/vendors/aos.js?v=20260430a" defer fetchpriority="low"></script>
+<script src="/static/js/vendors/swiper-bundle.min.js?v=20260430a" defer fetchpriority="low"></script>
+<script src="/static/js/main.js?v=20260616a" defer></script>
 
 <!-- Project showcase is rendered from /static/data/projects.json -->
-<script src="/static/js/projects-data.js?v=20260611d"></script>
-<script src="/static/js/showcase.js?v=20260611b"></script>
+<script src="/static/js/projects-data.js?v=20260616c" defer></script>
+<script src="/static/js/showcase.js?v=20260611b" defer></script>
 
 <!-- Testimonials marquee (section 002) from /static/data/reviews.json -->
-<script src="/static/js/reviews.js?v=20260606a" defer></script>
+<script src="/static/js/reviews.js?v=20260616b" defer fetchpriority="low"></script>
 
 <!-- Contact form → Forminit -->
-<script src="https://forminit.com/sdk/v1/forminit.js"></script>
-<script src="/static/js/contact-form.js?v=20260601b"></script>
+<script src="https://forminit.com/sdk/v1/forminit.js" fetchpriority="low" defer></script>
+<script src="/static/js/contact-form.js?v=20260601b" defer fetchpriority="low"></script>
 
 </body>
 </html>

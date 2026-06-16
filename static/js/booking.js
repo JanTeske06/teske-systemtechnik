@@ -399,7 +399,13 @@
   }
   function smoothScrollTo(node) {
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    node.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    // Offset for the fixed site header so the target lands just below it
+    // instead of under the header (scrollIntoView({block:'start'}) ignores it).
+    var header = document.getElementById('site-header');
+    var offset = (header ? header.offsetHeight : 0) + 16;
+    var y = node.getBoundingClientRect().top + window.pageYOffset - offset;
+    if (y < 0) y = 0;
+    window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
   }
   function summaryText() {
     var s = longDateInTz(selected.ms, clientTz) + ', ' + selected.label + S.uhr;

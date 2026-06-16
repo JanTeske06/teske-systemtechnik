@@ -26,7 +26,12 @@
     return '<span class="rv-stars" aria-label="' + n + ' von 5 Sternen">' + STAR.repeat(n) + '</span>';
   }
 
-  function card(r) {
+  // `decorative` cards live in the aria-hidden duplicate track: they must not
+  // be focusable or expose a button role, otherwise assistive tech reaches
+  // interactive elements inside an aria-hidden subtree (an a11y violation).
+  // role="button" sits on a <div>, not <article>, since <article> does not
+  // allow the button role.
+  function card(r, decorative) {
     var body;
     if (r.text) {
       body = '<p class="rv-quote">' + esc(r.text) + '</p>';
@@ -39,18 +44,21 @@
     }
     var proj = '<p class="rv-proj"><b>' + esc(r.project || '') + '</b>' + esc(r.projectSub || '') + '</p>';
     var src = '<span class="rv-src" aria-label="' + esc(r.source || '') + '" title="' + esc(r.source || '') + '">' + (LOGO[r.source] || esc(r.source || '')) + '</span>';
-    return '<article class="rv-card" tabindex="0" role="button">' +
+    var attrs = decorative ? '' : ' tabindex="0" role="button"';
+    return '<div class="rv-card"' + attrs + '>' +
       '<div class="rv-top">' + stars(r.stars) + src + '</div>' +
-      body + proj + EXPAND + '</article>';
+      body + proj + EXPAND + '</div>';
   }
 
-  // One row = two identical tracks back-to-back for a seamless loop.
+  // One row = two tracks back-to-back for a seamless loop. The first is the
+  // live, interactive copy; the second is an aria-hidden, inert duplicate.
   function row(list, reverse) {
-    var cards = list.map(card).join('');
+    var live = list.map(function (r) { return card(r, false); }).join('');
+    var dup = list.map(function (r) { return card(r, true); }).join('');
     var cls = 'rv-track' + (reverse ? ' rev' : '');
     return '<div class="rv-row">' +
-      '<div class="' + cls + '">' + cards + '</div>' +
-      '<div class="' + cls + '" aria-hidden="true">' + cards + '</div>' +
+      '<div class="' + cls + '">' + live + '</div>' +
+      '<div class="' + cls + '" aria-hidden="true">' + dup + '</div>' +
       '</div>';
   }
 
@@ -69,6 +77,28 @@
     return modal;
   }
 
+  // Each track must be at least as wide as the row, otherwise the marquee
+  // shows a gap at the edges between loops. The reverse row starts at
+  // translateX(-100%), so on first load it only covers ONE track width — on
+  // wide screens that leaves a hole on the right until it scrolls far enough.
+  // Repeating the cards until a single track exceeds the row width fixes it
+  // for both directions, on any viewport.
+  function fill(mount) {
+    mount.querySelectorAll('.rv-row').forEach(function (rowEl) {
+      var rowW = rowEl.clientWidth;
+      if (!rowW) return;
+      rowEl.querySelectorAll('.rv-track').forEach(function (track) {
+        var base = track.getAttribute('data-base');
+        if (base == null) { base = track.innerHTML; track.setAttribute('data-base', base); }
+        track.innerHTML = base;
+        var unit = track.scrollWidth;
+        if (!unit) return;
+        var times = Math.ceil((rowW + 1) / unit);
+        if (times > 1) track.innerHTML = new Array(times + 1).join(base);
+      });
+    });
+  }
+
   function render(data) {
     var mount = document.querySelector('[data-reviews]');
     if (!mount) return;
@@ -77,6 +107,12 @@
 
     var mid = Math.ceil(list.length / 2);
     mount.innerHTML = row(list.slice(0, mid), false) + row(list.slice(mid), true);
+    fill(mount);
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () { fill(mount); }, 200);
+    });
 
     var modal = buildModal();
     var body = modal.querySelector('.rv-modal-body');
@@ -91,11 +127,15 @@
       modal.classList.remove('is-open');
       document.documentElement.style.overflow = '';
     }
-    mount.querySelectorAll('.rv-card').forEach(function (c) {
-      c.addEventListener('click', function () { open(c); });
-      c.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(c); }
-      });
+    // Delegated so it survives innerHTML re-fills (e.g. on resize).
+    mount.addEventListener('click', function (e) {
+      var c = e.target.closest('.rv-card');
+      if (c) open(c);
+    });
+    mount.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      var c = e.target.closest('.rv-card');
+      if (c) { e.preventDefault(); open(c); }
     });
     modal.addEventListener('click', function (e) {
       if (e.target === modal || e.target.closest('.rv-modal-close')) close();
