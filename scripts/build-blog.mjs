@@ -625,7 +625,8 @@ ${post.body}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>html{background-color:#0c0a09}</style>
+  <meta name="color-scheme" content="dark">
+  <style>html{background-color:#0c0a09;color-scheme:dark}</style>
 
   ${maintenanceGuard()}
   <meta name="robots" content="index,follow">
@@ -906,7 +907,8 @@ function renderIndexPage(posts, lang) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>html{background-color:#0c0a09}</style>
+  <meta name="color-scheme" content="dark">
+  <style>html{background-color:#0c0a09;color-scheme:dark}</style>
 
   ${maintenanceGuard()}
   <meta name="robots" content="index,follow">

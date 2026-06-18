@@ -1948,7 +1948,8 @@ function renderServicePage(service, lang) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>html{background-color:#0c0a09}</style>
+  <meta name="color-scheme" content="dark">
+  <style>html{background-color:#0c0a09;color-scheme:dark}</style>
 
   ${maintenanceGuard()}
   <meta name="robots" content="index,follow">
@@ -2093,7 +2094,8 @@ function renderOverviewPage(lang) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>html{background-color:#0c0a09}</style>
+  <meta name="color-scheme" content="dark">
+  <style>html{background-color:#0c0a09;color-scheme:dark}</style>
 
   ${maintenanceGuard()}
   <meta name="robots" content="index,follow">
@@ -2276,7 +2278,8 @@ function renderInquiryPage(lang) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>html{background-color:#0c0a09}</style>
+  <meta name="color-scheme" content="dark">
+  <style>html{background-color:#0c0a09;color-scheme:dark}</style>
 
   ${maintenanceGuard()}
   <meta name="robots" content="noindex,follow">
@@ -2691,7 +2694,8 @@ function renderBookingPage(lang) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>html{background-color:#0c0a09}</style>
+  <meta name="color-scheme" content="dark">
+  <style>html{background-color:#0c0a09;color-scheme:dark}</style>
 
   ${maintenanceGuard()}
   <meta name="robots" content="index,follow">
