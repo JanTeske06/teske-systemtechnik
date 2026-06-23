@@ -32,20 +32,24 @@
   // role="button" sits on a <div>, not <article>, since <article> does not
   // allow the button role.
   function card(r, decorative) {
-    var body;
-    if (r.text) {
-      body = '<p class="rv-quote">' + esc(r.text) + '</p>';
-    } else if (Array.isArray(r.tags)) {
-      body = '<div class="rv-tags">' + r.tags.map(function (t) {
+    // A card may carry a quote, a set of skill tags, or both. When both are
+    // present the tags render first and the quote sits beneath them.
+    var body = '';
+    if (Array.isArray(r.tags) && r.tags.length) {
+      body += '<div class="rv-tags">' + r.tags.map(function (t) {
         return '<span class="rv-tag">' + esc(t) + '</span>';
       }).join('') + '</div>';
-    } else {
-      body = '';
+    }
+    if (r.text) {
+      body += '<p class="rv-quote">' + esc(r.text) + '</p>';
     }
     var proj = '<p class="rv-proj"><b>' + esc(r.project || '') + '</b>' + esc(r.projectSub || '') + '</p>';
     var src = '<span class="rv-src" aria-label="' + esc(r.source || '') + '" title="' + esc(r.source || '') + '">' + (LOGO[r.source] || esc(r.source || '')) + '</span>';
     var attrs = decorative ? '' : ' tabindex="0" role="button"';
-    return '<div class="rv-card"' + attrs + '>' +
+    // Tag-only cards have no quote to push the footer down, so flag them; the
+    // CSS pins their footer to the card bottom (see .rv-card--notext).
+    var cls = 'rv-card' + (r.text ? '' : ' rv-card--notext');
+    return '<div class="' + cls + '"' + attrs + '>' +
       '<div class="rv-top">' + stars(r.stars) + src + '</div>' +
       body + proj + EXPAND + '</div>';
   }
@@ -99,6 +103,40 @@
     });
   }
 
+  // Cards have a fixed height, so the room left for the quote depends on how
+  // many tag rows sit above it. Set each quote's line-clamp to the number of
+  // lines that fit, so the bottom-aligned quote fills upward and shows "..."
+  // only on genuine overflow (a tag-less card shows more lines than a
+  // tag-heavy one). Measured purely from geometry (card height minus the top
+  // row, tags and footer) so it is independent of the quote's own position.
+  // Runs after every fill() since fill() rewrites the DOM.
+  function clampQuotes(mount) {
+    mount.querySelectorAll('.rv-card').forEach(function (card) {
+      var q = card.querySelector('.rv-quote');
+      if (!q) return;
+      var lh = parseFloat(getComputedStyle(q).lineHeight);
+      if (!lh) lh = parseFloat(getComputedStyle(q).fontSize) * 1.6;  // 'normal'
+      if (!lh) return;
+      var ccs = getComputedStyle(card);
+      var avail = card.clientHeight - (parseFloat(ccs.paddingTop) || 0) - (parseFloat(ccs.paddingBottom) || 0);
+      ['.rv-top', '.rv-tags', '.rv-proj'].forEach(function (sel) {
+        var el = card.querySelector(sel);
+        if (!el) return;
+        var s = getComputedStyle(el);
+        avail -= el.offsetHeight + (parseFloat(s.marginTop) || 0) + (parseFloat(s.marginBottom) || 0);
+      });
+      avail -= 8;   // keep a small breathing gap between tags and quote
+      var lines = Math.max(1, Math.floor(avail / lh));
+      q.style.webkitLineClamp = String(lines);
+      // Safety net: the geometry estimate can be off by a line if text metrics
+      // shift (late fonts, sub-pixel rounding). Shrink until the card no longer
+      // overflows its fixed height, so the footer is never clipped.
+      while (lines > 1 && card.scrollHeight > card.clientHeight) {
+        q.style.webkitLineClamp = String(--lines);
+      }
+    });
+  }
+
   function render(data) {
     var mount = document.querySelector('[data-reviews]');
     if (!mount) return;
@@ -108,10 +146,17 @@
     var mid = Math.ceil(list.length / 2);
     mount.innerHTML = row(list.slice(0, mid), false) + row(list.slice(mid), true);
     fill(mount);
+    clampQuotes(mount);
+    // Re-clamp once web fonts / all resources finish loading, in case text
+    // metrics shift after the first measurement.
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { clampQuotes(mount); });
+    }
+    window.addEventListener('load', function () { clampQuotes(mount); });
     var resizeTimer;
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function () { fill(mount); }, 200);
+      resizeTimer = setTimeout(function () { fill(mount); clampQuotes(mount); }, 200);
     });
 
     var modal = buildModal();
@@ -119,6 +164,9 @@
     function open(c) {
       var clone = c.cloneNode(true);
       var ex = clone.querySelector('.rv-expand'); if (ex) ex.remove();
+      // Drop the inline line-clamp set by clampQuotes so the modal shows the
+      // full quote (the CSS rule .rv-modal-card .rv-quote sets clamp to unset).
+      var cq = clone.querySelector('.rv-quote'); if (cq) cq.style.webkitLineClamp = '';
       body.innerHTML = clone.innerHTML;
       modal.classList.add('is-open');
       document.documentElement.style.overflow = 'hidden';
@@ -146,7 +194,7 @@
   }
 
   function init() {
-    fetch('/static/data/reviews.json?v=20260606a', { cache: 'no-cache' })
+    fetch('/static/data/reviews.json?v=20260623a', { cache: 'no-cache' })
       .then(function (r) { return r.json(); })
       .then(render)
       .catch(function () {});

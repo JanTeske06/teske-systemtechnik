@@ -747,6 +747,13 @@ footer {
   background: rgb(28 25 23 / 0.5);
   border-radius: 1.1rem;
   padding: 1.4rem 1.5rem;
+  /* Feste, einheitliche Hoehe -> beide Reihen gleich hoch, egal wie viel
+     Inhalt eine Karte hat. Laengeres Zitat wird im .rv-quote per
+     line-clamp mit "..." gekuerzt; Klick oeffnet das volle Zitat.
+     16.5rem fasst auch die Karte mit 6 Tags (3 Tag-Zeilen) + 2 Textzeilen
+     + Projekt-Fuss, ohne dass das Zitat gequetscht wird. */
+  height: 16.5rem;
+  overflow: hidden;
   transition: border-color 0.25s, background-color 0.25s;
 }
 .rv-card:hover { border-color: rgb(249 115 22 / 0.45); background: rgb(28 25 23 / 0.75); }
@@ -762,8 +769,15 @@ footer {
 .rv-src svg { height: 16px; width: auto; display: block; }
 .rv-modal-card .rv-src svg { height: 19px; }
 .rv-quote {
-  color: rgb(231 229 228); font-size: 0.95rem; line-height: 1.6; margin: 0;
-  display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden;
+  color: rgb(231 229 228); font-size: 0.95rem; line-height: 1.6;
+  /* margin-top:auto schiebt Zitat + Projekt-Fuss nach unten, sodass JEDES
+     Zitat an derselben Linie (direkt ueber dem Fuss) endet -- egal wie viele
+     Tag-Zeilen darueber sitzen. reviews.js misst den freien Platz und setzt
+     -webkit-line-clamp so, dass der Text den Platz nach oben fuellt und nur
+     bei echtem Ueberlauf mit "..." endet. line-clamp:4 = Fallback ohne JS. */
+  margin: auto 0 0;
+  flex: 0 0 auto;
+  display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
 }
 .rv-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .rv-tag {
@@ -771,8 +785,11 @@ footer {
   border: 1px solid rgb(249 115 22 / 0.28); background: rgb(249 115 22 / 0.08);
   border-radius: 9999px; padding: 0.18rem 0.6rem;
 }
-.rv-proj { margin-top: auto; padding-top: 1.1rem; font-size: 0.72rem; color: rgb(120 113 108); line-height: 1.35; }
+.rv-proj { padding-top: 1.1rem; font-size: 0.72rem; color: rgb(120 113 108); line-height: 1.35; }
 .rv-proj b { display: block; color: rgb(168 162 158); font-weight: 600; margin-bottom: 0.1rem; }
+/* Karten ohne Zitat (nur Tags) haben kein .rv-quote, das den Fuss nach unten
+   schiebt -- darum hier den Fuss selbst an den Kartenboden pinnen. */
+.rv-card--notext .rv-proj { margin-top: auto; }
 .rv-expand {
   position: absolute; bottom: 1.15rem; right: 1.25rem; width: 15px; height: 15px;
   color: rgb(87 83 78); opacity: 0; transition: opacity 0.2s, color 0.2s; pointer-events: none;
